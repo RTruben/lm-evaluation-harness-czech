@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_lokace
+task:
+  - task: propaganda_lokace0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_lokace
+    description: "Úloha: identifikace lokace: Která z následujících lokalit je ve textu nejčastěji zmíněna? Česká republika, EU, Rusko, nebo jiná / nelze určit?"
+    doc_to_text: "{{query}} Vyberte odpověď (Česká republika, EU, Rusko, nebo jiná / nelze určit): "
+  - task: propaganda_lokace1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_lokace
+    description: "Analýza lokace: Kde se nejčastěji odehrává událost popsaná v textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?"
+    doc_to_text: "{{query}} Z možností Česká republika, EU, Rusko, nebo jiná / nelze určit zvolte odpověď: "
+  - task: propaganda_lokace2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_lokace
+    description: "Rozpoznání lokace: Která z následujících lokalit je v textu nejvíce spojena s popsanými událostmi? Česká republika, EU, Rusko, nebo jiná / nelze určit?"
+    doc_to_text: "{{query}} Prosím vyberte z možností Česká republika, EU, Rusko, nebo jiná / nelze určit: "
+  - task: propaganda_lokace3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_lokace
+    description: "Hodnocení lokace: Kde je událost nejpravděpodobněji situována podle textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?"
+    doc_to_text: "{{query}} Lokace: Česká republika, EU, Rusko, nebo jiná / nelze určit. Výber: "
+  - task: propaganda_lokace4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_lokace
+    description: "Která lokalita je nejčastěji spojována s událostí v textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?"
+    doc_to_text: "{{query}} Prosím zvolte z Česká republika, EU, Rusko, nebo jiná / nelze určit. Vybírám: "

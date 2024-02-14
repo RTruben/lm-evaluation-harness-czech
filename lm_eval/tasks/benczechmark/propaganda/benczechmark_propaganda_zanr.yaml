@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_zanr
+task:
+  - task: propaganda_zanr0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_zanr
+    description: "Dále je novinový článek. Chci vědět, jaký je jeho žánr. Vyberu z možností rozhovor (obsahuje dialog), komentář (má vždy autora, slovo komentář často v názvu), zpravodajství (většinou má autora)"
+    doc_to_text: "{{query}} Možnosti jsou (rozhovor, komentář, zpravodajství). Žánr je: "
+  - task: propaganda_zanr1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_zanr
+    description: "Jsem klasifikátor žánrů. Klasifikuji mezi kategoriemi rozhovor (obsahuje dialog), komentář (má vždy autora, slovo komentář často v názvu), zpravodajství (většinou má autora)"
+    doc_to_text: "{{query}} Klasifikuji z možností rozhovor, komentář, zpravodajství. Žánr je: "
+  - task: propaganda_zanr2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_zanr
+    description: "Z následujícího textu chci vědět, jaký je jeho žánr. Vyberu z možností zpravodajství, rozhovor, komentář."
+    doc_to_text: "{{query}} Z možností zpravodajství, rozhovor, komentář vybírám žánr: "
+  - task: propaganda_zanr3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_zanr
+    description: "Nyní máme k dispozici článek z internetu. Jaký je jeho žánr? Vyberte ze zpráva, komentář, rozhovor."
+    doc_to_text: "{{query}} Možnosti - zpráva, komentář, rozhovor. Vybíram žánr "
+  - task: propaganda_zanr4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_zanr
+    description: "Úloha: klasifikace žánru\nmožnosti: zpravodajství, komentář, rozhovor"
+    doc_to_text: "{{query}}\nmožnosti: zpravodajství, komentář, rozhovor\nvybraná kategorie: "

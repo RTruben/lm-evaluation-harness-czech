@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_relativizace
+task:
+  - task: propaganda_relativizace0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_relativizace
+    description: "Úloha: klasifikace relativizac. Relativizuje se v textu negativní konání Ruska nebo pozitivní zásluha Západu? Je většinou použita pro zmírnění něčeho negativního. Možnosti odpovědí: 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
+  - task: propaganda_relativizace1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_relativizace
+    description: "Analýza relativizace: Je v textu použita relativizace k zmírnění něčeho negativního? Vyberte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
+  - task: propaganda_relativizace2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_relativizace
+    description: "Rozpoznání relativizace: Je v textu použita relativizace pro zmírnění negativního konání Ruska nebo pozitivní zásluhy Západu? Odpovězte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
+  - task: propaganda_relativizace3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_relativizace
+    description: "Posouzení relativizace: Je v textu použita relativizace k ozvláštňování negativního konání Ruska nebo zlehčení pozitivních zásluh Západu? Možnosti: 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
+  - task: propaganda_relativizace4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_relativizace
+    description: "Hodnocení relativizace: Je v textu využita relativizace pro zmírnění negativního konání Ruska nebo zveličení pozitivních zásluh Západu? Odpovězte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "

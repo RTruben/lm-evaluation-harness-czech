@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_rusko
+task:
+  - task: propaganda_rusko0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_rusko
+    description: "Úloha: klasifikace obrazu Ruska. Do jaké pozice je staveno Rusko? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť."
+    doc_to_text: "{{query}}\nProsím vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Vybírám: "
+  - task: propaganda_rusko1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_rusko
+    description: "Vytváření obrazu Ruska: Jak je prezentováno Rusko? Vyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť."
+    doc_to_text: "{{query}}\nVyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Moje volba: "
+  - task: propaganda_rusko2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_rusko
+    description: "Hodnocení obrazu Ruska: Jak je charakterizováno Rusko? Vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť."
+    doc_to_text: "{{query}}\nProsím vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Odpověď: "
+  - task: propaganda_rusko3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_rusko
+    description: "Analýza prezentace Ruska: Jaká je prezentace Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť."
+    doc_to_text: "{{query}}\n Možnosti: hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Výber:"
+  - task: propaganda_rusko4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_rusko
+    description: "Jaký je v textu obraz Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť."
+    doc_to_text: "{{query}}\n Z možností -hrdina, -pozitivní příklad, -neutrální, -negativní příklad, -oběť volím: "

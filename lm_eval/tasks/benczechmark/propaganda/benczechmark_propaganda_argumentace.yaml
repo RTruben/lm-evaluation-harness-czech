@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_argumentace
+task:
+  - task: propaganda_argumentace0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_argumentace
+    description: "Úloha: klasifikace argumentace\nmožnosti: ne (pokud se jenom něco konstatuje (že se něco stalo)), ano (pokud působí jako argument (logický nebo emotivní))"
+    doc_to_text: "{{query}}\nmožnosti: ne, ano\nvybraná kategorie: "
+  - task: propaganda_argumentace1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_argumentace
+    description: "Zde je text s argumentací. Vaším úkolem je klasifikovat argumentaci. Vyberte možnost 'ano' pokud působí jako argument (logický nebo emotivní), nebo 'ne' pokud se pouze něco konstatuje (že se něco stalo)."
+    doc_to_text: "{{query}} Možnosti jsou: ne, ano. Vybírejte: "
+  - task: propaganda_argumentace2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_argumentace
+    description: "Následuje článek, ve kterém jsou různé tvrzení. Označte, zda se jedná o argumentaci či nikoliv. Pokud je to argument, vyberte 'ano', jinak 'ne'."
+    doc_to_text: "{{query}} Možnosti: ano, ne. Vyberte kategorii: "
+  - task: propaganda_argumentace3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_argumentace
+    description: "Vaším úkolem je klasifikovat, zda je text argumentativní či nikoliv. Pokud obsahuje argumenty (logický nebo emotivní), vyberte 'ano', jinak, pokud se pouze něco sděluje, vyberte 'ne'."
+    doc_to_text: "{{query}} Možnosti jsou: ne, ano. Prosím, vyberte: "
+  - task: propaganda_argumentace4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_argumentace
+    description: "Posuďte, zda je následující článek argumentativní. Vyberte možnost 'ano', pokud obsahuje argumenty, jinak 'ne'."
+    doc_to_text: "{{query}} Možnosti: ne, ano. Vaše volba: "

@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_demonizace
+task:
+  - task: propaganda_demonizace0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_demonizace
+    description: "Úloha: klasifikace demonizace. Je v textu nepřítel démonizován? Musí být definován nepřítel, většinou velmi negativní, popisuje destrukci, negativní zájmy/cíle, nebo emotivně velmi vyhrocené nálepkování. Možnosti jsou: ne, ano."
+    doc_to_text: "{{query}} Z možností ne, ano vybírám: "
+  - task: propaganda_demonizace1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_demonizace
+    description: ">\n          Je v textu přítomen proces demonizace? Musí být identifikován nepřítel, který je zpravidla prezentován v extrémně negativním světle, často s popisem destrukce, negativních zájmů/cílů nebo silně emocionálně nabitého označování. Možnosti jsou: ne, ano."
+    doc_to_text: "{{query}} Spomezi možnosti ne, ano vybírám: "
+  - task: propaganda_demonizace2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_demonizace
+    description: "Je v textu prezentována jednostranná a extrémní negativní představa o nepříteli? Například nepřítel je zobrazen jako zlo, násilník, terorista, hrozba pro společnost, a podobně. Možnosti jsou: ne, ano."
+    doc_to_text: "{{query}} Možnosti - ano/ne. vybírám: "
+  - task: propaganda_demonizace3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_demonizace
+    description: "Je v textu použito zjednodušení, karikatura nebo generalizace nepřítele? Nepřítel je zjednodušeně prezentován bez nuancí, což usnadňuje jeho identifikaci jako nepřítele. Možnosti jsou: ne, ano."
+    doc_to_text: "{{query}} Je to demonizace? (ano/ne) volím: "
+  - task: propaganda_demonizace4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_demonizace
+    description: "Je v textu prezentován nepřítel jako zdroj všech problémů, špatností a konfliktů? Nepřítel je zobrazován jako jediný zdroj všech negativních událostí a situací. Možnosti jsou: ne, ano."
+    doc_to_text: "{{query}} Rozhoduji se mezi volbami nebo ano: "

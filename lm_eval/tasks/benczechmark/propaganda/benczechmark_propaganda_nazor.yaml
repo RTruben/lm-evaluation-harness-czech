@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_nazor
+task:
+  - task: propaganda_nazor0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_nazor
+    description: "Úloha: klasifikace prezence názoru. Obsahuje článek jasný osobní názor autora článku? Možnosti odpovědí: 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
+  - task: propaganda_nazor1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_nazor
+    description: "Analýza názoru: Rozpoznáváte v textu jasný osobní názor autora článku? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Vyberte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
+  - task: propaganda_nazor2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_nazor
+    description: "Rozpoznání názoru: Je v článku zřejmý osobní názor autora? Odpovězte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
+  - task: propaganda_nazor3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_nazor
+    description: "Posouzení názoru: Je v článku patrný osobní názor autora? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Možnosti: 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
+  - task: propaganda_nazor4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_nazor
+    description: "Hodnocení osobního názoru: Obsahuje článek výrazný osobní názor autora? Odpovězte 'ano' nebo 'ne'."
+    doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "

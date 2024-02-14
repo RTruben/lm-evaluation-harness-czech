@@ -1,0 +1,32 @@
+group: benczechmark_propaganda_emoce
+task:
+  - task: propaganda_emoce0
+    task_alias: prompt-0
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_emoce
+    description: "Úloha: detekce emocí. Jakou převažující emoci text ve čtenáři vyvolává? Možnosti: strach, rozhořčení, soucit, nenávist, jiná"
+    doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Převažující emoce je: "
+  - task: propaganda_emoce1
+    task_alias: prompt-1
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_emoce
+    description: "Nyní se zaměříme na detekci emocí. Jakou hlavní emocí vyvolává tento text u čtenáře? Můžete vybírat z možností: strach, rozhořčení, soucit, nenávist, nebo jiná."
+    doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní vyvolaná emoce je: "
+  - task: propaganda_emoce2
+    task_alias: prompt-2
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_emoce
+    description: "Analyzujeme text z hlediska emocí. Jaká emoce převažuje u čtenáře? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná."
+    doc_to_text: "{{query}}\nMožnosti: strach, rozhořčení, soucit, nenávist, jiná. Převažující emocí je: "
+  - task: propaganda_emoce3
+    task_alias: prompt-3
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_emoce
+    description: "Posuzujeme text z pohledu emocí. Která emoce je nejvíce výrazná? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná."
+    doc_to_text: "{{query}}\nNejvýraznější emoce z možností (strach, rozhořčení, soucit, nenávist, jiná) je: "
+  - task: propaganda_emoce4
+    task_alias: prompt-4
+    include: multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/propaganda_emoce
+    description: "Pomoc! Potřebuji určit, jaké emoce text vyvolává. Vyberte z možností: strach, rozhořčení, soucit, nenávist, nebo jiná."
+    doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní emoce je: "
