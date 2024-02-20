@@ -1,3 +1,8 @@
+from transformers import AutoTokenizer
+
+from lm_eval.utils import SegmentedString
+
+
 class ContextSampler:
     def __init__(self, docs, task, fewshot_indices=None, rnd=None) -> None:
         self.rnd = rnd
@@ -32,20 +37,21 @@ class ContextSampler:
         # TODO: should we just stop people from using fewshot from same split as evaluating?
         selected_docs = [x for x in fewshotex if x != doc][:num_fewshot]
 
+        fewshot_delimiter = SegmentedString((self.fewshot_delimiter,), ("fewshot_delimiter",))
         labeled_examples = (
-            self.fewshot_delimiter.join(
+            fewshot_delimiter.join(
                 [
                     # TODO: is separating doc_to_text and doc_to_target by one space always desired?
-                    (
+                    SegmentedString((
                         self.doc_to_text(doc)
                         if (
                             self.config.doc_to_choice is None
                             or isinstance(self.doc_to_text(doc), str)
                         )
                         else self.doc_to_choice(doc)[self.doc_to_text(doc)]
-                    )
-                    + self.target_delimiter
-                    + (
+                    ,), ("fewshot_text",))
+                    + SegmentedString((self.target_delimiter,), ("target_delimiter",))
+                    + SegmentedString((
                         str(self.doc_to_target(doc)[0])
                         if isinstance(self.doc_to_target(doc), list)
                         else self.doc_to_target(doc)
@@ -54,11 +60,11 @@ class ContextSampler:
                             or isinstance(self.doc_to_target(doc), str)
                         )
                         else str(self.doc_to_choice(doc)[self.doc_to_target(doc)])
-                    )
+                    ,), ("fewshot_target",))
                     for doc in selected_docs
                 ]
             )
-            + self.fewshot_delimiter
+            + fewshot_delimiter
         )
 
         return labeled_examples
@@ -97,6 +103,19 @@ class ManualSampler(ContextSampler):
     def sample(self, n) -> None:
         """ """
         pass
+
+
+class FitInputLengthSampler(ContextSampler):
+
+    def __init__(self, max_input_length, tokenizer: str, docs, task, fewshot_indices=None, rnd=None) -> None:
+        super().__init__(docs, task, fewshot_indices, rnd)
+        self.max_input_length = max_input_length
+        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
+
+    def sample(self, n) -> None:
+        """ """
+        samples = super().sample(n)
+        samples = [self.tokenizer.encode(sample) for sample in samples]
 
 
 SAMPLER_REGISTRY = {

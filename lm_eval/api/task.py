@@ -29,7 +29,7 @@ from lm_eval.api.registry import (
 )
 from lm_eval.filters import build_filter_ensemble
 from lm_eval.prompts import get_prompt
-
+from lm_eval.utils import SegmentedString
 
 ALL_OUTPUT_TYPES = [
     "loglikelihood",
@@ -811,9 +811,9 @@ class ConfigurableTask(Task):
 
         if num_fewshot == 0:
             # always prepend the (possibly empty) task description
-            labeled_examples = self.config.description
+            labeled_examples = SegmentedString((self.config.description,), ("description",))
         else:
-            labeled_examples = self.config.description + self.sampler.get_context(
+            labeled_examples = SegmentedString((self.config.description,), ("description",)) + self.sampler.get_context(
                 doc, num_fewshot
             )
 
@@ -821,6 +821,7 @@ class ConfigurableTask(Task):
         if self.multiple_input:
             return labeled_examples
         else:
+            # TODO: mdocekal, not sure what this branch is responsible for, might also need the SegmentedString wrapper
             if isinstance(example, str):
                 return labeled_examples + example
             elif isinstance(example, list):
