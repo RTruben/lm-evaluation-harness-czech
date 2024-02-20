@@ -1,4 +1,8 @@
 group: benczechmark_propaganda_zanr
+metric_list:
+  - metric: acc
+    aggregation: max
+    higher_is_better: true
 task:
   - task: propaganda_zanr0
     task_alias: prompt-0
