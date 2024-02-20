@@ -3,6 +3,7 @@ from importlib.util import find_spec
 from typing import List, Literal, Optional, Tuple, Union
 
 from tqdm import tqdm
+from transformers import PreTrainedTokenizerFast
 
 from lm_eval.api.instance import Instance
 from lm_eval.api.model import LM
@@ -12,7 +13,7 @@ from lm_eval.utils import (
     divide,
     eval_logger,
     get_rolling_token_windows,
-    make_disjoint_window,
+    make_disjoint_window, SegmentedString,
 )
 
 
@@ -60,6 +61,7 @@ class VLLM(LM):
         gpu_memory_utilization: float = 0.9,
         device: str = "cuda",
         data_parallel_size: int = 1,
+        truncate_strategy: str = None,   # "leave_description"
     ):
         super().__init__()
 
@@ -92,6 +94,7 @@ class VLLM(LM):
             "quantization": quantization,
             "seed": int(seed),
         }
+        self.truncate_strategy = truncate_strategy
         self.batch_size = (
             "auto"
             if isinstance(batch_size, str) and "auto" in batch_size
@@ -146,19 +149,44 @@ class VLLM(LM):
 
     def tok_encode(
         self,
-        string: str,
+        string: Union[str, SegmentedString],
         left_truncate_len=None,
         add_special_tokens=False,
         truncation=False,
     ):
-        """ """
-        encoding = self.tokenizer.encode(
-            string, add_special_tokens=add_special_tokens, truncation=truncation
-        )
 
-        # left-truncate the encoded context to be at most `left_truncate_len` tokens long
-        if left_truncate_len:
-            encoding = encoding[-left_truncate_len:]
+        if self.truncate_strategy is None:
+            encoding = self.tokenizer.encode(
+                string, add_special_tokens=add_special_tokens, truncation=truncation
+            )
+
+            # left-truncate the encoded context to be at most `left_truncate_len` tokens long
+            if left_truncate_len:
+                encoding = encoding[-left_truncate_len:]
+        else:
+            # return_offsets_mapping works only with fast tokenizers
+            encoding = self.tokenizer(
+                string, add_special_tokens=add_special_tokens, truncation=False, return_offsets_mapping=True
+            )
+            token_offsets = encoding["offset_mapping"]
+            encoding = encoding["input_ids"]
+
+            if len(encoding) > self.max_length and isinstance(string, SegmentedString):
+                if self.truncate_strategy == "leave_description":
+                    try:
+                        desc_pos = string.labels.index("description")
+                    except ValueError:
+                        desc_pos = None
+
+                    if desc_pos == 0:
+                        first_token_after_desc = 0
+                        len_of_desc = len(string.segments[0])
+                        for i, offset in enumerate(token_offsets):
+                            if offset[0] >= len_of_desc:
+                                first_token_after_desc = i
+                                break
+                        desc_tokens = encoding[:first_token_after_desc]
+                        encoding = desc_tokens + encoding[-(self.max_length - len(desc_tokens)):]
 
         return encoding
 
