@@ -1,7 +1,15 @@
+# -*- coding: UTF-8 -*-
+"""
+
+:authors:     Martin Dočekal, Martin Fajčík
+"""
+import numpy
+import evaluate
+import datasets
+
 from sklearn.metrics import f1_score,confusion_matrix
 from lm_eval.api.registry import register_aggregation, register_metric
-import numpy
-
+from typing import Optional
 
 # The f1_posterior and _evaluate_statistics implementation is based on [GOUTTE-2005], and these few lines were borrowed
 # and modified from Andre Anjos <anjos@idiap.ch> under Copyright (c) 2022 Idiap Research Institute, http://www.idiap.ch/
@@ -124,3 +132,26 @@ def macro_f1_CI(items, alpha=0.95):
     lower, upper = _evaluate_statistics(samples, alpha)
 
     return (lower, upper)
+
+
+
+def rouge_raw_r1_f(predictions, references):
+    return rouge_raw(predictions, references, "rougeraw1_fmeasure")
+
+def rouge_raw_r2_f(predictions, references):
+    return rouge_raw(predictions, references, "rougeraw2_fmeasure")
+
+def rouge_raw_rl_f(predictions, references):
+    return rouge_raw(predictions, references, "rougerawl_fmeasure")
+
+def rouge_raw(predictions, references, select: Optional[str] = None):
+    module = evaluate.load("CZLC/rouge_raw")
+    return module.compute(predictions=predictions, references=references, select=select)
+
+def make_toy_dataset(dataset: datasets.Dataset):
+    """
+    Makes a toy dataset from given dataset. It means that the dataset will contain only 10 samples.
+
+    :param dataset: Dataset to make toy from.
+    """
+    return dataset.select(range(10))
