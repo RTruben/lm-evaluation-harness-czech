@@ -261,7 +261,11 @@ def make_table(result_dict, column: str = "results"):
                 se = dic[m + "_stderr" + "," + f]
                 if se != "N/A":
                     se = "%.4f" % se
-                values.append([k, version, f, n, m, "%.4f" % v, "±", se])
+                if type(v) == float:
+                    v = "%.4f" % v
+                elif type(v) == tuple: # patch by MF, allow tuple reporting
+                    v = "/".join(["%.4f" % x for x in v])
+                values.append([k, version, f, n, m, v, "±", se])
             else:
                 values.append([k, version, f, n, m, "%.4f" % v, "", ""])
             k = ""

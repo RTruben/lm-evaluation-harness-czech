@@ -10,7 +10,7 @@ export NUMEXPR_MAX_THREADS=$(nproc --all)
 set -x
 $PYTHON -m lm_eval --model vllm \
   --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$GPUs_per_model,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=2048 --tasks "$TASK" \
-  --batch_size 8 \
+  --batch_size 4 \
   --output_path "$OUTPUT_PATH" \
   --log_samples \
   --verbosity DEBUG

@@ -487,4 +487,8 @@ def aggregate_subtask_metrics(metrics, sizes, weight_by_size=True):
 
     assert len(metrics) == len(sizes)
 
-    return sum([metric * size for metric, size in zip(metrics, sizes)]) / sum(sizes)
+    # patch by MF
+    try:
+        return sum([metric * size for metric, size in zip(metrics, sizes)]) / sum(sizes)
+    except:
+        return "N/A"
