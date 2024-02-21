@@ -36,6 +36,7 @@ dependencies = [
     "tqdm-multiprocess",
     "transformers>=4.1",
     "zstandard",
+    "word2number",
 ]
 
 [tool.setuptools.packages.find]
@@ -88,7 +89,7 @@ all = [
 ]
 
 [tool.ruff]
-extend-exclude = ["lm_eval/evaluator.py", "lm_eval/tasks/*.py"]
+extend-exclude = ["lm_eval/tasks/*.py"]
 
 [tool.ruff.lint]
 extend-select = ["I"]
