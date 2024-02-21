@@ -7,9 +7,10 @@ import numpy
 import evaluate
 import datasets
 
-from sklearn.metrics import f1_score,confusion_matrix
+from sklearn.metrics import f1_score, confusion_matrix
 from lm_eval.api.registry import register_aggregation, register_metric
 from typing import Optional
+
 
 # The f1_posterior and _evaluate_statistics implementation is based on [GOUTTE-2005], and these few lines were borrowed
 # and modified from Andre Anjos <anjos@idiap.ch> under Copyright (c) 2022 Idiap Research Institute, http://www.idiap.ch/
@@ -55,6 +56,7 @@ def f1_posterior(tp, fp, fn, lambda_, nb_samples):
     )
     return u / (u + v)
 
+
 def _evaluate_statistics(variates, coverage):
     """Evaluates the left and right margins for a given M-C distribution
 
@@ -94,6 +96,7 @@ def _evaluate_statistics(variates, coverage):
 
     return lower, upper
 
+
 def macro_f1_score(items, **kwargs):
     unzipped_list = list(zip(*items))
     golds = unzipped_list[0]
@@ -113,16 +116,15 @@ def macro_f1_CI(items, alpha=0.95):
     # Get unique labels
     unique_labels = numpy.unique(golds + preds)
 
-
     # Iterate over confusion matrix to compute metrics for each class
-    samples=[]
+    samples = []
     for i in range(len(unique_labels)):
         TP = cm[i, i]
         FP = sum(cm[:, i]) - TP
         FN = sum(cm[i, :]) - TP
 
         # get samples from binary F1 distribution
-        samples.append(f1_posterior(TP, FP, FN, 1, 10000)) # 1 = flat prior
+        samples.append(f1_posterior(TP, FP, FN, 1, 10000))  # 1 = flat prior
 
     # convert binary f1 samples to macro f1 samples
     samples = numpy.array(samples)
@@ -134,19 +136,22 @@ def macro_f1_CI(items, alpha=0.95):
     return (lower, upper)
 
 
-
 def rouge_raw_r1_f(predictions, references):
     return rouge_raw(predictions, references, "rougeraw1_fmeasure")
+
 
 def rouge_raw_r2_f(predictions, references):
     return rouge_raw(predictions, references, "rougeraw2_fmeasure")
 
+
 def rouge_raw_rl_f(predictions, references):
     return rouge_raw(predictions, references, "rougerawl_fmeasure")
+
 
 def rouge_raw(predictions, references, select: Optional[str] = None):
     module = evaluate.load("CZLC/rouge_raw")
     return module.compute(predictions=predictions, references=references, select=select)
+
 
 def make_toy_dataset(dataset: datasets.Dataset):
     """
