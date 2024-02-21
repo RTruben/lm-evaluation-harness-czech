@@ -1,0 +1,28 @@
+group:
+  - benczechmark
+task: benczechmark_summarization
+dataset_path: CZLC/sumeczech-1.0
+dataset_name:
+output_type: generate_until
+training_split: train
+validation_split: validation
+test_split: test
+fewshot_split: train
+description: "Následuje seznam textů a jejich shrnutí."
+doc_to_text: "{{text}}\nShrnutí:"
+doc_to_target: abstract
+should_decontaminate: true
+doc_to_decontamination_query: "{{query}}"
+metric_list:
+  - metric: !function utils.rouge_raw_r1_f
+    higher_is_better: true
+    aggregation: mean
+  - metric: !function utils.rouge_raw_r2_f
+    higher_is_better: true
+    aggregation: mean
+  - metric: !function utils.rouge_raw_rl_f
+    higher_is_better: true
+    aggregation: mean
+
+metadata:
+  version: 1.0
