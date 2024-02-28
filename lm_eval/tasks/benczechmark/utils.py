@@ -3,18 +3,25 @@
 
 :authors:     Martin Dočekal, Martin Fajčík
 """
-import numpy
-import evaluate
-import datasets
-
-from sklearn.metrics import f1_score, confusion_matrix
-from lm_eval.api.registry import register_aggregation, register_metric
+from typing import List, Tuple
 from typing import Optional
 
+import datasets
+import evaluate
+import numpy
+from scipy.special import softmax
+from sklearn.metrics import f1_score, confusion_matrix
+
+from lm_eval.api.metrics import mean
+from lm_eval.api.task import ConfigurableTask, eval_logger
+
+
+###
+### F1 metric
+###
 
 # The f1_posterior and _evaluate_statistics implementation is based on [GOUTTE-2005], and these few lines were borrowed
 # and modified from Andre Anjos <anjos@idiap.ch> under Copyright (c) 2022 Idiap Research Institute, http://www.idiap.ch/
-
 def f1_posterior(tp, fp, fn, lambda_, nb_samples):
     """Simulates the F1-score posterior of a system with the provided markings
 
@@ -97,7 +104,7 @@ def _evaluate_statistics(variates, coverage):
     return lower, upper
 
 
-def macro_f1_score(items, **kwargs):
+def aggregate_macro_f1_score(items, **kwargs):
     unzipped_list = list(zip(*items))
     golds = unzipped_list[0]
     preds = unzipped_list[1]
@@ -105,7 +112,7 @@ def macro_f1_score(items, **kwargs):
     return fscore
 
 
-def macro_f1_CI(items, alpha=0.95):
+def aggregate_macro_f1_CI(items, alpha=0.95):
     unzipped_list = list(zip(*items))
     golds = unzipped_list[0]
     preds = unzipped_list[1]
@@ -136,6 +143,10 @@ def macro_f1_CI(items, alpha=0.95):
     return (lower, upper)
 
 
+###
+### ROUGE metric
+###
+
 def rouge_raw_r1_f(predictions, references):
     return rouge_raw(predictions, references, "rougeraw1_fmeasure")
 
@@ -160,3 +171,105 @@ def make_toy_dataset(dataset: datasets.Dataset):
     :param dataset: Dataset to make toy from.
     """
     return dataset.select(range(10))
+
+
+###
+### MC-AUROC metric
+###
+
+def avg_mcauroc(prediction, reference):
+    return prediction, reference  # nothing to process, passthrough metric
+
+
+def aggregate_avg_mcauroc(items):
+    unzipped_list = list(zip(*items))
+    golds = unzipped_list[0]
+    probs = unzipped_list[1]
+
+    metric = evaluate.load("CZLC/mc_auroc")
+    result = metric.compute(predictions=probs, references=golds)
+    return result["mc_auroc_score"]
+
+
+def aggregate_CI_avg_mcauroc(items, alpha=0.95):
+    unzipped_list = list(zip(*items))
+    golds = unzipped_list[0]
+    probs = unzipped_list[1]
+
+    metric = evaluate.load("CZLC/mc_auroc")
+    result = metric.compute(predictions=probs, references=golds)
+    return result["mc_auroc_ci"]
+
+
+
+###
+### Tasks wrapper
+###
+
+class MultipleChoiceTask(ConfigurableTask):
+
+    def process_results(self, doc: dict, results: List[Tuple[float, bool]]) -> dict:
+        lls, is_greedy = zip(*results)
+
+        # retrieve choices in List[str] form, to compute choice lengths, etc.
+        choices = self.doc_to_choice(doc)
+
+        if self.multiple_input:
+            gold = self.doc_to_text(doc)
+        else:
+            gold = self.doc_to_target(doc)
+
+        gold_index_error = False
+        if isinstance(gold, list):
+            gold = [i if i < len(choices) else -100 for i in gold]
+            if -100 in gold:
+                gold_index_error = True
+        else:
+            if isinstance(gold, int):
+                gold = gold if gold < len(choices) else -100
+            elif isinstance(gold, str):
+                gold = choices.index(gold) if gold in choices else -100
+
+            if gold == -100:
+                gold_index_error = True
+
+        if gold_index_error:
+            eval_logger.warning(
+                f"Label index was not in within range of available choices,"
+                f"Sample:\n\n{doc}\n\n"
+            )
+        probs = softmax(list(lls)).tolist()
+        pred = numpy.argmax(lls)
+
+        if self.multiple_target:
+            acc = 1.0 if pred in gold else 0.0
+        else:
+            acc = 1.0 if pred == gold else 0.0
+
+        use_metric = list(self._metric_fn_list.keys())
+
+        return {
+            **({"acc": acc} if "acc" in use_metric else {}),
+            **({"macro_f1": (gold, pred)} if "f1" in use_metric else {}),
+            **({"macro_f1_ci": (gold, pred)} if "f1" in use_metric else {}),
+            **({"avg_mcauroc": (gold, probs)} if "avg_mcauroc" in use_metric else {}),
+            **({"avg_mcauroc_ci": (gold, probs)} if "avg_mcauroc" in use_metric else {}),
+        }
+
+    def higher_is_better(self) -> dict:
+        return {
+            "avg_mcauroc": True,
+            "avg_mcauroc_ci": True,
+            "macro_f1": True,
+            "macro_f1_ci": True,
+            "acc": True,
+        }
+
+    def aggregation(self) -> dict:
+        return {
+            "avg_mcauroc": aggregate_avg_mcauroc,
+            "avg_mcauroc_ci": aggregate_CI_avg_mcauroc,
+            "macro_f1": aggregate_macro_f1_score,
+            "macro_f1_ci": aggregate_macro_f1_CI,
+            "acc": mean,
+        }
