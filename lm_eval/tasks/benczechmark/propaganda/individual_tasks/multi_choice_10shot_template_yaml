@@ -1,20 +1,9 @@
-output_type: multiple_choice
+include: ../../multi_choice_template_yaml
 training_split: train
-test_split: test
 fewshot_split: train
-num_fewshot: 10
-fewshot_delimiter: "\n"
-doc_to_target: gold
-doc_to_choice: choices
+class: !function ../../utils.MultipleChoiceTask
 metric_list:
   - metric: acc
-    aggregation: mean
-    higher_is_better: True
   - metric: f1
-    aggregation: !function ../../utils.macro_f1_score
-    higher_is_better: True
-  - metric: mcc
-    aggregation: !function ../../utils.macro_f1_CI
-    higher_is_better: True
-metadata:
-  version: 1.0
+  - metric: !function ../../utils.avg_mcauroc
+    aggregation: !function ../../utils.aggregate_avg_mcauroc
