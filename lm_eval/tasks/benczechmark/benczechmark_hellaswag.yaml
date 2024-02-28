@@ -1,0 +1,13 @@
+group:
+  - multiple_choice
+task: benczechmark_hellaswag
+dataset_path: .data/hf_dataset/cs_hellaswag
+fewshot_split: test
+include: multi_choice_template_yaml
+doc_to_text: "{{query}}"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
