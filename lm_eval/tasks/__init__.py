@@ -147,7 +147,8 @@ class TaskManager:
                     )
                 )
             if self._config_is_python_task(config):
-                task_object = config["class"]()
+                _cls = config.pop("class")
+                task_object = _cls(config=config) # patch by MF, pass config, to allow configurability from YAML
             else:
                 config = self._process_alias(config, group=group)
                 task_object = ConfigurableTask(config=config)
