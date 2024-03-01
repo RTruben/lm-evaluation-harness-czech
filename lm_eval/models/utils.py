@@ -19,8 +19,9 @@ from typing import (
 
 import torch
 import transformers
+from transformers import PreTrainedTokenizerFast
 
-from lm_eval.utils import eval_logger
+from lm_eval.utils import eval_logger, SegmentedString
 
 
 def chunks(iter, n: int = 0, fn=None):
@@ -623,3 +624,110 @@ class Collator:
 
         if arr:
             yield arr
+
+
+def truncate_token_segments_from_left(segments: List[List[int]], max_length: int) -> List[List[int]]:
+    """
+    Truncates a list of token segments from the left to the specified maximum length.
+
+    Parameters:
+    - segments (List[List[int]]): The list of token segments to be truncated.
+    - max_length (int): The maximum length of the segments.
+
+    Returns:
+    List[List[int]]: The list of token segments truncated to the specified maximum length.
+    """
+    new_segmented_tokens = []
+    new_length = 0
+    for segment in reversed(segments):
+        new_length += len(segment)
+        if new_length <= max_length:  # we can add the whole segment
+            new_segmented_tokens.append(segment)
+        elif new_length - len(segment) < max_length:  # we can add part of the segment
+            rest_of_space = max_length - (new_length - len(segment))
+            new_segmented_tokens.append(segment[-rest_of_space:])
+            break
+        else:
+            break
+
+    return list(reversed(new_segmented_tokens))
+
+
+def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizerFast, max_length: int,
+                         truncate_strategy: Optional[str], add_special_tokens=False) -> Tuple[List[int], List[List[int]], Optional[List[str]]]:
+    """
+    Tokenizes a string and that splits it into a segments. It is using offsets mapping thus it is only compatible
+    with fast tokenizers.
+
+    Args:
+        string: SegmentedString
+            The string to be tokenized.
+        tokenizer: PreTrainedTokenizerFast
+            The tokenizer to be used.
+        max_length: int
+            The maximum number of output tokens.
+        truncate_strategy: Optional[str]
+            The strategy to use when truncating the string. If None, the string will be truncated to the max_length.
+            If "leave_description", the string will be truncated to the max_length, but the description will be kept
+            in full.
+        add_special_tokens: bool
+            Whether to add special tokens to the tokenized string.
+
+    Returns:
+        Tuple[List[int], List[List[int]], Optional[List[str]]]:
+        Flat list of tokens and list of lists of tokens, each list corresponding to a segment. The third element
+        is a list of segment labels.
+
+    """
+    encoding = tokenizer(
+        string,
+        add_special_tokens=add_special_tokens,
+        truncation=False,
+        return_offsets_mapping=True
+    )
+    token_offsets = encoding["offset_mapping"]
+    encoding = encoding["input_ids"]
+
+    segment_offset = 0
+    offset = len(string.segments[segment_offset])
+
+    segmented_tokens = [[]]
+
+    segment_labels = [string.labels[segment_offset]] if string.labels else None
+
+    for token, tok_offsets in zip(encoding, token_offsets):
+        if tok_offsets[0] >= offset:
+            segment_offset += 1
+            offset += len(string.segments[segment_offset])
+
+            segmented_tokens.append([])
+            if segment_labels is not None:
+                segment_labels.append(string.labels[segment_offset])
+        segmented_tokens[-1].append(token)
+
+    if len(encoding) > max_length:
+        if truncate_strategy == "leave_description":
+            try:
+                desc_pos = string.labels.index("description")
+            except ValueError:
+                desc_pos = None
+
+            if desc_pos == 0:
+                # we take everything before and the description itself, then we will truncate the rest
+                desc_tokens = encoding[:sum(len(x) for x in segmented_tokens[:desc_pos + 1])]
+                if len(desc_tokens) > max_length:
+                    encoding = encoding[-max_length:]
+                    segmented_tokens = truncate_token_segments_from_left(segmented_tokens, max_length)
+                    segment_labels = segment_labels[-len(segmented_tokens):]
+                else:
+                    encoding = desc_tokens + encoding[-(max_length - len(desc_tokens)):]
+                    truncated_rest = truncate_token_segments_from_left(segmented_tokens[desc_pos + 1:], max_length - len(desc_tokens))
+                    segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
+                    segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
+        else:
+            encoding = encoding[-max_length:]
+            segmented_tokens = truncate_token_segments_from_left(segmented_tokens, max_length)
+            if segment_labels is not None:
+                segment_labels = segment_labels[-len(segmented_tokens):]
+
+    return encoding, segmented_tokens, segment_labels

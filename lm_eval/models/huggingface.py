@@ -31,9 +31,9 @@ from lm_eval.models.utils import (
     clear_torch_cache,
     get_dtype,
     pad_and_concat,
-    stop_sequences_criteria,
+    stop_sequences_criteria, segmented_tok_encode,
 )
-
+from lm_eval.utils import SegmentedString
 
 eval_logger = utils.eval_logger
 
@@ -108,9 +108,14 @@ class HFLM(LM):
         # PEFT and quantization options
         peft: Optional[str] = None,
         autogptq: Optional[Union[bool, str]] = False,
+        truncate_strategy: str = None,   # "leave_description"
+        normalize_log_probs: bool = True,
         **kwargs,
     ) -> None:
         super().__init__()
+
+        self.truncate_strategy = truncate_strategy
+        self.normalize_log_probs = normalize_log_probs
 
         # optionally: take in an already-initialized transformers.PreTrainedModel
         if not isinstance(pretrained, str):
@@ -661,13 +666,17 @@ class HFLM(LM):
             elif self.AUTO_MODEL_CLASS == transformers.AutoModelForSeq2SeqLM:
                 add_special_tokens = True
 
-        encoding = self.tokenizer.encode(string, add_special_tokens=add_special_tokens)
+        if self.truncate_strategy is None:
+            encoding = self.tokenizer.encode(string, add_special_tokens=add_special_tokens)
 
-        # left-truncate the encoded context to be at most `left_truncate_len` tokens long
-        if left_truncate_len:
-            encoding = encoding[-left_truncate_len:]
+            # left-truncate the encoded context to be at most `left_truncate_len` tokens long
+            if left_truncate_len:
+                encoding = encoding[-left_truncate_len:]
+        else:
+            encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
+                                                  add_special_tokens)
 
-        return encoding
+            return encoding
 
     def tok_batch_encode(
         self,
@@ -788,13 +797,16 @@ class HFLM(LM):
             continuation = context[-n_spaces:] + continuation
             context = context[:-n_spaces]
 
-        whole_enc = self.tok_encode(context + continuation, add_special_tokens=False)
-        context_enc = self.tok_encode(context, add_special_tokens=False)
+        whole_enc, segments, _ = segmented_tok_encode(context + continuation,
+                                                      self.tokenizer,
+                                                      self.max_length,
+                                                      self.truncate_strategy, add_special_tokens=False)
 
-        # whole_enc = self.tok_encode(context + continuation)
-        # context_enc = self.tok_encode(context, add_special_tokens=False)
+        context_enc, continuation_enc = whole_enc[:-len(segments[-1])], whole_enc[-len(segments[-1]):]
+
         context_enc_len = len(context_enc)
         continuation_enc = whole_enc[context_enc_len:]
+
         return context_enc, continuation_enc
 
     def loglikelihood(self, requests: List[Instance]) -> List[Tuple[float, bool]]:
@@ -1087,7 +1099,10 @@ class HFLM(LM):
                     )  # [1, seq]
 
                     # Answer: (log prob, is-exact-match)
-                    answer = (float(logits.sum()), bool(max_equal))
+                    if self.normalize_log_probs:
+                        answer = (float(logits.mean()), bool(max_equal))
+                    else:
+                        answer = (float(logits.sum()), bool(max_equal))
 
                     res.append(answer)
 

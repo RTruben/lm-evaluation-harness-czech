@@ -3,6 +3,7 @@ group:
 task: benczechmark_summarization
 dataset_path: CZLC/sumeczech-1.0
 dataset_name:
+process_docs: !function utils.make_toy_dataset
 output_type: generate_until
 training_split: train
 validation_split: validation

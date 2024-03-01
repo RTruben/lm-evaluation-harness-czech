@@ -1026,11 +1026,11 @@ class ConfigurableTask(Task):
                 # If there are multiple inputs, choices are placed in the ctx
                 cont = self.doc_to_target(doc)
                 arguments = [
-                    (ctx + choice, f"{target_delimiter}{cont}") for choice in choices
+                    (ctx + choice, SegmentedString(["{target_delimiter}{cont}"], ["continuation"])) for choice in choices
                 ]
             else:
                 # Otherwise they are placed in the continuation
-                arguments = [(ctx, f"{target_delimiter}{cont}") for cont in choices]
+                arguments = [(ctx, SegmentedString([f"{target_delimiter}{cont}"], ["continuation"])) for cont in choices]
 
             request_list = [
                 Instance(

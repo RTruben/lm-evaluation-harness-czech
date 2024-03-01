@@ -8,7 +8,7 @@ from transformers import PreTrainedTokenizerFast
 from lm_eval.api.instance import Instance
 from lm_eval.api.model import LM
 from lm_eval.api.registry import register_model
-from lm_eval.models.utils import Collator, divide
+from lm_eval.models.utils import Collator, divide, segmented_tok_encode
 from lm_eval.utils import (
     eval_logger,
     get_rolling_token_windows,
@@ -61,6 +61,7 @@ class VLLM(LM):
         device: str = "cuda",
         data_parallel_size: int = 1,
         truncate_strategy: str = None,   # "leave_description"
+        normalize_log_probs: bool = True
     ):
         super().__init__()
 
@@ -94,6 +95,7 @@ class VLLM(LM):
             "seed": int(seed),
         }
         self.truncate_strategy = truncate_strategy
+        self.normalize_log_probs = normalize_log_probs
         self.batch_size = (
             "auto"
             if isinstance(batch_size, str) and "auto" in batch_size
@@ -163,29 +165,8 @@ class VLLM(LM):
             if left_truncate_len:
                 encoding = encoding[-left_truncate_len:]
         else:
-            # return_offsets_mapping works only with fast tokenizers
-            encoding = self.tokenizer(
-                string, add_special_tokens=add_special_tokens, truncation=False, return_offsets_mapping=True
-            )
-            token_offsets = encoding["offset_mapping"]
-            encoding = encoding["input_ids"]
-
-            if len(encoding) > self.max_length and isinstance(string, SegmentedString):
-                if self.truncate_strategy == "leave_description":
-                    try:
-                        desc_pos = string.labels.index("description")
-                    except ValueError:
-                        desc_pos = None
-
-                    if desc_pos == 0:
-                        first_token_after_desc = 0
-                        len_of_desc = len(string.segments[0])
-                        for i, offset in enumerate(token_offsets):
-                            if offset[0] >= len_of_desc:
-                                first_token_after_desc = i
-                                break
-                        desc_tokens = encoding[:first_token_after_desc]
-                        encoding = desc_tokens + encoding[-(self.max_length - len(desc_tokens)):]
+            encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
+                                                  add_special_tokens)
 
         return encoding
 
@@ -223,18 +204,23 @@ class VLLM(LM):
         return outputs
 
     def _encode_pair(
-        self, context: str, continuation: str
+        self, context: SegmentedString, continuation: SegmentedString
     ) -> Tuple[List[int], List[int]]:
         n_spaces = len(context) - len(context.rstrip())
         if n_spaces > 0:
             continuation = context[-n_spaces:] + continuation
             context = context[:-n_spaces]
 
-        whole_enc = self.tok_encode(context + continuation, add_special_tokens=False)
-        context_enc = self.tok_encode(context, add_special_tokens=False)
+        whole_enc, segments, _ = segmented_tok_encode(context + continuation,
+                                                           self.tokenizer,
+                                                              self.max_length,
+                                                                self.truncate_strategy, add_special_tokens=False)
+
+        context_enc, continuation_enc = whole_enc[:-len(segments[-1])], whole_enc[-len(segments[-1]):]
 
         context_enc_len = len(context_enc)
         continuation_enc = whole_enc[context_enc_len:]
+
         return context_enc, continuation_enc
 
     def loglikelihood(self, requests: List[Instance]) -> List[Tuple[float, bool]]:
@@ -407,6 +393,9 @@ class VLLM(LM):
                     outputs=output,
                     ctxlen=ctxlen,
                 )
+
+                if self.normalize_log_probs:
+                    answer = (answer[0] / len(inp[ctxlen:]), answer[1])
 
                 res.append(answer)
 
