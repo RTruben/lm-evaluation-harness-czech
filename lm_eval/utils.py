@@ -527,6 +527,57 @@ class SegmentedString(str):
         else:
             raise ValueError("Can only multiply SegmentedString by an integer")
 
+    def __getitem__(self, item):
+        if isinstance(item, slice):
+            indices = range(len(self))[item]
+            indices_2_segment_indices = []
+
+            for i, s in enumerate(self._segments):
+                indices_2_segment_indices.extend([i] * len(s))
+
+            segments = [[]]
+
+            previous_segment_index = indices_2_segment_indices[indices[0]]
+            labels = [self._labels[previous_segment_index]] if self._labels is not None else None
+
+            for i in indices:
+                segment_index = indices_2_segment_indices[i]
+                if segment_index != previous_segment_index:
+                    segments.append([])
+                    previous_segment_index = segment_index
+                    if labels is not None:
+                        labels.append(self._labels[segment_index])
+                segments[-1].append(super().__getitem__(i))
+
+            segments = ["".join(s) for s in segments]
+
+            return SegmentedString(segments, labels)
+        else:
+            return SegmentedString(
+                (super().__getitem__(item),),
+                (self._labels[self.char_2_segment_index(range(len(self))[item])],) if self._labels is not None else None
+            )
+
+    def char_2_segment_index(self, char_index: int) -> int:
+        """
+        Get the index of the segment that contains the character at the given index.
+
+        Args:
+            char_index: The index of the character.
+
+        Returns:
+            The index of the segment.
+        """
+        if char_index < 0:
+            raise ValueError("The character index must be non-negative")
+        if char_index >= len(self):
+            raise ValueError("The character index is out of range")
+
+        for i, segment in enumerate(self._segments):
+            if char_index < len(segment):
+                return i
+            char_index -= len(segment)
+
     @staticmethod
     def _add_item(item: Union["SegmentedString", str], segments: List[str], labels: Optional[List[Any]]) -> Optional[
         List[Any]]:

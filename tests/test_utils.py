@@ -319,177 +319,6 @@ class TestCollator:
         reordered_output = loglikelihoods.get_original(output)
         assert reordered_output == [x[1] for x in loglikelihood_samples]
 
-
-class TestSegmentedString:
-
-    def setup_method(self):
-        self.segmented_string = SegmentedString((
-            "hello",
-            "world",
-            "this",
-            "is",
-            "a",
-            "test",
-        ))
-        self.segmented_string_with_labels = SegmentedString([
-            "hello",
-            "world",
-            "this",
-            "is",
-            "a",
-            "test",
-        ], [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-        ])
-        self.segmented_string_only_one_segment = SegmentedString(" ")
-        self.segmented_string_only_one_segment_with_labels = SegmentedString((" ",), ("delimiter", ))
-
-    def test_getitem(self):
-        assert self.segmented_string[0] == "h"
-        assert self.segmented_string_with_labels[0] == "h"
-        assert self.segmented_string_only_one_segment[0] == " "
-
-        assert self.segmented_string[5] == "w"
-
-        assert self.segmented_string[-1] == "t"
-        assert self.segmented_string_with_labels[-1] == "t"
-        assert self.segmented_string_only_one_segment[-1] == " "
-
-        assert self.segmented_string[0:2] == "he"
-        assert self.segmented_string_with_labels[0:2] == "he"
-
-    def test_len(self):
-        assert len(self.segmented_string) == 21
-        assert len(self.segmented_string_with_labels) == 21
-        assert len(self.segmented_string_only_one_segment) == 1
-
-    def test_segments(self):
-        assert self.segmented_string.segments == ("hello", "world", "this", "is", "a", "test")
-        assert self.segmented_string_with_labels.segments == ("hello", "world", "this", "is", "a", "test")
-        assert self.segmented_string_only_one_segment.segments == (" ",)
-
-    def test_labels(self):
-        assert self.segmented_string.labels is None
-        assert self.segmented_string_with_labels.labels == ("1", "2", "3", "4", "5", "6")
-
-    def test_add_string(self):
-        res = self.segmented_string + "!"
-        assert res == "helloworldthisisatest!"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
-        assert res.labels is None
-
-        res = self.segmented_string_with_labels + "!"
-        assert res == "helloworldthisisatest!"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
-        assert res.labels == ("1", "2", "3", "4", "5", "6", None)
-
-    def test_add_segmented_string(self):
-        res = self.segmented_string + SegmentedString("!")
-        assert res == "helloworldthisisatest!"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
-        assert res.labels is None
-
-        res = self.segmented_string_with_labels + SegmentedString("!")
-        assert res == "helloworldthisisatest!"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
-        assert res.labels == ("1", "2", "3", "4", "5", "6", None)
-
-    def test_add_segmented_string_with_labels(self):
-        res = self.segmented_string + SegmentedString(("!", "?"), ("exclamation", "question"))
-        assert res == "helloworldthisisatest!?"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!", "?")
-        assert res.labels == (None, None, None, None, None, None, "exclamation", "question")
-
-        res = self.segmented_string_with_labels + SegmentedString(("!", "?"), ("exclamation", "question"))
-        assert res == "helloworldthisisatest!?"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!", "?")
-        assert res.labels == ("1", "2", "3", "4", "5", "6", "exclamation", "question")
-
-    def test_mull(self):
-        res = self.segmented_string * 2
-        assert res == "helloworldthisisatesthelloworldthisisatest"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "hello", "world", "this", "is", "a", "test")
-        assert res.labels is None
-
-        res = self.segmented_string_with_labels * 2
-        assert res == "helloworldthisisatesthelloworldthisisatest"
-        assert res.segments == ("hello", "world", "this", "is", "a", "test", "hello", "world", "this", "is", "a", "test")
-        assert res.labels == ("1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6")
-
-        res = self.segmented_string * 0
-        assert res == ""
-        assert res.segments == ()
-        assert res.labels is None
-
-        res = self.segmented_string_with_labels * 0
-        assert res == ""
-        assert res.segments == ()
-        assert res.labels is None
-
-    def test_join_strings_only(self):
-        res = self.segmented_string_only_one_segment.join(["hello", "world", "this", "is", "a", "test"])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels is None
-
-        res = self.segmented_string_only_one_segment_with_labels.join(["hello", "world", "this", "is", "a", "test"])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == (None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
-
-    def test_join_segmented_strings_only(self):
-        res = self.segmented_string_only_one_segment.join([SegmentedString("hello"), SegmentedString("world"), SegmentedString("this"), SegmentedString("is"), SegmentedString("a"), SegmentedString("test")])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels is None
-
-        res = self.segmented_string_only_one_segment_with_labels.join([SegmentedString("hello"), SegmentedString("world"), SegmentedString("this"), SegmentedString("is"), SegmentedString("a"), SegmentedString("test")])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == (None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
-
-    def test_join_segmented_strings_with_labels(self):
-        res = self.segmented_string_only_one_segment.join([SegmentedString(("hello", ), ("1", ), ), SegmentedString(("world", ), ("2", ), ), SegmentedString(("this", ), ("3", ), ), SegmentedString(("is", ), ("4", ), ), SegmentedString(("a", ), ("5", ), ), SegmentedString(("test", ), ("6", ), )])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == ("1", None, "2", None, "3", None, "4", None, "5", None, "6")
-
-        res = self.segmented_string_only_one_segment_with_labels.join([SegmentedString(("hello", ), ("1", ), ), SegmentedString(("world", ), ("2", ), ), SegmentedString(("this", ), ("3", ), ), SegmentedString(("is", ), ("4", ), ), SegmentedString(("a", ), ("5", ), ), SegmentedString(("test", ), ("6", ), )])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == ("1", "delimiter", "2", "delimiter", "3", "delimiter", "4", "delimiter", "5", "delimiter", "6")
-
-    def test_join_mixed_type_strings(self):
-        res = self.segmented_string_only_one_segment.join(["hello", SegmentedString("world"), "this", SegmentedString("is"), "a", SegmentedString("test")])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels is None
-
-        res = self.segmented_string_only_one_segment_with_labels.join(["hello", SegmentedString("world"), "this", SegmentedString("is"), "a", SegmentedString("test")])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == (None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
-
-    def test_join_mixed_type_strings_with_labels(self):
-        res = self.segmented_string_only_one_segment.join([SegmentedString(("hello", ), ("1", ), ), "world", SegmentedString(("this", ), ("3", ), ), "is", SegmentedString(("a", ), ("5", ), ), "test"])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == ("1", None, None, None, "3", None, None, None, "5", None, None)
-
-        res = self.segmented_string_only_one_segment_with_labels.join([SegmentedString(("hello", ), ("1", ), ), "world", SegmentedString(("this", ), ("3", ), ), "is", SegmentedString(("a", ), ("5", ), ), "test"])
-        assert res == "hello world this is a test"
-        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
-        assert res.labels == ("1", "delimiter", None, "delimiter", "3", "delimiter", None, "delimiter", "5", "delimiter", None)
-
-
-
-
-
     @pytest.mark.parametrize("batch_size", [17, 8, 12, 0])
     def test_context_grouping(self, batch_size):
         def _collate(x):
@@ -567,3 +396,280 @@ def test_aggregate_stderrs(samples):
         mean_stderr(list(itertools.chain.from_iterable(samples))),
         atol=1.0e-3,
     )
+
+
+class TestSegmentedString:
+
+    def setup_method(self):
+        self.segmented_string = SegmentedString((
+            "hello",
+            "world",
+            "this",
+            "is",
+            "a",
+            "test",
+        ))
+        self.segmented_string_with_labels = SegmentedString([
+            "hello",
+            "world",
+            "this",
+            "is",
+            "a",
+            "test",
+        ], [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+        ])
+        self.segmented_string_only_one_segment = SegmentedString(" ")
+        self.segmented_string_only_one_segment_with_labels = SegmentedString((" ",), ("delimiter",))
+
+    def test_getitem(self):
+        assert self.segmented_string[0] == "h"
+        assert self.segmented_string_with_labels[0] == "h"
+        assert self.segmented_string_only_one_segment[0] == " "
+
+        assert self.segmented_string[5] == "w"
+
+        assert self.segmented_string[-1] == "t"
+        assert self.segmented_string_with_labels[-1] == "t"
+        assert self.segmented_string_only_one_segment[-1] == " "
+
+        assert self.segmented_string[0:2] == "he"
+        assert self.segmented_string_with_labels[0:2] == "he"
+
+    def test_len(self):
+        assert len(self.segmented_string) == 21
+        assert len(self.segmented_string_with_labels) == 21
+        assert len(self.segmented_string_only_one_segment) == 1
+
+    def test_segments(self):
+        assert self.segmented_string.segments == ("hello", "world", "this", "is", "a", "test")
+        assert self.segmented_string_with_labels.segments == ("hello", "world", "this", "is", "a", "test")
+        assert self.segmented_string_only_one_segment.segments == (" ",)
+
+    def test_labels(self):
+        assert self.segmented_string.labels is None
+        assert self.segmented_string_with_labels.labels == ("1", "2", "3", "4", "5", "6")
+
+    def test_add_string(self):
+        res = self.segmented_string + "!"
+        assert res == "helloworldthisisatest!"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
+        assert res.labels is None
+
+        res = self.segmented_string_with_labels + "!"
+        assert res == "helloworldthisisatest!"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
+        assert res.labels == ("1", "2", "3", "4", "5", "6", None)
+
+    def test_add_segmented_string(self):
+        res = self.segmented_string + SegmentedString("!")
+        assert res == "helloworldthisisatest!"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
+        assert res.labels is None
+
+        res = self.segmented_string_with_labels + SegmentedString("!")
+        assert res == "helloworldthisisatest!"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!")
+        assert res.labels == ("1", "2", "3", "4", "5", "6", None)
+
+    def test_add_segmented_string_with_labels(self):
+        res = self.segmented_string + SegmentedString(("!", "?"), ("exclamation", "question"))
+        assert res == "helloworldthisisatest!?"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!", "?")
+        assert res.labels == (None, None, None, None, None, None, "exclamation", "question")
+
+        res = self.segmented_string_with_labels + SegmentedString(("!", "?"), ("exclamation", "question"))
+        assert res == "helloworldthisisatest!?"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test", "!", "?")
+        assert res.labels == ("1", "2", "3", "4", "5", "6", "exclamation", "question")
+
+    def test_mull(self):
+        res = self.segmented_string * 2
+        assert res == "helloworldthisisatesthelloworldthisisatest"
+        assert res.segments == (
+        "hello", "world", "this", "is", "a", "test", "hello", "world", "this", "is", "a", "test")
+        assert res.labels is None
+
+        res = self.segmented_string_with_labels * 2
+        assert res == "helloworldthisisatesthelloworldthisisatest"
+        assert res.segments == (
+        "hello", "world", "this", "is", "a", "test", "hello", "world", "this", "is", "a", "test")
+        assert res.labels == ("1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6")
+
+        res = self.segmented_string * 0
+        assert res == ""
+        assert res.segments == ()
+        assert res.labels is None
+
+        res = self.segmented_string_with_labels * 0
+        assert res == ""
+        assert res.segments == ()
+        assert res.labels is None
+
+    def test_join_strings_only(self):
+        res = self.segmented_string_only_one_segment.join(["hello", "world", "this", "is", "a", "test"])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels is None
+
+        res = self.segmented_string_only_one_segment_with_labels.join(["hello", "world", "this", "is", "a", "test"])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == (
+        None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
+
+    def test_join_segmented_strings_only(self):
+        res = self.segmented_string_only_one_segment.join(
+            [SegmentedString("hello"), SegmentedString("world"), SegmentedString("this"), SegmentedString("is"),
+             SegmentedString("a"), SegmentedString("test")])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels is None
+
+        res = self.segmented_string_only_one_segment_with_labels.join(
+            [SegmentedString("hello"), SegmentedString("world"), SegmentedString("this"), SegmentedString("is"),
+             SegmentedString("a"), SegmentedString("test")])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == (
+        None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
+
+    def test_join_segmented_strings_with_labels(self):
+        res = self.segmented_string_only_one_segment.join(
+            [SegmentedString(("hello",), ("1",), ), SegmentedString(("world",), ("2",), ),
+             SegmentedString(("this",), ("3",), ), SegmentedString(("is",), ("4",), ),
+             SegmentedString(("a",), ("5",), ), SegmentedString(("test",), ("6",), )])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == ("1", None, "2", None, "3", None, "4", None, "5", None, "6")
+
+        res = self.segmented_string_only_one_segment_with_labels.join(
+            [SegmentedString(("hello",), ("1",), ), SegmentedString(("world",), ("2",), ),
+             SegmentedString(("this",), ("3",), ), SegmentedString(("is",), ("4",), ),
+             SegmentedString(("a",), ("5",), ), SegmentedString(("test",), ("6",), )])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == (
+        "1", "delimiter", "2", "delimiter", "3", "delimiter", "4", "delimiter", "5", "delimiter", "6")
+
+    def test_join_mixed_type_strings(self):
+        res = self.segmented_string_only_one_segment.join(
+            ["hello", SegmentedString("world"), "this", SegmentedString("is"), "a", SegmentedString("test")])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels is None
+
+        res = self.segmented_string_only_one_segment_with_labels.join(
+            ["hello", SegmentedString("world"), "this", SegmentedString("is"), "a", SegmentedString("test")])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == (
+        None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None, "delimiter", None)
+
+    def test_join_mixed_type_strings_with_labels(self):
+        res = self.segmented_string_only_one_segment.join(
+            [SegmentedString(("hello",), ("1",), ), "world", SegmentedString(("this",), ("3",), ), "is",
+             SegmentedString(("a",), ("5",), ), "test"])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == ("1", None, None, None, "3", None, None, None, "5", None, None)
+
+        res = self.segmented_string_only_one_segment_with_labels.join(
+            [SegmentedString(("hello",), ("1",), ), "world", SegmentedString(("this",), ("3",), ), "is",
+             SegmentedString(("a",), ("5",), ), "test"])
+        assert res == "hello world this is a test"
+        assert res.segments == ("hello", " ", "world", " ", "this", " ", "is", " ", "a", " ", "test")
+        assert res.labels == (
+        "1", "delimiter", None, "delimiter", "3", "delimiter", None, "delimiter", "5", "delimiter", None)
+
+    def test_getitem(self):
+        res = self.segmented_string_with_labels[0]
+        assert res == "h"
+        assert res.segments == ("h",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[3]
+        assert res == "l"
+        assert res.segments == ("l",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[-1]
+        assert res == "t"
+        assert res.segments == ("t",)
+        assert res.labels == ('6',)
+
+        res = self.segmented_string_with_labels[20]
+        assert res == "t"
+        assert res.segments == ("t",)
+        assert res.labels == ('6',)
+
+        with pytest.raises(Exception):
+            self.segmented_string_with_labels[99]
+
+    def test_getitem_slice(self):
+        res = self.segmented_string_with_labels[0:1]
+        assert res == "h"
+        assert res.segments == ("h",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[2:4]
+        assert res == "ll"
+        assert res.segments == ("ll",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[0:5]
+        assert res == "hello"
+        assert res.segments == ("hello",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[4:6]
+        assert res == "ow"
+        assert res.segments == ("o", "w")
+        assert res.labels == ('1', '2')
+
+        res = self.segmented_string_with_labels[:1]
+        assert res == "h"
+        assert res.segments == ("h",)
+        assert res.labels == ('1',)
+
+        res = self.segmented_string_with_labels[19:]
+        assert res == "st"
+        assert res.segments == ("st",)
+        assert res.labels == ('6',)
+
+        res = self.segmented_string_with_labels[19:25]
+        assert res == "st"
+        assert res.segments == ("st",)
+        assert res.labels == ('6',)
+
+        res = self.segmented_string_with_labels[-2:]
+        assert res == "st"
+        assert res.segments == ("st",)
+        assert res.labels == ('6',)
+
+        res = self.segmented_string_with_labels[-2:-1]
+        assert res == "s"
+        assert res.segments == ("s",)
+        assert res.labels == ('6',)
+
+        res = self.segmented_string_with_labels[:]
+        assert res == "helloworldthisisatest"
+        assert res.segments == ("hello", "world", "this", "is", "a", "test")
+        assert res.labels == ("1", "2", "3", "4", "5", "6")
+
+    def test_getitem_slice_step(self):
+        res = self.segmented_string_with_labels[::2]
+        assert res == "hlooltiiaet"
+        assert res.segments == ("hlo", "ol", "ti", "i", "a", "et")
+        assert res.labels == ("1", "2", "3", "4", "5", "6")
+
+        res = self.segmented_string_with_labels[::-2]
+        assert res == "teaiitloolh"
+        assert res.segments == ('te', 'a', 'i', 'it', 'lo', 'olh')
+        assert res.labels == ('6', '5', '4', '3', '2', '1')
+

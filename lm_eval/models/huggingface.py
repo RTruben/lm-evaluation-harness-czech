@@ -790,7 +790,7 @@ class HFLM(LM):
         return logits
 
     def _encode_pair(
-        self, context: str, continuation: str
+        self, context: SegmentedString, continuation: SegmentedString
     ) -> Tuple[List[int], List[int]]:
         n_spaces = len(context) - len(context.rstrip())
         if n_spaces > 0:
