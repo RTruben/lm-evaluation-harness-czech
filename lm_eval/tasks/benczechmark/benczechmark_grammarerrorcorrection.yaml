@@ -1,0 +1,45 @@
+group: benczechmark_grammarerrorcorrection
+group_alias: Grammar Error Correction
+task:
+  - task: propaganda_zanr0
+    task_alias: prompt-0
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Dostali jsme takovéto zadání testu: Je následující věta gramaticky správná?(ano/ne)\n"
+    doc_to_text: "{{query}} Je následující věta gramaticky správná?(ano/ne): "
+  - task: propaganda_zanr1
+    task_alias: prompt-1
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Zkontrolujte gramatickou správnost následujícího textu. Je správný? (ano/ne):\n"
+    doc_to_text: "{{query}} Odpověď (ano/ne): "
+  - task: propaganda_zanr2
+    task_alias: prompt-2
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Prosím, proveďte kontrolu gramatické správnosti následujícího textu. Označte ho jako 'ano' nebo 'ne':\n"
+    doc_to_text: "{{query}} Vaše hodnocení (ano/ne):"
+  - task: propaganda_zanr3
+    task_alias: prompt-3
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Zde je text k ověření gramatické správnosti. Co myslíte? (ano/ne)\n"
+    doc_to_text: "{{query}} Vaše reakce (ano/ne):"
+  - task: propaganda_zanr4
+    task_alias: prompt-4
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Ověřte prosím gramatickou správnost následujícího textu. Je správný? (ano/ne):\n"
+    doc_to_text: "{{query}} Vaše odpověď (ano/ne):"
+  - task: propaganda_zanr5
+    task_alias: prompt-5
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Dostal jsem za úkol rozhodnout, jestli jsou následující věty gramaticky správně nebo ne.\n"
+    doc_to_text: "{{query}} Odpověděl jsem: "
+  - task: propaganda_zanr6
+    task_alias: prompt-6
+    include: templates/multichoice/multi_choice_10shot_template_yaml
+    dataset_path: .data/hf_dataset/cs_gec
+    description: "Následující text potřebuje vaši pozornost. Je gramaticky správný? (ano/ne):\n"
+    doc_to_text: "{{query}} Jak se rozhodujete? (ano/ne):"
