@@ -1,0 +1,2 @@
+dataset_path: CZLC/czech_sentiment
+include: multi_choice_template_wtrain_acc_f1_aa_yaml

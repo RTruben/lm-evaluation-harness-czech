@@ -6,26 +6,26 @@ task:
     task:
     - task: benczechmark_sentiment_task_0
       task_alias: prompt-0
-      include: _sentiment_template.yaml
+      include: templates/multichoice/sentiment_template_yaml
       description: "Dále je můj seznam textů. Dělím je na negativní, neutrální a pozitivní.\n"
       doc_to_text: "{{query}} Toto shledávám jako:"
     - task: benczechmark_sentiment_task_1
       task_alias: prompt-1
-      include: _sentiment_template.yaml
+      include: templates/multichoice/sentiment_template_yaml
       description: "Následují příklady textů s negativním, neutrálním a pozitivním sentimentem.\n"
       doc_to_text: "{{query}} Sentiment tohoto příkladu je:"
     - task: benczechmark_sentiment_task_2
       task_alias: prompt-2
-      include: _sentiment_template.yaml
+      include: templates/multichoice/sentiment_template_yaml
       description: "Rozhodni jestli je sentiment následujícího textu negativní, neutrální, nebo pozitivní. Odpověz negativní, neutrální, nebo pozitivní.\n"
       doc_to_text: "{{query}} Rozhodnutí je:"
     - task: benczechmark_sentiment_task_3
       task_alias: prompt-3
-      include: _sentiment_template.yaml
+      include: templates/multichoice/sentiment_template_yaml
       description: "Proveď klasifikaci sentimentu do tříd: negativní, neutrální, nebo pozitivní.\n"
       doc_to_text: "{{query}} Třída:"
     - task: benczechmark_sentiment_task_4
       task_alias: prompt-4
-      include: _sentiment_template.yaml
+      include: templates/multichoice/sentiment_template_yaml
       description: "Příklady textů, které jsou negativní, neutrální, nebo pozitivní.\n"
       doc_to_text: "{{query}} Sentiment:"
