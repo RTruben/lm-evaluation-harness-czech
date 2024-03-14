@@ -676,7 +676,7 @@ class HFLM(LM):
             encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
                                                   add_special_tokens)
 
-            return encoding
+        return encoding
 
     def tok_batch_encode(
         self,
