@@ -1,7 +1,7 @@
 task: benczechmark_hellaswag
 dataset_path: .data/hf_dataset/cs_hellaswag
 fewshot_split: test
-include: templates/multichoice/multi_choice_10s_template_yaml
+include: templates/multichoice/multi_choice_template_yaml
 doc_to_text: "{{query}}"
 metric_list:
   - metric: acc

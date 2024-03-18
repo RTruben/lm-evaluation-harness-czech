@@ -1,4 +1,4 @@
-include: multi_choice_10s_template_yaml
+include: multi_choice_template_yaml
 training_split: train
 fewshot_split: train
 class: !function ../../utils.MultipleChoiceTask
