@@ -1,0 +1,28 @@
+group: benczechmark_cs_triviaQA
+group_alias: CS Trivia QA
+task:
+  - task: cs_triviaqa0
+    dataset_path: .data/hf_dataset/cs_triviaqa
+    description: "Odpovězte na tyto otázky:\n\n"
+    doc_to_text: "Otázka: {{question}}\nOdpověď:"
+    include: templates/qa/tq_template_yaml
+  - task: cs_triviaqa1
+    dataset_path: .data/hf_dataset/cs_triviaqa
+    description: "Zodpovězte následující otázky:\n\n"
+    doc_to_text: "Dotaz: {{question}}\nSprávná odpověď:"
+    include: templates/qa/tq_template_yaml
+  - task: cs_triviaqa2
+    dataset_path: .data/hf_dataset/cs_triviaqa
+    description: "Kvíz:\n\n"
+    doc_to_text: "Otázka: {{question}}\nOdpověď:"
+    include: templates/qa/tq_template_yaml
+  - task: cs_triviaqa3
+    dataset_path: .data/hf_dataset/cs_triviaqa
+    description: "Najděte odpovědi na tato dotazy:\n\n"
+    doc_to_text: "Dotaz: {{question}}?\nVaše odpověď:"
+    include: templates/qa/tq_template_yaml
+  - task: cs_triviaqa4
+    dataset_path: .data/hf_dataset/cs_triviaqa
+    description: "Úloha: Najděte odpovědi na tato dotazy:\n\n"
+    doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď:"
+    include: templates/qa/tq_template_yaml

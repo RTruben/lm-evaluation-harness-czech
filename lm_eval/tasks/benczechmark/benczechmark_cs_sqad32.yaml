@@ -1,0 +1,29 @@
+group: benczechmark_cs_sqad32
+group_alias: Simple QA Dataset 3.2
+task:
+  - task: cs_sqad_open0
+    dataset_path: .data/hf_dataset/sqad_3.2
+    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
+    include: templates/qa/tq_template_yaml
+  - task: cs_sqad_open1
+    dataset_path: .data/hf_dataset/sqad_3.2
+    description: "Najděte odpovědi na tato dotazy. Podložte je textem.\n\n"
+    doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
+    include: templates/qa/tq_template_yaml
+  - task: cs_sqad_open2
+    dataset_path: .data/hf_dataset/sqad_3.2
+    description: "Kvíz. Zodpovězte následující otázky podle textu.\n\n"
+    doc_to_text: "Kontext: {{title}}-{{context}} Dotaz: {{question}}\nOdpověď: "
+    include: templates/qa/tq_template_yaml
+  - task: cs_sqad_open3
+    dataset_path: .data/hf_dataset/sqad_3.2
+    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
+    include: templates/qa/tq_template_yaml
+  - task: cs_sqad_open4
+    dataset_path: .data/hf_dataset/sqad_3.2
+    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
+    include: templates/qa/tq_template_yaml
+
