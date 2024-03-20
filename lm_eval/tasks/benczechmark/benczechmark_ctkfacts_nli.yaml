@@ -1,0 +1,92 @@
+
+group: benczechmark_ctkfacts_nli
+group_alias: CTKFacts NLI
+task:
+  - task: ctkfacts0
+    task_alias: prompt-0
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/není jasné:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "nepravda"
+        - "není jasné"
+        - "pravda"
+    doc_to_text: '{{evidence}} Za uvedeného předpokladu a na základě znalostí o světe, "{{claim}}" je určitě pravda, nepravda, nebo není jasné? Odpověď (pravda/nepravda/není jasné): '
+  - task: ctkfacts1
+    task_alias: prompt-1
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Ste fact-checker. Určete pravdivost následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "ne"
+        - "možná"
+        - "Ano"
+    doc_to_text: 'Předpokládáme, že {{evidence}} Je možné předpokládat, že "{{claim}}" je pravda? Ano, ne, nebo možná? '
+  - task: ctkfacts2
+    task_alias: prompt-2
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Oveřte fakticitu následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "ne"
+        - "možná"
+        - "Ano"
+    doc_to_text: 'Za předpokladu, že {{evidence}} vyplývá, že {{claim}}? Ano, ne, nebo možná? '
+  - task: ctkfacts3
+    task_alias: prompt-3
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Úkol: Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/ani jedno:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "nepravda"
+        - "ani jedno"
+        - "Pravda"
+    doc_to_text: '{{evidence}}\n\nOtázka: {{claim}} Pravda, nepravda, nebo ani jedno? '
+  - task: ctkfacts4
+    task_alias: prompt-4
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Ste si jisti pravdivostí následujúcích tvrzení? Odpovězte ne/možná/ano:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "Ne"
+        - "možná"
+        - "ano"
+    doc_to_text: '{{evidence}}\n\nNa základě předchozího odstavce, je to pravda, že "{{claim}}"? Ne, možná, nebo ano? '
+  - task: ctkfacts5
+    task_alias: prompt-5
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Seš profesionální fact-checker. Determinuj pravdivost následujúcích tvrzení. Odpověz pravda/nepravda/nejasné:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "nepravda"
+        - "nejasné"
+        - "pravda"
+    doc_to_text: 'Předpokládejme následovné: {{evidence}}\n\nPak následující tvrzení: "{{claim}}" je pravda, nepravda, nebo nejasné? '
+  - task: ctkfacts6
+    task_alias: prompt-6
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Prozkoumejte pravdivost následujúcích výroků. Odpovězte Ano/ne/možná:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+        - "ne"
+        - "možná"
+        - "Ano"
+    doc_to_text: 'Předpokládejme následovné: {{evidence}} Pak musí být pravda, že "{{claim}}"? Ano, ne, nebo možná? Odpověď: '
+  - task: ctkfacts7
+    task_alias: prompt-7
+    include: templates/multichoice/multi_class_template_yaml
+    dataset_path: ctu-aic/ctkfacts_nli
+    description: "Seš AI pro fact-checking. Urči pravdivost následujúcích tvrzení. Odpověz jestli evidence podporuje/vyvrací tvrzení, nebo jestli chybí informace:\n\n"
+    doc_to_target: label
+    doc_to_choice:
+      - "vyvrací"
+      - "chybí informace"
+      - "podporuje"
+    doc_to_text: 'Předpokládejme evidenci {{evidence}}\n\nJaký je vztah mezi tímto tvrzením: "{{claim}}" a uvedenou evidencí? Odpověď (podporuje/vyvrací/chybí informace): '
