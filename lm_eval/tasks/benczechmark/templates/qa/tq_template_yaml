@@ -1,7 +1,0 @@
-include: qa_template_yaml
-metric_list:
-  - metric: exact_match
-    aggregation: mean
-    higher_is_better: true
-    ignore_case: true
-    ignore_punctuation: true
