@@ -273,3 +273,34 @@ class MultipleChoiceTask(ConfigurableTask):
             "macro_f1_ci": aggregate_macro_f1_CI,
             "acc": mean,
         }
+
+def process_docs_cs_nec(dataset):
+    def _process_dataset(dataset):
+        """
+        text: source sentence
+        entities: list of selected entities. Each entity contains:
+        category_id: string identifier of the entity category
+        category_str: human-friendly category name in Czech (verbalizer)
+        start: index on which the entity starts in the source sentence
+        end: index on which the entity ends in the source sentence
+        content: entity content, it was created as text[start:end]
+        entity_id: unique entity string identifier
+        parent_id: If entity was selected inside another entity (e.g. house number inside address), parent_id is the identifier of the parent entity. None otherwise.
+
+        -> PROCESS INTO ->
+        label
+        answers
+        text
+        """
+        r = []
+        for doc in dataset:
+            text = doc["text"]
+            for entity in doc["entities"]:
+                r.append({
+                    "label": entity["category_str"],
+                    "answers": [entity["content"]],
+                    "text": text,
+                })
+        return r
+
+    return datasets.arrow_dataset.Dataset.from_list(_process_dataset(dataset))
