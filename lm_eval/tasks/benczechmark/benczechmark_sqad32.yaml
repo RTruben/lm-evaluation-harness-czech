@@ -5,25 +5,25 @@ task:
     dataset_path: .data/hf_dataset/sqad_3.2
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
-    include: templates/qa/tq_template_yaml
+    include: templates/qa/qa_template_yaml
   - task: cs_sqad_open1
     dataset_path: .data/hf_dataset/sqad_3.2
     description: "Najděte odpovědi na tato dotazy. Podložte je textem.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
-    include: templates/qa/tq_template_yaml
+    include: templates/qa/qa_template_yaml
   - task: cs_sqad_open2
     dataset_path: .data/hf_dataset/sqad_3.2
     description: "Kvíz. Zodpovězte následující otázky podle textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Dotaz: {{question}}\nOdpověď: "
-    include: templates/qa/tq_template_yaml
+    include: templates/qa/qa_template_yaml
   - task: cs_sqad_open3
     dataset_path: .data/hf_dataset/sqad_3.2
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
-    include: templates/qa/tq_template_yaml
+    include: templates/qa/qa_template_yaml
   - task: cs_sqad_open4
     dataset_path: .data/hf_dataset/sqad_3.2
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
-    include: templates/qa/tq_template_yaml
+    include: templates/qa/qa_template_yaml
 
