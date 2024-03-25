@@ -1,8 +1,4 @@
-output_type: multiple_choice
-test_split: test
 include: ../n_shot_yaml
-fewshot_delimiter: "\n"
+include: multi_class_template_yaml
 doc_to_target: gold
 doc_to_choice: choices
-metadata:
-  version: 1.0
