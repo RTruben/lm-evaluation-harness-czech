@@ -1,29 +1,33 @@
-group:
-  - benczechmark
-task: benczechmark_summarization
-dataset_path: CZLC/sumeczech-1.0
-dataset_name:
-process_docs: !function utils.make_toy_dataset
-output_type: generate_until
-training_split: train
-validation_split: validation
-test_split: test
-fewshot_split: train
-description: "Následuje seznam textů a jejich shrnutí."
-doc_to_text: "{{text}}\nShrnutí:"
-doc_to_target: abstract
-should_decontaminate: true
-doc_to_decontamination_query: "{{query}}"
-metric_list:
-  - metric: !function utils.rouge_raw_r1_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function utils.rouge_raw_r2_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function utils.rouge_raw_rl_f
-    higher_is_better: true
-    aggregation: mean
-
+group: benczechmark_summarization
+group_alias: Czech Benchmark Summarization
+task:
+  - group: benczechmark_summarization_g
+    group_alias: Summarization
+    task:
+    - task: benczechmark_summarization_task_0
+      task_alias: prompt-0
+      include: templates/summarization_template.yaml
+      description: "Následuje text a jeho shrnutí.\n"
+      doc_to_text: "{{text}}\nShrnutí:"
+    - task: benczechmark_summarization_task_1
+      task_alias: prompt-1
+      include: templates/summarization_template.yaml
+      description: "Psaní krátkého shrnutí textu.\n"
+      doc_to_text: "{{text}}\nShrnutí:"
+    - task: benczechmark_summarization_task_2
+      task_alias: prompt-2
+      include: templates/summarization_template.yaml
+      description: "Příklady sumarizace textu.\n"
+      doc_to_text: "{{text}}\nSumarizace:"
+    - task: benczechmark_summarization_task_3
+      task_alias: prompt-3
+      include: templates/summarization_template.yaml
+      description: "Přepis textu do TLDR verze.\n"
+      doc_to_text: "{{text}}\nTLDR:"
+    - task: benczechmark_summarization_task_4
+      task_alias: prompt-4
+      include: templates/summarization_template.yaml
+      description: "Shrň následující texty.\n"
+      doc_to_text: "{{text}}\nShrnutí:"
 metadata:
   version: 1.0

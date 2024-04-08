@@ -147,16 +147,40 @@ def aggregate_macro_f1_CI(items, alpha=0.95):
 ### ROUGE metric
 ###
 
-def rouge_raw_r1_f(predictions, references):
-    return rouge_raw(predictions, references, "rougeraw1_fmeasure")
+def rouge_raw_r1_low_f(predictions, references):
+    return rouge_raw(predictions, references, "1_low_fmeasure")
 
 
-def rouge_raw_r2_f(predictions, references):
-    return rouge_raw(predictions, references, "rougeraw2_fmeasure")
+def rouge_raw_r1_mid_f(predictions, references):
+    return rouge_raw(predictions, references, "1_mid_fmeasure")
 
 
-def rouge_raw_rl_f(predictions, references):
-    return rouge_raw(predictions, references, "rougerawl_fmeasure")
+def rouge_raw_r1_high_f(predictions, references):
+    return rouge_raw(predictions, references, "1_high_fmeasure")
+
+
+def rouge_raw_r2_low_f(predictions, references):
+    return rouge_raw(predictions, references, "2_low_fmeasure")
+
+
+def rouge_raw_r2_mid_f(predictions, references):
+    return rouge_raw(predictions, references, "2_mid_fmeasure")
+
+
+def rouge_raw_r2_high_f(predictions, references):
+    return rouge_raw(predictions, references, "2_high_fmeasure")
+
+
+def rouge_raw_rl_low_f(predictions, references):
+    return rouge_raw(predictions, references, "L_low_fmeasure")
+
+
+def rouge_raw_rl_mid_f(predictions, references):
+    return rouge_raw(predictions, references, "L_mid_fmeasure")
+
+
+def rouge_raw_rl_high_f(predictions, references):
+    return rouge_raw(predictions, references, "L_high_fmeasure")
 
 
 def rouge_raw(predictions, references, select: Optional[str] = None):
@@ -199,7 +223,6 @@ def aggregate_CI_avg_mcauroc(items, alpha=0.95):
     metric = evaluate.load("CZLC/mc_auroc")
     result = metric.compute(predictions=probs, references=golds)
     return result["mc_auroc_ci"]
-
 
 
 ###
