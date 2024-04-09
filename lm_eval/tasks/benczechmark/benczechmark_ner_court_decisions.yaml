@@ -1,0 +1,28 @@
+group: benczechmark_cs_court_decisions_ner
+group_alias: Court Decisions Entity Corpus
+task:
+  - task: cdec_ner0
+    dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
+    description: "Hledejte určité entity v následujících textech.\n\n"
+    doc_to_text: "Jaká entita typu {{label}} se nachází v nasledujícím textu? {{text}}\n\nEntita typu {{label}}: "
+    include: templates/qa/cnec_ner_template_yaml
+  - task: cdec_ner1
+    dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
+    description: "Najděte entity v následujících textech.\n\n"
+    doc_to_text: "{{text}}\n\n{{label}} v tomto textu je: "
+    include: templates/qa/cnec_ner_template_yaml
+  - task: cdec_ner2
+    dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
+    description: "Extrahujte vybrané entity verbatim z nasledujících textů.\n\n"
+    doc_to_text: "{{text}}\n\nJaká entita typu {{label}} se nachází v předchozím odstavci? "
+    include: templates/qa/cnec_ner_template_yaml
+  - task: cdec_ner3
+    dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
+    description: "Nalezněte verbatim text entit v následujících textech.\n\n"
+    doc_to_text: "{{text}}\n\n Text entity {{label}} je: "
+    include: templates/qa/cnec_ner_template_yaml
+  - task: cdec_ner4
+    dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
+    description: "Vyhladejte texty obsahující dotazované entity.\n\n"
+    doc_to_text: "{{text}}\n\n Dotaz: Jaká entita typu {{label}} je zde zmíněna? Odpověď: "
+    include: templates/qa/cnec_ner_template_yaml
