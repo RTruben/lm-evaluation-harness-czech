@@ -1,6 +1,7 @@
 group: umimeto_qa
 dataset_path: hynky/umimeto-qa
-include: templates/multichoice/multi_choice_A-Z_template_yaml
+include: templates/multichoice/multi_choice_mmlu_template_yaml
+doc_to_text: !function ./utils.mmlu_get_question_text_umimeto
 fewshot_split: train
 test_split: train
 task:

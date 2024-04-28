@@ -4,7 +4,7 @@
 group: klokan_qa
 dataset_path: hynky/klokan-qa
 dataset_name: default
-include: templates/multichoice/multi_choice_A-Z_template_yaml
+include: templates/multichoice/multi_choice_mmlu_template_yaml
 fewshot_split: train
 test_split: train
 task:
