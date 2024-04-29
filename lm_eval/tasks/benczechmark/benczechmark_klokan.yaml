@@ -7,6 +7,7 @@ dataset_name: default
 include: templates/multichoice/multi_choice_mmlu_template_yaml
 fewshot_split: train
 test_split: train
+num_fewshot: 3
 task:
 - task: klokan_qa0
   task_alias: prompt-0
