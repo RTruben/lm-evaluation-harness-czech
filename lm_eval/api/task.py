@@ -1016,9 +1016,9 @@ class ConfigurableTask(Task):
         self, doc: dict, ctx: str, **kwargs
     ) -> Union[List[Instance], Instance]:
         if self.OUTPUT_TYPE == "loglikelihood":
-            arguments = (ctx, self.doc_to_target(doc))
+            arguments = (ctx, SegmentedString([self.doc_to_target(doc)], ["continuation"]))
         elif self.OUTPUT_TYPE == "loglikelihood_rolling":
-            arguments = (self.doc_to_target(doc),)
+            arguments = (SegmentedString([self.doc_to_target(doc)], ["continuation"]),)
         elif self.OUTPUT_TYPE == "multiple_choice":
             choices = self.doc_to_choice(doc)
             target_delimiter = self.config.target_delimiter
@@ -1026,7 +1026,7 @@ class ConfigurableTask(Task):
                 # If there are multiple inputs, choices are placed in the ctx
                 cont = self.doc_to_target(doc)
                 arguments = [
-                    (ctx + choice, SegmentedString(["{target_delimiter}{cont}"], ["continuation"])) for choice in choices
+                    (ctx + choice, SegmentedString([f"{target_delimiter}{cont}"], ["continuation"])) for choice in choices
                 ]
             else:
                 # Otherwise they are placed in the continuation
