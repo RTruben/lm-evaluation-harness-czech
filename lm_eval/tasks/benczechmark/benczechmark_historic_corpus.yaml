@@ -1,16 +1,14 @@
 task: benczechmark_histcorpus
 task_alias: Historical Corpus
 dataset_path: CZLC/benczechmark_histcorpus
-output_type: loglikelihood_rolling
+output_type: loglikelihood
 test_split: test
 doc_to_text: "Historický text: "
 doc_to_target: "{{text}}"
+class: !function utils.ConfigurableTaskCustom
 metric_list:
   - metric: word_perplexity
     aggregation: weighted_perplexity
     higher_is_better: false
-  - metric: acc
-    aggregation: mean
-    higher_is_better: true
 metadata:
   version: 1.0

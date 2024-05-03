@@ -2,7 +2,7 @@
 group: benczechmark_ctkfacts_nli
 group_alias: CTKFacts NLI
 task:
-  - task: ctkfacts0
+  - task: ctkfacts_0
     task_alias: prompt-0
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -13,7 +13,7 @@ task:
         - "není jasné"
         - "pravda"
     doc_to_text: '{{evidence}} Za uvedeného předpokladu a na základě znalostí o světe, "{{claim}}" je určitě pravda, nepravda, nebo není jasné? Odpověď (pravda/nepravda/není jasné): '
-  - task: ctkfacts1
+  - task: ctkfacts_1
     task_alias: prompt-1
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -24,7 +24,7 @@ task:
         - "možná"
         - "Ano"
     doc_to_text: 'Předpokládáme, že {{evidence}} Je možné předpokládat, že "{{claim}}" je pravda? Ano, ne, nebo možná? '
-  - task: ctkfacts2
+  - task: ctkfacts_2
     task_alias: prompt-2
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -35,7 +35,7 @@ task:
         - "možná"
         - "Ano"
     doc_to_text: 'Za předpokladu, že {{evidence}} vyplývá, že {{claim}}? Ano, ne, nebo možná? '
-  - task: ctkfacts3
+  - task: ctkfacts_3
     task_alias: prompt-3
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -46,7 +46,7 @@ task:
         - "ani jedno"
         - "Pravda"
     doc_to_text: '{{evidence}}\n\nOtázka: {{claim}} Pravda, nepravda, nebo ani jedno? '
-  - task: ctkfacts4
+  - task: ctkfacts_4
     task_alias: prompt-4
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -57,7 +57,7 @@ task:
         - "možná"
         - "ano"
     doc_to_text: '{{evidence}}\n\nNa základě předchozího odstavce, je to pravda, že "{{claim}}"? Ne, možná, nebo ano? '
-  - task: ctkfacts5
+  - task: ctkfacts_5
     task_alias: prompt-5
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -68,7 +68,7 @@ task:
         - "nejasné"
         - "pravda"
     doc_to_text: 'Předpokládejme následovné: {{evidence}}\n\nPak následující tvrzení: "{{claim}}" je pravda, nepravda, nebo nejasné? '
-  - task: ctkfacts6
+  - task: ctkfacts_6
     task_alias: prompt-6
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli
@@ -79,7 +79,7 @@ task:
         - "možná"
         - "Ano"
     doc_to_text: 'Předpokládejme následovné: {{evidence}} Pak musí být pravda, že "{{claim}}"? Ano, ne, nebo možná? Odpověď: '
-  - task: ctkfacts7
+  - task: ctkfacts_7
     task_alias: prompt-7
     include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/ctkfacts_nli

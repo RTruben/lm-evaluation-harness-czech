@@ -1,27 +1,27 @@
 group: benczechmark_cs_ner
 group_alias: Czech Named Entity Corpus
 task:
-  - task: cnec_ner0
+  - task: cnec_ner_0
     dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
     description: "Hledejte určité entity v následujících textech.\n\n"
     doc_to_text: "Jaká entita typu {{label}} se nachází v nasledujícím textu? {{text}}\n\nEntita typu {{label}}: "
     include: templates/qa/cnec_ner_template_yaml
-  - task: cnec_ner1
+  - task: cnec_ner_1
     dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
     description: "Najděte entity v následujících textech.\n\n"
     doc_to_text: "{{text}}\n\n{{label}} v tomto textu je: "
     include: templates/qa/cnec_ner_template_yaml
-  - task: cnec_ner2
+  - task: cnec_ner_2
     dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
     description: "Extrahujte vybrané entity verbatim z nasledujících textů.\n\n"
     doc_to_text: "{{text}}\n\nJaká entita typu {{label}} se nachází v předchozím odstavci? "
     include: templates/qa/cnec_ner_template_yaml
-  - task: cnec_ner3
+  - task: cnec_ner_3
     dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
     description: "Nalezněte verbatim text entit v následujících textech.\n\n"
     doc_to_text: "{{text}}\n\n Text entity {{label}} je: "
     include: templates/qa/cnec_ner_template_yaml
-  - task: cnec_ner4
+  - task: cnec_ner_4
     dataset_path: fewshot-goes-multilingual/cs_czech-named-entity-corpus_2.0
     description: "Vyhladejte texty obsahující dotazované entity.\n\n"
     doc_to_text: "{{text}}\n\n Dotaz: Jaká entita typu {{label}} je zde zmíněna? Odpověď: "
