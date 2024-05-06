@@ -6,7 +6,6 @@ metric_list:
   - metric: acc
     aggregation: mean
     higher_is_better: true
-num_fewshot: 5
 
 
 

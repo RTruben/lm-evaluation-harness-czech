@@ -2,26 +2,26 @@ group: umimeto_qa
 dataset_path: CZLC/umimeto-qa
 include: templates/multichoice/multi_choice_mmlu_template_yaml
 doc_to_text: !function ./utils.mmlu_get_question_text_umimeto
-fewshot_split: train
-test_split: train
+fewshot_split: test
+test_split: test
 task:
-- group: bilogy
+- group: biology
   group_alias: Biology
   dataset_name: biology
   task:
-  - task: umimeto_bilogy0
+  - task: umimeto_biology0
     task_alias: prompt-0
     description: "Jsi expert v biologii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_bilogy1
+  - task: umimeto_biloogy1
     task_alias: prompt-1
     description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_bilogy2
+  - task: umimeto_biology2
     task_alias: prompt-2
     description: "Ukázkové úlohy z biologie pro žáky základních a středních škol.\n\n"
-  - task: umimeto_bilogy3
+  - task: umimeto_biology3
     task_alias: prompt-3
     description: "Biologická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_bilogy4
+  - task: umimeto_biology4
     task_alias: prompt-4
     description: "Správná řešení úloh z Krajského přeboru v biologii.\n\n"
 
