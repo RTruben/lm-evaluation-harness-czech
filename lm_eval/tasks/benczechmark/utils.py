@@ -215,7 +215,7 @@ def aggregate_avg_mcauroc(items):
     return result["mc_auroc_score"]
 
 
-def aggregate_CI_avg_mcauroc(items, alpha=0.95):
+def aggregate_CI_avg_mcauroc(items):
     unzipped_list = list(zip(*items))
     golds = unzipped_list[0]
     probs = unzipped_list[1]
@@ -296,6 +296,27 @@ class MultipleChoiceTask(ConfigurableTask):
             "macro_f1_ci": aggregate_macro_f1_CI,
             "acc": mean,
         }
+
+
+class ConfigurableTaskCustom(ConfigurableTask):
+
+    def process_results(self, doc, results):
+        if callable(self.config.process_results):
+            return self.config.process_results(doc, results)
+
+        use_metric = list(self._metric_fn_list.keys())
+        if self.OUTPUT_TYPE in ["loglikelihood", "loglikelihood_rolling"]:
+            results = results[0]
+            ll, is_greedy = results
+            _words = self.count_words(self.doc_to_target(doc))
+
+            return {
+                **({"word_perplexity": (ll, _words)} if "word_perplexity" in use_metric else {}),
+                **({"acc": int(is_greedy)} if "acc" in use_metric else {}),
+            }
+        else:
+            raise NotImplementedError(f"This task does not support this output type '{self.OUTPUT_TYPE}' of processing")
+
 
 def process_docs_cs_nec(dataset):
     def _process_dataset(dataset):
