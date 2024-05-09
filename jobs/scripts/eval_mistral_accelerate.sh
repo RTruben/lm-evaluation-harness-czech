@@ -10,7 +10,9 @@ OUTPUT_PATH="$2"
 export NUMEXPR_MAX_THREADS=$(nproc --all)
 
 set -x
-$PYTHON -m accelerate.commands.launch -m lm_eval --model hf \
+$PYTHON -m accelerate.commands.launch \
+  --dynamo_backend=inductor \
+-m lm_eval --model hf \
   --model_args pretrained=$MODEL_NAME,dtype=bfloat16,max_length=2048,truncation=True,trust_remote_code=True \
   --tasks "$TASK" \
   --batch_size $num_gpus \

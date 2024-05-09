@@ -17,5 +17,5 @@ $PYTHON -m accelerate.commands.launch \
   --batch_size $(($num_gpus * $batch_size)) \
   --output_path "$OUTPUT_PATH" \
   --log_samples \
-  --use_cache $CACHE_NAME \
   --verbosity DEBUG
+#  --use_cache $CACHE_NAME \
