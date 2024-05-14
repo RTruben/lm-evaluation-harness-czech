@@ -2,28 +2,29 @@
 # The reason is that in order to deduce the correct answer, we need to know all possible answers.
 # eg. "What is the smallest number of the following? A. 1 B. 2 C. 3 D. 4"
 group: benczechmark_klokan_qa
+group_alias: Klokan QA
 dataset_path: hynky/klokan-qa
 dataset_name: balanced
 include: templates/multichoice/multi_choice_mmlu_template_yaml
 fewshot_split: test
 task:
-- task: klokan_qa0
+- task: klokan_qa_0
   task_alias: prompt-0
   description: "Jsi expert v matematice. Předložím ti několik otázek a možné odpovědi A-E a tvůj úkol bude vybrat správnou odpověď.\n\n"
 
-- task: klokan_qa1
+- task: klokan_qa_1
   task_alias: prompt-1
   description: "Úkol: Vyberte správnou odpověď A-E na následující otázky.\n\n"
 
-- task: klokan_qa2
+- task: klokan_qa_2
   task_alias: prompt-2
   description: "Ukázkové úlohy z Matematického Klokana.\n\n"
 
-- task: klokan_qa3
+- task: klokan_qa_3
   task_alias: prompt-3
   description: "Matematická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-E pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
 
-- task: klokan_qa4
+- task: klokan_qa_4
   task_alias: prompt-4
   description: "Správná řešení úloh z Krajského přeboru v matematice.\n\n"
 

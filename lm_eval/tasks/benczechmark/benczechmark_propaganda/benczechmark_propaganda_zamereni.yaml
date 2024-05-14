@@ -1,0 +1,29 @@
+group: benczechmark_propaganda_zamereni
+group_alias: Propaganda Zameření
+task:
+- task: propaganda_zamereni_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Pro aké publikum je článek určen? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
+  doc_to_text: "{{query}}\nProsím vyberte z možností zahraniční, obojí, nelze určit, domácí. Mé rozhodnutí je: "
+- task: propaganda_zamereni_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Jaký je zameření na publikum v článku? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
+  doc_to_text: "{{query}}\nVyberte z možností zahraniční, obojí, nelze určit, domácí. Moje volba je: "
+- task: propaganda_zamereni_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Pro jaké publikum je článek napsán? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
+  doc_to_text: "{{query}}\nProsím vyberte z možností zahraniční, obojí, nelze určit, domácí. Můj výběr je: "
+- task: propaganda_zamereni_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Jaký je zameření článku? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
+  doc_to_text: "{{query}}\nMožnosti: zahraniční, obojí, nelze určit, domácí. Výběr: "
+- task: propaganda_zamereni_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Pro které publikum je článek určen? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
+  doc_to_text: "{{query}}\nZ možností -zahraniční, -obojí, -nelze určit, -domácí volím: "
+dataset_path: CZLC/propaganda_zamereni

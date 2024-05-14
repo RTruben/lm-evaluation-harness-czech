@@ -1,0 +1,29 @@
+group: benczechmark_propaganda_argumentace
+group_alias: Propaganda Argumentace
+task:
+- task: propaganda_argumentace_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "\n.\n"
+  doc_to_text: "{{query}}\nmožnosti: ne, ano\nvybraná kategorie: "
+- task: propaganda_argumentace_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Zde je text s argumentací. Vaším úkolem je klasifikovat argumentaci. Vyberte možnost 'ano' pokud působí jako argument (logický nebo emotivní), nebo 'ne' pokud se pouze něco konstatuje (že se něco stalo).\n"
+  doc_to_text: "{{query}} Možnosti jsou: ne, ano. Vybírejte: "
+- task: propaganda_argumentace_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Následuje článek, ve kterém jsou různé tvrzení. Označte, zda se jedná o argumentaci či nikoliv. Pokud je to argument, vyberte 'ano', jinak 'ne'.\n"
+  doc_to_text: "{{query}} Možnosti: ano, ne. Vyberte kategorii: "
+- task: propaganda_argumentace_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Vaším úkolem je klasifikovat, zda je text argumentativní či nikoliv. Pokud obsahuje argumenty (logický nebo emotivní), vyberte 'ano', jinak, pokud se pouze něco sděluje, vyberte 'ne'.\n"
+  doc_to_text: "{{query}} Možnosti jsou: ne, ano. Prosím, vyberte: "
+- task: propaganda_argumentace_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Posuďte, zda je následující článek argumentativní. Vyberte možnost 'ano', pokud obsahuje argumenty, jinak 'ne'.\n"
+  doc_to_text: "{{query}} Možnosti: ne, ano. Vaše volba: "
+dataset_path: CZLC/propaganda_argumentace

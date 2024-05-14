@@ -1,0 +1,12 @@
+include: multi_class_template_yaml
+doc_to_choice: !function ../../utils.cermat_get_choice
+doc_to_target: gold
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+
+
+
+metadata:
+  version: 3.0

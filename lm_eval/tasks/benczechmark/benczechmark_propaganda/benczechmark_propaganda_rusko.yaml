@@ -1,0 +1,29 @@
+group: benczechmark_propaganda_rusko
+group_alias: Propaganda Rusko
+task:
+- task: propaganda_rusko_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Úloha: klasifikace obrazu Ruska. Do jaké pozice je staveno Rusko? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
+  doc_to_text: "{{query}}\nProsím vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Vybírám: "
+- task: propaganda_rusko_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Vytváření obrazu Ruska: Jak je prezentováno Rusko? Vyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
+  doc_to_text: "{{query}}\nVyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Moje volba: "
+- task: propaganda_rusko_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Hodnocení obrazu Ruska: Jak je charakterizováno Rusko? Vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
+  doc_to_text: "{{query}}\nProsím vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Odpověď: "
+- task: propaganda_rusko_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Analýza prezentace Ruska: Jaká je prezentace Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
+  doc_to_text: "{{query}}\n Možnosti: hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Výber:"
+- task: propaganda_rusko_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Jaký je v textu obraz Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
+  doc_to_text: "{{query}}\n Z možností -hrdina, -pozitivní příklad, -neutrální, -negativní příklad, -oběť volím: "
+dataset_path: CZLC/propaganda_rusko

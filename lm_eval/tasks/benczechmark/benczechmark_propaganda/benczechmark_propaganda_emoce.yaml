@@ -1,0 +1,29 @@
+group: benczechmark_propaganda_emoce
+group_alias: Propaganda Emoce
+task:
+- task: propaganda_emoce_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "\n.\n"
+  doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Převažující emoce je: "
+- task: propaganda_emoce_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Nyní se zaměříme na detekci emocí. Jakou hlavní emocí vyvolává tento text u čtenáře? Můžete vybírat z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
+  doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní vyvolaná emoce je: "
+- task: propaganda_emoce_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Analyzujeme text z hlediska emocí. Jaká emoce převažuje u čtenáře? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
+  doc_to_text: "{{query}}\nMožnosti: strach, rozhořčení, soucit, nenávist, jiná. Převažující emocí je: "
+- task: propaganda_emoce_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Posuzujeme text z pohledu emocí. Která emoce je nejvíce výrazná? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
+  doc_to_text: "{{query}}\nNejvýraznější emoce z možností (strach, rozhořčení, soucit, nenávist, jiná) je: "
+- task: propaganda_emoce_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  description: "Pomoc! Potřebuji určit, jaké emoce text vyvolává. Vyberte z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
+  doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní emoce je: "
+dataset_path: CZLC/propaganda_emoce
