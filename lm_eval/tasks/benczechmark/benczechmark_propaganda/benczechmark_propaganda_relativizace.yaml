@@ -3,27 +3,27 @@ group_alias: Propaganda Relativizace
 task:
 - task: propaganda_relativizace_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Úloha: klasifikace relativizac. Relativizuje se v textu negativní konání Ruska nebo pozitivní zásluha Západu? Je většinou použita pro zmírnění něčeho negativního. Možnosti odpovědí: 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 - task: propaganda_relativizace_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Analýza relativizace: Je v textu použita relativizace k zmírnění něčeho negativního? Vyberte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
 - task: propaganda_relativizace_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Rozpoznání relativizace: Je v textu použita relativizace pro zmírnění negativního konání Ruska nebo pozitivní zásluhy Západu? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
 - task: propaganda_relativizace_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Posouzení relativizace: Je v textu použita relativizace k ozvláštňování negativního konání Ruska nebo zlehčení pozitivních zásluh Západu? Možnosti: 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
 - task: propaganda_relativizace_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Hodnocení relativizace: Je v textu využita relativizace pro zmírnění negativního konání Ruska nebo zveličení pozitivních zásluh Západu? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
 dataset_path: CZLC/propaganda_relativizace

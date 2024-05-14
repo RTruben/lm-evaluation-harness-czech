@@ -3,27 +3,27 @@ group_alias: Propaganda Demonizace
 task:
 - task: propaganda_demonizace_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Úloha: klasifikace demonizace. Je v textu nepřítel démonizován? Musí být definován nepřítel, většinou velmi negativní, popisuje destrukci, negativní zájmy/cíle, nebo emotivně velmi vyhrocené nálepkování. Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Z možností ne, ano vybírám: "
 - task: propaganda_demonizace_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: ">\n          Je v textu přítomen proces demonizace? Musí být identifikován nepřítel, který je zpravidla prezentován v extrémně negativním světle, často s popisem destrukce, negativních zájmů/cílů nebo silně emocionálně nabitého označování. Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Spomezi možnosti ne, ano vybírám: "
 - task: propaganda_demonizace_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu prezentována jednostranná a extrémní negativní představa o nepříteli? Například nepřítel je zobrazen jako zlo, násilník, terorista, hrozba pro společnost, a podobně. Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Možnosti - ano/ne. vybírám: "
 - task: propaganda_demonizace_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu použito zjednodušení, karikatura nebo generalizace nepřítele? Nepřítel je zjednodušeně prezentován bez nuancí, což usnadňuje jeho identifikaci jako nepřítele. Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Je to demonizace? (ano/ne) volím: "
 - task: propaganda_demonizace_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu prezentován nepřítel jako zdroj všech problémů, špatností a konfliktů? Nepřítel je zobrazován jako jediný zdroj všech negativních událostí a situací. Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Rozhoduji se mezi volbami nebo ano: "
 dataset_path: CZLC/propaganda_demonizace

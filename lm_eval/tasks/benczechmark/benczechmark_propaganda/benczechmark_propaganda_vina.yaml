@@ -3,27 +3,27 @@ group_alias: Propaganda Vina
 task:
 - task: propaganda_vina_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "V textu je někomu přisuzována vina? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Z možností ne, ano vybírám: "
 - task: propaganda_vina_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu někdo obviňován? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 - task: propaganda_vina_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu někomu přičítána odpovědnost za nějakou událost? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
 - task: propaganda_vina_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu někdo odsuzován za určité chyby nebo jednání? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
 - task: propaganda_vina_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu někomu připisována morální či právní vina za určité události nebo situace? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
   doc_to_text: "{{query}} Ano nebo ne? Zde je vaše volba: "
 dataset_path: CZLC/propaganda_vina

@@ -3,27 +3,27 @@ group_alias: Propaganda Zanr
 task:
 - task: propaganda_zanr_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Možnosti jsou (rozhovor, komentář, zpravodajství). Žánr je: "
 - task: propaganda_zanr_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Klasifikuji z možností rozhovor, komentář, zpravodajství. Žánr je: "
 - task: propaganda_zanr_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Z následujícího textu chci vědět, jaký je jeho žánr. Vyberu z možností rozhovor, zpravodajství, komentář.\n"
   doc_to_text: "{{query}} Z možností zpravodajství, rozhovor, komentář vybírám žánr: "
 - task: propaganda_zanr_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Nyní máme k dispozici článek z internetu. Jaký je jeho žánr? Vyberte ze komentář, rozhovor, zpráva.\n"
   doc_to_text: '{{query}} Možnosti - zpráva, rozhovor, komentář. Vybíram žánr '
 - task: propaganda_zanr_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}}\nmožnosti: zpravodajství, komentář, rozhovor\nvybraná kategorie: "
 dataset_path: CZLC/propaganda_zanr

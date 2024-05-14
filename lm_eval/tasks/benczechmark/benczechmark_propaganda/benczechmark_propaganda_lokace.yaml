@@ -3,27 +3,27 @@ group_alias: Propaganda Lokace
 task:
 - task: propaganda_lokace_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Vyberte odpověď (Česká republika, EU, Rusko, nebo jiná / nelze určit): "
 - task: propaganda_lokace_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Z možností Česká republika, EU, Rusko, nebo jiná / nelze určit zvolte odpověď: "
 - task: propaganda_lokace_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Prosím vyberte z možností Česká republika, EU, Rusko, nebo jiná / nelze určit: "
 - task: propaganda_lokace_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Lokace: Česká republika, EU, Rusko, nebo jiná / nelze určit. Výber: "
 - task: propaganda_lokace_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "\n.\n"
   doc_to_text: "{{query}} Prosím zvolte z Česká republika, EU, Rusko, nebo jiná / nelze určit. Vybírám: "
 dataset_path: CZLC/propaganda_lokace

@@ -3,27 +3,27 @@ group_alias: Propaganda Strach
 task:
 - task: propaganda_strach_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Úloha: identifikace strachu. Je ve textu přítomný přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 - task: propaganda_strach_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Hodnocení přítomnosti strachu: Rozpoznáváte v textu přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
 - task: propaganda_strach_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Analýza strachu: Je ve textu zjevný přesah do budoucna, apel na strach, nejistotu či ohrožení, například rušení sociálních dávek nebo zavírající se podniky? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
 - task: propaganda_strach_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Je v textu přítomnost implikace strachu, presah problémů do budoucna, apel na nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
 - task: propaganda_strach_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Posouzení strachu: Je ve textu patrný přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
 dataset_path: CZLC/propaganda_strach

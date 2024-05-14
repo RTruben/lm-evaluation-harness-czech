@@ -3,27 +3,27 @@ group_alias: Propaganda Fabulace
 task:
 - task: propaganda_fabulace_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Úloha: klasifikace fabulace. Je v textu přítomna fabulace (zveličování problémů, fámy, nepodložená tvrzení)? Možnosti: ne, ano.\n"
   doc_to_text: "{{query}}\n Možnosti: ne, ano. Vybírám: "
 - task: propaganda_fabulace_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Klasifikace fabulace: Je v textu prezentováno zveličování problémů, šíření fám, nebo tvrzení bez dostatečného podkladu? Vyberte z možností 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zvolte 'ano' nebo 'ne' jako odpověď: "
 - task: propaganda_fabulace_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Posouzení fabulace: Je v textu přítomna fabulace, což zahrnuje zveličování problémů, šíření fám, nebo tvrzení bez dostatečného podkladu? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Prosím zvolte 'ano' nebo 'ne': "
 - task: propaganda_fabulace_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Pomoc! Potřebuji zistit jestli je v textu zveličování problémů, šíření fám nebo tvrzení bez podkladu. Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Vyberte prosím 'ano' nebo 'ne': "
 - task: propaganda_fabulace_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Analýza fabulace: Rozpoznáváte v textu zvětšování problémů, šíření fám nebo tvrzení bez dostatečného podkladu? Vyberte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zvolte ano/ne. Vaše odpověď: "
 dataset_path: CZLC/propaganda_fabulace

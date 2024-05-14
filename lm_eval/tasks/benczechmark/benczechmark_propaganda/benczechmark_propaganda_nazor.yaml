@@ -3,27 +3,27 @@ group_alias: Propaganda Názor
 task:
 - task: propaganda_nazor_0
   task_alias: prompt-0
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Úloha: klasifikace prezence názoru. Obsahuje článek jasný osobní názor autora článku? Možnosti odpovědí: 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 - task: propaganda_nazor_1
   task_alias: prompt-1
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Analýza názoru: Rozpoznáváte v textu jasný osobní názor autora článku? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Vyberte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
 - task: propaganda_nazor_2
   task_alias: prompt-2
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Rozpoznání názoru: Je v článku zřejmý osobní názor autora? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
 - task: propaganda_nazor_3
   task_alias: prompt-3
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Posouzení názoru: Je v článku patrný osobní názor autora? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Možnosti: 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
 - task: propaganda_nazor_4
   task_alias: prompt-4
-  include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+  include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Hodnocení osobního názoru: Obsahuje článek výrazný osobní názor autora? Odpovězte 'ano' nebo 'ne'.\n"
   doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 dataset_path: CZLC/propaganda_nazor
