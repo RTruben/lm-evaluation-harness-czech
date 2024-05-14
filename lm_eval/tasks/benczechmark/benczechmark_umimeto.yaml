@@ -1,9 +1,8 @@
-group: umimeto_qa
+group: benczechmark_umimeto_qa
 dataset_path: CZLC/umimeto-qa
 include: templates/multichoice/multi_choice_mmlu_template_yaml
 doc_to_text: !function ./utils.mmlu_get_question_text_umimeto
 fewshot_split: test
-test_split: test
 task:
 - group: biology
   group_alias: Biology

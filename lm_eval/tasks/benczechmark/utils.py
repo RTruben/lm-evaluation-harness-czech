@@ -298,26 +298,6 @@ class MultipleChoiceTask(ConfigurableTask):
         }
 
 
-class ConfigurableTaskCustom(ConfigurableTask):
-
-    def process_results(self, doc, results):
-        if callable(self.config.process_results):
-            return self.config.process_results(doc, results)
-
-        use_metric = list(self._metric_fn_list.keys())
-        if self.OUTPUT_TYPE in ["loglikelihood", "loglikelihood_rolling"]:
-            results = results[0]
-            ll, is_greedy = results
-            _words = self.count_words(self.doc_to_target(doc))
-
-            return {
-                **({"word_perplexity": (ll, _words)} if "word_perplexity" in use_metric else {}),
-                **({"acc": int(is_greedy)} if "acc" in use_metric else {}),
-            }
-        else:
-            raise NotImplementedError(f"This task does not support this output type '{self.OUTPUT_TYPE}' of processing")
-
-
 def process_docs_cs_nec(dataset):
     def _process_dataset(dataset):
         """
@@ -360,6 +340,16 @@ def mmlu_get_choice(dataset):
 
 def mmlu_get_answer_index(dataset):
     return ANSWER_LETTERS.index(dataset["correct_answer"])
+
+
+def cermat_get_choice(dataset):
+    if len(dataset['choices']) == 4:
+        return ["A", "B", "C", "D"]
+    elif len(dataset['choices']) == 5:
+        return ["A", "B", "C", "D", "E"]
+    else:
+        raise ValueError(f"Invalid number of choices: {len(dataset['choices'])}")
+
 
 def mmlu_get_question_text(dataset):
     dataset_answer_keys = mmlu_get_choice(dataset)

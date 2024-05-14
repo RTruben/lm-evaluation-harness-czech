@@ -1,12 +1,11 @@
 # Klokan uses MMLU-like style, with answers in the text.
 # The reason is that in order to deduce the correct answer, we need to know all possible answers.
 # eg. "What is the smallest number of the following? A. 1 B. 2 C. 3 D. 4"
-group: klokan_qa
+group: benczechmark_klokan_qa
 dataset_path: hynky/klokan-qa
 dataset_name: balanced
 include: templates/multichoice/multi_choice_mmlu_template_yaml
 fewshot_split: test
-test_split: test
 task:
 - task: klokan_qa0
   task_alias: prompt-0

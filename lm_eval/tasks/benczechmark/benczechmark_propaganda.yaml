@@ -8,31 +8,31 @@ task:
       - task: propaganda_zanr_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zanr
+        dataset_path: CZLC/propaganda_zanr
         description: "Dále je novinový článek. Chci vědět, jaký je jeho žánr. Vyberu z možností rozhovor (obsahuje dialog), komentář (má vždy autora, slovo komentář často v názvu), zpravodajství (většinou má autora)\n"
         doc_to_text: "{{query}} Možnosti jsou (rozhovor, komentář, zpravodajství). Žánr je: "
       - task: propaganda_zanr_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zanr
+        dataset_path: CZLC/propaganda_zanr
         description: "Jsem klasifikátor žánrů. Klasifikuji mezi kategoriemi rozhovor (obsahuje dialog), komentář (má vždy autora, slovo komentář často v názvu), zpravodajství (většinou má autora)\n"
         doc_to_text: "{{query}} Klasifikuji z možností rozhovor, komentář, zpravodajství. Žánr je: "
       - task: propaganda_zanr_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zanr
+        dataset_path: CZLC/propaganda_zanr
         description: "Z následujícího textu chci vědět, jaký je jeho žánr. Vyberu z možností rozhovor, zpravodajství, komentář.\n"
         doc_to_text: "{{query}} Z možností zpravodajství, rozhovor, komentář vybírám žánr: "
       - task: propaganda_zanr_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zanr
+        dataset_path: CZLC/propaganda_zanr
         description: "Nyní máme k dispozici článek z internetu. Jaký je jeho žánr? Vyberte ze komentář, rozhovor, zpráva.\n"
         doc_to_text: "{{query}} Možnosti - zpráva, rozhovor, komentář. Vybíram žánr "
       - task: propaganda_zanr_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zanr
+        dataset_path: CZLC/propaganda_zanr
         description: "Úloha: klasifikace žánru\nmožnosti: zpravodajství, komentář, rozhovor\n"
         doc_to_text: "{{query}}\nmožnosti: zpravodajství, komentář, rozhovor\nvybraná kategorie: "
 
@@ -42,31 +42,31 @@ task:
       - task: propaganda_argumentace_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_argumentace
+        dataset_path: CZLC/propaganda_argumentace
         description: "Úloha: klasifikace argumentace\nmožnosti: ne (pokud se jenom něco konstatuje (že se něco stalo)), ano (pokud působí jako argument (logický nebo emotivní))\n"
         doc_to_text: "{{query}}\nmožnosti: ne, ano\nvybraná kategorie: "
       - task: propaganda_argumentace_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_argumentace
+        dataset_path: CZLC/propaganda_argumentace
         description: "Zde je text s argumentací. Vaším úkolem je klasifikovat argumentaci. Vyberte možnost 'ano' pokud působí jako argument (logický nebo emotivní), nebo 'ne' pokud se pouze něco konstatuje (že se něco stalo).\n"
         doc_to_text: "{{query}} Možnosti jsou: ne, ano. Vybírejte: "
       - task: propaganda_argumentace_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_argumentace
+        dataset_path: CZLC/propaganda_argumentace
         description: "Následuje článek, ve kterém jsou různé tvrzení. Označte, zda se jedná o argumentaci či nikoliv. Pokud je to argument, vyberte 'ano', jinak 'ne'.\n"
         doc_to_text: "{{query}} Možnosti: ano, ne. Vyberte kategorii: "
       - task: propaganda_argumentace_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_argumentace
+        dataset_path: CZLC/propaganda_argumentace
         description: "Vaším úkolem je klasifikovat, zda je text argumentativní či nikoliv. Pokud obsahuje argumenty (logický nebo emotivní), vyberte 'ano', jinak, pokud se pouze něco sděluje, vyberte 'ne'.\n"
         doc_to_text: "{{query}} Možnosti jsou: ne, ano. Prosím, vyberte: "
       - task: propaganda_argumentace_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_argumentace
+        dataset_path: CZLC/propaganda_argumentace
         description: "Posuďte, zda je následující článek argumentativní. Vyberte možnost 'ano', pokud obsahuje argumenty, jinak 'ne'.\n"
         doc_to_text: "{{query}} Možnosti: ne, ano. Vaše volba: "
 
@@ -77,31 +77,31 @@ task:
       - task: propaganda_demonizace_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_demonizace
+        dataset_path: CZLC/propaganda_demonizace
         description: "Úloha: klasifikace demonizace. Je v textu nepřítel démonizován? Musí být definován nepřítel, většinou velmi negativní, popisuje destrukci, negativní zájmy/cíle, nebo emotivně velmi vyhrocené nálepkování. Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Z možností ne, ano vybírám: "
       - task: propaganda_demonizace_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_demonizace
+        dataset_path: CZLC/propaganda_demonizace
         description: ">\n          Je v textu přítomen proces demonizace? Musí být identifikován nepřítel, který je zpravidla prezentován v extrémně negativním světle, často s popisem destrukce, negativních zájmů/cílů nebo silně emocionálně nabitého označování. Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Spomezi možnosti ne, ano vybírám: "
       - task: propaganda_demonizace_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_demonizace
+        dataset_path: CZLC/propaganda_demonizace
         description: "Je v textu prezentována jednostranná a extrémní negativní představa o nepříteli? Například nepřítel je zobrazen jako zlo, násilník, terorista, hrozba pro společnost, a podobně. Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Možnosti - ano/ne. vybírám: "
       - task: propaganda_demonizace_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_demonizace
+        dataset_path: CZLC/propaganda_demonizace
         description: "Je v textu použito zjednodušení, karikatura nebo generalizace nepřítele? Nepřítel je zjednodušeně prezentován bez nuancí, což usnadňuje jeho identifikaci jako nepřítele. Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Je to demonizace? (ano/ne) volím: "
       - task: propaganda_demonizace_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_demonizace
+        dataset_path: CZLC/propaganda_demonizace
         description: "Je v textu prezentován nepřítel jako zdroj všech problémů, špatností a konfliktů? Nepřítel je zobrazován jako jediný zdroj všech negativních událostí a situací. Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Rozhoduji se mezi volbami nebo ano: "
 
@@ -112,31 +112,31 @@ task:
       - task: propaganda_emoce_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_emoce
+        dataset_path: CZLC/propaganda_emoce
         description: "Úloha: detekce emocí. Jakou převažující emoci text ve čtenáři vyvolává? Možnosti: strach, rozhořčení, soucit, nenávist, jiná\n"
         doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Převažující emoce je: "
       - task: propaganda_emoce_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_emoce
+        dataset_path: CZLC/propaganda_emoce
         description: "Nyní se zaměříme na detekci emocí. Jakou hlavní emocí vyvolává tento text u čtenáře? Můžete vybírat z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
         doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní vyvolaná emoce je: "
       - task: propaganda_emoce_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_emoce
+        dataset_path: CZLC/propaganda_emoce
         description: "Analyzujeme text z hlediska emocí. Jaká emoce převažuje u čtenáře? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
         doc_to_text: "{{query}}\nMožnosti: strach, rozhořčení, soucit, nenávist, jiná. Převažující emocí je: "
       - task: propaganda_emoce_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_emoce
+        dataset_path: CZLC/propaganda_emoce
         description: "Posuzujeme text z pohledu emocí. Která emoce je nejvíce výrazná? Vyberte jednu z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
         doc_to_text: "{{query}}\nNejvýraznější emoce z možností (strach, rozhořčení, soucit, nenávist, jiná) je: "
       - task: propaganda_emoce_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_emoce
+        dataset_path: CZLC/propaganda_emoce
         description: "Pomoc! Potřebuji určit, jaké emoce text vyvolává. Vyberte z možností: strach, rozhořčení, soucit, nenávist, nebo jiná.\n"
         doc_to_text: "{{query}}\nEmoce: strach, rozhořčení, soucit, nenávist, jiná. Hlavní emoce je: "
 
@@ -147,31 +147,31 @@ task:
       - task: propaganda_fabulace_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_fabulace
+        dataset_path: CZLC/propaganda_fabulace
         description: "Úloha: klasifikace fabulace. Je v textu přítomna fabulace (zveličování problémů, fámy, nepodložená tvrzení)? Možnosti: ne, ano.\n"
         doc_to_text: "{{query}}\n Možnosti: ne, ano. Vybírám: "
       - task: propaganda_fabulace_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_fabulace
+        dataset_path: CZLC/propaganda_fabulace
         description: "Klasifikace fabulace: Je v textu prezentováno zveličování problémů, šíření fám, nebo tvrzení bez dostatečného podkladu? Vyberte z možností 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte 'ano' nebo 'ne' jako odpověď: "
       - task: propaganda_fabulace_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_fabulace
+        dataset_path: CZLC/propaganda_fabulace
         description: "Posouzení fabulace: Je v textu přítomna fabulace, což zahrnuje zveličování problémů, šíření fám, nebo tvrzení bez dostatečného podkladu? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Prosím zvolte 'ano' nebo 'ne': "
       - task: propaganda_fabulace_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_fabulace
+        dataset_path: CZLC/propaganda_fabulace
         description: "Pomoc! Potřebuji zistit jestli je v textu zveličování problémů, šíření fám nebo tvrzení bez podkladu. Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Vyberte prosím 'ano' nebo 'ne': "
       - task: propaganda_fabulace_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_fabulace
+        dataset_path: CZLC/propaganda_fabulace
         description: "Analýza fabulace: Rozpoznáváte v textu zvětšování problémů, šíření fám nebo tvrzení bez dostatečného podkladu? Vyberte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte ano/ne. Vaše odpověď: "
 
@@ -181,31 +181,31 @@ task:
       - task: propaganda_lokace_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_lokace
+        dataset_path: CZLC/propaganda_lokace
         description: "Úloha: identifikace lokace: Která z následujících lokalit je ve textu nejčastěji zmíněna? Česká republika, EU, Rusko, nebo jiná / nelze určit?\n"
         doc_to_text: "{{query}} Vyberte odpověď (Česká republika, EU, Rusko, nebo jiná / nelze určit): "
       - task: propaganda_lokace_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_lokace
+        dataset_path: CZLC/propaganda_lokace
         description: "Analýza lokace: Kde se nejčastěji odehrává událost popsaná v textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?\n"
         doc_to_text: "{{query}} Z možností Česká republika, EU, Rusko, nebo jiná / nelze určit zvolte odpověď: "
       - task: propaganda_lokace_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_lokace
+        dataset_path: CZLC/propaganda_lokace
         description: "Rozpoznání lokace: Která z následujících lokalit je v textu nejvíce spojena s popsanými událostmi? Česká republika, EU, Rusko, nebo jiná / nelze určit?\n"
         doc_to_text: "{{query}} Prosím vyberte z možností Česká republika, EU, Rusko, nebo jiná / nelze určit: "
       - task: propaganda_lokace_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_lokace
+        dataset_path: CZLC/propaganda_lokace
         description: "Hodnocení lokace: Kde je událost nejpravděpodobněji situována podle textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?\n"
         doc_to_text: "{{query}} Lokace: Česká republika, EU, Rusko, nebo jiná / nelze určit. Výber: "
       - task: propaganda_lokace_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_lokace
+        dataset_path: CZLC/propaganda_lokace
         description: "Která lokalita je nejčastěji spojována s událostí v textu? Česká republika, EU, Rusko, nebo jiná / nelze určit?\n"
         doc_to_text: "{{query}} Prosím zvolte z Česká republika, EU, Rusko, nebo jiná / nelze určit. Vybírám: "
 
@@ -216,31 +216,31 @@ task:
       - task: propaganda_nalepkovani_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nalepkovani
+        dataset_path: CZLC/propaganda_nalepkovani
         description: "Úloha: identifikace nalepkování. Je v textu použito nálepkování, tj. stereotypní popis lidí, kolektivní vina, nebo krátké, zapamatovatelné a často pejorativní slovní spojení? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností ano/ne je odpověď: "
       - task: propaganda_nalepkovani_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nalepkovani
+        dataset_path: CZLC/propaganda_nalepkovani
         description: "Hodnocení nalepkování: Rozpoznáváte v textu stereotypní popis lidí, kolektivní vinu nebo krátká, pejorativní slovní spojení? Zvolte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte odpověď z ano, ne. Vaše volba: "
       - task: propaganda_nalepkovani_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nalepkovani
+        dataset_path: CZLC/propaganda_nalepkovani
         description: "Rozpoznání nálepkování: Je v textu použito stereotypních popisů lidí, kolektivní viny nebo krátkých, pejorativních slovních spojení? Vyberte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Prosím vyberte ano nebo ne. Výber: "
       - task: propaganda_nalepkovani_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nalepkovani
+        dataset_path: CZLC/propaganda_nalepkovani
         description: "Analýza nalepkování: Rozpoznáváte v textu stereotypy, kolektivní vinu nebo krátká, pejorativní slovní spojení? Zvolte odpověď: 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Možnosti jsou: ano, ne. Vybírám: "
       - task: propaganda_nalepkovani_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nalepkovani
+        dataset_path: CZLC/propaganda_nalepkovani
         description: "Posouzení nalepkování: Je v textu použito stereotypního popisu lidí, kolektivní viny nebo krátkých, pejorativních slovních spojení? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Obsahuje text nalepkování? (ano/ne) volím: "
 
@@ -250,31 +250,31 @@ task:
       - task: propaganda_nazor_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nazor
+        dataset_path: CZLC/propaganda_nazor
         description: "Úloha: klasifikace prezence názoru. Obsahuje článek jasný osobní názor autora článku? Možnosti odpovědí: 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
       - task: propaganda_nazor_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nazor
+        dataset_path: CZLC/propaganda_nazor
         description: "Analýza názoru: Rozpoznáváte v textu jasný osobní názor autora článku? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Vyberte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
       - task: propaganda_nazor_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nazor
+        dataset_path: CZLC/propaganda_nazor
         description: "Rozpoznání názoru: Je v článku zřejmý osobní názor autora? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
       - task: propaganda_nazor_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nazor
+        dataset_path: CZLC/propaganda_nazor
         description: "Posouzení názoru: Je v článku patrný osobní názor autora? Může mít i formu komentáře nebo sugestivně položené otázky v rozhovoru. Možnosti: 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
       - task: propaganda_nazor_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_nazor
+        dataset_path: CZLC/propaganda_nazor
         description: "Hodnocení osobního názoru: Obsahuje článek výrazný osobní názor autora? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
 
@@ -285,31 +285,31 @@ task:
       - task: propaganda_relativizace_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_relativizace
+        dataset_path: CZLC/propaganda_relativizace
         description: "Úloha: klasifikace relativizac. Relativizuje se v textu negativní konání Ruska nebo pozitivní zásluha Západu? Je většinou použita pro zmírnění něčeho negativního. Možnosti odpovědí: 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
       - task: propaganda_relativizace_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_relativizace
+        dataset_path: CZLC/propaganda_relativizace
         description: "Analýza relativizace: Je v textu použita relativizace k zmírnění něčeho negativního? Vyberte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
       - task: propaganda_relativizace_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_relativizace
+        dataset_path: CZLC/propaganda_relativizace
         description: "Rozpoznání relativizace: Je v textu použita relativizace pro zmírnění negativního konání Ruska nebo pozitivní zásluhy Západu? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
       - task: propaganda_relativizace_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_relativizace
+        dataset_path: CZLC/propaganda_relativizace
         description: "Posouzení relativizace: Je v textu použita relativizace k ozvláštňování negativního konání Ruska nebo zlehčení pozitivních zásluh Západu? Možnosti: 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
       - task: propaganda_relativizace_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_relativizace
+        dataset_path: CZLC/propaganda_relativizace
         description: "Hodnocení relativizace: Je v textu využita relativizace pro zmírnění negativního konání Ruska nebo zveličení pozitivních zásluh Západu? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
 
@@ -320,31 +320,31 @@ task:
       - task: propaganda_rusko_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_rusko
+        dataset_path: CZLC/propaganda_rusko
         description: "Úloha: klasifikace obrazu Ruska. Do jaké pozice je staveno Rusko? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
         doc_to_text: "{{query}}\nProsím vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Vybírám: "
       - task: propaganda_rusko_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_rusko
+        dataset_path: CZLC/propaganda_rusko
         description: "Vytváření obrazu Ruska: Jak je prezentováno Rusko? Vyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
         doc_to_text: "{{query}}\nVyberte odpověď z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Moje volba: "
       - task: propaganda_rusko_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_rusko
+        dataset_path: CZLC/propaganda_rusko
         description: "Hodnocení obrazu Ruska: Jak je charakterizováno Rusko? Vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
         doc_to_text: "{{query}}\nProsím vyberte hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Odpověď: "
       - task: propaganda_rusko_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_rusko
+        dataset_path: CZLC/propaganda_rusko
         description: "Analýza prezentace Ruska: Jaká je prezentace Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
         doc_to_text: "{{query}}\n Možnosti: hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Výber:"
       - task: propaganda_rusko_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_rusko
+        dataset_path: CZLC/propaganda_rusko
         description: "Jaký je v textu obraz Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
         doc_to_text: "{{query}}\n Z možností -hrdina, -pozitivní příklad, -neutrální, -negativní příklad, -oběť volím: "
 
@@ -355,31 +355,31 @@ task:
       - task: propaganda_strach_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_strach
+        dataset_path: CZLC/propaganda_strach
         description: "Úloha: identifikace strachu. Je ve textu přítomný přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
       - task: propaganda_strach_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_strach
+        dataset_path: CZLC/propaganda_strach
         description: "Hodnocení přítomnosti strachu: Rozpoznáváte v textu přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zvolte odpověď 'ano' nebo 'ne': "
       - task: propaganda_strach_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_strach
+        dataset_path: CZLC/propaganda_strach
         description: "Analýza strachu: Je ve textu zjevný přesah do budoucna, apel na strach, nejistotu či ohrožení, například rušení sociálních dávek nebo zavírající se podniky? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
       - task: propaganda_strach_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_strach
+        dataset_path: CZLC/propaganda_strach
         description: "Je v textu přítomnost implikace strachu, presah problémů do budoucna, apel na nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Zde je vaše volba: 'ano' nebo 'ne': "
       - task: propaganda_strach_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_strach
+        dataset_path: CZLC/propaganda_strach
         description: "Posouzení strachu: Je ve textu patrný přesah do budoucna, apel na strach, nejistotu či ohrožení, například zavírající se podniky, rušení sociálních dávek? Odpovězte 'ano' nebo 'ne'.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
 
@@ -389,31 +389,31 @@ task:
       - task: propaganda_vina_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_vina
+        dataset_path: CZLC/propaganda_vina
         description: "V textu je někomu přisuzována vina? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Z možností ne, ano vybírám: "
       - task: propaganda_vina_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_vina
+        dataset_path: CZLC/propaganda_vina
         description: "Je v textu někdo obviňován? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' vyberte odpověď: "
       - task: propaganda_vina_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_vina
+        dataset_path: CZLC/propaganda_vina
         description: "Je v textu někomu přičítána odpovědnost za nějakou událost? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Prosím vyberte odpověď (ano/ne): "
       - task: propaganda_vina_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_vina
+        dataset_path: CZLC/propaganda_vina
         description: "Je v textu někdo odsuzován za určité chyby nebo jednání? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Z možností 'ano' nebo 'ne' zvolte odpověď: "
       - task: propaganda_vina_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_vina
+        dataset_path: CZLC/propaganda_vina
         description: "Je v textu někomu připisována morální či právní vina za určité události nebo situace? Musí být zřetelně definováno, co je vina (co se vytýká) a kdo je viník (na koho se svaluje). Možnosti jsou: ne, ano.\n"
         doc_to_text: "{{query}} Ano nebo ne? Zde je vaše volba: "
 
@@ -424,30 +424,30 @@ task:
       - task: propaganda_zamereni_0
         task_alias: prompt-0
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zamereni
+        dataset_path: CZLC/propaganda_zamereni
         description: "Pro aké publikum je článek určen? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
         doc_to_text: "{{query}}\nProsím vyberte z možností zahraniční, obojí, nelze určit, domácí. Mé rozhodnutí je: "
       - task: propaganda_zamereni_1
         task_alias: prompt-1
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zamereni
+        dataset_path: CZLC/propaganda_zamereni
         description: "Jaký je zameření na publikum v článku? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
         doc_to_text: "{{query}}\nVyberte z možností zahraniční, obojí, nelze určit, domácí. Moje volba je: "
       - task: propaganda_zamereni_2
         task_alias: prompt-2
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zamereni
+        dataset_path: CZLC/propaganda_zamereni
         description: "Pro jaké publikum je článek napsán? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
         doc_to_text: "{{query}}\nProsím vyberte z možností zahraniční, obojí, nelze určit, domácí. Můj výběr je: "
       - task: propaganda_zamereni_3
         task_alias: prompt-3
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zamereni
+        dataset_path: CZLC/propaganda_zamereni
         description: "Jaký je zameření článku? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
         doc_to_text: "{{query}}\nMožnosti: zahraniční, obojí, nelze určit, domácí. Výběr: "
       - task: propaganda_zamereni_4
         task_alias: prompt-4
         include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
-        dataset_path: .data/hf_dataset/propaganda_zamereni
+        dataset_path: CZLC/propaganda_zamereni
         description: "Pro které publikum je článek určen? Vyberte z možností zahraniční, obojí, nelze určit, domácí.\n"
         doc_to_text: "{{query}}\nZ možností -zahraniční, -obojí, -nelze určit, -domácí volím: "

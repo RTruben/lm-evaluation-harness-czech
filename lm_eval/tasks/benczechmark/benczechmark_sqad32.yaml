@@ -2,27 +2,32 @@ group: benczechmark_cs_sqad32
 group_alias: Simple QA Dataset 3.2
 task:
   - task: cs_sqad_open_0
-    dataset_path: .data/hf_dataset/sqad_3.2
+    task_alias: prompt-0
+    dataset_path: CZLC/sqad_3.2_filtered
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_1
-    dataset_path: .data/hf_dataset/sqad_3.2
+    task_alias: prompt-1
+    dataset_path: CZLC/sqad_3.2_filtered
     description: "Najděte odpovědi na tato dotazy. Podložte je textem.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_2
-    dataset_path: .data/hf_dataset/sqad_3.2
+    task_alias: prompt-2
+    dataset_path: CZLC/sqad_3.2_filtered
     description: "Kvíz. Zodpovězte následující otázky podle textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Dotaz: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_3
-    dataset_path: .data/hf_dataset/sqad_3.2
+    task_alias: prompt-3
+    dataset_path: CZLC/sqad_3.2_filtered
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_4
-    dataset_path: .data/hf_dataset/sqad_3.2
+    task_alias: prompt-4
+    dataset_path: CZLC/sqad_3.2_filtered
     description: "Odpovězte na tyto otázky na základě textu.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml

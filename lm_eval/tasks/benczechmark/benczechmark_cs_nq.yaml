@@ -2,27 +2,32 @@ group: benczechmark_cs_naturalquestions
 group_alias: CS Natural Questions
 task:
   - task: cs_nq_open_0
-    dataset_path: .data/hf_dataset/cs_naturalquestions
+    task_alias: prompt-0
+    dataset_path: CZLC/cs_naturalquestions
     description: "Odpovězte na tyto otázky:\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_1
-    dataset_path: .data/hf_dataset/cs_naturalquestions
+    task_alias: prompt-1
+    dataset_path: CZLC/cs_naturalquestions
     description: "Zodpovězte následující otázky:\n\n"
     doc_to_text: "Dotaz: {{question}}\nSprávná odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_2
-    dataset_path: .data/hf_dataset/cs_naturalquestions
+    task_alias: prompt-2
+    dataset_path: CZLC/cs_naturalquestions
     description: "Kvíz:\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_3
-    dataset_path: .data/hf_dataset/cs_naturalquestions
+    task_alias: prompt-3
+    dataset_path: CZLC/cs_naturalquestions
     description: "Najděte odpovědi na tato dotazy:\n\n"
     doc_to_text: "Dotaz: {{question}}?\nVaše odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_4
-    dataset_path: .data/hf_dataset/cs_naturalquestions
+    task_alias: prompt-4
+    dataset_path: CZLC/cs_naturalquestions
     description: "Úloha: Najděte odpovědi na tato dotazy:\n\n"
     doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď: "
     include: templates/qa/qa_template_yaml
