@@ -1,150 +1,104 @@
-group: benczechmark_cermat
+group: benczechmark_cermat_mc
 group_alias: Cermat tests
 task:
   - group: benczechmark_czech_mc
     dataset_path: CZLC/cermat_czech_mc
-    include: templates/multichoice/multi_choice_cermat_template_yaml
     fewshot_split: test
     task:
       - task: cermat_czech_mc_0
         task_alias: prompt-0
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Jsi expert v Češtine. Předložím ti několik otázek a možné odpovědi A-D a tvůj úkol bude vybrat správnou odpověď.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVybírám: "
 
       - task: cermat_czech_mc_1
         task_alias: prompt-1
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Úkol: Vyberte správnou odpověď A-D na následující otázky.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nOdpověď: "
 
       - task: cermat_czech_mc_2
         task_alias: prompt-2
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Ukázkové úlohy ze zkoušky ČJ. Odpovídejte pouze z možností A,B,C,D:\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVybraná odpověď: "
 
       - task: cermat_czech_mc_3
         task_alias: prompt-3
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Maturitní zkouška.\n\nInstrukce: Vyberte správnou odpověď A-D pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVaše odpověď: "
 
       - task: cermat_czech_mc_4
         task_alias: prompt-4
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Správná řešení úloh z českého jazyka.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nSprávné řešení: "
 
   - group: benczechmark_czech_tf
     dataset_path: CZLC/cermat_czech_tf
-    include: templates/multichoice/multi_choice_cermat_template_yaml
     fewshot_split: test
     task:
       - task: cermat_czech_tf_0
         task_alias: prompt-0
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Jsi expert v Češtine. Předložím ti několik otázek a tvůj úkol bude odpovídat ANO/NE.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybírám: "
 
       - task: cermat_czech_tf_1
         task_alias: prompt-1
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Úkol: Vyberte odpověď ANO/NE na následující otázky.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
 
       - task: cermat_czech_tf_2
         task_alias: prompt-2
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Ukázkové úlohy ze zkoušky ČJ. Odpovídejte pouze NE/ANO:\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVybraná odpověď: "
 
       - task: cermat_czech_tf_3
         task_alias: prompt-3
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Maturitní zkouška.\n\nInstrukce: Vyberte správnou NE/ANO pro zadanou otázku. \nZadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVaše odpověď: "
 
       - task: cermat_czech_tf_4
         task_alias: prompt-4
-        description: "Správná řešení úloh z českého jazyka.\n\n"
-        doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "
-  - group: benczechmark_czech_open
-    dataset_path: CZLC/cermat_czech_open
-    include: templates/qa/qa_template_yaml
-    fewshot_split: test
-    task:
-      - task: cermat_czech_open_0
-        task_alias: prompt-0
-        description: "Jsi expert v Češtine. Předložím ti několik otázek a tvůj úkol bude odpovídat.\n\n"
-        doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nOdpověď: "
-
-      - task: cermat_czech_open_1
-        task_alias: prompt-1
-        description: "Úkol: Odpovězte na následující otázky.\n\n"
-        doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
-
-      - task: cermat_czech_open_2
-        task_alias: prompt-2
-        description: "Ukázkové úlohy ze zkoušky ČJ. Na dotaz odpovídejte pouze stručne.\n\n"
-        doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVaše odpověď: "
-
-      - task: cermat_czech_open_3
-        task_alias: prompt-3
-        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku.\nZadání:\n\n"
-        doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybraná odpověď: "
-
-      - task: cermat_czech_open_4
-        task_alias: prompt-4
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Správná řešení úloh z českého jazyka.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "
 
-  - group: benczechmark_czmath_open
-    dataset_path: CZLC/cermat_math_open
-    include: templates/qa/qa_template_yaml
-    fewshot_split: test
-    task:
-      - task: cermat_czmath_open_0
-        task_alias: prompt-0
-        description: "Jsi expert v matematice. Předložím ti několik otázek a tvůj úkol bude odpovídat.\n\n"
-        doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nOdpověď: "
-
-      - task: cermat_czmath_open_1
-        task_alias: prompt-1
-        description: "Úkol: Nalezněte odpověď na následující slovní úlohy.\n\n"
-        doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
-
-      - task: cermat_czmath_open_2
-        task_alias: prompt-2
-        description: "Ukázkové úlohy ze zkoušky z matematiky. Na dotaz odpovídejte pouze stručne a jasne.\n\n"
-        doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVaše odpověď: "
-
-      - task: cermat_czmath_open_3
-        task_alias: prompt-3
-        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku z matematiky.\nZadání:\n\n"
-        doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybraná odpověď: "
-
-      - task: cermat_czmath_open_4
-        task_alias: prompt-4
-        description: "Správná řešení úloh z matematiky.\n\n"
-        doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "
   - group: benczechmark_czmath_mc
     dataset_path: CZLC/cermat_math_mc
-    include: templates/multichoice/multi_choice_cermat_template_yaml
     fewshot_split: test
     task:
       - task: cermat_czmath_mc_0
         task_alias: prompt-0
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Jsi expert v matematice. Předložím ti několik otázek a možné odpovědi A,B,C,D,E a tvůj úkol bude vybrat správnou odpověď.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVybírám: "
 
       - task: cermat_czmath_mc_1
         task_alias: prompt-1
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Úkol: Vyberte správnou odpověď A-E na následující otázky.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nOdpověď: "
 
       - task: cermat_czmath_mc_2
         task_alias: prompt-2
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Ukázkové úlohy ze zkoušky z matematiky. Odpovídejte pouze z možností A,B,C,D,E:\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVybraná odpověď: "
 
       - task: cermat_czmath_mc_3
         task_alias: prompt-3
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Maturitní zkouška.\n\nInstrukce: Vyberte správnou odpověď A-E pro zadanú slovní úlohu. Pro každou úlohu existuje právě jedna správná odpověď.\nZadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nVaše odpověď: "
 
       - task: cermat_czmath_mc_4
         task_alias: prompt-4
+        include: ../templates/multichoice/multi_choice_cermat_template_yaml
         description: "Správná řešení úloh z matematiky. Odpovědi jsou vždy v rozsahu A-E.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nSprávné řešení: "
