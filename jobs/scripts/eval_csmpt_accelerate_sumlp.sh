@@ -11,7 +11,7 @@ set -x
 $PYTHON -m accelerate.commands.launch \
   --dynamo_backend=inductor \
 -m lm_eval --model hf \
-  --model_args pretrained=$MODEL_NAME,dtype=bfloat16,max_length=2048,truncation=True,trust_remote_code=True \
+  --model_args pretrained=$MODEL_NAME,dtype=bfloat16,max_length=2048,truncation=True,trust_remote_code=True,normalize_log_probs=False, \
   --tasks "$TASK" \
   --batch_size 4\
   --output_path "$OUTPUT_PATH" \
