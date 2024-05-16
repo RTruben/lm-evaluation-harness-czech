@@ -1,5 +1,5 @@
 group: benczechmark_cermat_mc
-group_alias: Cermat tests
+group_alias: Cermat multichoice tests
 task:
   - group: benczechmark_czech_mc
     dataset_path: CZLC/cermat_czech_mc
