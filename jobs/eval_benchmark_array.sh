@@ -23,7 +23,6 @@ TASKS=(
     "benczechmark_propaganda_rusko"
     "benczechmark_sentiment" # TODO: soon will be split to multiple tasks, based on source (mall, fb, csfd)
     "benczechmark_grammarerrorcorrection"
-    "benczechmark_histcorpus"
     "benczechmark_cs_naturalquestions"
     "benczechmark_cs_sqad32"
     "benczechmark_cs_triviaQA"

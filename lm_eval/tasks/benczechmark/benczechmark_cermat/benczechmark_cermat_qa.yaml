@@ -1,5 +1,5 @@
 group: benczechmark_cermat_qa
-group_alias: Cermat tests
+group_alias: Cermat qa tests
 task:
   - group: benczechmark_czech_open
     dataset_path: CZLC/cermat_czech_open
