@@ -3,6 +3,7 @@
 
 :authors:     Martin Dočekal, Martin Fajčík
 """
+import json
 from typing import List, Tuple
 from typing import Optional
 
@@ -186,16 +187,6 @@ def rouge_raw_rl_high_f(predictions, references):
 def rouge_raw(predictions, references, select: Optional[str] = None):
     module = evaluate.load("CZLC/rouge_raw")
     return module.compute(predictions=predictions, references=references, select=select)
-
-
-def make_toy_dataset(dataset: datasets.Dataset):
-    """
-    Makes a toy dataset from given dataset. It means that the dataset will contain only 10 samples.
-
-    :param dataset: Dataset to make toy from.
-    """
-    return dataset.select(range(10))
-
 
 ###
 ### MC-AUROC metric

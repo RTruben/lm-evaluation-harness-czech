@@ -1,4 +1,4 @@
-dataset_path: CZLC/sumeczech-1.0
+dataset_path: CZLC/sumeczech_downsampled
 dataset_name:
 output_type: generate_until
 training_split: train
@@ -8,30 +8,6 @@ fewshot_split: train
 include: n_shot_yaml
 doc_to_target: abstract
 metric_list:
-  - metric: !function ../utils.rouge_raw_r1_low_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_r1_mid_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_r1_high_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_r2_low_f
-    higher_is_better: true
-    aggregation: mean
   - metric: !function ../utils.rouge_raw_r2_mid_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_r2_high_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_rl_low_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_rl_mid_f
-    higher_is_better: true
-    aggregation: mean
-  - metric: !function ../utils.rouge_raw_rl_high_f
     higher_is_better: true
     aggregation: mean

@@ -1,0 +1,36 @@
+group: benczechmark_sentiment_mall
+group_alias: Sentiment
+task:
+  - group: benczechmark_sentiment_mall_g
+    group_alias: Sentiment
+    task:
+      - task: benczechmark_sentiment_mall_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+        dataset_path: CZLC/mall_sentiment_balanced
+        description: "Dále je můj seznam textů. Dělím je na negativní, neutrální a pozitivní.\n"
+        doc_to_text: "{{query}} Toto shledávám jako:"
+      - task: benczechmark_sentiment_mall_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+        dataset_path: CZLC/mall_sentiment_balanced
+        description: "Následují příklady textů s negativním, neutrálním a pozitivním sentimentem.\n"
+        doc_to_text: "{{query}} Sentiment tohoto příkladu je:"
+      - task: benczechmark_sentiment_mall_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+        dataset_path: CZLC/mall_sentiment_balanced
+        description: "Rozhodni jestli je sentiment následujícího textu negativní, neutrální, nebo pozitivní. Odpověz negativní, neutrální, nebo pozitivní.\n"
+        doc_to_text: "{{query}} Rozhodnutí je:"
+      - task: benczechmark_sentiment_mall_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+        dataset_path: CZLC/mall_sentiment_balanced
+        description: "Proveď klasifikaci sentimentu do tříd: negativní, neutrální, nebo pozitivní.\n"
+        doc_to_text: "{{query}} Třída:"
+      - task: benczechmark_sentiment_mall_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
+        dataset_path: CZLC/mall_sentiment_balanced
+        description: "Příklady textů, které jsou negativní, neutrální, nebo pozitivní.\n"
+        doc_to_text: "{{query}} Sentiment:"
