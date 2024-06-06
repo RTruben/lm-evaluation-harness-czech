@@ -1,3 +1,4 @@
+
 group: benczechmark_umimeto_qa
 group_alias: Umimeto QA
 dataset_path: CZLC/umimeto-qa
@@ -12,7 +13,7 @@ task:
   - task: umimeto_biology_0
     task_alias: prompt-0
     description: "Jsi expert v biologii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_biloogy_1
+  - task: umimeto_biology_1
     task_alias: prompt-1
     description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
   - task: umimeto_biology_2

@@ -8,26 +8,26 @@ task:
       task_alias: prompt-0
       include: templates/summarization_template_yaml
       description: "Následuje text a jeho shrnutí.\n"
-      doc_to_text: "{{text}}\nShrnutí:"
+      doc_to_text: "{{text}}\nShrnutí: "
     - task: benczechmark_summarization_1
       task_alias: prompt-1
       include: templates/summarization_template_yaml
       description: "Psaní krátkého shrnutí textu.\n"
-      doc_to_text: "{{text}}\nShrnutí:"
+      doc_to_text: "{{text}}\nShrnutí: "
     - task: benczechmark_summarization_2
       task_alias: prompt-2
       include: templates/summarization_template_yaml
       description: "Příklady sumarizace textu.\n"
-      doc_to_text: "{{text}}\nSumarizace:"
+      doc_to_text: "{{text}}\nSumarizace: "
     - task: benczechmark_summarization_3
       task_alias: prompt-3
       include: templates/summarization_template_yaml
       description: "Přepis textu do TLDR verze.\n"
-      doc_to_text: "{{text}}\nTLDR:"
+      doc_to_text: "{{text}}\nTLDR: "
     - task: benczechmark_summarization_4
       task_alias: prompt-4
       include: templates/summarization_template_yaml
       description: "Shrň následující texty.\n"
-      doc_to_text: "{{text}}\nShrnutí:"
+      doc_to_text: "{{text}}\nShrnutí: "
 metadata:
   version: 1.0

@@ -8,63 +8,63 @@ task:
       - task: cermat_czech_open_0
         task_alias: prompt-0
         include: ../templates/qa/qa_template_yaml
-        description: "Jsi expert v Češtine. Předložím ti několik otázek a tvůj úkol bude odpovídat.\n\n"
+        description: "Jsi expert v Češtine. Předložím ti několik otázek a tvůj úkol bude odpovídat. V případě vícero odpovědí je oddělte pomocí ', '.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nOdpověď: "
 
       - task: cermat_czech_open_1
         task_alias: prompt-1
         include: ../templates/qa/qa_template_yaml
-        description: "Úkol: Odpovězte na následující otázky.\n\n"
+        description: "Úkol: Odpovězte na následující otázky. V případě více odpovědí je spojte pomocí ', '.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
 
       - task: cermat_czech_open_2
         task_alias: prompt-2
         include: ../templates/qa/qa_template_yaml
-        description: "Ukázkové úlohy ze zkoušky ČJ. Na dotaz odpovídejte pouze stručne.\n\n"
+        description: "Ukázkové úlohy ze zkoušky ČJ. Na dotaz odpovídejte pouze stručne. V případě více možných odpovědí je oddělte pomocí ', '.\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVaše odpověď: "
 
       - task: cermat_czech_open_3
         task_alias: prompt-3
         include: ../templates/qa/qa_template_yaml
-        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku.\nZadání:\n\n"
+        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku.\nV případě seznamu odpovědí je oddělte pomocí ', '. Zadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybraná odpověď: "
 
       - task: cermat_czech_open_4
         task_alias: prompt-4
         include: ../templates/qa/qa_template_yaml
-        description: "Správná řešení úloh z českého jazyka.\n\n"
+        description: "Správná řešení úloh z českého jazyka. Více odpovědí je oddeleno pomoci ', '.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "
 
-  - group: benczechmark_czmath_open
+  - group: benczechmark_cermat_czmath_open
     dataset_path: CZLC/cermat_math_open
     fewshot_split: test
     task:
       - task: cermat_czmath_open_0
         task_alias: prompt-0
         include: ../templates/qa/qa_template_yaml
-        description: "Jsi expert v matematice. Předložím ti několik otázek a tvůj úkol bude odpovídat.\n\n"
+        description: "Jsi expert v matematice. Předložím ti několik otázek a tvůj úkol bude odpovídat. V případě vícero odpovědí je oddělte pomocí ', '.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nOdpověď: "
 
       - task: cermat_czmath_open_1
         task_alias: prompt-1
         include: ../templates/qa/qa_template_yaml
-        description: "Úkol: Nalezněte odpověď na následující slovní úlohy.\n\n"
+        description: "Úkol: Nalezněte odpověď na následující slovní úlohy. V případě více odpovědí je spojte pomocí ', '.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
 
       - task: cermat_czmath_open_2
         task_alias: prompt-2
         include: ../templates/qa/qa_template_yaml
-        description: "Ukázkové úlohy ze zkoušky z matematiky. Na dotaz odpovídejte pouze stručne a jasne.\n\n"
+        description: "Ukázkové úlohy ze zkoušky z matematiky. Na dotaz odpovídejte pouze stručne a jasne. V případě více možných odpovědí je oddělte pomocí ', '.\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVaše odpověď: "
 
       - task: cermat_czmath_open_3
         task_alias: prompt-3
         include: ../templates/qa/qa_template_yaml
-        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku z matematiky.\nZadání:\n\n"
+        description: "Maturitní zkouška.\n\nInstrukce: Výstižně a krátce zodpovězte zadanou otázku z matematiky.\nV případě seznamu odpovědí je oddělte pomocí ', '. Zadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybraná odpověď: "
 
       - task: cermat_czmath_open_4
         task_alias: prompt-4
         include: ../templates/qa/qa_template_yaml
-        description: "Správná řešení úloh z matematiky.\n\n"
+        description: "Správná řešení úloh z matematiky. Více odpovědí je oddeleno pomoci ', '.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "

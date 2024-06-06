@@ -20,7 +20,7 @@ task:
   task_alias: prompt-3
   include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml
   description: "Analýza prezentace Ruska: Jaká je prezentace Ruska? Vyberte z možností hrdina, pozitivní příklad, neutrální, negativní příklad, oběť.\n"
-  doc_to_text: "{{query}}\n Možnosti: hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Výber:"
+  doc_to_text: "{{query}}\n Možnosti: hrdina, pozitivní příklad, neutrální, negativní příklad, oběť. Výber: "
 - task: propaganda_rusko_4
   task_alias: prompt-4
   include: ../templates/multichoice/multi_choice_template_wtrain_acc_f1_aa_yaml

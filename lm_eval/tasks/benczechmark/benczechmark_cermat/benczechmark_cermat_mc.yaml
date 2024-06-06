@@ -1,7 +1,7 @@
 group: benczechmark_cermat_mc
 group_alias: Cermat multichoice tests
 task:
-  - group: benczechmark_czech_mc
+  - group: benczechmark_cermat_czech_mc
     dataset_path: CZLC/cermat_czech_mc
     fewshot_split: test
     task:
@@ -35,41 +35,41 @@ task:
         description: "Správná řešení úloh z českého jazyka.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nMožnosti: {{'\n'.join(choices)}}\nSprávné řešení: "
 
-  - group: benczechmark_czech_tf
+  - group: benczechmark_cermat_czech_tf
     dataset_path: CZLC/cermat_czech_tf
     fewshot_split: test
     task:
       - task: cermat_czech_tf_0
         task_alias: prompt-0
-        include: ../templates/multichoice/multi_choice_cermat_template_yaml
+        include: ../templates/multichoice/multi_choice_template_acc_f1_aa_yaml
         description: "Jsi expert v Češtine. Předložím ti několik otázek a tvůj úkol bude odpovídat ANO/NE.\n\n"
         doc_to_text: "{{('Kontext: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVybírám: "
 
       - task: cermat_czech_tf_1
         task_alias: prompt-1
-        include: ../templates/multichoice/multi_choice_cermat_template_yaml
+        include: ../templates/multichoice/multi_choice_template_acc_f1_aa_yaml
         description: "Úkol: Vyberte odpověď ANO/NE na následující otázky.\n\n"
         doc_to_text: "{{('Text: '+ context+' ') if context else ''}}Otázka: {{query}}\nOdpověď: "
 
       - task: cermat_czech_tf_2
         task_alias: prompt-2
-        include: ../templates/multichoice/multi_choice_cermat_template_yaml
+        include: ../templates/multichoice/multi_choice_template_acc_f1_aa_yaml
         description: "Ukázkové úlohy ze zkoušky ČJ. Odpovídejte pouze NE/ANO:\n\n"
         doc_to_text: "{{('Ukázka: '+ context+' ') if context else ''}}Zodpovězte: {{query}}\nVybraná odpověď: "
 
       - task: cermat_czech_tf_3
         task_alias: prompt-3
-        include: ../templates/multichoice/multi_choice_cermat_template_yaml
+        include: ../templates/multichoice/multi_choice_template_acc_f1_aa_yaml
         description: "Maturitní zkouška.\n\nInstrukce: Vyberte správnou NE/ANO pro zadanou otázku. \nZadání:\n\n"
         doc_to_text: "{{('Příklad: '+ context+' ') if context else ''}}Dotaz: {{query}}\nVaše odpověď: "
 
       - task: cermat_czech_tf_4
         task_alias: prompt-4
-        include: ../templates/multichoice/multi_choice_cermat_template_yaml
+        include: ../templates/multichoice/multi_choice_template_acc_f1_aa_yaml
         description: "Správná řešení úloh z českého jazyka.\n\n"
         doc_to_text: "{{('Zadání: '+ context+' ') if context else ''}}Dotaz: {{query}}\nSprávné řešení: "
 
-  - group: benczechmark_czmath_mc
+  - group: benczechmark_cermat_czmath_mc
     dataset_path: CZLC/cermat_math_mc
     fewshot_split: test
     task:

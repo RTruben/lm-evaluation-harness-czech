@@ -5,29 +5,29 @@ task:
     task_alias: prompt-0
     dataset_path: CZLC/cs_triviaqa
     description: "Odpovězte na tyto otázky:\n\n"
-    doc_to_text: "Otázka: {{question}}\nOdpověď:"
+    doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_1
     task_alias: prompt-1
     dataset_path: CZLC/cs_triviaqa
     description: "Zodpovězte následující otázky:\n\n"
-    doc_to_text: "Dotaz: {{question}}\nSprávná odpověď:"
+    doc_to_text: "Dotaz: {{question}}\nSprávná odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_2
     task_alias: prompt-2
     dataset_path: CZLC/cs_triviaqa
     description: "Kvíz:\n\n"
-    doc_to_text: "Otázka: {{question}}\nOdpověď:"
+    doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_3
     task_alias: prompt-3
     dataset_path: CZLC/cs_triviaqa
     description: "Najděte odpovědi na tato dotazy:\n\n"
-    doc_to_text: "Dotaz: {{question}}?\nVaše odpověď:"
+    doc_to_text: "Dotaz: {{question}}?\nVaše odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_4
     task_alias: prompt-4
     dataset_path: CZLC/cs_triviaqa
     description: "Úloha: Najděte odpovědi na tato dotazy:\n\n"
-    doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď:"
+    doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď: "
     include: templates/qa/qa_template_yaml
