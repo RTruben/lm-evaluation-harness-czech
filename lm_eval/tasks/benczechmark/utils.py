@@ -3,11 +3,9 @@
 
 :authors:     Martin Dočekal, Martin Fajčík
 """
-import json
 from typing import List, Tuple
 from typing import Optional
 
-import datasets
 import evaluate
 import numpy
 from scipy.special import softmax
@@ -288,38 +286,6 @@ class MultipleChoiceTask(ConfigurableTask):
             "acc": mean,
         }
 
-
-def process_docs_cs_nec(dataset):
-    def _process_dataset(dataset):
-        """
-        text: source sentence
-        entities: list of selected entities. Each entity contains:
-        category_id: string identifier of the entity category
-        category_str: human-friendly category name in Czech (verbalizer)
-        start: index on which the entity starts in the source sentence
-        end: index on which the entity ends in the source sentence
-        content: entity content, it was created as text[start:end]
-        entity_id: unique entity string identifier
-        parent_id: If entity was selected inside another entity (e.g. house number inside address), parent_id is the identifier of the parent entity. None otherwise.
-
-        -> PROCESS INTO ->
-        label
-        answers
-        text
-        """
-        r = []
-        for doc in dataset:
-            text = doc["text"]
-            for entity in doc["entities"]:
-                r.append({
-                    "label": entity["category_str"],
-                    "answers": [entity["content"]],
-                    "text": text,
-                })
-        return r
-
-    return datasets.arrow_dataset.Dataset.from_list(_process_dataset(dataset))
-
 # MMLU multi-choice style (A....Z)
 ANSWER_LETTERS = [chr(ord('A') + i) for i in range(ord('Z') - ord('A') + 1)]
 
@@ -346,7 +312,7 @@ def mmlu_get_question_text(dataset):
     dataset_answer_keys = mmlu_get_choice(dataset)
     question_text = dataset['question'].strip()
     choices_text = "\n".join(f"{c}. {dataset[c]}" for c in dataset_answer_keys)
-    return f"{question_text}\n{choices_text}\nOdpověď:"
+    return f"{question_text}\n{choices_text}\nOdpověď: "
 
 def mmlu_get_question_text_umimeto(dataset):
     """
@@ -356,4 +322,4 @@ def mmlu_get_question_text_umimeto(dataset):
     question_text = dataset['question'].strip()
     choices_text = "\n".join(f"{c}. {dataset[c]}" for c in dataset_answer_keys)
     topic = dataset["topic"]
-    return f"{topic}: {question_text}\n{choices_text}\nOdpověď:"
+    return f"{topic}: {question_text}\n{choices_text}\nOdpověď: "
