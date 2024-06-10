@@ -1,0 +1,31 @@
+group: benczechmark_history_ir
+group_alias: History Retrieval
+dataset_path: CZLC/history_retrieval
+include: templates/multichoice/multi_choice_historyir_template_yaml
+fewshot_split: train
+task:
+  - task: history_ir_0
+    task_alias: prompt-0
+    include: templates/multichoice/multi_choice_historyir_template_yaml
+    description: "Jsi výhledávač-reranker. Předložím ti dotaz a nekolik možností. Tvůj úkol je vybrat nejlepší možnost (z možností A až D).\n\n"
+    doc_to_text: "Dotaz: {{query}}\nInstrukce: Urči, který dokument je {{'nejrelevantnější' if task=='1pos_3neg' else 'irelevantní'}}.\nDokumenty: {% for doc in docs %}{{ 'ABCD'[loop.index0] }}) {{ doc }}{% if not loop.last %}\n{% endif %}{% endfor %}\n Vybírám: "
+  - task: history_ir_1
+    task_alias: prompt-1
+    include: templates/multichoice/multi_choice_historyir_template_yaml
+    description: "Urči relevanci textů na základě dotazu s možnostmi od A do D.\n\n"
+    doc_to_text: "Který dokument je {{'najvíc relevantní' if task=='1pos_3neg' else 'nedůležitý'}} pro dotaz?\nDotaz: {{query}}\nDokumenty: {% for doc in docs %}{{ 'ABCD'[loop.index0] }}) {{ doc }}{% if not loop.last %}\n{% endif %}{% endfor %}\n Odověď: "
+  - task: history_ir_2
+    task_alias: prompt-2
+    include: templates/multichoice/multi_choice_historyir_template_yaml
+    description: "CAPTCHA: Zvol odpověď (A až D) podle relevance.\n\n"
+    doc_to_text: "Která pasáž z výberu {% for doc in docs %}{{ 'ABCD'[loop.index0] }}) {{ doc }}{% if not loop.last %}\n{% endif %}{% endfor %}\nje  {{'nejrelevantnější' if task=='1pos_3neg' else 'irelevantní'}} pro dotaz: {{query}}\nOdpověď: "
+  - task: history_ir_3
+    task_alias: prompt-3
+    include: templates/multichoice/multi_choice_historyir_template_yaml
+    description: "Vyber nejlepší možnost (A až D) na základě otázky.\n\n"
+    doc_to_text: "Otázka: {{query}}\nÚloha: Urči, který dokument z možností je {{'nejrelevantnější' if task=='1pos_3neg' else 'irelevantní'}}.\nDokumenty: {% for doc in docs %}{{ 'ABCD'[loop.index0] }}) {{ doc }}{% if not loop.last %}\n{% endif %}{% endfor %}\nJe to dokument "
+  - task: history_ir_4
+    task_alias: prompt-4
+    include: templates/multichoice/multi_choice_historyir_template_yaml
+    description: "Subreddit: Pomoc, potřebuji určiť relevanci příspevků na základě dotazu z možnostmi A až D.\n\n"
+    doc_to_text: "Příspěvky:\n{% for doc in docs %}{{ 'ABCD'[loop.index0] }}. {{ doc }}{% if not loop.last %}\n---\n{% endif %}{% endfor %}\nOtázka: {{query}}\nMožnost (A-D): "
