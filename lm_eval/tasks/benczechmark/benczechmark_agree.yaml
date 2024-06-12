@@ -1,0 +1,40 @@
+group: benczechmark_agree_group
+group_alias: Benchmark Agree
+task:
+- task: benchmark_agree_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "V zadané větě je jedno slovo nahrazeno výrazem '____'. Z nabídnutých možností vyber slovo, po jehož doplnění bude zadaná věta gramaticky správná.
+    Odpovídej vždy pouze vhodným slovem bez dalšího komentáře."
+  doc_to_text: "Doplň správně chybějící slovo do této věty:\nVěta: {{sentence}}\nMožnosti:\n1. {{choices[0]}}\n2. {{choices[1]}}\n3. {{choices[2]}}\n4. {{choices[3]}}\n5. {{choices[4]}}\nOdpověď:\n"
+  doc_to_target: answer_idx
+  doc_to_choice: choices
+- task: benchmark_agree_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "V zadané větě je jedno slovo nahrazeno výrazem '____'. Vyber z nabízených možností slovo, které doplní větu tak, aby byla gramaticky správná. Vždy odpovídej pouze vhodným slovem bez dalších komentářů."
+  doc_to_text: "Doplň správně chybějící slovo do této věty:\nVěta: {{sentence}}\nMožnosti:\n1. {{choices[0]}}\n2. {{choices[1]}}\n3. {{choices[2]}}\n4. {{choices[3]}}\n5. {{choices[4]}}\nOdpověď:\n"
+  doc_to_target: answer_idx
+  doc_to_choice: choices
+- task: benchmark_agree_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "V zadané větě je jedno slovo nahrazeno výrazem '____'. Z nabídnutých možností vyber slovo, které po doplnění udělá větu gramaticky správnou. Vždy odpovídej pouze vhodným slovem bez dalších komentářů."
+  doc_to_text: "Doplň správně chybějící slovo do této věty:\nVěta: {{sentence}}\nMožnosti:\n1. {{choices[0]}}\n2. {{choices[1]}}\n3. {{choices[2]}}\n4. {{choices[3]}}\n5. {{choices[4]}}\nOdpověď:\n"
+  doc_to_target: answer_idx
+  doc_to_choice: choices
+- task: benchmark_agree_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "V zadané větě je jedno slovo nahrazeno výrazem '____'. Z nabídnutých možností vyber slovo, které po doplnění udělá větu gramaticky správnou. Vždy odpověz pouze vhodným slovem bez dalších komentářů."
+  doc_to_text: "Doplň správně chybějící slovo do této věty:\nVěta: {{sentence}}\nMožnosti:\n1. {{choices[0]}}\n2. {{choices[1]}}\n3. {{choices[2]}}\n4. {{choices[3]}}\n5. {{choices[4]}}\nOdpověď:\n"
+  doc_to_target: answer_idx
+  doc_to_choice: choices
+- task: benchmark_agree_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "V zadané větě je jedno slovo nahrazeno výrazem '____'. Z nabízených možností vyber slovo, které po doplnění udělá větu gramaticky správnou. Odpovídej vždy pouze vhodným slovem bez dalších komentářů."
+  doc_to_text: "Doplň správně chybějící slovo do této věty:\nVěta: {{sentence}}\nMožnosti:\n1. {{choices[0]}}\n2. {{choices[1]}}\n3. {{choices[2]}}\n4. {{choices[3]}}\n5. {{choices[4]}}\nOdpověď:\n"
+  doc_to_target: answer_idx
+  doc_to_choice: choices
+dataset_path: davidadamczyk/czechbench_agree

@@ -1,0 +1,40 @@
+group: benczechmark_belebele_group
+group_alias: Benchmark Belebele
+task:
+- task: benchmark_belebele_0
+  task_alias: prompt-0
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "Zodpověz zadanou otázku výběrem jedné z nabízených možností. Odpovídej na základě poskytnutého kontextu.
+    Zvolenou odpověď neopakuj. Vždy odpovídej pouze číslem odpovídajícím vybrané odpovědi bez dalšího komentáře."
+  doc_to_text: "Vygeneruj klasifikaci pro následující příklad:\nText:\n 1. {{mc_answer1}}\n 2. {{mc_answer2}}\n 3. {{mc_answer3}}\n 4. {{mc_answer4}}\nOdpověď: "
+  doc_to_target: !function utils.get_target_belebele
+  doc_to_choice: !function utils.get_choices_belebele
+- task: benchmark_belebele_1
+  task_alias: prompt-1
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "Odpověz na zadanou otázku výběrem jedné z nabízených možností. Na základě poskytnutého kontextu odpovídej pouze číslem odpovídajícím vybrané odpovědi bez dalšího komentáře."
+  doc_to_text: "Vygeneruj klasifikaci pro následující příklad:\nText:\n 1. {{mc_answer1}}\n 2. {{mc_answer2}}\n 3. {{mc_answer3}}\n 4. {{mc_answer4}}\nOdpověď: "
+  doc_to_target: !function utils.get_target_belebele
+  doc_to_choice: !function utils.get_choices_belebele
+- task: benchmark_belebele_2
+  task_alias: prompt-2
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "Odpověz na zadanou otázku výběrem jedné z nabízených možností na základě poskytnutého kontextu. Neopakuj zvolenou odpověď. Vždy odpovídej pouze číslem vybrané odpovědi bez dalších komentářů."
+  doc_to_text: "Vygeneruj klasifikaci pro následující příklad:\nText:\n 1. {{mc_answer1}}\n 2. {{mc_answer2}}\n 3. {{mc_answer3}}\n 4. {{mc_answer4}}\nOdpověď: "
+  doc_to_target: !function utils.get_target_belebele
+  doc_to_choice: !function utils.get_choices_belebele
+- task: benchmark_belebele_3
+  task_alias: prompt-3
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "Odpověz na zadanou otázku výběrem jedné z nabízených možností na základě poskytnutého kontextu. Neopakuj vybranou odpověď. Vždy odpovídej pouze číslem vybrané možnosti bez dalších komentářů."
+  doc_to_text: "Vygeneruj klasifikaci pro následující příklad:\nText:\n 1. {{mc_answer1}}\n 2. {{mc_answer2}}\n 3. {{mc_answer3}}\n 4. {{mc_answer4}}\nOdpověď: "
+  doc_to_target: !function utils.get_target_belebele
+  doc_to_choice: !function utils.get_choices_belebele
+- task: benchmark_belebele_4
+  task_alias: prompt-4
+  include: templates/multichoice/multi_choice_czechbench_acc_f1_aa_yaml
+  description: "Odpověz na zadanou otázku výběrem jedné z nabízených možností podle poskytnutého kontextu. Neopakuj vybranou odpověď. Vždy odpovídej pouze číslem odpovídající vybrané možnosti bez dalších komentářů."
+  doc_to_text: "Vygeneruj klasifikaci pro následující příklad:\nText:\n 1. {{mc_answer1}}\n 2. {{mc_answer2}}\n 3. {{mc_answer3}}\n 4. {{mc_answer4}}\nOdpověď: "
+  doc_to_target: !function utils.get_target_belebele
+  doc_to_choice: !function utils.get_choices_belebele
+dataset_path: davidadamczyk/czechbench_belebele
