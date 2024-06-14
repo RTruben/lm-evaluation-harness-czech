@@ -1,0 +1,13 @@
+task: benczechmark_spoken
+task_alias: Spoken Corpus
+dataset_path: CZLC/CNC_oral_ortofon
+output_type: loglikelihood_rolling
+test_split: test
+doc_to_text: "Mluvené slovo: "
+doc_to_target: "{{text}}"
+metric_list:
+  - metric: word_perplexity
+    aggregation: weighted_perplexity
+    higher_is_better: false
+metadata:
+  version: 1.0
