@@ -116,6 +116,26 @@ def ter(items):
     return sacrebleu.corpus_ter(preds, refs).score
 
 
+@register_aggregation("brier_score")
+def brier_score(items):  # This is a passthrough function
+    gold, predictions = list(zip(*items))
+    bs, num_class = np.array(predictions).shape
+
+    gold = list(gold)
+    gold_one_hot = np.eye(num_class)[gold]
+    return np.mean(np.sum((predictions - gold_one_hot) ** 2, axis=1))
+
+
+@register_metric(
+    metric="brier_score",
+    higher_is_better=False,
+    output_type=["multiple_choice"],
+    aggregation="brier_score",
+)
+def brier_score_fn(items):  # This is a passthrough function
+    return items
+
+
 @register_metric(
     metric="acc",
     higher_is_better=True,
@@ -409,7 +429,11 @@ def bootstrap_stderr(f, xs, iters):
     return sample_stddev(res)
 
 
-def stderr_for_metric(metric, bootstrap_iters):
+def stderr_for_metric(metric, bootstrap_iters: int):
+    if bootstrap_iters <= 0:
+        # return no function (don't compute stderr) if bootstrap iters = 0
+        return None
+
     bootstrappable = [
         median,
         matthews_corrcoef,

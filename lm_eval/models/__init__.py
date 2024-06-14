@@ -1,13 +1,19 @@
-from . import huggingface
-from . import openai_completions
-from . import textsynth
-from . import dummy
-from . import anthropic_llms
-from . import gguf
-from . import vllm_causallms
-from . import mamba_lm
-from . import optimum_lm
-from . import neuron_optimum
+from . import (
+    anthropic_llms,
+    dummy,
+    gguf,
+    huggingface,
+    mamba_lm,
+    nemo_lm,
+    neuralmagic,
+    neuron_optimum,
+    openai_completions,
+    optimum_lm,
+    textsynth,
+    vllm_causallms,
+)
+
+
 # TODO: implement __all__
 
 
