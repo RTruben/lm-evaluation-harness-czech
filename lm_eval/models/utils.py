@@ -141,9 +141,9 @@ class Grouper:
 
 
 def pad_and_concat(
-    max_length: int,
-    tensors: List[torch.Tensor],
-    padding_side: Literal["right", "left"] = "right",
+        max_length: int,
+        tensors: List[torch.Tensor],
+        padding_side: Literal["right", "left"] = "right",
 ):
     """
     Method for padding a list of tensors given the maximum tensor
@@ -151,7 +151,7 @@ def pad_and_concat(
     seq2seq models.
     """
     assert (
-        padding_side == "left" or padding_side == "right"
+            padding_side == "left" or padding_side == "right"
     ), f"Unrecognized padding type: '{padding_side}' not 'left' or 'right'"
 
     for i, tensor in enumerate(tensors):
@@ -210,11 +210,11 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
     """Criteria to stop on the specified multi-token sequence."""
 
     def __init__(
-        self,
-        sequence: str,
-        tokenizer: transformers.PreTrainedTokenizer,
-        initial_decoder_input_length: int,
-        batch_size: int,
+            self,
+            sequence: str,
+            tokenizer: transformers.PreTrainedTokenizer,
+            initial_decoder_input_length: int,
+            batch_size: int,
     ) -> None:
         self.initial_decoder_input_length = initial_decoder_input_length
         self.done_tracker = [False] * batch_size
@@ -234,9 +234,9 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
 
     def __call__(self, input_ids, scores, **kwargs) -> bool:
         # For efficiency, we compare the last n tokens where n is the number of tokens in the stop_sequence
-        lookback_ids_batch = input_ids[:, self.initial_decoder_input_length :]
+        lookback_ids_batch = input_ids[:, self.initial_decoder_input_length:]
 
-        lookback_ids_batch = lookback_ids_batch[:, -self.sequence_id_len :]
+        lookback_ids_batch = lookback_ids_batch[:, -self.sequence_id_len:]
 
         lookback_tokens_batch = self.tokenizer.batch_decode(lookback_ids_batch)
 
@@ -247,10 +247,10 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
 
 
 def stop_sequences_criteria(
-    tokenizer: transformers.PreTrainedTokenizer,
-    stop_sequences: List[str],
-    initial_decoder_input_length: int,
-    batch_size: int,
+        tokenizer: transformers.PreTrainedTokenizer,
+        stop_sequences: List[str],
+        initial_decoder_input_length: int,
+        batch_size: int,
 ) -> transformers.StoppingCriteriaList:
     return transformers.StoppingCriteriaList(
         [
@@ -305,11 +305,11 @@ def undistribute(iterable):
 
 
 def retry_on_specific_exceptions(
-    on_exceptions: List[Type[Exception]],
-    max_retries: Optional[int] = None,
-    backoff_time: float = 3.0,
-    backoff_multiplier: float = 1.5,
-    on_exception_callback: Optional[Callable[[Exception, float], Any]] = None,
+        on_exceptions: List[Type[Exception]],
+        max_retries: Optional[int] = None,
+        backoff_time: float = 3.0,
+        backoff_multiplier: float = 1.5,
+        on_exception_callback: Optional[Callable[[Exception, float], Any]] = None,
 ):
     """Retry on an LLM Provider's rate limit error with exponential backoff
     For example, to use for OpenAI, do the following:
@@ -358,11 +358,11 @@ class Collator:
     """
 
     def __init__(
-        self,
-        arr: List,
-        sort_fn: Callable = lambda x: x,
-        group_fn: Callable = lambda x: x[1],
-        group_by: Union[Literal["gen_kwargs", "contexts"], None] = None,
+            self,
+            arr: List,
+            sort_fn: Callable = lambda x: x,
+            group_fn: Callable = lambda x: x[1],
+            group_by: Union[Literal["gen_kwargs", "contexts"], None] = None,
     ) -> None:
         self._group_by = group_by
         # 0 indices are enumerated indices. Apply functions to original arr.
@@ -413,8 +413,8 @@ class Collator:
         """
         if self._group_by == "gen_kwargs":
             for (
-                key,
-                values,
+                    key,
+                    values,
             ) in self._arr_with_indices.items():  # type: ignore
                 values = self._reorder(values)
                 batch = self.get_chunks(values, n=n, fn=batch_fn)
@@ -432,11 +432,11 @@ class Collator:
             yield from batch
 
     def get_cache(
-        self,
-        req_str: Tuple[str, str] = None,
-        cxt_toks: List[int] = None,
-        cont_toks: List[int] = None,
-        logits: torch.Tensor = None,
+            self,
+            req_str: Tuple[str, str] = None,
+            cxt_toks: List[int] = None,
+            cont_toks: List[int] = None,
+            logits: torch.Tensor = None,
     ) -> Iterator[Tuple[Tuple[str, str], List[int], torch.Tensor]]:
         """
         Retrieves cached single-token continuations and their associated arguments, updating indices as necessary.
@@ -535,9 +535,9 @@ class Collator:
 
     @staticmethod
     def group(
-        arr: Iterable,
-        fn: Callable,
-        group_by: Literal["gen_kwargs", "contexts"] = "gen_kwargs",
+            arr: Iterable,
+            fn: Callable,
+            group_by: Literal["gen_kwargs", "contexts"] = "gen_kwargs",
     ) -> dict:
         """
         Groups elements of an iterable based on a provided function.
@@ -627,6 +627,7 @@ def truncate_token_segments_from_left(segments: List[List[int]], max_length: int
     Returns:
     List[List[int]]: The list of token segments truncated to the specified maximum length.
     """
+    assert max_length > 0, "max_length must be greater than 0"
     new_segmented_tokens = []
     new_length = 0
     for segment in reversed(segments):
@@ -643,8 +644,37 @@ def truncate_token_segments_from_left(segments: List[List[int]], max_length: int
     return list(reversed(new_segmented_tokens))
 
 
+def truncate_token_segments_from_right(segments: List[List[int]], max_length: int) -> List[List[int]]:
+    """
+    Truncates a list of token segments from the right to the specified maximum length.
+
+    Parameters:
+    - segments (List[List[int]]): The list of token segments to be truncated.
+    - max_length (int): The maximum length of the segments.
+
+    Returns:
+    List[List[int]]: The list of token segments truncated to the specified maximum length.
+    """
+    assert max_length > 0, "max_length must be greater than 0"
+    new_segmented_tokens = []
+    new_length = 0
+    for segment in segments:
+        new_length += len(segment)
+        if new_length <= max_length:  # we can add the whole segment
+            new_segmented_tokens.append(segment)
+        elif new_length - len(segment) < max_length:  # we can add part of the segment
+            rest_of_space = max_length - (new_length - len(segment))
+            new_segmented_tokens.append(segment[:rest_of_space])
+            break
+        else:
+            break
+
+    return new_segmented_tokens
+
+
 def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizerFast, max_length: int,
-                         truncate_strategy: Optional[str], add_special_tokens=False) -> Tuple[List[int], List[List[int]], Optional[List[str]]]:
+                         truncate_strategy: Optional[str], add_special_tokens=False) -> Tuple[
+    List[int], List[List[int]], Optional[List[str]]]:
     """
     Tokenizes a string and that splits it into a segments. It is using offsets mapping thus it is only compatible
     with fast tokenizers.
@@ -669,6 +699,16 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
         is a list of segment labels.
 
     """
+    # Debugging suite: repeat last segment N times
+    N = 3000
+    long_continuation = string.segments[-1] * N  # super long continuation
+    #long_desc = string.segments[0] * N  # super long description
+    short_desc = string.segments[0]   # super long description
+    new_string = SegmentedString([short_desc] + list(string.segments[1:-1]) + [long_continuation],
+                                 ['description'] + list(string.labels[1:-1]) + ['target_cont'])
+    string = new_string
+    # *--- dbg
+
     encoding = tokenizer(
         string,
         add_special_tokens=add_special_tokens,
@@ -685,18 +725,28 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
 
     segment_labels = [string.labels[segment_offset]] if string.labels else None
 
+    # collect tokens for each segment, tokens with start >= length of the segment are in the next segment
     for token, tok_offsets in zip(encoding, token_offsets):
-        if tok_offsets[0] >= offset:
-            segment_offset += 1
-            offset += len(string.segments[segment_offset])
+        if tok_offsets[0] >= offset:  # if current token's start offset is greater than the current segment's offset
+            segment_offset += 1  # move to the next (new) segment
+            offset += len(
+                string.segments[segment_offset])  # add char offset corresponding to the length of the new segment
 
             segmented_tokens.append([])
             if segment_labels is not None:
                 segment_labels.append(string.labels[segment_offset])
         segmented_tokens[-1].append(token)
+    # the last segmment might be placed into delimiter, make it cont instead
+    if segment_labels is not None and segment_labels[-1] == "target_delimiter":
+        segment_labels[-1] = "target_cont"
 
     if len(encoding) > max_length:
+        # TODO: MF: How will this behave for chat models?
+        # TODO: MF: How will this behave with system prompt?
         if truncate_strategy == "leave_description":
+            # prefix must have at least 20% of the tokens
+            min_prefix_length = max_length // 5
+
             try:
                 desc_pos = string.labels.index("description")
             except ValueError:
@@ -704,20 +754,107 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
 
             if desc_pos == 0:
                 # we take everything before and the description itself, then we will truncate the rest
-                desc_tokens = encoding[:sum(len(x) for x in segmented_tokens[:desc_pos + 1])]
+                desc_end_idx = sum(len(x) for x in segmented_tokens[:desc_pos + 1])
+                desc_tokens = encoding[:desc_end_idx]
+                # compute size of
                 if len(desc_tokens) > max_length:
-                    encoding = encoding[-max_length:]
-                    segmented_tokens = truncate_token_segments_from_left(segmented_tokens, max_length)
-                    segment_labels = segment_labels[-len(segmented_tokens):]
-                else:
-                    encoding = desc_tokens + encoding[-(max_length - len(desc_tokens)):]
-                    truncated_rest = truncate_token_segments_from_left(segmented_tokens[desc_pos + 1:], max_length - len(desc_tokens))
-                    segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
-                    segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
-        else:
-            encoding = encoding[-max_length:]
-            segmented_tokens = truncate_token_segments_from_left(segmented_tokens, max_length)
-            if segment_labels is not None:
-                segment_labels = segment_labels[-len(segmented_tokens):]
+                    # if the description itself is too long, we will just drop it and shout warning
+                    eval_logger.warning("Description is too long, it will be truncated!")
+                    proposed_encoding = encoding[-max_length:]
+                    proposed_segmented_tokens = truncate_token_segments_from_left(segmented_tokens, max_length)
+                    proposed_segment_labels = segment_labels[-len(proposed_segmented_tokens):]
+                    # check if prefix is there
+                    if 'target_text' not in proposed_segment_labels:
+                        # add the target text into prefix (at least)
+                        # if prefix is missing
 
+                        # prefix
+                        # find position of target_text
+                        target_prefix_positions = []
+                        for i, x in enumerate(segment_labels):
+                            if x in ['target_text']:
+                                target_prefix_positions.append(i)
+                            # only consider last delimiter
+                            if x in ['target_delimiter'] and len(target_prefix_positions) > 0:
+                                target_prefix_positions.append(i)
+                        target_prefix_tokens = [segmented_tokens[i] for i in target_prefix_positions]
+                        target_prefix_labels = [segment_labels[i] for i in target_prefix_positions]
+
+                        target_suffix_positions = [i for i, x in enumerate(segment_labels) if x == 'target_cont']
+                        target_suffix_tokens = [segmented_tokens[i] for i in target_suffix_positions]
+                        target_suffix_labels = [segment_labels[i] for i in target_suffix_positions]
+
+                        # truncate  suffix from right
+                        truncated_segments_suffix = truncate_token_segments_from_right(target_suffix_tokens,
+                                                                                       max_length - min_prefix_length)
+                        # truncate target text frm left
+                        truncated_segments_prefix = truncate_token_segments_from_left(target_prefix_tokens,
+                                                                                      min_prefix_length)
+                        #  get fixed encoding
+                        encoding = ([t for tokens in truncated_segments_prefix for t in tokens] +
+                                    [t for tokens in truncated_segments_suffix for t in tokens])
+                        # get fixed segmented tokens
+                        segmented_tokens = truncated_segments_prefix + truncated_segments_suffix
+                        # get fixed segment labels
+                        segment_labels = target_prefix_labels[-len(truncated_segments_prefix):] + target_suffix_labels[:len(truncated_segments_suffix)]
+                        assert len(segment_labels) == len(segmented_tokens)
+                    else:
+                        encoding = proposed_encoding
+                        segmented_tokens = proposed_segmented_tokens
+                        segment_labels = proposed_segment_labels
+                else:
+                    proposed_encoding = desc_tokens + encoding[desc_end_idx:][-(max_length - len(desc_tokens)):]
+                    truncated_rest = truncate_token_segments_from_left(segmented_tokens[desc_pos + 1:],
+                                                                       max_length - len(desc_tokens))
+                    proposed_segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
+                    proposed_segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
+                    if 'target_text' not in proposed_segment_labels:
+                        # similar as branch above, but this one also retains the description
+                        # if prefix is missing
+                        # find position of target_text
+                        target_prefix_positions = []
+                        for i, x in enumerate(segment_labels):
+                            if x in ['target_text']:
+                                target_prefix_positions.append(i)
+                            # only consider last delimiter
+                            if x in ['target_delimiter'] and len(target_prefix_positions) > 0:
+                                target_prefix_positions.append(i)
+                        target_prefix_tokens = [segmented_tokens[i] for i in target_prefix_positions]
+                        target_prefix_labels = [segment_labels[i] for i in target_prefix_positions]
+
+                        target_suffix_positions = [i for i, x in enumerate(segment_labels) if x == 'target_cont']
+                        target_suffix_tokens = [segmented_tokens[i] for i in target_suffix_positions]
+                        target_suffix_labels = [segment_labels[i] for i in target_suffix_positions]
+
+                        # truncate  suffix from right
+                        truncated_segments_suffix = truncate_token_segments_from_right(target_suffix_tokens,
+                                                                                       max_length - len(
+                                                                                           desc_tokens) - min_prefix_length)
+                        # truncate target text frm left
+                        truncated_segments_prefix = truncate_token_segments_from_left(target_prefix_tokens,
+                                                                                      min_prefix_length - len(
+                                                                                          desc_tokens))
+                        #  get fixed encoding
+                        encoding = desc_tokens + ([t for tokens in truncated_segments_prefix for t in tokens] +
+                                                  [t for tokens in truncated_segments_suffix for t in tokens])
+                        # get fixed segmented tokens
+                        segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_segments_prefix + truncated_segments_suffix
+                        # get fixed segment labels
+                        segment_labels = (segment_labels[:desc_pos + 1] +
+                                          target_prefix_labels[-len(truncated_segments_prefix):] +
+                                          target_suffix_labels[:len(truncated_segments_suffix)])
+
+                        assert len(segment_labels) == len(segmented_tokens)
+
+                    else:
+                        encoding = proposed_encoding
+                        segmented_tokens = proposed_segmented_tokens
+                        segment_labels = proposed_segment_labels
+
+            else:
+                raise ValueError("Description must be the first segment!")
+        else:
+            raise ValueError(f"Truncate strategy {truncate_strategy} not recognized!")
+
+    assert "target_cont" in segment_labels
     return encoding, segmented_tokens, segment_labels

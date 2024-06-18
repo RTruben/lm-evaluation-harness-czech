@@ -769,7 +769,7 @@ class HFLM(TemplateLM):
                 encoding = encoding[-left_truncate_len:]
         else:
             encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
-                                                  add_special_tokens)
+                                                  **special_tokens_kwargs)
 
         return encoding
 

@@ -58,7 +58,7 @@ class ContextSampler:
                 doc_content
                 if self.config.doc_to_choice is None or isinstance(doc_content, str)
                 else self.doc_to_choice(doc)[doc_content]
-            ), ("fewshot_text",))
+            ,), ("fewshot_text",))
             labeled_examples += target_delimiter
 
             labeled_examples += SegmentedString((
@@ -67,16 +67,16 @@ class ContextSampler:
                 else doc_target
                 if self.config.doc_to_choice is None or isinstance(doc_target, str)
                 else str(self.doc_to_choice(doc)[doc_target])
-            ), ("fewshot_target",))
+            ,), ("fewshot_target",))
             labeled_examples += fewshot_delimiter
 
         return labeled_examples
 
     def get_chat_context(
-        self,
-        doc,
-        num_fewshot,
-        fewshot_as_multiturn: bool = False,
+            self,
+            doc,
+            num_fewshot,
+            fewshot_as_multiturn: bool = False,
     ):
         chat_history = []
         # draw an extra fewshot sample if using same split as evaluating on
@@ -96,24 +96,31 @@ class ContextSampler:
             for doc in selected_docs:
                 doc_content = self.doc_to_text(doc)
                 doc_target = self.doc_to_target(doc)
+                fewshot_text = (doc_content
+                                if self.config.doc_to_choice is None
+                                   or isinstance(doc_content, str)
+                                else self.doc_to_choice(doc)[doc_content])
+                # cast to SegmentedString
+                fewshot_text = SegmentedString((fewshot_text,), ("fewshot_text",))
                 chat_history.append(
                     {
                         "role": "user",
-                        "content": doc_content
-                        if self.config.doc_to_choice is None
-                        or isinstance(doc_content, str)
-                        else self.doc_to_choice(doc)[doc_content],
+                        "content": fewshot_text,
                     }
                 )
+                fewshot_target = (str(doc_target[0])
+                                  if isinstance(doc_target, list)
+                                  else doc_target
+                if self.config.doc_to_choice is None
+                   or isinstance(doc_target, str)
+                else str(self.doc_to_choice(doc)[doc_target]))
+                # cast to SegmentedString
+                fewshot_target = SegmentedString((fewshot_target,), ("fewshot_target",))
+
                 chat_history.append(
                     {
                         "role": "assistant",
-                        "content": str(doc_target[0])
-                        if isinstance(doc_target, list)
-                        else doc_target
-                        if self.config.doc_to_choice is None
-                        or isinstance(doc_target, str)
-                        else str(self.doc_to_choice(doc)[doc_target]),
+                        "content": fewshot_target,
                     }
                 )
         else:
@@ -159,19 +166,6 @@ class ManualSampler(ContextSampler):
         """ """
         pass
 
-
-class FitInputLengthSampler(ContextSampler):
-
-    def __init__(self, max_input_length, tokenizer: str, docs, task, fewshot_indices=None, rnd=None) -> None:
-        super().__init__(docs, task, fewshot_indices, rnd)
-        self.max_input_length = max_input_length
-        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
-
-    def sample(self, n) -> None:
-        # TODO: MF/MD Figure out what this sample method does??
-        """ """
-        samples = super().sample(n)
-        samples = [self.tokenizer.encode(sample) for sample in samples]
 
 
 SAMPLER_REGISTRY = {
