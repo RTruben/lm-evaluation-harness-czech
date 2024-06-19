@@ -1,0 +1,7 @@
+include: multi_choice_template_yaml
+class: !function ../../utils.MultipleChoiceTask
+metric_list:
+  - metric: acc
+  - metric: f1
+  - metric: !function ../../utils.avg_mcauroc
+    aggregation: !function ../../utils.aggregate_avg_mcauroc
