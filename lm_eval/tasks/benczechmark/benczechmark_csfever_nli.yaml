@@ -4,7 +4,6 @@ group_alias: CSFEVER NLI
 task:
   - task: csfever_0
     task_alias: prompt-0
-    include: templates/multichoice/multi_class_template_yaml
     dataset_path: ctu-aic/csfever_nli
     description: "Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/není jasné:\n\n"
     doc_to_target: label
@@ -13,9 +12,11 @@ task:
         - "není jasné"
         - "pravda"
     doc_to_text: '{{evidence}} Za uvedeného předpokladu a na základě znalostí o světe, "{{claim}}" je určitě pravda, nepravda, nebo není jasné? Odpověď (pravda/nepravda/není jasné): '
+    include: templates/multichoice/multi_class_template_wtrain_yaml
   - task: csfever_1
     task_alias: prompt-1
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Ste fact-checker. Určete pravdivost následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
@@ -26,7 +27,8 @@ task:
     doc_to_text: 'Předpokládáme, že {{evidence}} Je možné předpokládat, že "{{claim}}" je pravda? Ano, ne, nebo možná? '
   - task: csfever_2
     task_alias: prompt-2
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Oveřte fakticitu následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
@@ -37,7 +39,8 @@ task:
     doc_to_text: 'Za předpokladu, že {{evidence}} vyplývá, že {{claim}}? Ano, ne, nebo možná? '
   - task: csfever_3
     task_alias: prompt-3
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Úkol: Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/ani jedno:\n\n"
     doc_to_target: label
@@ -48,7 +51,8 @@ task:
     doc_to_text: '{{evidence}}\n\nOtázka: {{claim}} Pravda, nepravda, nebo ani jedno? '
   - task: csfever_4
     task_alias: prompt-4
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Ste si jisti pravdivostí následujúcích tvrzení? Odpovězte ne/možná/ano:\n\n"
     doc_to_target: label
@@ -59,7 +63,8 @@ task:
     doc_to_text: '{{evidence}}\n\nNa základě předchozího odstavce, je to pravda, že "{{claim}}"? Ne, možná, nebo ano? '
   - task: csfever_5
     task_alias: prompt-5
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Seš profesionální fact-checker. Determinuj pravdivost následujúcích tvrzení. Odpověz pravda/nepravda/nejasné:\n\n"
     doc_to_target: label
@@ -70,7 +75,8 @@ task:
     doc_to_text: 'Předpokládejme následovné: {{evidence}}\n\nPak následující tvrzení: "{{claim}}" je pravda, nepravda, nebo nejasné? '
   - task: csfever_6
     task_alias: prompt-6
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Prozkoumejte pravdivost následujúcích výroků. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
@@ -81,7 +87,8 @@ task:
     doc_to_text: 'Předpokládejme následovné: {{evidence}} Pak musí být pravda, že "{{claim}}"? Ano, ne, nebo možná? Odpověď: '
   - task: csfever_7
     task_alias: prompt-7
-    include: templates/multichoice/multi_class_template_yaml
+    include: templates/multichoice/multi_class_template_wtrain_yaml
+
     dataset_path: ctu-aic/csfever_nli
     description: "Seš AI pro fact-checking. Urči pravdivost následujúcích tvrzení. Odpověz jestli evidence podporuje/vyvrací tvrzení, nebo jestli chybí informace:\n\n"
     doc_to_target: label
