@@ -1079,14 +1079,14 @@ class ConfigurableTask(Task):
 
         example = self.doc_to_text(doc)
 
-        #TODO: MF: Make chat templates use the SegmentedString
         #TODO: MF: Check what happens with system prompts!
+        ss = lambda x: SegmentedString((x,), ("target_text",))
         if apply_chat_template:
             if self.multiple_input:
                 return lm.apply_chat_template(labeled_examples)
             if isinstance(example, str):
                 self.append_target_question(
-                    labeled_examples, example, fewshot_as_multiturn
+                    labeled_examples, ss(example), fewshot_as_multiturn
                 )
             # for loglikelihood create a list of questions with appended choices
             elif isinstance(example, list):
@@ -1094,7 +1094,7 @@ class ConfigurableTask(Task):
                 # copy chat history for each example and append the answer
                 for ex in example:
                     chat = deepcopy(labeled_examples)
-                    self.append_target_question(chat, ex, fewshot_as_multiturn)
+                    self.append_target_question(chat,ss(ex), fewshot_as_multiturn)
                     labeled_examples_list.append(lm.apply_chat_template(chat))
                 return labeled_examples_list
             # if example is an integer, append the choice or convert to string
@@ -1102,11 +1102,11 @@ class ConfigurableTask(Task):
                 if self.config.doc_to_choice is not None:
                     choices = self.doc_to_choice(doc)
                     self.append_target_question(
-                        labeled_examples, choices[example], fewshot_as_multiturn
+                        labeled_examples, ss(choices[example]), fewshot_as_multiturn
                     )
                 else:
                     self.append_target_question(
-                        labeled_examples, str(example), fewshot_as_multiturn
+                        labeled_examples, ss(str(example)), fewshot_as_multiturn
                     )
                 # return lm.apply_chat_template(labeled_examples)
             return lm.apply_chat_template(labeled_examples)
