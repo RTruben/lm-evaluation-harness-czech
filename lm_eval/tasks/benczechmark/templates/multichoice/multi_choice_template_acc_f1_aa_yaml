@@ -4,4 +4,3 @@ include:
 
 fewshot_split: test
 class: !function ../../utils.MultipleChoiceTask
-

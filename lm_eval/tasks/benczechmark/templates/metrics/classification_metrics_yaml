@@ -1,0 +1,5 @@
+metric_list:
+  - metric: acc
+  - metric: f1
+  - metric: !function ../../utils.avg_mcauroc
+    aggregation: !function ../../utils.aggregate_avg_mcauroc
