@@ -2,6 +2,7 @@ import collections
 import fnmatch
 import gc
 import itertools
+import operator
 import time
 from functools import wraps
 from typing import (
@@ -701,23 +702,6 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
     """
     assert type(string) == SegmentedString, "string must be a SegmentedString"
 
-    # Debugging suite: repeat last segment N times
-    N = 6000
-
-    assert type(string) == SegmentedString
-    long_continuation = string.segments[-1] * N  # super long continuation
-    di = string.labels.index('description')
-    conti = string.labels.index('target_cont')
-    # desc = string.segments[di] * N  # super long description
-    desc = string.segments[di]  # standard description
-    # )
-    new_string = SegmentedString(list(string.segments[:di]) + [desc] + list(string.segments[di + 1:conti]) +
-                                 [long_continuation] + list(string.segments[conti + 1:]),
-                                 list(string.labels[:di]) + ["description"] + list(string.labels[di + 1:conti]) +
-                                 ["target_cont"] + list(string.labels[conti + 1:]))
-    string = new_string
-    # *--- dbg
-
     encoding = tokenizer(
         string,
         add_special_tokens=add_special_tokens,
@@ -750,8 +734,6 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
         segment_labels[-1] = "target_cont"
 
     if len(encoding) > max_length:
-        # TODO: MF: How will this behave for chat models?
-        # TODO: MF: How will this behave with system prompt?
         if truncate_strategy == "leave_description":
             # prefix must have at least 20% of the tokens
             min_prefix_length = max_length // 5
@@ -782,14 +764,16 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
                     proposed_segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
                     proposed_segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
                     if 'target_text' not in proposed_segment_labels:
-                        # similar as branch above, but this one also retains the description
-                        # if prefix is missing
-                        # find position of target_text
-                        target_prefix_positions = list(range(segment_labels.index("target_text"),segment_labels.index("target_cont")))
+                        target_cont_pos = segment_labels.index("target_cont")
+                        split_pos = target_cont_pos - 1 if segment_labels[target_cont_pos - 1] == "target_delimiter" else target_cont_pos
+
+                        target_prefix_positions = list(
+                            range(segment_labels.index("target_text"), split_pos))
                         target_prefix_tokens = [segmented_tokens[i] for i in target_prefix_positions]
                         target_prefix_labels = [segment_labels[i] for i in target_prefix_positions]
 
-                        target_suffix_positions = [i for i, x in enumerate(segment_labels) if x == 'target_cont']
+                        target_suffix_positions = list(
+                            range(split_pos, len(segment_labels)))
                         target_suffix_tokens = [segmented_tokens[i] for i in target_suffix_positions]
                         target_suffix_labels = [segment_labels[i] for i in target_suffix_positions]
 

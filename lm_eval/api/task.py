@@ -1079,7 +1079,6 @@ class ConfigurableTask(Task):
 
         example = self.doc_to_text(doc)
 
-        #TODO: MF: Check what happens with system prompts!
         ss = lambda x: SegmentedString((x,), ("target_text",))
         if apply_chat_template:
             if self.multiple_input:

@@ -2,7 +2,7 @@ import copy
 import os
 from datetime import timedelta
 from pathlib import Path
-from typing import Dict, List, Literal, Optional, Tuple, Union
+from typing import Dict, List, Literal, Optional, Tuple, Union, AnyStr
 
 import torch
 import torch.nn.functional as F
@@ -744,8 +744,8 @@ class HFLM(TemplateLM):
         return batch_size
 
     def tok_encode(
-            self, string: str, left_truncate_len=None, add_special_tokens=None
-    ) -> List[int]:
+            self, string: str, left_truncate_len=None, add_special_tokens=None, return_segment_tokens=False,
+    ) -> Union[List[int], Tuple[List[int], List[int], List[AnyStr]]]:
         """ """
         # default for None - empty dict, use predefined tokenizer param
         # used for all models except for CausalLM or predefined value
@@ -768,8 +768,11 @@ class HFLM(TemplateLM):
             if left_truncate_len:
                 encoding = encoding[-left_truncate_len:]
         else:
-            encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
+            encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
                                                   **special_tokens_kwargs)
+            if return_segment_tokens:
+                return encoding, segmented_tokens, segment_labels
+
 
         return encoding
 
