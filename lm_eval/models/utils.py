@@ -718,6 +718,8 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
 
     segment_labels = [string.labels[segment_offset]] if string.labels else None
 
+    has_continuation = "target_cont" in string.labels
+
     # collect tokens for each segment, tokens with start >= length of the segment are in the next segment
     for token, tok_offsets in zip(encoding, token_offsets):
         if tok_offsets[0] >= offset:  # if current token's start offset is greater than the current segment's offset
@@ -730,7 +732,7 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
                 segment_labels.append(string.labels[segment_offset])
         segmented_tokens[-1].append(token)
     # the last segmment might be placed into delimiter, make it cont instead
-    if segment_labels is not None and segment_labels[-1] == "target_delimiter":
+    if segment_labels is not None and segment_labels[-1] == "target_delimiter" and has_continuation:
         segment_labels[-1] = "target_cont"
 
     if len(encoding) > max_length:
@@ -740,75 +742,78 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
 
             try:
                 desc_pos = string.labels.index("description")
-            except ValueError:
-                desc_pos = None
+            except ValueError as e:
+                print(f"Description not found in {str(string)}\n{str(string.labels)}")
+                raise e
 
-            if desc_pos:
-                # we take everything before and the description itself, then we will truncate the rest
-                desc_tokens = segmented_tokens[desc_pos]
-                desc_prefix = [t for tokens in segmented_tokens[:desc_pos] for t in tokens]
-                desc_budget = len(desc_prefix) + len(desc_tokens)
+            # we take everything before and the description itself, then we will truncate the rest
+            desc_tokens = segmented_tokens[desc_pos]
+            desc_prefix = [t for tokens in segmented_tokens[:desc_pos] for t in tokens]
+            desc_budget = len(desc_prefix) + len(desc_tokens)
 
-                # compute size of
-                if desc_budget > max_length:
-                    raise ValueError(f"{tokenizer.decode(desc_prefix + desc_tokens, skip_special_tokens=False)}\n"
-                                     f"Description tokens: {desc_budget}. Description is too long for max length {max_length}!")
-                else:
-                    """
-                    In chat template, there might be already something before description,
-                    solution: do not truncate that either!
-                    """
-                    proposed_encoding = desc_prefix + desc_tokens + encoding[desc_budget:][-(max_length - desc_budget):]
-                    truncated_rest = truncate_token_segments_from_left(segmented_tokens[desc_pos + 1:],
-                                                                       max_length - desc_budget)
-                    proposed_segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
-                    proposed_segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
-                    if 'target_text' not in proposed_segment_labels:
-                        target_cont_pos = segment_labels.index("target_cont")
-                        split_pos = target_cont_pos - 1 if segment_labels[target_cont_pos - 1] == "target_delimiter" else target_cont_pos
-
-                        target_prefix_positions = list(
-                            range(segment_labels.index("target_text"), split_pos))
-                        target_prefix_tokens = [segmented_tokens[i] for i in target_prefix_positions]
-                        target_prefix_labels = [segment_labels[i] for i in target_prefix_positions]
-
-                        target_suffix_positions = list(
-                            range(split_pos, len(segment_labels)))
-                        target_suffix_tokens = [segmented_tokens[i] for i in target_suffix_positions]
-                        target_suffix_labels = [segment_labels[i] for i in target_suffix_positions]
-
-                        # truncate  suffix from right
-                        truncated_segments_suffix = truncate_token_segments_from_right(target_suffix_tokens,
-                                                                                       max_length - desc_budget - min_prefix_length)
-                        # truncate target text frm left
-                        truncated_segments_prefix = truncate_token_segments_from_left(target_prefix_tokens,
-                                                                                      min_prefix_length)
-                        #  get fixed encoding
-                        encoding = desc_prefix + desc_tokens + \
-                                   ([t for tokens in truncated_segments_prefix for t in tokens] +
-                                    [t for tokens in truncated_segments_suffix for t in tokens])
-                        # get fixed segmented tokens
-                        segmented_tokens = segmented_tokens[
-                                           :desc_pos + 1] + truncated_segments_prefix + truncated_segments_suffix
-                        # get fixed segment labels
-                        segment_labels = (segment_labels[:desc_pos + 1] +
-                                          target_prefix_labels[-len(truncated_segments_prefix):] +
-                                          target_suffix_labels[:len(truncated_segments_suffix)])
-
-                        # this assumes that in this case, chat template segments before target text are dropped
-                        # only chat template segment left is the one before description
-
-                        assert len(segment_labels) == len(segmented_tokens)
-
-                    else:
-                        encoding = proposed_encoding
-                        segmented_tokens = proposed_segmented_tokens
-                        segment_labels = proposed_segment_labels
-
+            # compute size of
+            if desc_budget > max_length:
+                raise ValueError(f"{tokenizer.decode(desc_prefix + desc_tokens, skip_special_tokens=False)}\n"
+                                 f"Description tokens: {desc_budget}. Description is too long for max length {max_length}!")
             else:
-                raise ValueError("Description must be the first segment!")
+                """
+                In chat template, there might be already something before description,
+                solution: do not truncate that either!
+                """
+                proposed_encoding = desc_prefix + desc_tokens + encoding[desc_budget:][-(max_length - desc_budget):]
+                truncated_rest = truncate_token_segments_from_left(segmented_tokens[desc_pos + 1:],
+                                                                   max_length - desc_budget)
+                proposed_segmented_tokens = segmented_tokens[:desc_pos + 1] + truncated_rest
+                proposed_segment_labels = segment_labels[:desc_pos + 1] + segment_labels[-len(truncated_rest):]
+                if 'target_text' not in proposed_segment_labels:
+                    if has_continuation:
+                        target_cont_pos = segment_labels.index("target_cont")
+                        split_pos = target_cont_pos - 1 if segment_labels[
+                                                           target_cont_pos - 1] == "target_delimiter" else target_cont_pos
+                    else:
+                        split_pos = len(segment_labels)
+
+
+                    target_prefix_positions = list(
+                        range(segment_labels.index("target_text"), split_pos))
+                    target_prefix_tokens = [segmented_tokens[i] for i in target_prefix_positions]
+                    target_prefix_labels = [segment_labels[i] for i in target_prefix_positions]
+
+                    target_suffix_positions = list(
+                        range(split_pos, len(segment_labels)))
+                    target_suffix_tokens = [segmented_tokens[i] for i in target_suffix_positions]
+                    target_suffix_labels = [segment_labels[i] for i in target_suffix_positions]
+
+                    # truncate  suffix from right
+                    truncated_segments_suffix = truncate_token_segments_from_right(target_suffix_tokens,
+                                                                                   max_length - desc_budget - min_prefix_length)
+                    # truncate target text frm left
+                    truncated_segments_prefix = truncate_token_segments_from_left(target_prefix_tokens,
+                                                                                  min_prefix_length)
+                    #  get fixed encoding
+                    encoding = desc_prefix + desc_tokens + \
+                               ([t for tokens in truncated_segments_prefix for t in tokens] +
+                                [t for tokens in truncated_segments_suffix for t in tokens])
+                    # get fixed segmented tokens
+                    segmented_tokens = segmented_tokens[
+                                       :desc_pos + 1] + truncated_segments_prefix + truncated_segments_suffix
+                    # get fixed segment labels
+                    segment_labels = (segment_labels[:desc_pos + 1] +
+                                      target_prefix_labels[-len(truncated_segments_prefix):] +
+                                      target_suffix_labels[:len(truncated_segments_suffix)])
+
+                    # this assumes that in this case, chat template segments before target text are dropped
+                    # only chat template segment left is the one before description
+
+                    assert len(segment_labels) == len(segmented_tokens)
+
+                else:
+                    encoding = proposed_encoding
+                    segmented_tokens = proposed_segmented_tokens
+                    segment_labels = proposed_segment_labels
+
         else:
             raise ValueError(f"Truncate strategy {truncate_strategy} not recognized!")
-
-    assert "target_cont" in segment_labels
+    if has_continuation and  "target_cont" not in segment_labels:
+        raise ValueError(f"Continuation not found in {str(string)}\n{str(segment_labels)}")
     return encoding, segmented_tokens, segment_labels

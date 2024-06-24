@@ -767,12 +767,12 @@ class HFLM(TemplateLM):
             # left-truncate the encoded context to be at most `left_truncate_len` tokens long
             if left_truncate_len:
                 encoding = encoding[-left_truncate_len:]
-        else:
-            encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
-                                                  **special_tokens_kwargs)
+        else:  # smart truncation
+            encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length,
+                                                                              self.truncate_strategy,
+                                                                              **special_tokens_kwargs)
             if return_segment_tokens:
                 return encoding, segmented_tokens, segment_labels
-
 
         return encoding
 
@@ -790,21 +790,26 @@ class HFLM(TemplateLM):
         add_special_tokens = {}
         if self.AUTO_MODEL_CLASS == transformers.AutoModelForCausalLM:
             add_special_tokens = {"add_special_tokens": False or self.add_bos_token}
-
-        encoding = self.tokenizer(
-            strings,
-            truncation=truncation,
-            padding="longest",
-            return_tensors="pt",
-            **add_special_tokens,
-        )
-        if left_truncate_len:
-            encoding["input_ids"] = encoding["input_ids"][:, -left_truncate_len:]
-            encoding["attention_mask"] = encoding["attention_mask"][
-                                         :, -left_truncate_len:
-                                         ]
+        if self.truncate_strategy is None:
+            encoding = self.tokenizer(
+                strings,
+                truncation=truncation,
+                padding="longest",
+                return_tensors="pt",
+                **add_special_tokens,
+            )
+            if left_truncate_len:
+                encoding["input_ids"] = encoding["input_ids"][:, -left_truncate_len:]
+                encoding["attention_mask"] = encoding["attention_mask"][
+                                             :, -left_truncate_len:
+                                             ]
+        else:  # smart truncation
+            # tokenize each independently, then batch
+            input_ids = [self.tok_encode(string, **add_special_tokens) for string in strings]
+            non_padded_encoding = {"input_ids": input_ids,
+                                   "attention_mask": [[1] * len(ids) for ids in input_ids]}
+            encoding = self.tokenizer.pad(non_padded_encoding, return_tensors="pt", padding="longest")
         self.tokenizer.padding_side = old_padding_side
-
         return encoding["input_ids"], encoding["attention_mask"]
 
     def tok_decode(self, tokens, skip_special_tokens=True):
@@ -1324,7 +1329,7 @@ class HFLM(TemplateLM):
         """
 
         def map_segmented_string(raw_string: str, segmented_string: SegmentedString) -> Tuple[
-            List[Tuple[int, int]], List[str]]:
+            List[Tuple[int, int]], List[str], str]:
             """
             Method to map segmented string to raw string. The segments in_between should be labeled as "chat_template"
             """
@@ -1333,7 +1338,28 @@ class HFLM(TemplateLM):
             start_search = 0
             for i, (segment, label) in enumerate(zip(segmented_string.segments, segmented_string.labels)):
                 segment_start = raw_string.find(segment, start_search)
-                assert segment_start != -1, f"Segment {segment} not found in raw string"
+                # very rarely left space can disappear, if this is not whitespace segment
+                # check if we havent found earlier segment with space
+                if segment_start != -1 and segment.strip!="":
+                    possible_earlier_start =  raw_string.find(segment.lstrip(), start_search)
+                    if possible_earlier_start != segment_start:
+                        segment_start = possible_earlier_start
+                        segment=segment.lstrip()
+                if segment_start == -1:
+                    # if segment not found, try to find it without leading/trailing whitespaces
+                    # chat template often removes leading/trailing whitespaces
+                    segment_start = raw_string.find(segment.rstrip(), start_search)
+                    if segment_start == -1:
+                        segment_start = raw_string.find(segment.lstrip(), start_search)
+                        if segment_start == -1:
+                            segment_start = raw_string.find(segment.strip(), start_search)
+                            assert segment_start != -1, f"Raw string: {raw_string}\n\nSegment {segment}\n(type: {label}) not found in raw string"
+                            segment = segment.strip()
+                        else:
+                            segment = segment.lstrip()
+                    else:
+                        segment = segment.rstrip()
+
                 # if segment.strip() == "":
                 #     # whitespace segments can dissapear in chat templates
                 #     # so if they won't continue immediately after the previous segment, skip them
@@ -1365,12 +1391,12 @@ class HFLM(TemplateLM):
                     segment_offsets.append((segment_offsets_wgaps[i][1], segment_offsets_wgaps[i + 1][0]))
                     segment_labels.append("chat_template")
 
-            if len(segment_offsets_wgaps)>1:
+            if len(segment_offsets_wgaps) > 1:
                 # add the last segment
                 segment_offsets.append(segment_offsets_wgaps[-1])
                 segment_labels.append(segment_labels_wgaps[-1])
 
-            return segment_offsets, segment_labels
+            return segment_offsets, segment_labels, raw_string
 
         # patch for SegmentedString
         raw_string_rendered = self.tokenizer.apply_chat_template(
@@ -1380,7 +1406,7 @@ class HFLM(TemplateLM):
         # map segmentedstring back to raw_string_rendered
         result = SegmentedString(("",))
         for h in chat_history:
-            segment_offsets, segment_labels = map_segmented_string(raw_string=raw_string_rendered,
+            segment_offsets, segment_labels, raw_string_rendered = map_segmented_string(raw_string=raw_string_rendered,
                                                                    segmented_string=h["content"])
             result += SegmentedString([raw_string_rendered[of_s:of_e] for of_s, of_e in segment_offsets],
                                       segment_labels)
