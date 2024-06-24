@@ -1,7 +1,7 @@
-include: multi_choice_template_yaml
+include:
+ - multi_choice_template_yaml
+ - ../metrics/classification_metrics_yaml
+
+fewshot_split: test
 class: !function ../../utils.MultipleChoiceTask
-metric_list:
-  - metric: acc
-  - metric: f1
-  - metric: !function ../../utils.avg_mcauroc
-    aggregation: !function ../../utils.aggregate_avg_mcauroc
+
