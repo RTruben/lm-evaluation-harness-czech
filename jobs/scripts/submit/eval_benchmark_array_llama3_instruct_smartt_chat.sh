@@ -20,6 +20,7 @@ export HF_HOME="/home/ifajcik/data_scratch_new/hfhome"
 
 source ./jobs/TASKS.sh
 source ./jobs/HF_TOKEN.sh
+source ./jobs/NUM_SHOT.sh
 
 export CACHE_NAME="realrun_benchmark_llama3_instruct_cache_${TASKS[$SLURM_ARRAY_TASK_ID]}"
 cd /home/ifajcik/data_scratch_new/lm-evaluation-harness || exit
@@ -35,6 +36,8 @@ for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
     SUM_LOGP_FLAG="yes"
     TRUNCATE_STRATEGY="none"
+    CHAT_TEMPLATE="none"
+    NUM_FEWSHOT=0
     break
   fi
 done

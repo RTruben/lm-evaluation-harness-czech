@@ -1338,13 +1338,28 @@ class HFLM(TemplateLM):
             start_search = 0
             for i, (segment, label) in enumerate(zip(segmented_string.segments, segmented_string.labels)):
                 segment_start = raw_string.find(segment, start_search)
-                # very rarely left space can disappear, if this is not whitespace segment
-                # check if we havent found earlier segment with space
+                # unfortunately, chat templates influence whitespacing
+                # very rarely left/right space can disappear, if this is not whitespace segment
+                # check if we havent found earlier segment without space
                 if segment_start != -1 and segment.strip!="":
-                    possible_earlier_start =  raw_string.find(segment.lstrip(), start_search)
+                    possible_earlier_start =  raw_string.find(segment.strip(), start_search)
                     if possible_earlier_start != segment_start:
-                        segment_start = possible_earlier_start
-                        segment=segment.lstrip()
+                        # check if lstrip or rstrip werent only necessary
+                        possible_earlier_start_l =  raw_string.find(segment.lstrip(), start_search)
+                        possible_earlier_start_r =  raw_string.find(segment.rstrip(), start_search)
+                        if possible_earlier_start_l == possible_earlier_start:
+                            # only lstrip was necessary
+                            segment_start = possible_earlier_start
+                            segment = segment.lstrip()
+                        elif possible_earlier_start_r <= possible_earlier_start:
+                            # only rstrip was necessary
+                            segment_start = possible_earlier_start
+                            segment = segment.rstrip()
+                        else:
+                            # full strip was necessary
+                            segment_start = possible_earlier_start
+                            segment = segment.strip()
+
                 if segment_start == -1:
                     # if segment not found, try to find it without leading/trailing whitespaces
                     # chat template often removes leading/trailing whitespaces

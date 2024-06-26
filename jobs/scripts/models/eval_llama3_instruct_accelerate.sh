@@ -8,6 +8,8 @@ OUTPUT_PATH="$2"
 SUMLOGP="$3"
 CHAT_TEMPLATE="$4"
 TRUNCATE_STRATEGY="$5"
+NUM_FEWSHOT="$6"
+
 export NUMEXPR_MAX_THREADS=$(nproc --all)
 
 set -x
@@ -42,4 +44,4 @@ $PYTHON -m accelerate.commands.launch \
   --output_path "$OUTPUT_PATH" \
   --log_samples \
   --verbosity DEBUG \
-  --num_fewshot 3 $CHAT_TEMPLATE_ARGS
+  --num_fewshot $NUM_FEWSHOT $CHAT_TEMPLATE_ARGS
