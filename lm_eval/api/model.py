@@ -343,13 +343,21 @@ class TemplateLM(LM):
             context_enc = self.tok_encode(context)
             continuation_enc = self.tok_encode(continuation, add_special_tokens=False)
         else:
-            whole_enc, segment_tokens, segment_labels = self.tok_encode(context + continuation,
-                                                                        return_segment_tokens=True)
-            target_cont_pos = segment_labels.index("target_cont")
-            split_pos = target_cont_pos - 1 if segment_labels[
-                                                   target_cont_pos - 1] == "target_delimiter" else target_cont_pos
-            context_enc = [t for tokens in segment_tokens[:split_pos] for t in tokens]
-            continuation_enc = [t for tokens in segment_tokens[split_pos:] for t in tokens]
+            if (hasattr(self, 'truncate_strategy') and
+                    self.truncate_strategy == "leave_description"):
+                whole_enc, segment_tokens, segment_labels = self.tok_encode(context + continuation,
+                                                                            return_segment_tokens=True)
+                target_cont_pos = segment_labels.index("target_cont")
+                split_pos = target_cont_pos - 1 if segment_labels[
+                                                       target_cont_pos - 1] == "target_delimiter" else target_cont_pos
+                context_enc = [t for tokens in segment_tokens[:split_pos] for t in tokens]
+                continuation_enc = [t for tokens in segment_tokens[split_pos:] for t in tokens]
+            else:
+                whole_enc = self.tok_encode(context + continuation)
+                context_enc = self.tok_encode(context)
+
+                context_enc_len = len(context_enc)
+                continuation_enc = whole_enc[context_enc_len:]
 
         return context_enc, continuation_enc
 
