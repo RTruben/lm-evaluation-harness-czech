@@ -1,0 +1,13 @@
+task: benczechmark_fiction
+task_alias: Fiction Corpus
+dataset_path: CZLC/CNC_fictree
+output_type: loglikelihood_rolling
+test_split: test
+doc_to_text: "Následuje ukázka z beletrie: "
+doc_to_target: "{{text}}"
+metric_list:
+  - metric: word_perplexity
+    aggregation: weighted_perplexity
+    higher_is_better: false
+metadata:
+  version: 1.0

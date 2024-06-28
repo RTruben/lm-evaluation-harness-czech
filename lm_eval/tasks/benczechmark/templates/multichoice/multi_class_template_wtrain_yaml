@@ -1,0 +1,6 @@
+include:
+ - multi_class_template_yaml
+ - ../metrics/classification_metrics_yaml
+
+fewshot_split: train
+class: !function ../../utils.MultipleChoiceTask

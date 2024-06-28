@@ -286,14 +286,17 @@ class MultipleChoiceTask(ConfigurableTask):
             "acc": mean,
         }
 
+
 # MMLU multi-choice style (A....Z)
 ANSWER_LETTERS = [chr(ord('A') + i) for i in range(ord('Z') - ord('A') + 1)]
+
 
 def mmlu_get_choice(dataset):
     choice = [c for c in ANSWER_LETTERS if c in dataset.keys()]
     if len(choice) == 0:
         raise ValueError(f"No answer columns found in dataset")
     return choice
+
 
 def mmlu_get_answer_index(dataset):
     return ANSWER_LETTERS.index(dataset["correct_answer"])
@@ -306,6 +309,10 @@ def cermat_get_choice(dataset):
         return ["A", "B", "C", "D", "E"]
     else:
         raise ValueError(f"Invalid number of choices: {len(dataset['choices'])}")
+
+
+def history_ir_get_choice(dataset):
+    return ["A", "B", "C", "D"]
 
 
 def mmlu_get_question_text(dataset):
@@ -324,20 +331,3 @@ def mmlu_get_question_text_umimeto(dataset):
     choices_text = "\n".join(f"{c}. {dataset[c]}" for c in dataset_answer_keys)
     topic = dataset["topic"]
     return f"{topic}: {question_text}\n{choices_text}\nOdpověď: "
-
-
-def get_choices_belebele(dataset):
-    return [
-        f"1. {dataset['mc_answer1']}",
-        f"2. {dataset['mc_answer2']}",
-        f"3. {dataset['mc_answer3']}",
-        f"4. {dataset['mc_answer4']}"
-    ]
-
-
-def get_target_belebele(dataset):
-    return int(dataset['correct_answer_num']) - 1
-
-
-def get_czech_news_target(dataset):
-    return dataset['category'] - 1

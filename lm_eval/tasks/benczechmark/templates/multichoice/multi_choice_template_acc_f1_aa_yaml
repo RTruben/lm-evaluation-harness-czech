@@ -2,6 +2,5 @@ include:
  - multi_choice_template_yaml
  - ../metrics/classification_metrics_yaml
 
-training_split: train
-fewshot_split: train
+fewshot_split: test
 class: !function ../../utils.MultipleChoiceTask
