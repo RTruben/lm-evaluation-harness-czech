@@ -1038,7 +1038,9 @@ class ConfigurableTask(Task):
         if apply_chat_template:
             labeled_examples = []
         else:
-            labeled_examples = ""
+            # patch: initialize as empty seg string
+            labeled_examples =   SegmentedString(("",))
+            # end of patch
 
         # get task description
         if description := self.config.description:
