@@ -43,5 +43,5 @@ LOGFILE="eval_llama3_instruct_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_T
 
 set -x # enables a mode of the shell where all executed commands are printed to the terminal
 # Run the script with the task specified by SLURM_ARRAY_TASK_ID
-time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "$SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" | tee -a "$LOGFILE"
+time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "$SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" "$NUM_FEWSHOT" | tee -a "$LOGFILE"
 set +x

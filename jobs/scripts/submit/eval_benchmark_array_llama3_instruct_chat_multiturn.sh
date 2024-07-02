@@ -7,8 +7,8 @@
 #SBATCH --nodes 1
 
 # set up run settings
-CHAT_TEMPLATE="none"
-TRUNCATE_STRATEGY="leave_description"
+CHAT_TEMPLATE="multiturn"
+TRUNCATE_STRATEGY="none"
 
 # Set up environment variables
 export PYTHON=/scratch/project/open-30-35/ifajcik/mamba/envs/harness/bin/python
@@ -32,7 +32,7 @@ SUM_LOGP_FLAG="no"
 for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
     SUM_LOGP_FLAG="yes"
-    CHAT_TEMPLATE="none"
+    TRUNCATE_STRATEGY="none"
     NUM_FEWSHOT=0
     break
   fi

@@ -46,5 +46,5 @@ OUTPUT_PATH="results/eval_llama3_instruct_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${
 LOGFILE="eval_llama3_instruct_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}.log"
 
 # Run the script with the task specified by SLURM_ARRAY_TASK_ID
-time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" | tee -a "$LOGFILE"
+time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" "$NUM_FEWSHOT" | tee -a "$LOGFILE"
 set +x

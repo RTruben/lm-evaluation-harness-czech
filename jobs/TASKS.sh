@@ -33,9 +33,9 @@ export TASKS=(
   "benczechmark_cermat_mc"
   "benczechmark_cermat_qa"
   "benczechmark_history_ir"
-  "benczechmark_histcorpus" #requires logprob summing, not averaging!
-  "benczechmark_essay"      #requires logprob summing, not averaging!
-  "benczechmark_fiction"    #requires logprob summing, not averaging!
+    "benczechmark_histcorpus" #requires logprob summing, not averaging!
+    "benczechmark_essay"      #requires logprob summing, not averaging!
+    "benczechmark_fiction"    #requires logprob summing, not averaging!
 )
 
 # Define tasks that require summing of logprobs
