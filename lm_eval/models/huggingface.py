@@ -2,7 +2,7 @@ import copy
 import os
 from datetime import timedelta
 from pathlib import Path
-from typing import Dict, List, Literal, Optional, Tuple, Union
+from typing import Dict, List, Literal, Optional, Tuple, Union, AnyStr
 
 import torch
 import torch.nn.functional as F
@@ -34,6 +34,7 @@ from lm_eval.models.utils import (
     get_dtype,
     pad_and_concat,
     stop_sequences_criteria,
+    segmented_tok_encode,
 )
 
 
@@ -112,13 +113,13 @@ class HFLM(TemplateLM):
         # PEFT, delta weights and quantization options
         peft: Optional[str] = None,
         delta: Optional[str] = None,
-        autogptq: Optional[Union[bool, str]] = False,
-        # Benczechmark patch
-        # -- begin
-        truncate_strategy: str = None,  # "leave_description"
-        normalize_log_probs: bool = True,
-        # -- end patch
-        **kwargs,
+            autogptq: Optional[Union[bool, str]] = False,
+            # Benczechmark patch
+            # -- begin
+            truncate_strategy: str = None,  # "leave_description"
+            normalize_log_probs: bool = True,
+            # -- end patch
+            **kwargs,
     ) -> None:
         super().__init__()
 
