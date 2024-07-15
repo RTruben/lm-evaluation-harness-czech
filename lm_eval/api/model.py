@@ -2,7 +2,6 @@ import abc
 import hashlib
 import json
 import logging
-import operator
 import os
 from typing import Dict, List, Optional, Tuple, Type, TypeVar
 
@@ -11,6 +10,7 @@ from sqlitedict import SqliteDict
 from tqdm import tqdm
 
 from lm_eval import utils
+
 
 eval_logger = logging.getLogger("lm-eval")
 
@@ -130,7 +130,7 @@ class LM(abc.ABC):
 
     @classmethod
     def create_from_arg_string(
-            cls: Type[T], arg_string: str, additional_config: Optional[dict] = None
+        cls: Type[T], arg_string: str, additional_config: Optional[dict] = None
     ) -> T:
         """
         Creates an instance of the LM class using the given argument string and additional config.
@@ -149,7 +149,7 @@ class LM(abc.ABC):
 
     @classmethod
     def create_from_arg_obj(
-            cls: Type[T], arg_dict: dict, additional_config: Optional[dict] = None
+        cls: Type[T], arg_dict: dict, additional_config: Optional[dict] = None
     ) -> T:
         """
         Creates an instance of the LM class using the given arg_obj
@@ -246,9 +246,10 @@ class CachingLM:
         # add hook to lm
         lm.set_cache_hook(self.get_cache_hook())
 
-    def __getattr__(self, attr):
+    def __getattr__(self, attr: str):
         lm_attr = getattr(self.lm, attr)
-        if not callable(lm_attr):
+        if attr not in ["loglikelihood", "loglikelihood_rolling", "generate_until"]:
+            eval_logger.debug(f"Passing through attribute '{attr}' to underlying LM")
             return lm_attr
 
         def fn(requests):
@@ -362,7 +363,7 @@ class TemplateLM(LM):
         return context_enc, continuation_enc
 
     def loglikelihood(
-            self, requests, disable_tqdm: bool = False
+        self, requests, disable_tqdm: bool = False
     ) -> List[Tuple[float, bool]]:
         new_reqs = []
         for context, continuation in [req.args for req in requests]:
@@ -381,7 +382,7 @@ class TemplateLM(LM):
 
     @abc.abstractmethod
     def loglikelihood_rolling(
-            self, requests, disable_tqdm: bool = False
+        self, requests, disable_tqdm: bool = False
     ) -> List[Tuple[float, bool]]:
         pass
 

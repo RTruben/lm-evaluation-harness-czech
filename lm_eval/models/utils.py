@@ -2,10 +2,10 @@ import collections
 import fnmatch
 import gc
 import itertools
-import operator
 import time
 from functools import wraps
 from typing import (
+    TYPE_CHECKING,
     Any,
     Callable,
     Dict,
@@ -24,6 +24,11 @@ import transformers
 from transformers import PreTrainedTokenizerFast
 
 from lm_eval.utils import eval_logger, SegmentedString
+
+
+if TYPE_CHECKING:
+    from transformers import PreTrainedTokenizerBase
+    from transformers.configuration_utils import PretrainedConfig
 
 
 def chunks(iter, n: int = 0, fn=None):
@@ -142,9 +147,9 @@ class Grouper:
 
 
 def pad_and_concat(
-        max_length: int,
-        tensors: List[torch.Tensor],
-        padding_side: Literal["right", "left"] = "right",
+    max_length: int,
+    tensors: List[torch.Tensor],
+    padding_side: Literal["right", "left"] = "right",
 ):
     """
     Method for padding a list of tensors given the maximum tensor
@@ -152,7 +157,7 @@ def pad_and_concat(
     seq2seq models.
     """
     assert (
-            padding_side == "left" or padding_side == "right"
+        padding_side == "left" or padding_side == "right"
     ), f"Unrecognized padding type: '{padding_side}' not 'left' or 'right'"
 
     for i, tensor in enumerate(tensors):
@@ -211,11 +216,11 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
     """Criteria to stop on the specified multi-token sequence."""
 
     def __init__(
-            self,
-            sequence: str,
-            tokenizer: transformers.PreTrainedTokenizer,
-            initial_decoder_input_length: int,
-            batch_size: int,
+        self,
+        sequence: str,
+        tokenizer: transformers.PreTrainedTokenizer,
+        initial_decoder_input_length: int,
+        batch_size: int,
     ) -> None:
         self.initial_decoder_input_length = initial_decoder_input_length
         self.done_tracker = [False] * batch_size
@@ -235,9 +240,9 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
 
     def __call__(self, input_ids, scores, **kwargs) -> bool:
         # For efficiency, we compare the last n tokens where n is the number of tokens in the stop_sequence
-        lookback_ids_batch = input_ids[:, self.initial_decoder_input_length:]
+        lookback_ids_batch = input_ids[:, self.initial_decoder_input_length :]
 
-        lookback_ids_batch = lookback_ids_batch[:, -self.sequence_id_len:]
+        lookback_ids_batch = lookback_ids_batch[:, -self.sequence_id_len :]
 
         lookback_tokens_batch = self.tokenizer.batch_decode(lookback_ids_batch)
 
@@ -248,10 +253,10 @@ class MultiTokenEOSCriteria(transformers.StoppingCriteria):
 
 
 def stop_sequences_criteria(
-        tokenizer: transformers.PreTrainedTokenizer,
-        stop_sequences: List[str],
-        initial_decoder_input_length: int,
-        batch_size: int,
+    tokenizer: transformers.PreTrainedTokenizer,
+    stop_sequences: List[str],
+    initial_decoder_input_length: int,
+    batch_size: int,
 ) -> transformers.StoppingCriteriaList:
     return transformers.StoppingCriteriaList(
         [
@@ -306,11 +311,11 @@ def undistribute(iterable):
 
 
 def retry_on_specific_exceptions(
-        on_exceptions: List[Type[Exception]],
-        max_retries: Optional[int] = None,
-        backoff_time: float = 3.0,
-        backoff_multiplier: float = 1.5,
-        on_exception_callback: Optional[Callable[[Exception, float], Any]] = None,
+    on_exceptions: List[Type[Exception]],
+    max_retries: Optional[int] = None,
+    backoff_time: float = 3.0,
+    backoff_multiplier: float = 1.5,
+    on_exception_callback: Optional[Callable[[Exception, float], Any]] = None,
 ):
     """Retry on an LLM Provider's rate limit error with exponential backoff
     For example, to use for OpenAI, do the following:
@@ -359,11 +364,11 @@ class Collator:
     """
 
     def __init__(
-            self,
-            arr: List,
-            sort_fn: Callable = lambda x: x,
-            group_fn: Callable = lambda x: x[1],
-            group_by: Union[Literal["gen_kwargs", "contexts"], None] = None,
+        self,
+        arr: List,
+        sort_fn: Callable = lambda x: x,
+        group_fn: Callable = lambda x: x[1],
+        group_by: Union[Literal["gen_kwargs", "contexts"], None] = None,
     ) -> None:
         self._group_by = group_by
         # 0 indices are enumerated indices. Apply functions to original arr.
@@ -414,8 +419,8 @@ class Collator:
         """
         if self._group_by == "gen_kwargs":
             for (
-                    key,
-                    values,
+                key,
+                values,
             ) in self._arr_with_indices.items():  # type: ignore
                 values = self._reorder(values)
                 batch = self.get_chunks(values, n=n, fn=batch_fn)
@@ -433,11 +438,11 @@ class Collator:
             yield from batch
 
     def get_cache(
-            self,
-            req_str: Tuple[str, str] = None,
-            cxt_toks: List[int] = None,
-            cont_toks: List[int] = None,
-            logits: torch.Tensor = None,
+        self,
+        req_str: Tuple[str, str] = None,
+        cxt_toks: List[int] = None,
+        cont_toks: List[int] = None,
+        logits: torch.Tensor = None,
     ) -> Iterator[Tuple[Tuple[str, str], List[int], torch.Tensor]]:
         """
         Retrieves cached single-token continuations and their associated arguments, updating indices as necessary.
@@ -536,9 +541,9 @@ class Collator:
 
     @staticmethod
     def group(
-            arr: Iterable,
-            fn: Callable,
-            group_by: Literal["gen_kwargs", "contexts"] = "gen_kwargs",
+        arr: Iterable,
+        fn: Callable,
+        group_by: Literal["gen_kwargs", "contexts"] = "gen_kwargs",
     ) -> dict:
         """
         Groups elements of an iterable based on a provided function.
@@ -615,6 +620,51 @@ class Collator:
 
         if arr:
             yield arr
+
+
+def configure_pad_token(
+    tokenizer: "PreTrainedTokenizerBase",
+    model_config: Optional["PretrainedConfig"] = None,
+) -> "PreTrainedTokenizerBase":
+    """
+    This function checks if the (Hugging Face) tokenizer has a padding token and sets it if not present.
+    Some tokenizers require special handling.
+
+    Args:
+        tokenizer: The tokenizer for which the padding token is to be handled.
+        model_config: The configuration of the model. Default is None.
+
+    Returns:
+        The tokenizer after the padding token has been handled.
+
+    Raises:
+        AssertionError: If the tokenizer is of type RWKVWorldTokenizer or Rwkv5Tokenizer and the padding token id is not 0.
+    """
+    if tokenizer.pad_token:
+        pass
+    elif tokenizer.unk_token:
+        tokenizer.pad_token_id = tokenizer.unk_token_id
+    elif tokenizer.eos_token:
+        tokenizer.pad_token_id = tokenizer.eos_token_id
+    else:
+        # handle special cases
+        if model_config and getattr(model_config, "model_type", None) == "qwen":
+            # Qwen's trust_remote_code tokenizer does not allow for adding special tokens
+            tokenizer.pad_token = "<|endoftext|>"
+        elif (
+            tokenizer.__class__.__name__ == "RWKVWorldTokenizer"
+            or tokenizer.__class__.__name__ == "Rwkv5Tokenizer"
+        ):
+            # The RWKV world tokenizer, does not allow for adding special tokens / setting the pad token (which is set as 0)
+            # The additional tokenizer name check is needed, as there exists rwkv4 models with neox tokenizer
+            # ---
+            # Note that the world tokenizer class name, might change in the future for the final huggingface merge
+            # https://github.com/huggingface/transformers/pull/26963
+            assert tokenizer.pad_token_id == 0
+        else:
+            tokenizer.add_special_tokens({"pad_token": "<|pad|>"})
+
+    return tokenizer
 
 
 def truncate_token_segments_from_left(segments: List[List[int]], max_length: int) -> List[List[int]]:

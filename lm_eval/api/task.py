@@ -156,7 +156,7 @@ class TaskConfig(dict):
         return cfg_dict
 
     def serialize_function(
-            self, value: Union[Callable, str], keep_callable=False
+        self, value: Union[Callable, str], keep_callable=False
     ) -> Union[Callable, str]:
         """Serializes a given function or string.
 
@@ -194,11 +194,11 @@ class Task(abc.ABC):
     OUTPUT_TYPE: Optional[OutputType] = None
 
     def __init__(
-            self,
-            data_dir: Optional[str] = None,
-            cache_dir: Optional[str] = None,
-            download_mode: Optional[datasets.DownloadMode] = None,
-            config: Optional[Mapping] = None,  # Union[dict, TaskConfig]
+        self,
+        data_dir: Optional[str] = None,
+        cache_dir: Optional[str] = None,
+        download_mode: Optional[datasets.DownloadMode] = None,
+        config: Optional[Mapping] = None,  # Union[dict, TaskConfig]
     ) -> None:
         """
         :param data_dir: str
@@ -234,10 +234,10 @@ class Task(abc.ABC):
         )
 
     def download(
-            self,
-            data_dir: Optional[str] = None,
-            cache_dir: Optional[str] = None,
-            download_mode=None,
+        self,
+        data_dir: Optional[str] = None,
+        cache_dir: Optional[str] = None,
+        download_mode=None,
     ) -> None:
         """Downloads and returns the task dataset.
         Override this method to download the dataset from a custom API.
@@ -366,17 +366,18 @@ class Task(abc.ABC):
         pass
 
     def build_all_requests(
-            self,
-            *,
-            limit=None,
-            rank=None,
-            world_size=None,
-            cache_requests=False,
-            rewrite_requests_cache=False,
-            system_instruction=None,
-            apply_chat_template=False,
-            fewshot_as_multiturn=False,
-            lm=None,
+        self,
+        *,
+        limit: Union[int, None] = None,
+        rank: int = 0,
+        world_size: int = 1,
+        cache_requests: bool = False,
+        rewrite_requests_cache: bool = False,
+        system_instruction: Optional[str] = None,
+        apply_chat_template: bool = False,
+        fewshot_as_multiturn: bool = False,
+        chat_template: Optional[Callable] = None,
+        tokenizer_name: str = "",
     ) -> None:
         """Build a set of Instances for a task, and store them in task.instances"""
 
@@ -391,7 +392,7 @@ class Task(abc.ABC):
             if system_instruction is not None
             else ""
         )
-        cache_key += f"-tokenizer{lm.tokenizer_name}" if apply_chat_template else ""
+        cache_key += f"-tokenizer{tokenizer_name}"
 
         cached_instances = load_from_cache(file_name=cache_key)
 
@@ -413,9 +414,9 @@ class Task(abc.ABC):
 
         # process all documents when caching is specified for simplicity
         if (
-                cache_requests
-                and (not cached_instances or rewrite_requests_cache)
-                and limit is not None
+            cache_requests
+            and (not cached_instances or rewrite_requests_cache)
+            and limit is not None
         ):
             limit = None
 
@@ -426,8 +427,8 @@ class Task(abc.ABC):
         num_docs = len(doc_id_docs)
 
         for doc_id, doc in tqdm(
-                doc_id_docs,
-                total=num_docs,
+            doc_id_docs,
+            total=num_docs,
         ):
             # sample fewshot context #TODO: need to offset doc_id by rank now!
             fewshot_ctx = self.fewshot_context(
@@ -436,7 +437,7 @@ class Task(abc.ABC):
                 system_instruction,
                 apply_chat_template,
                 fewshot_as_multiturn,
-                lm,
+                chat_template,
             )
 
             # TODO: we should override self.config.repeats if doing greedy gen so users don't waste time+compute
@@ -536,11 +537,11 @@ class Task(abc.ABC):
 
     @utils.positional_deprecated
     def fewshot_context(
-            self,
-            doc,
-            num_fewshot,
-            rnd=None,
-            description=None,
+        self,
+        doc,
+        num_fewshot,
+        rnd=None,
+        description=None,
     ):
         """Returns a fewshot context string that is made up of a prepended description
         (if provided), the `num_fewshot` number of examples, and an appended prompt example.
@@ -587,13 +588,13 @@ class Task(abc.ABC):
                 fewshotex = [x for x in fewshotex if x != doc][:num_fewshot]
 
             labeled_examples = (
-                    "\n\n".join(
-                        [
-                            self.doc_to_text(doc) + self.doc_to_target(doc)
-                            for doc in fewshotex
-                        ]
-                    )
-                    + "\n\n"
+                "\n\n".join(
+                    [
+                        self.doc_to_text(doc) + self.doc_to_target(doc)
+                        for doc in fewshotex
+                    ]
+                )
+                + "\n\n"
             )
 
         example = self.doc_to_text(doc)
@@ -671,7 +672,7 @@ class Task(abc.ABC):
             )
 
     def doc_iterator(
-            self, *, rank: int = 0, limit: Union[int, None] = None, world_size: int = 1
+        self, *, rank: int = 0, limit: Union[int, None] = None, world_size: int = 1
     ) -> Iterator[Tuple[int, Any]]:
         limit = int(limit) if limit else None
         doc_iterator = utils.create_iterator(
@@ -689,11 +690,11 @@ class ConfigurableTask(Task):
     CONFIG = None
 
     def __init__(
-            self,
-            data_dir=None,
-            cache_dir=None,
-            download_mode=None,
-            config: Optional[dict] = None,
+        self,
+        data_dir=None,
+        cache_dir=None,
+        download_mode=None,
+        config: Optional[dict] = None,
     ) -> None:  # TODO no super() call here
         # Get pre-configured attributes
         self._config = self.CONFIG
@@ -755,11 +756,11 @@ class ConfigurableTask(Task):
                     key: metric_config[key]
                     for key in metric_config
                     if key
-                       not in ["metric", "aggregation", "higher_is_better", "hf_evaluate"]
+                    not in ["metric", "aggregation", "higher_is_better", "hf_evaluate"]
                 }
                 hf_evaluate_metric = (
-                        "hf_evaluate" in metric_config
-                        and metric_config["hf_evaluate"] is True
+                    "hf_evaluate" in metric_config
+                    and metric_config["hf_evaluate"] is True
                 )
 
                 if self.config.process_results is not None:
@@ -848,7 +849,7 @@ class ConfigurableTask(Task):
                     list(self.fewshot_docs()), self, rnd=self.fewshot_rnd
                 )
             elif callable(config_sampler) and issubclass(
-                    config_sampler, samplers.ContextSampler
+                config_sampler, samplers.ContextSampler
             ):
                 self.sampler = config_sampler(
                     docs=list(self.fewshot_docs()), task=self, rnd=self.fewshot_rnd
@@ -899,7 +900,7 @@ class ConfigurableTask(Task):
                 delimiter_has_whitespace = (
                     True
                     if self.config.target_delimiter.rstrip()
-                       != self.config.target_delimiter
+                    != self.config.target_delimiter
                     else False
                 )
 
@@ -965,8 +966,8 @@ class ConfigurableTask(Task):
                 return self.config.process_docs(self.dataset[self.config.fewshot_split])
             return self.dataset[self.config.fewshot_split]
         elif (
-                self.config.fewshot_config is not None
-                and self.config.fewshot_config.get("samples", None) is not None
+            self.config.fewshot_config is not None
+            and self.config.fewshot_config.get("samples", None) is not None
         ):
             if isinstance(self.config.fewshot_config["samples"], list):
                 return self.config.fewshot_config["samples"]
@@ -987,9 +988,9 @@ class ConfigurableTask(Task):
 
     @staticmethod
     def append_target_question(
-            labeled_examples: List[Dict[str, str]],
-            question: str,
-            fewshot_as_multiturn: bool = False,
+        labeled_examples: List[Dict[str, str]],
+        question: str,
+        fewshot_as_multiturn: bool = False,
     ) -> None:
         """Adds a target question to the labeled examples list.
         If fewshot_as_multiturn is True, or labeled_examples is empty, or the last entry is a system turn, appends the question as a new user entry.
@@ -1008,13 +1009,13 @@ class ConfigurableTask(Task):
 
     @utils.positional_deprecated
     def fewshot_context(
-            self,
-            doc: str,
-            num_fewshot: int,
-            system_instruction: Optional[str] = None,
-            apply_chat_template: bool = False,
-            fewshot_as_multiturn: bool = False,
-            lm=None,
+        self,
+        doc: str,
+        num_fewshot: int,
+        system_instruction: Optional[str] = None,
+        apply_chat_template: bool = False,
+        fewshot_as_multiturn: bool = False,
+        chat_template: Optional[Callable] = None,
     ) -> str:
         """Returns a fewshot context string that is made up of a prepended description
         (if provided), the `num_fewshot` number of examples, and an appended prompt example.
@@ -1029,8 +1030,8 @@ class ConfigurableTask(Task):
             Whether to apply the chat template to the fewshot context.
         :param fewshot_as_multiturn: bool
             Whether to provide the fewshot examples as a multiturn conversation or a single user turn.
-        :param lm:
-            Language model with definition of the tokenizer/function to use for applying the chat template.
+        :param chat_template: Callable
+            Chat template to be applied to the fewshot context.
         :returns: str
             The fewshot context.
         """
@@ -1084,7 +1085,7 @@ class ConfigurableTask(Task):
         ss = lambda x: SegmentedString((x,), ("target_text",))
         if apply_chat_template:
             if self.multiple_input:
-                return lm.apply_chat_template(labeled_examples)
+                return chat_template(labeled_examples)
             if isinstance(example, str):
                 self.append_target_question(
                     labeled_examples, ss(example), fewshot_as_multiturn
@@ -1096,7 +1097,7 @@ class ConfigurableTask(Task):
                 for ex in example:
                     chat = deepcopy(labeled_examples)
                     self.append_target_question(chat,ss(ex), fewshot_as_multiturn)
-                    labeled_examples_list.append(lm.apply_chat_template(chat))
+                    labeled_examples_list.append(chat_template(chat))
                 return labeled_examples_list
             # if example is an integer, append the choice or convert to string
             elif isinstance(example, int):
@@ -1110,7 +1111,7 @@ class ConfigurableTask(Task):
                         labeled_examples, ss(str(example)), fewshot_as_multiturn
                     )
                 # return lm.apply_chat_template(labeled_examples)
-            return lm.apply_chat_template(labeled_examples)
+            return chat_template(labeled_examples)
         else:
             if self.multiple_input:
                 return labeled_examples
@@ -1218,9 +1219,9 @@ class ConfigurableTask(Task):
                 if target_string.isdigit() and self._config.doc_to_choice is not None:
                     return ast.literal_eval(target_string)
                 elif (
-                        len(target_string) >= 2
-                        and (target_string[0] == "[")
-                        and (target_string[-1] == "]")
+                    len(target_string) >= 2
+                    and (target_string[0] == "[")
+                    and (target_string[-1] == "]")
                 ):
                     try:
                         return ast.literal_eval(target_string)
@@ -1268,7 +1269,7 @@ class ConfigurableTask(Task):
             raise TypeError
 
     def construct_requests(
-            self, doc: dict, ctx: str, **kwargs
+        self, doc: dict, ctx: str, **kwargs
     ) -> Union[List[Instance], Instance]:
         if self.OUTPUT_TYPE == "loglikelihood":
             arguments = (ctx, self.doc_to_target(doc))
@@ -1368,8 +1369,8 @@ class ConfigurableTask(Task):
             completion_len = np.array([float(len(i)) for i in choices])
 
             if (
-                    2 * len(choices) == len(lls)
-                    and "acc_mutual_info" in self._metric_fn_list.keys()
+                2 * len(choices) == len(lls)
+                and "acc_mutual_info" in self._metric_fn_list.keys()
             ):
                 # then we are doing mutual info.
                 # this stores the "dryrun" / unconditional answer loglikelihoods
@@ -1483,7 +1484,7 @@ class ConfigurableTask(Task):
                                     **self._metric_fn_kwargs[metric],
                                 )
                             except (
-                                    TypeError
+                                TypeError
                             ):  # TODO: this is hacky and I don't want to do it
                                 result_score = self._metric_fn_list[metric](
                                     [gold_option, result]

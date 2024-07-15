@@ -1,8 +1,7 @@
-from transformers import AutoTokenizer
-
-from lm_eval.utils import SegmentedString
-
 import datasets
+
+from transformers import AutoTokenizer
+from lm_eval.utils import SegmentedString
 
 
 class ContextSampler:
@@ -146,7 +145,7 @@ class FirstNSampler(ContextSampler):
         Used for tasks with "canonical" ordered fewshot examples, such as MMLU and CMMLU.
         """
         assert (
-                n <= len(self.docs)
+            n <= len(self.docs)
         ), f"Error: number of fewshot samples requested exceeds the {len(self.docs)} that are available."
         return self.docs[:n]
 
@@ -165,7 +164,6 @@ class ManualSampler(ContextSampler):
     def sample(self, n) -> None:
         """ """
         pass
-
 
 
 SAMPLER_REGISTRY = {
