@@ -1,4 +1,5 @@
 import collections
+import copy
 import fnmatch
 import functools
 import hashlib
@@ -503,6 +504,110 @@ def create_iterator(raw_iterator, *, rank=0, world_size=1, limit=None):
 
 # from more_itertools
 
+def apply_chat_template(obj, chat_history):
+    def map_segmented_string(raw_string: str, segmented_string: SegmentedString) -> Tuple[
+        List[Tuple[int, int]], List[str], str]:
+        """
+        Method to map segmented string to raw string. The segments in_between should be labeled as "chat_template"
+        """
+        segment_offsets_wgaps = []
+        segment_labels_wgaps = []
+        start_search = 0
+        for i, (segment, label) in enumerate(zip(segmented_string.segments, segmented_string.labels)):
+            segment_start = raw_string.find(segment, start_search)
+            # unfortunately, chat templates influence whitespacing
+            # very rarely left/right space can disappear, if this is not whitespace segment
+            # check if we havent found earlier segment without space
+            if segment_start != -1 and segment.strip != "":
+                possible_earlier_start = raw_string.find(segment.strip(), start_search)
+                if possible_earlier_start != segment_start:
+                    # check if lstrip or rstrip werent only necessary
+                    possible_earlier_start_l = raw_string.find(segment.lstrip(), start_search)
+                    possible_earlier_start_r = raw_string.find(segment.rstrip(), start_search)
+                    if possible_earlier_start_l == possible_earlier_start:
+                        # only lstrip was necessary
+                        segment_start = possible_earlier_start
+                        segment = segment.lstrip()
+                    elif possible_earlier_start_r <= possible_earlier_start:
+                        # only rstrip was necessary
+                        segment_start = possible_earlier_start
+                        segment = segment.rstrip()
+                    else:
+                        # full strip was necessary
+                        segment_start = possible_earlier_start
+                        segment = segment.strip()
+
+            if segment_start == -1:
+                # if segment not found, try to find it without leading/trailing whitespaces
+                # chat template often removes leading/trailing whitespaces
+                segment_start = raw_string.find(segment.rstrip(), start_search)
+                if segment_start == -1:
+                    segment_start = raw_string.find(segment.lstrip(), start_search)
+                    if segment_start == -1:
+                        segment_start = raw_string.find(segment.strip(), start_search)
+                        assert segment_start != -1, f"Raw string: {raw_string}\n\nSegment {segment}\n(type: {label}) not found in raw string"
+                        segment = segment.strip()
+                    else:
+                        segment = segment.lstrip()
+                else:
+                    segment = segment.rstrip()
+
+            # if segment.strip() == "":
+            #     # whitespace segments can dissapear in chat templates
+            #     # so if they won't continue immediately after the previous segment, skip them
+            #     if (len(segment_offsets_wgaps)==0 and segment_start!=0) or segment_start != segment_offsets_wgaps[-1][1]:
+            #         continue
+            segment_end = segment_start + len(segment)
+            segment_offsets_wgaps.append((segment_start, segment_end))
+            segment_labels_wgaps.append(label)
+            assert segment_start >= start_search, "Segment start is before the end of the previous segment"
+            start_search = segment_end
+        # now check for the missing gaps between offsets
+        # eg. for [(1,5), (10, 15)], we need to add (0, 1) and (5, 10)
+        segment_offsets = []
+        segment_labels = []
+
+        if segment_offsets_wgaps[0][0] != 0:
+            segment_offsets.insert(0, (0, segment_offsets_wgaps[0][0]))
+            segment_labels.insert(0, "chat_template")
+        if len(segment_offsets_wgaps) == 1:
+            segment_offsets.append(segment_offsets_wgaps[0])
+            segment_labels.append(segment_labels_wgaps[0])
+
+        for i in range(len(segment_offsets_wgaps) - 1):
+            # add the segment
+            segment_offsets.append(segment_offsets_wgaps[i])
+            segment_labels.append(segment_labels_wgaps[i])
+            # check for the gap between i and i+1
+            if segment_offsets_wgaps[i][1] != segment_offsets_wgaps[i + 1][0]:
+                segment_offsets.append((segment_offsets_wgaps[i][1], segment_offsets_wgaps[i + 1][0]))
+                segment_labels.append("chat_template")
+
+        if len(segment_offsets_wgaps) > 1:
+            # add the last segment
+            segment_offsets.append(segment_offsets_wgaps[-1])
+            segment_labels.append(segment_labels_wgaps[-1])
+
+        return segment_offsets, segment_labels, raw_string
+
+    # patch for SegmentedString
+    raw_string_rendered = obj.tokenizer.apply_chat_template(
+        chat_history, tokenize=False, add_generation_prompt=True
+    )
+    orig_raw_string = copy.deepcopy(raw_string_rendered)
+    # map segmentedstring back to raw_string_rendered
+    result = SegmentedString(("",))
+    for h in chat_history:
+        segment_offsets, segment_labels, raw_string_rendered = map_segmented_string(raw_string=raw_string_rendered,
+                                                                                    segmented_string=h["content"])
+        result += SegmentedString([raw_string_rendered[of_s:of_e] for of_s, of_e in segment_offsets],
+                                  segment_labels)
+        raw_string_rendered = raw_string_rendered[segment_offsets[-1][1]:]
+    if raw_string_rendered != "":
+        # if there is a gap between the last segment and the end of the string, it is a chat_template again
+        result += SegmentedString([raw_string_rendered], ["chat_template"])
+    assert orig_raw_string == str(result), "Mismatch between original raw string and mapped segmented string"
+    return result
 
 class SegmentedString(str):
     """

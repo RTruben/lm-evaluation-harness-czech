@@ -14,7 +14,7 @@ from lm_eval.models.utils import Collator, configure_pad_token, undistribute, se
 from lm_eval.utils import (
     eval_logger,
     get_rolling_token_windows,
-    make_disjoint_window, SegmentedString,
+    make_disjoint_window, SegmentedString, apply_chat_template,
 )
 
 
@@ -189,10 +189,8 @@ class VLLM(TemplateLM):
         """
         Method to apply a chat template to a list of chat history between user and model.
         """
-        return self.tokenizer.apply_chat_template(
-            chat_history, tokenize=False, add_generation_prompt=True
-        )
 
+        return apply_chat_template(self,chat_history)
     @property
     def chat_template(self) -> str:
         if self.tokenizer.chat_template is not None:
@@ -209,6 +207,7 @@ class VLLM(TemplateLM):
         left_truncate_len: int = None,
         add_special_tokens: bool = False,
         truncation: bool = False,
+        return_segment_tokens=False,
     ) -> Union[List[int], List[List[int]]]:
         if not add_special_tokens:
             add_special_tokens = False or self.add_bos_token
@@ -229,9 +228,10 @@ class VLLM(TemplateLM):
                     encoding = encoding[-left_truncate_len:]
 
         else:
-            encoding, _, _ = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
+            encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
                                                   add_special_tokens)
-
+            if return_segment_tokens:
+                return encoding, segmented_tokens, segment_labels
 
         return encoding
 
