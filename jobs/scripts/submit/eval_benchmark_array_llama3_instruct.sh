@@ -34,6 +34,7 @@ for task in "${SUM_LOGPROBS[@]}"; do
     SUM_LOGP_FLAG="yes"
     TRUNCATE_STRATEGY="none"
     NUM_FEWSHOT=0
+    CHAT_TEMPLATE="none"
     break
   fi
 done

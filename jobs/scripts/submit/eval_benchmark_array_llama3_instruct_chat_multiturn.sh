@@ -33,6 +33,7 @@ for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
     SUM_LOGP_FLAG="yes"
     TRUNCATE_STRATEGY="none"
+    CHAT_TEMPLATE="none"
     NUM_FEWSHOT=0
     break
   fi
