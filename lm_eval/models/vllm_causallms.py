@@ -228,8 +228,12 @@ class VLLM(TemplateLM):
                     encoding = encoding[-left_truncate_len:]
 
         else:
-            encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
-                                                  add_special_tokens)
+            if type(string) == tuple:
+                encoding = [self.tok_encode(s,add_special_tokens=add_special_tokens) for s in string]
+                assert return_segment_tokens is False
+            else:
+                encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer, self.max_length, self.truncate_strategy,
+                                                      add_special_tokens)
             if return_segment_tokens:
                 return encoding, segmented_tokens, segment_labels
 
@@ -329,9 +333,11 @@ class VLLM(TemplateLM):
 
         # batch tokenize contexts
         context, all_gen_kwargs = zip(*(req.args for req in requests))
+
         context_encoding: List[List[int]] = self.tok_encode(
             context, add_special_tokens=self.add_bos_token
         )
+
         requests = [
             ((a, b), c) for a, b, c in zip(context, context_encoding, all_gen_kwargs)
         ]

@@ -36,7 +36,7 @@ from lm_eval.models.utils import (
     stop_sequences_criteria,
     segmented_tok_encode,
 )
-from lm_eval.utils import SegmentedString, apply_chat_template
+from lm_eval.utils import apply_chat_template
 
 eval_logger = utils.eval_logger
 
