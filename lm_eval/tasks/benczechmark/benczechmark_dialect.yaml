@@ -1,0 +1,13 @@
+task: benczechmark_dialect
+task_alias: Corpus of Traditional Czech Dialects
+dataset_path: CZLC/CNC_Dialekt
+output_type: loglikelihood_rolling
+test_split: test
+doc_to_text: "Ukážka textu s dialektem: {{text}}"
+doc_to_target: "{{text}}"
+metric_list:
+  - metric: word_perplexity
+    aggregation: weighted_perplexity
+    higher_is_better: false
+metadata:
+  version: 1.0

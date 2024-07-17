@@ -1,0 +1,13 @@
+task: benczechmark_speeches
+task_alias: Presidential Speeches
+dataset_path: CZLC/CNC_PrezPrejavy
+output_type: loglikelihood_rolling
+test_split: test
+doc_to_text: "Ukážka textu z prezidentského projevu: "
+doc_to_target: "{{text}}"
+metric_list:
+  - metric: word_perplexity
+    aggregation: weighted_perplexity
+    higher_is_better: false
+metadata:
+  version: 1.0

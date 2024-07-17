@@ -1,0 +1,13 @@
+task: benczechmark_capek
+task_alias: Karel Capek's Works
+dataset_path: CZLC/CNC_Capek
+output_type: loglikelihood_rolling
+test_split: test
+doc_to_text: "Ukážka textu Karla Čapka: "
+doc_to_target: "{{text}}"
+metric_list:
+  - metric: word_perplexity
+    aggregation: weighted_perplexity
+    higher_is_better: false
+metadata:
+  version: 1.0
