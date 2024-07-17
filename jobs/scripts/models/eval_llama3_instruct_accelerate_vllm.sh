@@ -36,7 +36,7 @@ if [ "$TRUNCATE_STRATEGY" != "none" ]; then
 fi
 
 $PYTHON -m lm_eval --model vllm \
-  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$GPUs_per_model,dtype=bfloat16,gpu_memory_utilization=0.85,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
+  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$GPUs_per_model,dtype=bfloat16,gpu_memory_utilization=0.8,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
   --tasks "$TASK" \
   --batch_size 1 \
   --output_path "$OUTPUT_PATH" \
