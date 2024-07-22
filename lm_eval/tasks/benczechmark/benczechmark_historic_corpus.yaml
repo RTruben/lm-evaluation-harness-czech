@@ -3,7 +3,7 @@ task_alias: Historical Corpus
 dataset_path: CZLC/benczechmark_histcorpus
 output_type: loglikelihood_rolling
 test_split: test
-doc_to_text: "Historický text: "
+doc_to_text: ""
 doc_to_target: "{{text}}"
 metric_list:
   - metric: word_perplexity

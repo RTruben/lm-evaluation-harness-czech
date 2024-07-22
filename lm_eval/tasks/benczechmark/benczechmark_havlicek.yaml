@@ -3,7 +3,7 @@ task_alias: K. Havlicek Historical News Corpus
 dataset_path: CZLC/CNC_KHavlicek_HistNews
 output_type: loglikelihood_rolling
 test_split: test
-doc_to_text: "Ukážka textu Karla Havlíčka Borovského: "
+doc_to_text: ""
 doc_to_target: "{{text}}"
 metric_list:
   - metric: word_perplexity

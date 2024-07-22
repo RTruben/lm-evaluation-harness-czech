@@ -3,7 +3,7 @@ task_alias: Essay Corpus
 dataset_path: CZLC/CNC_skript12
 output_type: loglikelihood_rolling
 test_split: test
-doc_to_text: "Následuje ukázka ze slohové práce: "
+doc_to_text: ""
 doc_to_target: "{{text}}"
 metric_list:
   - metric: word_perplexity
