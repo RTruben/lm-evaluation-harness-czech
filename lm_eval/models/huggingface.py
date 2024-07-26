@@ -113,13 +113,13 @@ class HFLM(TemplateLM):
         # PEFT, delta weights and quantization options
         peft: Optional[str] = None,
         delta: Optional[str] = None,
-            autogptq: Optional[Union[bool, str]] = False,
-            # Benczechmark patch
-            # -- begin
-            truncate_strategy: str = None,  # "leave_description"
-            normalize_log_probs: bool = True,
-            # -- end patch
-            **kwargs,
+        autogptq: Optional[Union[bool, str]] = False,
+        # Benczechmark patch
+        # -- begin
+        truncate_strategy: str = None,  # "leave_description"
+        normalize_log_probs: bool = True,
+        # -- end patch
+        **kwargs,
     ) -> None:
         super().__init__()
 
