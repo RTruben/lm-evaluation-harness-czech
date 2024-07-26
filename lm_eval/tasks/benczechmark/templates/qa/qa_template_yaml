@@ -7,13 +7,6 @@ fewshot_split: test
 output_type: generate_until
 doc_to_target: "{{answers}}"
 
-generation_kwargs:
-  until:
-    - "\n"
-    - "."
-    - ","
-  do_sample: false
-  temperature: 0.0
 filter_list:
   - name: remove_whitespace
     filter:
@@ -21,4 +14,4 @@ filter_list:
       - function: take_first
 
 target_delimiter: " "
-fewshot_delimiter: "\n"
+fewshot_delimiter: "\n\n"

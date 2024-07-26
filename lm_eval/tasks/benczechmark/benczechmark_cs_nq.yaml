@@ -1,34 +1,44 @@
 group: benczechmark_cs_naturalquestions
 group_alias: CS Natural Questions
+generation_kwargs:
+  until:
+    - "\n\n"
+    - "</s>"
+    - "Otázka:"
+    - "Dotaz:"
+    - "<|im_end|>"
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 15
 task:
   - task: cs_nq_open_0
     task_alias: prompt-0
     dataset_path: CZLC/cs_naturalquestions
-    description: "Odpovězte na tyto otázky:\n\n"
+    description: "Odpovězte na tyto otázky (Odpověď by měla končit znakem '\n\n'):\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_1
     task_alias: prompt-1
     dataset_path: CZLC/cs_naturalquestions
-    description: "Zodpovězte následující otázky:\n\n"
+    description: "Zodpovězte následující otázky (Na závěr odpovědi přidejte symbol '\n\n'):\n\n"
     doc_to_text: "Dotaz: {{question}}\nSprávná odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_2
     task_alias: prompt-2
     dataset_path: CZLC/cs_naturalquestions
-    description: "Kvíz:\n\n"
+    description: "Kvíz (Ukončete svou odpověď řetězcem '\n\n'):\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_3
     task_alias: prompt-3
     dataset_path: CZLC/cs_naturalquestions
-    description: "Najděte odpovědi na tato dotazy:\n\n"
+    description: "Najděte odpovědi na tato dotazy (Na závěr odpovědi přidejte symbol '\n\n'):\n\n"
     doc_to_text: "Dotaz: {{question}}?\nVaše odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_nq_open_4
     task_alias: prompt-4
     dataset_path: CZLC/cs_naturalquestions
-    description: "Úloha: Najděte odpovědi na tato dotazy:\n\n"
+    description: "Úloha: Najděte odpovědi na tato dotazy (Zakončete odpověď znakem '\n\n'):\n\n"
     doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď: "
     include: templates/qa/qa_template_yaml
 

@@ -1,33 +1,43 @@
 group: benczechmark_cs_court_decisions_ner
 group_alias: Court Decisions Entity Corpus
+generation_kwargs:
+  until:
+    - "\n\n"
+    - "</s>"
+    - "Otázka:"
+    - "Dotaz:"
+    - "<|im_end|>"
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 20
 task:
   - task: cdec_ner_0
     task_alias: prompt-0
     dataset_path: CZLC/ner_court_decisions
-    description: "Hledejte určité entity v následujících textech.\n\n"
+    description: "Hledejte určité entity v následujících textech. Odpověď ukončete symbolem '\n\n'.\n\n"
     doc_to_text: "Jaká entita typu {{label}} se nachází v nasledujícím textu? {{text}}\n\nEntita typu {{label}}: "
     include: templates/qa/qa_template_yaml
   - task: cdec_ner_1
     task_alias: prompt-1
     dataset_path: CZLC/ner_court_decisions
-    description: "Najděte entity v následujících textech.\n\n"
+    description: "Najděte entity v následujících textech. Odpověď by měla končit znakem '\n\n'.\n\n"
     doc_to_text: "{{text}}\n\n{{label}} v tomto textu je: "
     include: templates/qa/qa_template_yaml
   - task: cdec_ner_2
     task_alias: prompt-2
     dataset_path: CZLC/ner_court_decisions
-    description: "Extrahujte vybrané entity verbatim z nasledujících textů.\n\n"
+    description: "Extrahujte vybrané entity verbatim z nasledujících textů. Ukončete svou odpověď řetězcem '\n\n'.\n\n"
     doc_to_text: "{{text}}\n\nJaká entita typu {{label}} se nachází v předchozím odstavci? "
     include: templates/qa/qa_template_yaml
   - task: cdec_ner_3
     task_alias: prompt-3
     dataset_path: CZLC/ner_court_decisions
-    description: "Nalezněte verbatim text entit v následujících textech.\n\n"
+    description: "Nalezněte verbatim text entit v následujících textech. Ukončete odpověď symbolem '\n\n'.\n\n"
     doc_to_text: "{{text}}\n\n Text entity {{label}} je: "
     include: templates/qa/qa_template_yaml
   - task: cdec_ner_4
     task_alias: prompt-4
     dataset_path: CZLC/ner_court_decisions
-    description: "Vyhladejte texty obsahující dotazované entity.\n\n"
+    description: "Vyhladejte texty obsahující dotazované entity. Odpověď by měla končit znakem '\n\n'.\n\n"
     doc_to_text: "{{text}}\n\n Dotaz: Jaká entita typu {{label}} je zde zmíněna? Odpověď: "
     include: templates/qa/qa_template_yaml

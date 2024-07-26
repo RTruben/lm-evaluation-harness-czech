@@ -1,33 +1,43 @@
 group: benczechmark_cs_triviaQA
 group_alias: CS Trivia QA
+generation_kwargs:
+  until:
+    - "\n\n"
+    - "</s>"
+    - "Otázka:"
+    - "Dotaz:"
+    - "<|im_end|>"
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 15
 task:
   - task: cs_triviaqa_0
     task_alias: prompt-0
     dataset_path: CZLC/cs_triviaqa
-    description: "Odpovězte na tyto otázky:\n\n"
+    description: "Odpovězte na tyto otázky (Odpověď by měla končit znakem '\n\n'):\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_1
     task_alias: prompt-1
     dataset_path: CZLC/cs_triviaqa
-    description: "Zodpovězte následující otázky:\n\n"
+    description: "Zodpovězte následující otázky (Odpověď uzavřete symbolem '\n\n'):\n\n"
     doc_to_text: "Dotaz: {{question}}\nSprávná odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_2
     task_alias: prompt-2
     dataset_path: CZLC/cs_triviaqa
-    description: "Kvíz:\n\n"
+    description: "Kvíz (Ukončete svou odpověď řetězcem '\n\n'):\n\n"
     doc_to_text: "Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_3
     task_alias: prompt-3
     dataset_path: CZLC/cs_triviaqa
-    description: "Najděte odpovědi na tato dotazy:\n\n"
+    description: "Najděte odpovědi na tato dotazy (Použijte symbol '\n\n' pro ukončení odpovědi):\n\n"
     doc_to_text: "Dotaz: {{question}}?\nVaše odpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_triviaqa_4
     task_alias: prompt-4
     dataset_path: CZLC/cs_triviaqa
-    description: "Úloha: Najděte odpovědi na tato dotazy:\n\n"
+    description: "Úloha: Najděte odpovědi na tato dotazy (Na závěr odpovědi přidejte symbol '\n\n'):\n\n"
     doc_to_text: "Dotaz: {{question}}?\nNalezená odpověď: "
     include: templates/qa/qa_template_yaml

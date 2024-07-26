@@ -1,34 +1,46 @@
 group: benczechmark_cs_sqad32
 group_alias: Simple QA Dataset 3.2
+generation_kwargs:
+  until:
+    - "\n\n"
+    - "</s>"
+    - "Otázka:"
+    - "Dotaz:"
+    - "<|im_end|>"
+    - "Kontext:"
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 20
+
 task:
   - task: cs_sqad_open_0
     task_alias: prompt-0
     dataset_path: CZLC/sqad_3.2_filtered
-    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    description: "Odpovězte na tyto otázky na základě textu. Ukončete odpověď symbolem '\n\n'.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_1
     task_alias: prompt-1
     dataset_path: CZLC/sqad_3.2_filtered
-    description: "Najděte odpovědi na tato dotazy. Podložte je textem.\n\n"
+    description: "Najděte odpovědi na tato dotazy. Podložte je textem. Odpověď ukončete symbolem '\n\n'.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_2
     task_alias: prompt-2
     dataset_path: CZLC/sqad_3.2_filtered
-    description: "Kvíz. Zodpovězte následující otázky podle textu.\n\n"
+    description: "Kvíz. Zodpovězte následující otázky podle textu. Použijte symbol '\n\n' pro ukončení odpovědi.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Dotaz: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_3
     task_alias: prompt-3
     dataset_path: CZLC/sqad_3.2_filtered
-    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    description: "Odpovězte na tyto otázky na základě textu. Odpověď by měla končit znakem '\n\n'.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
   - task: cs_sqad_open_4
     task_alias: prompt-4
     dataset_path: CZLC/sqad_3.2_filtered
-    description: "Odpovězte na tyto otázky na základě textu.\n\n"
+    description: "Odpovězte na tyto otázky na základě textu. Na závěr odpovědi přidejte symbol '\n\n'.\n\n"
     doc_to_text: "Kontext: {{title}}-{{context}} Otázka: {{question}}\nOdpověď: "
     include: templates/qa/qa_template_yaml
 
