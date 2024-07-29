@@ -4,30 +4,28 @@ task:
   - group: benczechmark_summarization_g
     group_alias: Summarization
     task:
-    - task: benczechmark_summarization_0
-      task_alias: prompt-0
-      include: templates/summarization_template_yaml
-      description: "Následuje text a jeho shrnutí.\n"
-      doc_to_text: "{{text}}\nShrnutí: "
-    - task: benczechmark_summarization_1
-      task_alias: prompt-1
-      include: templates/summarization_template_yaml
-      description: "Psaní krátkého shrnutí textu.\n"
-      doc_to_text: "{{text}}\nShrnutí: "
-    - task: benczechmark_summarization_2
-      task_alias: prompt-2
-      include: templates/summarization_template_yaml
-      description: "Příklady sumarizace textu.\n"
-      doc_to_text: "{{text}}\nSumarizace: "
-    - task: benczechmark_summarization_3
-      task_alias: prompt-3
-      include: templates/summarization_template_yaml
-      description: "Přepis textu do TLDR verze.\n"
-      doc_to_text: "{{text}}\nTLDR: "
-    - task: benczechmark_summarization_4
-      task_alias: prompt-4
-      include: templates/summarization_template_yaml
-      description: "Shrň následující texty.\n"
-      doc_to_text: "{{text}}\nShrnutí: "
-metadata:
-  version: 1.0
+      - task: benczechmark_summarization_0
+        task_alias: prompt-0
+        include: templates/summarization_template_yaml
+        description: "Následuje text a jeho souhrn (33 až 51 slov). Souhrn končí znakem '\n\n'.\n"
+        doc_to_text: "{{text}}\nSouhrn: "
+      - task: benczechmark_summarization_1
+        task_alias: prompt-1
+        include: templates/summarization_template_yaml
+        description: "Psaní krátkého(33 až 51 slov) shrnutí textu. Vždy ukončeno znakem '\n\n'.\n"
+        doc_to_text: "{{text}}\nShrnutí: "
+      - task: benczechmark_summarization_2
+        task_alias: prompt-2
+        include: templates/summarization_template_yaml
+        description: "Příklady sumarizace textu. Délka (33 až 51 slov). Ukončeno znakem '\n\n'.\n"
+        doc_to_text: "{{text}}\nSumarizace: "
+      - task: benczechmark_summarization_3
+        task_alias: prompt-3
+        include: templates/summarization_template_yaml
+        description: "Přepis textu do 33 až 51 slovní TLDR verze. Končí řetězcem '\n\n'.\n"
+        doc_to_text: "{{text}}\nTLDR: "
+      - task: benczechmark_summarization_4
+        task_alias: prompt-4
+        include: templates/summarization_template_yaml
+        description: "Shrň následující texty do 33 až 51 slov. Ukonči shrnutí symbolem '\n\n'.\n"
+        doc_to_text: "{{text}}\nShrnutí: "
