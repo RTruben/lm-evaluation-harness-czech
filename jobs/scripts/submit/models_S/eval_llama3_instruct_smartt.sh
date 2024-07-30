@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH --job-name bcm
+#SBATCH --job-name bcm_llama3
 #SBATCH --account OPEN-30-35
 #SBATCH --partition qgpu
 #SBATCH --time 16:00:00
@@ -9,4 +9,4 @@
 NAME='llama3_instruct'
 MODEL_NAME='meta-llama/Meta-Llama-3-8B-Instruct'
 
-source ./jobs/scripts/submit/fire_smartt.sh
+source ./jobs/scripts/submit/fire/fire_S_smartt.sh

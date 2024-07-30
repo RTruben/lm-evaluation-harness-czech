@@ -1,11 +1,3 @@
-#!/usr/bin/bash
-#SBATCH --job-name bcm
-#SBATCH --account OPEN-30-35
-#SBATCH --partition qgpu
-#SBATCH --time 16:00:00
-#SBATCH --gpus-per-node 2
-#SBATCH --nodes 1
-
 # set up run settings
 CHAT_TEMPLATE="none"
 TRUNCATE_STRATEGY="leave_description"
@@ -20,15 +12,17 @@ source ./jobs/TASKS.sh
 source ./jobs/HF_TOKEN.sh
 source ./jobs/NUM_SHOT.sh
 
-export CACHE_NAME="realrun_benchmark_llama3_instruct_cache_${TASKS[$SLURM_ARRAY_TASK_ID]}"
+export CACHE_NAME="realrun_benczechmark_${NAME}_cache_${TASKS[$SLURM_ARRAY_TASK_ID]}"
 cd /home/ifajcik/data_scratch_new/lm-evaluation-harness || exit
 export PYTHONPATH=$(pwd)
 
 echo "SLURM_ARRAY_TASK_ID: $SLURM_ARRAY_TASK_ID"
 echo "Executing TASK: ${TASKS[$SLURM_ARRAY_TASK_ID]}"
 
+ml CUDA/12.1.1
+
 # Set run script
-SCRIPT="./jobs/scripts/models/eval_llama3_instruct_accelerate_vllm.sh"
+SCRIPT="./jobs/scripts/models/eval_L_vllm_master.sh"
 SUM_LOGP_FLAG="no"
 for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
@@ -40,10 +34,10 @@ for task in "${SUM_LOGPROBS[@]}"; do
   fi
 done
 
-OUTPUT_PATH="results/eval_llama3_instruct_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}"
-LOGFILE="eval_llama3_instruct_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}.log"
+OUTPUT_PATH="results_hf/eval_${NAME}_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}"
+LOGFILE="eval_${NAME}_array_${TASKS[$SLURM_ARRAY_TASK_ID]}_chat_${CHAT_TEMPLATE}_trunc_${TRUNCATE_STRATEGY}.log"
 
 set -x # enables a mode of the shell where all executed commands are printed to the terminal
 # Run the script with the task specified by SLURM_ARRAY_TASK_ID
-time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "$SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" "$NUM_FEWSHOT" | tee -a "$LOGFILE"
+time $SCRIPT "${TASKS[$SLURM_ARRAY_TASK_ID]}" "$OUTPUT_PATH" "$SUM_LOGP_FLAG" "$CHAT_TEMPLATE" "$TRUNCATE_STRATEGY" "$NUM_FEWSHOT" "$MODEL_NAME" | tee -a "$LOGFILE"
 set +x

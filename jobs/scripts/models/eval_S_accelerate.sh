@@ -1,6 +1,3 @@
-MODEL_NAME='meta-llama/Meta-Llama-3-8B-Instruct'
-num_gpus=4 #$(nvidia-smi --query-gpu=count --format=csv,noheader | awk '{print $1}' | head -n 1)
-GPUs_per_model=$num_gpus
 echo "Executing in $(pwd)"
 
 TASK="$1"
@@ -9,6 +6,7 @@ SUMLOGP="$3"
 CHAT_TEMPLATE="$4"
 TRUNCATE_STRATEGY="$5"
 NUM_FEWSHOT="$6"
+MODEL_NAME="$7"
 
 export NUMEXPR_MAX_THREADS=$(nproc --all)
 
@@ -35,12 +33,15 @@ if [ "$TRUNCATE_STRATEGY" != "none" ]; then
   TRUNCATE_STRATEGY_ARG=",truncate_strategy=$TRUNCATE_STRATEGY"
 fi
 
+#TODO: Some tasks fail with batch_size auto, keeping 2 for now
+#TODO: Phi3 requires specifically setting attn_implementation="flash_attention_2"
+#TODO: Generative tasks require 2048-256=1792 max_length, as they have default gen. limit 256. MPT model fails with 2048.
 $PYTHON -m accelerate.commands.launch \
   --dynamo_backend=inductor \
   -m lm_eval --model hf \
   --model_args pretrained=$MODEL_NAME,dtype=bfloat16,max_length=2048,truncation=True,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
   --tasks "$TASK" \
-  --batch_size $num_gpus \
+  --batch_size 2 \
   --output_path "$OUTPUT_PATH" \
   --log_samples \
   --verbosity DEBUG \

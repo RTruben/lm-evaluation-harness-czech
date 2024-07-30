@@ -4,7 +4,7 @@ group_alias: CSFEVER NLI
 task:
   - task: csfever_0
     task_alias: prompt-0
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/není jasné:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -17,7 +17,7 @@ task:
     task_alias: prompt-1
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Ste fact-checker. Určete pravdivost následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -29,7 +29,7 @@ task:
     task_alias: prompt-2
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Oveřte fakticitu následujúcích tvrzení. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -41,7 +41,7 @@ task:
     task_alias: prompt-3
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Úkol: Vyhodnoťte pravdivost následujúcích tvrzení. Odpovězte pravda/nepravda/ani jedno:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -53,7 +53,7 @@ task:
     task_alias: prompt-4
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Ste si jisti pravdivostí následujúcích tvrzení? Odpovězte ne/možná/ano:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -65,7 +65,7 @@ task:
     task_alias: prompt-5
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Seš profesionální fact-checker. Determinuj pravdivost následujúcích tvrzení. Odpověz pravda/nepravda/nejasné:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -77,7 +77,7 @@ task:
     task_alias: prompt-6
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Prozkoumejte pravdivost následujúcích výroků. Odpovězte Ano/ne/možná:\n\n"
     doc_to_target: label
     doc_to_choice:
@@ -89,7 +89,7 @@ task:
     task_alias: prompt-7
     include: templates/multichoice/multi_class_template_wtrain_yaml
 
-    dataset_path: ctu-aic/csfever_nli
+    dataset_path: CZLC/csfever_nli
     description: "Seš AI pro fact-checking. Urči pravdivost následujúcích tvrzení. Odpověz jestli evidence podporuje/vyvrací tvrzení, nebo jestli chybí informace:\n\n"
     doc_to_target: label
     doc_to_choice:
