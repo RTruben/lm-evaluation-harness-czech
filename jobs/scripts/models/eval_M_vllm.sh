@@ -1,5 +1,4 @@
 num_gpus=$(nvidia-smi --query-gpu=count --format=csv,noheader | awk '{print $1}' | head -n 1)
-GPUs_per_model=$num_gpus
 echo "Executing in $(pwd)"
 
 TASK="$1"
@@ -36,7 +35,7 @@ if [ "$TRUNCATE_STRATEGY" != "none" ]; then
 fi
 
 $PYTHON -m lm_eval --model vllm \
-  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$GPUs_per_model,dtype=bfloat16,gpu_memory_utilization=0.8,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
+  --model_args pretrained=$MODEL_NAME,tensor_parallel_size=$num_gpus,dtype=bfloat16,gpu_memory_utilization=0.8,max_length=2048,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
   --tasks "$TASK" \
   --batch_size auto:4 \
   --output_path "$OUTPUT_PATH" \
