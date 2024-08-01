@@ -21,7 +21,7 @@ from typing import (
 
 import torch
 import transformers
-from transformers import PreTrainedTokenizerFast
+from transformers import PreTrainedTokenizerFast, AutoTokenizer
 
 from lm_eval.utils import eval_logger, SegmentedString
 
@@ -751,7 +751,6 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
 
     """
     assert type(string) == SegmentedString, "string must be a SegmentedString"
-
     encoding = tokenizer(
         string,
         add_special_tokens=add_special_tokens,
@@ -782,7 +781,7 @@ def segmented_tok_encode(string: SegmentedString, tokenizer: PreTrainedTokenizer
                 segment_labels.append(string.labels[segment_offset])
         segmented_tokens[-1].append(token)
     # the last segmment might be placed into delimiter, make it cont instead
-    if segment_labels is not None and segment_labels[-1] == "target_delimiter" and has_continuation:
+    if segment_labels is not None and segment_labels[-1] in ["target_delimiter", "target_text"] and has_continuation:
         segment_labels[-1] = "target_cont"
 
     if len(encoding) > max_length:
