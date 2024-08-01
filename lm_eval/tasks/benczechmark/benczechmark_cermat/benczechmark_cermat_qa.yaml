@@ -14,7 +14,7 @@ generation_kwargs:
     - "<|im_end|>"
   do_sample: false
   temperature: 0.0
-  max_new_tokens: 20
+  max_gen_toks: 20
 task:
   - group: benczechmark_czech_open
     dataset_path: CZLC/cermat_czech_open
