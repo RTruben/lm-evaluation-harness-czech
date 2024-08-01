@@ -22,7 +22,11 @@ echo "Executing TASK: ${TASKS[$SLURM_ARRAY_TASK_ID]}"
 ml CUDA/12.1.1
 
 # Set run script
-SCRIPT="./jobs/scripts/models/eval_M_accelerate.sh"
+if [ "$BACKEND" == "vllm" ]; then
+  SCRIPT="./jobs/scripts/models/eval_M_vllm.sh"
+else
+  SCRIPT="./jobs/scripts/models/eval_M_accelerate.sh"
+fi
 SUM_LOGP_FLAG="no"
 for task in "${SUM_LOGPROBS[@]}"; do
   if [ "$task" == "${TASKS[$SLURM_ARRAY_TASK_ID]}" ]; then
