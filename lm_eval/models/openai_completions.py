@@ -57,6 +57,9 @@ class LocalCompletionsAPI(TemplateAPI):
         outputs: Union[Dict, List[Dict]],
         tokens: List[List[int]] = None,
         ctxlens: List[int] = None,
+        # patch by Martin Fajčík
+        normalize_log_probs: bool = False,
+        # end of patch
         **kwargs,
     ) -> List[Tuple[float, bool]]:
         res = []
@@ -73,6 +76,10 @@ class LocalCompletionsAPI(TemplateAPI):
                     if tok != max(top, key=top.get):
                         is_greedy = False
                         break
+                # patch by Martin Fajčík
+                if normalize_log_probs:
+                    logprobs /= len(tokens)
+                # end of patch
                 res.append((logprobs, is_greedy))
         return res
 

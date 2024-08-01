@@ -34,7 +34,8 @@ from importlib.util import find_spec
 from lm_eval import utils
 from lm_eval.api.instance import Instance
 from lm_eval.api.model import TemplateLM
-from lm_eval.models.utils import Collator, chunks, configure_pad_token
+from lm_eval.models.utils import Collator, chunks, configure_pad_token, segmented_tok_encode
+from lm_eval.utils import SegmentedString
 
 
 LogLikelihoodInputs = Tuple[Tuple[str, str], List[int], List[int]]
@@ -76,6 +77,10 @@ class TemplateAPI(TemplateLM):
         custom_prefix_token_id=None,
         # send the requests as tokens or strings
         tokenized_requests=True,
+        # benczechmark patch start
+        truncate_strategy: str = None,  # "leave_description"
+        normalize_log_probs: bool = True,
+        # patch end
         **kwargs,
     ) -> None:
         super().__init__()
@@ -92,6 +97,8 @@ class TemplateAPI(TemplateLM):
         self.model = model or pretrained
         self.base_url = base_url
         self.tokenizer = tokenizer
+        self.truncate_strategy = truncate_strategy
+        self.normalize_log_probs = normalize_log_probs
         if not isinstance(batch_size, int) and "auto" in batch_size:
             eval_logger.warning(
                 "Automatic batch size is not supported for API models. Defaulting to batch size 1."
@@ -276,12 +283,13 @@ class TemplateAPI(TemplateLM):
                 return self.tokenizer.eot_token
 
     def tok_encode(
-        self,
-        string: str,
-        left_truncate_len: int = None,
-        add_special_tokens: bool = False,
-        truncation: bool = False,
-        **kwargs,
+            self,
+            string: str,
+            left_truncate_len: int = None,
+            add_special_tokens: bool = False,
+            truncation: bool = False,
+            return_segment_tokens=False,
+            **kwargs,
     ) -> Union[List[List[int]], List[int], List[str]]:
         if self.tokenizer_backend is None:
             return [string]
@@ -289,23 +297,38 @@ class TemplateAPI(TemplateLM):
             # by default for CausalLM - false or self.add_bos_token is set
             if not add_special_tokens:
                 add_special_tokens = False or self.add_bos_token
-            encoding: Union[List[List[int]], List[int]] = self.tokenizer(
-                string,
-                add_special_tokens=add_special_tokens,
-                truncation=truncation,
-                return_attention_mask=False,
-            ).input_ids
 
-            # left-truncate the encoded context to be at most `left_truncate_len` tokens long
-            if left_truncate_len:
-                if not isinstance(string, str):
-                    encoding = [enc[-left_truncate_len:] for enc in encoding]
+            if self.truncate_strategy is None:
+                encoding: Union[List[List[int]], List[int]] = self.tokenizer(
+                    string,
+                    add_special_tokens=add_special_tokens,
+                    truncation=truncation,
+                    return_attention_mask=False,
+                ).input_ids
+
+                # left-truncate the encoded context to be at most `left_truncate_len` tokens long
+                if left_truncate_len:
+                    if not isinstance(string, str):
+                        encoding = [enc[-left_truncate_len:] for enc in encoding]
+                    else:
+                        encoding = encoding[-left_truncate_len:]
+            else:
+                if type(string) == tuple:
+                    encoding = [self.tok_encode(s, add_special_tokens=add_special_tokens) for s in string]
+                    assert return_segment_tokens is False
                 else:
-                    encoding = encoding[-left_truncate_len:]
+                    encoding, segmented_tokens, segment_labels = segmented_tok_encode(string, self.tokenizer,
+                                                                                      self.max_length,
+                                                                                      self.truncate_strategy,
+                                                                                      add_special_tokens)
+                if return_segment_tokens:
+                    return encoding, segmented_tokens, segment_labels
 
             return encoding
 
         else:
+            if self.truncate_strategy == "leave_description":
+                raise NotImplementedError("Non-default truncate strategy is only implemented for hf backend.")
             try:
                 encoding = self.tokenizer.encode(string)
             except Exception:
@@ -503,9 +526,12 @@ class TemplateAPI(TemplateLM):
                 if isinstance(outputs, dict):
                     outputs = [outputs]
                 for answer_, cache_key in zip(
-                    self.parse_logprobs(
-                        outputs=outputs, tokens=inputs, ctxlens=ctxlens
-                    ),
+                        self.parse_logprobs(
+                            outputs=outputs, tokens=inputs, ctxlens=ctxlens,
+                            # patch by Martin Fajčík
+                            normalize_log_probs=self.normalize_log_probs,
+                            # end of patch
+                        ),
                     cache_keys,
                 ):
                     if answer_ is not None:
