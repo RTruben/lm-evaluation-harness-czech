@@ -10,7 +10,9 @@ generation_kwargs:
     - "Kontext:"
   do_sample: false
   temperature: 0.0
-  max_new_tokens: 20
+  max_gen_toks: 20
+
+
 
 task:
   - task: cs_sqad_open_0

@@ -9,7 +9,7 @@ generation_kwargs:
     - "<|im_end|>"
   do_sample: false
   temperature: 0.0
-  max_new_tokens: 20
+  max_gen_toks: 20
 task:
   - task: cnec_ner_0
     task_alias: prompt-0
