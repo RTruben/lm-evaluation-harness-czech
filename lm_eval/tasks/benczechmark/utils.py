@@ -264,9 +264,9 @@ class MultipleChoiceTask(ConfigurableTask):
         return {
             **({"acc": acc} if "acc" in use_metric else {}),
             **({"macro_f1": (gold, pred)} if "f1" in use_metric else {}),
-            **({"macro_f1_ci": (gold, pred)} if "f1_ci" in use_metric else {}),
+            # **({"macro_f1_ci": (gold, pred)} if "f1_ci" in use_metric else {}),
             **({"avg_mcauroc": (gold, probs)} if "avg_mcauroc" in use_metric else {}),
-            **({"avg_mcauroc_ci": (gold, probs)} if "avg_mcauroc_ci" in use_metric else {}),
+            # **({"avg_mcauroc_ci": (gold, probs)} if "avg_mcauroc_ci" in use_metric else {}),
         }
 
     def higher_is_better(self) -> dict:
