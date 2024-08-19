@@ -14,6 +14,7 @@ source ./jobs/TASKS.sh
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_S/eval_aya23_instruct_smartt.sh
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_S/eval_phi3mini_instruct_smartt.sh
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_S/eval_qwen2_instruct_smartt.sh
+#sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_S/eval_olmo_instruct_smartt.sh
 
 # M MODELS - EACH JOB uses multiple GPUs
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_M/eval_mixtral8x7_instruct_smartt.sh
@@ -22,3 +23,6 @@ source ./jobs/TASKS.sh
 # L MODELS - EACH JOB IS MULTINODE, and uses 8 GPUs/node
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_L/eval_llama31_instruct_TEST_smartt.sh
 #sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_L/eval_llama31_instruct_70B_smartt.sh
+
+# XXL MODELS - EACH JOB IS MANY MULTINODE (e.g. llama406 is 8 nodes), and uses 8 GPUs/node
+#sbatch --array=0-$((${#TASKS[@]} - 1)) jobs/scripts/submit/models_XXL/eval_llama31_instruct_405B_smartt.sh

@@ -41,7 +41,7 @@ $PYTHON -m accelerate.commands.launch \
   -m lm_eval --model hf \
   --model_args pretrained=$MODEL_NAME,dtype=bfloat16,max_length=2048,truncation=True,normalize_log_probs=$NORMALIZE_LOG_PROBS,trust_remote_code=True$TRUNCATE_STRATEGY_ARG \
   --tasks "$TASK" \
-  --batch_size 2 \
+  --batch_size auto:4 \
   --output_path "$OUTPUT_PATH" \
   --log_samples \
   --verbosity DEBUG \

@@ -11,6 +11,11 @@ export TRUNCATE_STRATEGY="$5"
 export NUM_FEWSHOT="$6"
 export MODEL_NAME="$7"
 
-ray start --head --port $MASTER_PORT
+source ~/.bashrc
+micromamba activate harness
+
+#ray start --head --port $MASTER_PORT
+
 
 srun /home/ifajcik/data_scratch_new/lm-evaluation-harness/jobs/scripts/models/eval_L_vllm_worker.sh
+echo "Finished master script at $(hostname)"
