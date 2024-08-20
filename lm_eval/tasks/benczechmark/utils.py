@@ -187,6 +187,15 @@ def rouge_raw(predictions, references, select: Optional[str] = None):
     return module.compute(predictions=predictions, references=references, select=select)
 
 
+def rouge_raw_r2_mid_f_without_bootstrap(predictions, references):
+    return rouge_raw_without_bootstrap(predictions, references, "2_fmeasure")
+
+
+def rouge_raw_without_bootstrap(predictions, references, select: Optional[str] = None):
+    module = evaluate.load("CZLC/rouge_raw")
+    return module.compute(predictions=predictions, references=references, select=select, aggregate=False)
+
+
 ###
 ### MC-AUROC metric
 ###

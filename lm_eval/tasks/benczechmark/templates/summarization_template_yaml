@@ -8,6 +8,6 @@ fewshot_split: train
 include: n_shot_yaml
 doc_to_target: abstract
 metric_list:
-  - metric: !function ../utils.rouge_raw_r2_mid_f
+  - metric: !function ../utils.rouge_raw_r2_mid_f_without_bootstrap
     higher_is_better: true
     aggregation: mean
