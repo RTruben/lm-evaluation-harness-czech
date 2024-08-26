@@ -12,6 +12,12 @@ export NUMEXPR_MAX_THREADS=$(nproc --all)
 
 set -x
 
+# Check if OUTPUT_PATH exists
+if [ -e "$OUTPUT_PATH" ]; then
+  echo "Output path $OUTPUT_PATH already exists. Exiting."
+  exit 0
+fi
+
 # Normalize log probs based on sumlogp argument
 if [ "$SUMLOGP" = "no" ]; then
   NORMALIZE_LOG_PROBS="True"
