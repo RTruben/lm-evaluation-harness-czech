@@ -344,12 +344,7 @@ def mmlu_get_question_text_umimeto(dataset):
 
 
 def get_choices_belebele(dataset):
-    return [
-        f"1. {dataset['mc_answer1']}",
-        f"2. {dataset['mc_answer2']}",
-        f"3. {dataset['mc_answer3']}",
-        f"4. {dataset['mc_answer4']}"
-    ]
+    return ["1", "2", "3", "4"]
 
 
 def get_target_belebele(dataset):
