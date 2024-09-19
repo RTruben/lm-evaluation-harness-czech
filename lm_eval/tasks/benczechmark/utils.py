@@ -220,7 +220,7 @@ def aggregate_CI_avg_mcauroc(items):
     probs = unzipped_list[1]
 
     metric = evaluate.load("CZLC/mc_auroc")
-    result = metric.compute(predictions=probs, references=golds)
+    result = metric.compute(predictions=probs, references=golds, CI=True)
     return result["mc_auroc_ci"]
 
 
