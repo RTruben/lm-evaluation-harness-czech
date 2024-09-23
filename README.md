@@ -2,7 +2,7 @@
 * __pre-release v0.3__   
 If you done the evaluation with older version (v0.2), please reevaluate subjectivity task.
 And if you have used the first public version (v0.1), please reevaluate subjectivity, belebele, and snli in order to be comparable with benchmark. Be sure to extract leaderboard results (using [compile_log_files.py](https://github.com/MFajcik/benczechmark-leaderboard/blob/master/leaderboard/compile_log_files.py)) on the new results, not the older results.
-* __pre-release v0.2__
+* __pre-release v0.2__   
 Fixes for belebele, snli, and grammarerrorcorrection tasks. The first critical big in prompt (only answer choices were shown to model; not question and neither context). The latter two tasks were using wrong metrics.
 Please reevaluate this tasks before submitting your results to leaderboard.
 
