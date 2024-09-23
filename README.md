@@ -1,3 +1,14 @@
+# Changelog / Things to be aware of!
+* __pre-release v0.3__   
+If you done the evaluation with older version (v0.2), please reevaluate subjectivity task.
+And if you have used the first public version (v0.1), please reevaluate subjectivity, belebele, and snli in order to be comparable with benchmark. Be sure to extract leaderboard results (using [compile_log_files.py](https://github.com/MFajcik/benczechmark-leaderboard/blob/master/leaderboard/compile_log_files.py)) on the new results, not the older results.
+* __pre-release v0.2__
+Fixes for belebele, snli, and grammarerrorcorrection tasks. The first critical big in prompt (only answer choices were shown to model; not question and neither context). The latter two tasks were using wrong metrics.
+Please reevaluate this tasks before submitting your results to leaderboard.
+
+* If the [leaderboard](https://huggingface.co/spaces/CZLC/BenCzechMark) doesn't show up (or shows something like `Results dataset integrity solving`), it means the model tournament is being recomputed (~ 5 hours). This gets done everytime we fix some crucial bug (so after v0.2, v0.3).
+
+
 # Introduction to  🇨🇿 BenCzechMark Fork
 Welcome to 🇨🇿 BenCzechMark for of [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). Official readme corresponding to the forked version is [here](README_harness.md). The main differences of this fork include:
 * Extra switch for aggregating per-token log-probability with average, instead of sum.
