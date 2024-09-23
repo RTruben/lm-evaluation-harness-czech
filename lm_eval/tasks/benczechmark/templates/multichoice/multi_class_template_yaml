@@ -1,7 +1,7 @@
 include:
  - ../metrics/classification_metrics_yaml
+ - ../n_shot_yaml
 
 output_type: multiple_choice
 test_split: test
-include: ../n_shot_yaml
 fewshot_delimiter: "\n"

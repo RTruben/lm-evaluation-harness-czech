@@ -1,6 +1,5 @@
 include:
  - multi_choice_template_yaml
- - ../metrics/classification_metrics_yaml
 
 fewshot_split: test
 class: !function ../../utils.MultipleChoiceTask

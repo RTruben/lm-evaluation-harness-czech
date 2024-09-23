@@ -1,7 +1,5 @@
 group: benczechmark_snli
 group_alias: CS SNLI
-include:
-  - templates/metrics/classification_metrics_yaml
 fewshot_split: test
 task:
   - task: benczechmark_snli_0
