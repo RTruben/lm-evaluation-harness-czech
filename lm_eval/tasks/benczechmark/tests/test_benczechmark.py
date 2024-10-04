@@ -107,13 +107,15 @@ def generate_argv(model_type, task, max_seq_len, truncate_strategy, apply_chat_t
 @pytest.mark.parametrize("truncate_strategy", [None, "leave_description"])
 def test_task(task, backend, max_seq_len, apply_chat_template, truncate_strategy):
     from lm_eval.__main__ import cli_evaluate
-    normalize_log_probs = "False" if task in SUM_LOGPROBS else "True"
+    normalize_log_probs = "True"
 
-    if truncate_strategy == "leave_description" and task in SUM_LOGPROBS:
-        # This is an invalid combination
-        return
-
-    # Select a GPU randomly from the available options
+    if task in SUM_LOGPROBS:
+        normalize_log_probs = "False"
+        # Skip invalid combinations
+        if truncate_strategy == "leave_description":
+            pytest.skip("Invalid combination: truncate_strategy='leave_description' for tasks in SUM_LOGPROBS")
+        if apply_chat_template:
+            pytest.skip("Invalid combination: apply_chat_template=True for tasks in SUM_LOGPROBS")
 
     # Generate command-line arguments
     sys.argv = generate_argv(
