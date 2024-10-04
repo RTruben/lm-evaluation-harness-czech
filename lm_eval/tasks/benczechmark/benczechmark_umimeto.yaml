@@ -1,147 +1,179 @@
-
 group: benczechmark_umimeto_qa
 group_alias: Umimeto QA
 dataset_path: CZLC/umimeto-qa
-include: templates/multichoice/multi_choice_mmlu_template_yaml
-doc_to_text: !function ./utils.mmlu_get_question_text_umimeto
 fewshot_split: test
 task:
-- group: biology
-  group_alias: Biology
-  dataset_name: biology
-  task:
-  - task: umimeto_biology_0
-    task_alias: prompt-0
-    description: "Jsi expert v biologii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_biology_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_biology_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z biologie pro žáky základních a středních škol.\n\n"
-  - task: umimeto_biology_3
-    task_alias: prompt-3
-    description: "Biologická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_biology_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v biologii.\n\n"
+  - group: biology
+    group_alias: Biology
+    dataset_name: biology
+    task:
+      - task: umimeto_biology_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Jsi expert v biologii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_biology_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_biology_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Ukázkové úlohy z biologie pro žáky základních a středních škol.\n\n"
+      - task: umimeto_biology_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Biologická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_biology_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Správná řešení úloh z Krajského přeboru v biologii.\n\n"
 
-- group: chemistry
-  group_alias: Chemistry
-  dataset_name: chemistry
-  task:
-  - task: umimeto_chemistry_0
-    task_alias: prompt-0
-    description: "Jsi expert v chemii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_chemistry_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_chemistry_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z chemie pro žáky základních a středních škol.\n\n"
-  - task: umimeto_chemistry_3
-    task_alias: prompt-3
-    description: "Chemická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_chemistry_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v chemii.\n\n"
+  - group: chemistry
+    group_alias: Chemistry
+    dataset_name: chemistry
+    task:
+      - task: umimeto_chemistry_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Jsi expert v chemii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_chemistry_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_chemistry_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Ukázkové úlohy z chemie pro žáky základních a středních škol.\n\n"
+      - task: umimeto_chemistry_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Chemická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_chemistry_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Správná řešení úloh z Krajského přeboru v chemii.\n\n"
 
-- group: czech
-  group_alias: Czech
-  dataset_name: czech
-  task:
-  - task: umimeto_czech_0
-    task_alias: prompt-0
-    description: "Jsi odborník na český jazyk. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_czech_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_czech_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z českého jazyka pro žáky základních a středních škol.\n\n"
-  - task: umimeto_czech_3
-    task_alias: prompt-3
-    description: "Olympiáda z českého jazyka.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_czech_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v češtině.\n\n"
+  - group: czech
+    group_alias: Czech
+    dataset_name: czech
+    task:
+      - task: umimeto_czech_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Jsi odborník na český jazyk. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_czech_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_czech_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Ukázkové úlohy z českého jazyka pro žáky základních a středních škol.\n\n"
+      - task: umimeto_czech_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Olympiáda z českého jazyka.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_czech_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Správná řešení úloh z Krajského přeboru v češtině.\n\n"
 
-- group: history
-  group_alias: History
-  dataset_name: history
-  task:
-  - task: umimeto_history_0
-    task_alias: prompt-0
-    description: "Jsi expert na historii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_history_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_history_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z dějepisu pro žáky základních a středních škol.\n\n"
-  - task: umimeto_history_3
-    task_alias: prompt-3
-    description: "Dějepisná Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_history_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v dějepise.\n\n"
+  - group: history
+    group_alias: History
+    dataset_name: history
+    task:
+      - task: umimeto_history_0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-0
+        description: "Jsi expert na historii. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_history_1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-1
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_history_2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-2
+        description: "Ukázkové úlohy z dějepisu pro žáky základních a středních škol.\n\n"
+      - task: umimeto_history_3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-3
+        description: "Dějepisná Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_history_4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-4
+        description: "Správná řešení úloh z Krajského přeboru v dějepise.\n\n"
 
-- group: informatics
-  group_alias: Informatics
-  dataset_name: informatics
-  task:
-  - task: umimeto_informatics_0
-    task_alias: prompt-0
-    description: "Jsi počítačový expert. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_informatics_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_informatics_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z informatiky pro žáky základních a středních škol.\n\n"
-  - task: umimeto_informatics_3
-    task_alias: prompt-3
-    description: "Informatická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_informatics_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v informatice.\n\n"
+  - group: informatics
+    group_alias: Informatics
+    dataset_name: informatics
+    task:
+      - task: umimeto_informatics_0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-0
+        description: "Jsi počítačový expert. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_informatics_1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-1
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_informatics_2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-2
+        description: "Ukázkové úlohy z informatiky pro žáky základních a středních škol.\n\n"
+      - task: umimeto_informatics_3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-3
+        description: "Informatická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_informatics_4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        task_alias: prompt-4
+        description: "Správná řešení úloh z Krajského přeboru v informatice.\n\n"
 
-- group: math
-  group_alias: Math
-  dataset_name: math
-  task:
-  - task: umimeto_math_0
-    task_alias: prompt-0
-    description: "Jsi expert v matematice. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_math_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_math_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z matematiky pro žáky základních a středních škol.\n\n"
-  - task: umimeto_math_3
-    task_alias: prompt-3
-    description: "Matematická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_math_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru v matematice.\n\n"
+  - group: math
+    group_alias: Math
+    dataset_name: math
+    task:
+      - task: umimeto_math_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Jsi expert v matematice. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_math_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_math_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Ukázkové úlohy z matematiky pro žáky základních a středních škol.\n\n"
+      - task: umimeto_math_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Matematická Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_math_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Správná řešení úloh z Krajského přeboru v matematice.\n\n"
 
-- group: physics
-  group_alias: Physics
-  dataset_name: physics
-  task:
-  - task: umimeto_physics_0
-    task_alias: prompt-0
-    description: "Jsi expert ve fyzice. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
-  - task: umimeto_physics_1
-    task_alias: prompt-1
-    description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
-  - task: umimeto_physics_2
-    task_alias: prompt-2
-    description: "Ukázkové úlohy z fyziky pro žáky základních a středních škol.\n\n"
-  - task: umimeto_physics_3
-    task_alias: prompt-3
-    description: "Fyzikální Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
-  - task: umimeto_physics_4
-    task_alias: prompt-4
-    description: "Správná řešení úloh z Krajského přeboru ve fyzice.\n\n"
+  - group: physics
+    group_alias: Physics
+    dataset_name: physics
+    task:
+      - task: umimeto_physics_0
+        task_alias: prompt-0
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Jsi expert ve fyzice. Předložím ti několik otázek a možné odpovědi A-B a tvůj úkol bude vybrat správnou odpověď.\n\n"
+      - task: umimeto_physics_1
+        task_alias: prompt-1
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Úkol: Vyberte správnou odpověď A-B na následující otázky.\n\n"
+      - task: umimeto_physics_2
+        task_alias: prompt-2
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Ukázkové úlohy z fyziky pro žáky základních a středních škol.\n\n"
+      - task: umimeto_physics_3
+        task_alias: prompt-3
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Fyzikální Olympiáda.\n\nInstrukce: Vyberte správnou odpověď A-B pro zadanou otázku. Pro každou otázku existuje právě jedna správná odpověď.\nZadání:\n\n"
+      - task: umimeto_physics_4
+        task_alias: prompt-4
+        include: templates/multichoice/multi_choice_umimeto_template_yaml
+        description: "Správná řešení úloh z Krajského přeboru ve fyzice.\n\n"

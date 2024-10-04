@@ -1,7 +1,6 @@
 group: benczechmark_history_ir
 group_alias: History Retrieval
 dataset_path: CZLC/history_retrieval
-include: templates/multichoice/multi_choice_historyir_template_yaml
 fewshot_split: train
 task:
   - task: history_ir_0

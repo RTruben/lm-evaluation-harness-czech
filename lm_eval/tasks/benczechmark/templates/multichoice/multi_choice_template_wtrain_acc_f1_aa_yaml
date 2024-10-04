@@ -3,4 +3,3 @@ include:
 
 training_split: train
 fewshot_split: train
-class: !function ../../utils.MultipleChoiceTask
