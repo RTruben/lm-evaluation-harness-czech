@@ -10,7 +10,7 @@ from sqlitedict import SqliteDict
 from tqdm import tqdm
 
 from lm_eval import utils
-
+from lm_eval.utils import SegmentedString
 
 eval_logger = logging.getLogger("lm-eval")
 
@@ -348,9 +348,15 @@ class TemplateLM(LM):
             context_enc = self.tok_encode(context)
             continuation_enc = self.tok_encode(continuation, add_special_tokens=False)
         else:
-            if (hasattr(self, 'truncate_strategy') and
-                    self.truncate_strategy == "leave_description"):
-                whole_enc, segment_tokens, segment_labels = self.tok_encode(context + continuation,
+            inp = context + continuation
+            truncation_ld = (hasattr(self, 'truncate_strategy') and  self.truncate_strategy == "leave_description")
+            if  truncation_ld and \
+                (type(inp) == SegmentedString
+                 and "description" in inp.labels) or \
+                (type(inp) == tuple and
+                 type(inp[0]) == SegmentedString and "description" in inp[0].labels):
+
+                whole_enc, segment_tokens, segment_labels = self.tok_encode(inp,
                                                                             return_segment_tokens=True)
                 target_cont_pos = segment_labels.index("target_cont")
                 split_pos = target_cont_pos - 1 if segment_labels[
@@ -358,7 +364,13 @@ class TemplateLM(LM):
                 context_enc = [t for tokens in segment_tokens[:split_pos] for t in tokens]
                 continuation_enc = [t for tokens in segment_tokens[split_pos:] for t in tokens]
             else:
-                whole_enc = self.tok_encode(context + continuation)
+                if truncation_ld:
+                    # At this point, disable leave_description truncation strategy
+                    eval_logger.warning(
+                        f"Disabling truncation strategy {self.truncate_strategy}, as there is no description in the inputs.")
+                    self.truncate_strategy = None
+
+                whole_enc = self.tok_encode(inp)
                 context_enc = self.tok_encode(context)
 
                 context_enc_len = len(context_enc)
