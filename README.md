@@ -1,7 +1,7 @@
 # Changelog / Things to be aware of!
 * __pre-release v0.4__  
-- bugfix: F1 was sometimes corresponding to binary F1, and sometimes to macro F1. F1 was not used on leaderboard, however if you used it, you might want to recompute your tasks.
-- minor fixes, BCM tests added
+    - bugfix: F1 was sometimes corresponding to binary F1, and sometimes to macro F1. F1 was not used on leaderboard, however if you used it, you might want to recompute your tasks.
+    - minor fixes, BCM tests added
 
 * __pre-release v0.3__   
 If you done the evaluation with older version (v0.2), please reevaluate subjectivity task.
