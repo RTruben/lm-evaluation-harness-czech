@@ -10,7 +10,7 @@ from lm_eval import evaluator, utils
 from lm_eval.evaluator import request_caching_arg_to_dict
 from lm_eval.loggers import EvaluationTracker, WandbLogger
 from lm_eval.tasks import TaskManager
-from lm_eval.utils import handle_non_serializable, make_table, simple_parse_args_string
+from lm_eval.utils import handle_non_serializable, make_table, simple_parse_args_string, print_single_metric
 
 
 def _int_or_none_list_arg_type(
@@ -442,9 +442,11 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
             f"batch_size: {args.batch_size}{f' ({batch_sizes})' if batch_sizes else ''}"
         )
         print(make_table(results))
+        # print(results)
         if "groups" in results:
             print(make_table(results, "groups"))
-
+        if "aver_complete" in results:
+            print_single_metric(results.get("results"))
         if args.wandb_args:
             # Tear down wandb run once all the logging is done.
             wandb_logger.run.finish()

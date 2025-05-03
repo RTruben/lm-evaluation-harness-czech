@@ -95,10 +95,26 @@ def chrf(items):
 
     Higher is better  # TODO I think
     """
-    refs = list(zip(*items))[0]
-    preds = list(zip(*items))[1]
+    my_items = chrf_ter_util(items)
+    print(my_items)
+    refs = list(zip(*my_items))[0]
+    preds = list(zip(*my_items))[1]
     refs, preds = _sacreformat(refs, preds)
     return sacrebleu.corpus_chrf(preds, refs).score
+
+
+def chrf_ter_util(items):
+    my_items = []
+    for double in items:
+        ref = re.sub(r"<extra_id_\d+>", "", double[0]).strip().replace("  ",",")
+        pred = re.sub(r"<extra_id_\d+>", "", double[1]).strip().replace("  ",",")
+        ref_list = ref.split(",")
+        pred_list = pred.split(",")
+        if len(ref_list) > 1 and len(pred_list) == len(ref_list):
+            for index, value in enumerate(ref_list):
+                my_items.append([value, pred_list[index]])
+        my_items.append([ref, pred])
+    return my_items
 
 
 @register_aggregation("ter")
@@ -111,8 +127,9 @@ def ter(items):
 
     Lower is better
     """
-    refs = list(zip(*items))[0]
-    preds = list(zip(*items))[1]
+    my_items = chrf_ter_util(items)
+    refs = list(zip(*my_items))[0]
+    preds = list(zip(*my_items))[1]
     refs, preds = _sacreformat(refs, preds)
     return sacrebleu.corpus_ter(preds, refs).score
 
@@ -193,6 +210,8 @@ def exact_match_hf_evaluate(
     ignore_punctuation=False,
     ignore_numbers=False,
 ):
+    predictions, references = em_util(predictions, references)
+    print(f'Preds: {predictions} | Refs: {references}')
     if regexes_to_ignore is not None:
         for s in regexes_to_ignore:
             predictions = np.array([re.sub(s, "", x) for x in predictions])
@@ -222,6 +241,19 @@ def exact_match_hf_evaluate(
 
 ###
 
+
+def em_util(predictions, references):
+    my_predictions = [re.sub(r"<extra_id_\d+>", "", pred).strip().replace("  ",",") for pred in predictions]
+    my_references = [re.sub(r"<extra_id_\d+>", "", ref).strip().replace("  ",",") for ref in references]
+    pred_list = my_predictions[0].split(",")
+    ref_list = my_references[0].split(",")
+    if len(ref_list) > 1 and len(pred_list) == len(ref_list):
+        my_predictions.pop(0)
+        my_references.pop(0)
+        for index, value in enumerate(ref_list):
+            my_references.append(value)
+            my_predictions.append(pred_list[index])
+    return my_predictions, my_references    
 
 @register_metric(
     metric="exact_match",

@@ -314,7 +314,76 @@ class Reorderer:
         assert all(cov)
 
         return res
+    
+def get_chrf(tasks):
+    baseline = 0
+    best = 100
+    result_agg = 0
+    samples_agg = 0
+    for task, sample_count in tasks:
+        result_chrf = task.get("chrf,none", 0)
+        normalized = 100 * ((result_chrf - baseline) / (best - baseline))
+        result_agg += (sample_count * normalized)
+        samples_agg += sample_count
+    return (result_agg / samples_agg)
 
+def get_ter(tasks):
+    baseline = 150
+    best = 0
+    result_agg = 0
+    samples_agg = 0
+    for task, sample_count in tasks:
+        result_ter = task.get("ter,none", 0)
+        normalized = 100 * ((baseline - result_ter) / (baseline - best))
+        result_agg += (sample_count * normalized)
+        samples_agg += sample_count
+    return (result_agg / samples_agg)
+
+def get_exact_match(tasks):
+    baseline = 0
+    best = 1
+    result_agg = 0
+    samples_agg = 0
+    for task, sample_count in tasks:
+        result_em = task.get("exact_match,none", 0)
+        normalized = 100 * ((result_em - baseline) / (best - baseline))
+        result_agg += (sample_count * normalized)
+        samples_agg += sample_count
+    return (result_agg / samples_agg)
+
+def get_acc(acc_tasks):
+    result_agg = 0
+    samples_agg = 0
+    for task, sample_count, baseline, best in acc_tasks:
+        result_acc = task.get("acc,none", 0)
+        normalized = 100 * ((result_acc - baseline) / (best - baseline))
+        result_agg += (sample_count * normalized)
+        samples_agg += sample_count
+    return (result_agg / samples_agg)
+    
+def print_single_metric(results):
+    """Calculate and print single value metric"""
+    agree_single = results.get("aver_agree_single_var", None)
+    agree_double = results.get("aver_agree_double_var", None)
+    belebele_mask = results.get("aver_belebele", None)
+    aver_csgec = results.get("aver_csgec", None)
+    aver_hellaswag = results.get("aver_hellaswag", None)
+    aver_sqad = results.get("aver_sqad", None)
+    aver_umimeto = results.get("aver_umime_to", None)
+    # number in tuple denotes amount of samples per task
+    mask_tasks = [(agree_single, 713), (agree_double, 329), (belebele_mask, 750), (aver_sqad, 500)]
+    # last two numbers denote baseline and best scores
+    acc_tasks = [(aver_csgec, 1000, 0.556, 1.0), (aver_hellaswag, 1000, 0.263, 1.0), (aver_umimeto, 700, 0.5, 1.0)]
+    chrf_performance = round(get_chrf(mask_tasks), 2)
+    ter_performance = round(get_ter(mask_tasks), 2)
+    exact_match_performance = round(get_exact_match(mask_tasks), 2)
+    acc_performance = round(get_acc(acc_tasks), 2)
+    combined = (chrf_performance + ter_performance + exact_match_performance + acc_performance) / 4
+    print(f"Normalized CHRF performance across all tasks is: {chrf_performance}")
+    print(f"Normalized TER performance across all tasks is: {ter_performance}")
+    print(f"Normalized EM performance across all tasks is: {exact_match_performance}")
+    print(f"Normalized ACC performance across all tasks is: {acc_performance}")
+    print(f"Combined performance across all metrics of all tasks is: {round(combined, 2)}")
 
 def make_table(result_dict, column: str = "results", sort_results: bool = True):
     """Generate table of results."""
