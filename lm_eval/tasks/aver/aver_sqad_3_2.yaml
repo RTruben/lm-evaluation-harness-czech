@@ -1,0 +1,26 @@
+task: aver_sqad
+group:
+  - aver
+generation_kwargs:
+  until:
+    - "<extra_id_1>"
+  do_sample: false
+  temperature: 0.0
+doc_to_text: "Kontext: {{context}}\n <extra_id_0> je odpověď na otázku: {{question}}\n"
+doc_to_target: answer
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files:
+    validation: aver_sqad_3_2.json
+validation_split: validation
+
+metric_list:
+  - metric: ter
+    higher_is_better: false
+  - metric: chrf
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: false
