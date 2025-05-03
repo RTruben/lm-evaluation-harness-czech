@@ -1,0 +1,38 @@
+group: aver_agree_double_var
+task:
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-0
+    doc_to_text: "Věta: {{inputs}}\nTvoje odpověď: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-1
+    doc_to_text: "Vstup: {{inputs}}\nVýstup: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-2
+    doc_to_text: "{{inputs}}"
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-3
+    doc_to_text: "Maska: {{inputs}}\nCíl: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-4
+    doc_to_text: "Text kde chybí slovo: {{inputs}}\nSlovo: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-5
+    doc_to_text: "Nekompletní věta: {{inputs}}\nDoplňený slovo: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-6
+    doc_to_text: "{{inputs}}\nDoplňeno: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-7
+    doc_to_text: "Věta bez slova: {{inputs}}\nSlovo: "
+    doc_to_target: targets
+  - task: aver_agree_double
+    task_alias: agree_double_prompt-8
+    doc_to_text: "Věta bez slovesa: {{inputs}}\nSloveso (minulý tvar): "
+    doc_to_target: targets

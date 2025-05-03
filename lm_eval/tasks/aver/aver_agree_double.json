@@ -1,0 +1,1318 @@
+[
+    {
+        "inputs": "V prvním poločase byl Nový Jičín lepší , <extra_id_0> mírný náskok a <extra_id_1> odhodlanějším dojmem .",
+        "targets": "<extra_id_0> měl <extra_id_1> působil <extra_id_2>"
+    },
+    {
+        "inputs": "V prvním poločase <extra_id_0> Nový Jičín lepší , měl mírný náskok a <extra_id_1> odhodlanějším dojmem .",
+        "targets": "<extra_id_0> byl <extra_id_1> působil <extra_id_2>"
+    },
+    {
+        "inputs": "V prvním poločase <extra_id_0> Nový Jičín lepší , <extra_id_1> mírný náskok a působil odhodlanějším dojmem .",
+        "targets": "<extra_id_0> byl <extra_id_1> měl <extra_id_2>"
+    },
+    {
+        "inputs": "Neméně příznivá <extra_id_0> i atmosféra na malé lodi Aisha , jejíž posádku jsme <extra_id_1> již z předchozích ponorů .",
+        "targets": "<extra_id_0> byla <extra_id_1> znali <extra_id_2>"
+    },
+    {
+        "inputs": "Takže jsme <extra_id_0> moc rády když na náš cvičák <extra_id_1> docházet Radek .",
+        "targets": "<extra_id_0> byly <extra_id_1> začal <extra_id_2>"
+    },
+    {
+        "inputs": "Říkala mu Joe , ale brzo <extra_id_0> svůj životní omyl , aby se s konečnou platností <extra_id_1> do sebe .",
+        "targets": "<extra_id_0> prokoukla <extra_id_1> uzavřela <extra_id_2>"
+    },
+    {
+        "inputs": "Ten nicotný kousek pergamenu <extra_id_0> pořád dokola a jen těžko tomu <extra_id_1> .",
+        "targets": "<extra_id_0> četl <extra_id_1> věřil <extra_id_2>"
+    },
+    {
+        "inputs": "Zkrátka , jak jsem <extra_id_0> novinový papír na stůl , stránky <extra_id_1> v luftě .",
+        "targets": "<extra_id_0> vyndal <extra_id_1> byly <extra_id_2>"
+    },
+    {
+        "inputs": "Teď už se normálně <extra_id_0> a <extra_id_1> trávou směrem ke mně .",
+        "targets": "<extra_id_0> postavila <extra_id_1> ťapkala <extra_id_2>"
+    },
+    {
+        "inputs": "Ahojte všechny . dnes jsme <extra_id_0> brzy , páč se <extra_id_1> na houby .",
+        "targets": "<extra_id_0> vstávali <extra_id_1> jelo <extra_id_2>"
+    },
+    {
+        "inputs": "Ženy <extra_id_0> a <extra_id_1> si , že u nich najde hodně peněz .",
+        "targets": "<extra_id_0> znal <extra_id_1> myslel <extra_id_2>"
+    },
+    {
+        "inputs": "Za tuto toleranci však občané <extra_id_0> , <extra_id_1> poslouchat a nesměli zasahovat do veřejného a politického života .",
+        "targets": "<extra_id_0> platili <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "Cyklisté v rámci závodu <extra_id_0> městem Litoměřice a na BESIP aktivně <extra_id_1> strážníci .",
+        "targets": "<extra_id_0> prožížděli <extra_id_1> dohlíželi <extra_id_2>"
+    },
+    {
+        "inputs": "První sníh <extra_id_0> až 2 . března a hned <extra_id_1> .",
+        "targets": "<extra_id_0> napadl <extra_id_1> roztál <extra_id_2>"
+    },
+    {
+        "inputs": "Pokud prodejce <extra_id_0> a jeho živnost <extra_id_1> jiná firma , máte právo uplatnit reklamaci u této .",
+        "targets": "<extra_id_0> zanikl <extra_id_1> převzala <extra_id_2>"
+    },
+    {
+        "inputs": "Balboa okamžitě rozkázal zastavit a sám <extra_id_0> , aby <extra_id_1> jistotu , že spatří moře první .",
+        "targets": "<extra_id_0> vykročil <extra_id_1> měl <extra_id_2>"
+    },
+    {
+        "inputs": "Balboa okamžitě <extra_id_0> zastavit a sám vykročil , aby <extra_id_1> jistotu , že spatří moře první .",
+        "targets": "<extra_id_0> rozkázal <extra_id_1> měl <extra_id_2>"
+    },
+    {
+        "inputs": "Balboa okamžitě <extra_id_0> zastavit a sám <extra_id_1> , aby měl jistotu , že spatří moře první .",
+        "targets": "<extra_id_0> rozkázal <extra_id_1> vykročil <extra_id_2>"
+    },
+    {
+        "inputs": "Generál <extra_id_0> do Donovy show poprvé 29 . května 2009 , aby se veřejně <extra_id_1> Donovým posluchačům .",
+        "targets": "<extra_id_0> zavolal <extra_id_1> představil <extra_id_2>"
+    },
+    {
+        "inputs": "Pokud by výsledky měření <extra_id_0> shodné , <extra_id_1> by to teorii o masivním posunu pólů v historii Země .",
+        "targets": "<extra_id_0> byly <extra_id_1> potvrdilo <extra_id_2>"
+    },
+    {
+        "inputs": "Po chvíli se z bláta <extra_id_0> psí proutek , za ním pes , který <extra_id_1> už zhaslou lišku .",
+        "targets": "<extra_id_0> vynořil <extra_id_1> vlekl <extra_id_2>"
+    },
+    {
+        "inputs": "Hlasitě jsem <extra_id_0> a pevně <extra_id_1> George za tričko , jako kdybych ho už nikdy nechtěla pustit .",
+        "targets": "<extra_id_0> vyjekla <extra_id_1> chytila <extra_id_2>"
+    },
+    {
+        "inputs": "Těžba na tomto dole <extra_id_0> až do roku 1892 a poté <extra_id_1> až do roku 1896 jako větrní pro jámu Amálie .",
+        "targets": "<extra_id_0> probíhala <extra_id_1> sloužila <extra_id_2>"
+    },
+    {
+        "inputs": "Výkon , jakým jsme se <extra_id_0> proti Lyonu , bychom ale <extra_id_1> předvádět pravidelně .",
+        "targets": "<extra_id_0> prezentovali <extra_id_1> měli <extra_id_2>"
+    },
+    {
+        "inputs": "I Hrnčířský bubáci <extra_id_0> druhou příčku , ačkoli <extra_id_1> týmu Saens .",
+        "targets": "<extra_id_0> udrželi <extra_id_1> podlehli <extra_id_2>"
+    },
+    {
+        "inputs": "Dimitrij Katzarov <extra_id_0> a <extra_id_1> dveře .",
+        "targets": "<extra_id_0> vstal <extra_id_1> odemkl <extra_id_2>"
+    },
+    {
+        "inputs": "Kam jsme se <extra_id_0> , <extra_id_1> děti nebo salesiáni .",
+        "targets": "<extra_id_0> podívali <extra_id_1> byly <extra_id_2>"
+    },
+    {
+        "inputs": "Loňskou sezónu <extra_id_0> pátou příčkou v Ceně Vltavy , v níž o rok dříve <extra_id_1> druhý .",
+        "targets": "<extra_id_0> uzavřel <extra_id_1> finišoval <extra_id_2>"
+    },
+    {
+        "inputs": "Někdy se <extra_id_0> jeden neb i více démonů , nejčastěji v podobě žen , s nimiž se přítomní <extra_id_1> .",
+        "targets": "<extra_id_0> zjevoval <extra_id_1> spojovali <extra_id_2>"
+    },
+    {
+        "inputs": "Petr Novák <extra_id_0> v soutěži 3 . místo , Lucie Vávrovská <extra_id_1> na 4 . místě .",
+        "targets": "<extra_id_0> obsadil <extra_id_1> skončila <extra_id_2>"
+    },
+    {
+        "inputs": "Na PS jsem <extra_id_0> celý minulý půlrok a <extra_id_1> jsem tam spokojený .",
+        "targets": "<extra_id_0> hrál <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Mám ho <extra_id_0> samou láskou , ale dobře to <extra_id_1> .",
+        "targets": "<extra_id_0> snědla <extra_id_1> dopadlo <extra_id_2>"
+    },
+    {
+        "inputs": "Abych <extra_id_0> krev vlastní krve a <extra_id_1> mu svého jediného bratra !",
+        "targets": "<extra_id_0> zradil <extra_id_1> předhodil <extra_id_2>"
+    },
+    {
+        "inputs": "Irmak <extra_id_0> a rukou <extra_id_1> varovné gesto .",
+        "targets": "<extra_id_0> zpozorněl <extra_id_1> udělal <extra_id_2>"
+    },
+    {
+        "inputs": "To <extra_id_0> vlastně první vrchol sezóny a pak až druhým <extra_id_1> samotné play-off .",
+        "targets": "<extra_id_0> byl <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsem si ale v pondělí <extra_id_0> denní tisk , konkrétně Lidové noviny , málem jsem <extra_id_1> ze židle .",
+        "targets": "<extra_id_0> otevřel <extra_id_1> spadl <extra_id_2>"
+    },
+    {
+        "inputs": "OOP původně <extra_id_0> v Egyptě , ale brzo se po neshodách s egyptskou vládou <extra_id_1> do Jordánska .",
+        "targets": "<extra_id_0> sídlila <extra_id_1> přesunula <extra_id_2>"
+    },
+    {
+        "inputs": "Schůze <extra_id_0> ukončena přibližně v 21 : 0 0 hodin , dál pak ale samozřejmě <extra_id_1> diskuse neformální .",
+        "targets": "<extra_id_0> byla <extra_id_1> pokračovala <extra_id_2>"
+    },
+    {
+        "inputs": "Pan Otakárek suverénně <extra_id_0> hlavou a <extra_id_1> poukázat na svůj prostý civilní šat , že takhle rytíři nevypadají .",
+        "targets": "<extra_id_0> zavrtěl <extra_id_1> chtěl <extra_id_2>"
+    },
+    {
+        "inputs": "Kdo tu <extra_id_0> <extra_id_1> jenom Louis a John .",
+        "targets": "<extra_id_0> chyběl byl <extra_id_1>"
+    },
+    {
+        "inputs": "Než <extra_id_0> udělat další krok , tak <extra_id_1> na zemi ve své vlastní krvi .",
+        "targets": "<extra_id_0> stačil <extra_id_1> ležel <extra_id_2>"
+    },
+    {
+        "inputs": "A oči se mu tak zvláštně <extra_id_0> , jakoby se dosud <extra_id_1> kdesi v oblacích .",
+        "targets": "<extra_id_0> leskly <extra_id_1> vznášel <extra_id_2>"
+    },
+    {
+        "inputs": "Pevně si <extra_id_0> ruce před pusou a <extra_id_1> hlavou .",
+        "targets": "<extra_id_0> sevřela <extra_id_1> zavrtěla <extra_id_2>"
+    },
+    {
+        "inputs": "Pro obě to <extra_id_0> premiera v drezurním obdelníku a se ziskem 44 % <extra_id_1> na 9 . místě .",
+        "targets": "<extra_id_0> byla <extra_id_1> skončily <extra_id_2>"
+    },
+    {
+        "inputs": "Na té Sázavě jsem si psala cosi jako deník , který můj manžel <extra_id_0> a docela se <extra_id_1> .",
+        "targets": "<extra_id_0> četl <extra_id_1> bavil <extra_id_2>"
+    },
+    {
+        "inputs": "Na té Sázavě jsem si <extra_id_0> cosi jako deník , který můj manžel četl a docela se <extra_id_1> .",
+        "targets": "<extra_id_0> psala <extra_id_1> bavil <extra_id_2>"
+    },
+    {
+        "inputs": "Na té Sázavě jsem si <extra_id_0> cosi jako deník , který můj manžel <extra_id_1> a docela se bavil .",
+        "targets": "<extra_id_0> psala <extra_id_1> četl <extra_id_2>"
+    },
+    {
+        "inputs": "Vzhledem k tomu , že <extra_id_0> obrovské závěje , <extra_id_1> na Miltitz jen 6 čechů .",
+        "targets": "<extra_id_0> byli <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Nepatrně zamrkal , jako by se <extra_id_0> z omámení a <extra_id_1> se mi přes rameno na obleční .",
+        "targets": "<extra_id_0> probral <extra_id_1> koukl <extra_id_2>"
+    },
+    {
+        "inputs": "Nepatrně <extra_id_0> , jako by se probral z omámení a <extra_id_1> se mi přes rameno na obleční .",
+        "targets": "<extra_id_0> zamrkal <extra_id_1> koukl <extra_id_2>"
+    },
+    {
+        "inputs": "Nepatrně <extra_id_0> , jako by se <extra_id_1> z omámení a koukl se mi přes rameno na obleční .",
+        "targets": "<extra_id_0> zamrkal <extra_id_1> probral <extra_id_2>"
+    },
+    {
+        "inputs": "V prvním kole <extra_id_0> , ale nakonec <extra_id_1> útěchu a nádherný pohár .",
+        "targets": "<extra_id_0> prohráli <extra_id_1> vyhráli <extra_id_2>"
+    },
+    {
+        "inputs": "Jak jsme <extra_id_0> , tak každých asi třicet metrů <extra_id_1> dvě nebo tři sťuknutá auta .",
+        "targets": "<extra_id_0> jeli <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Aby <extra_id_0> živý plot opravdovou chloubou zahrady , <extra_id_1> by být nejen dobře rostlý a zdravý .",
+        "targets": "<extra_id_0> byl <extra_id_1> měl <extra_id_2>"
+    },
+    {
+        "inputs": "Okamžitě se <extra_id_0> a poplašeně se <extra_id_1> .",
+        "targets": "<extra_id_0> probral <extra_id_1> rozhlédl <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsme si ji <extra_id_0> , <extra_id_1> jsme do Vojtěchova na Motolu do indiánské hospody .",
+        "targets": "<extra_id_0> prohlédly <extra_id_1> vyrazily <extra_id_2>"
+    },
+    {
+        "inputs": "Když se dostatečně <extra_id_0> , <extra_id_1> rozbřesk .",
+        "targets": "<extra_id_0> vymilovali <extra_id_1> nastal <extra_id_2>"
+    },
+    {
+        "inputs": "Hudební teorii <extra_id_0> ve Vídni , od roku 1927 <extra_id_1> v Bratislavě a později v Praze .",
+        "targets": "<extra_id_0> vystudoval <extra_id_1> žil <extra_id_2>"
+    },
+    {
+        "inputs": "Jak jsem už <extra_id_0> , <extra_id_1> to ta jazzová hudba bez tlumočení .",
+        "targets": "<extra_id_0> řekla <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Já jsem měl na kolenou blok , abych <extra_id_0> dopis své budoucí ženě , vždyť na vojně <extra_id_1> tehdy čas tak vzácný .",
+        "targets": "<extra_id_0> dopsal <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Já jsem <extra_id_0> na kolenou blok , abych dopsal dopis své budoucí ženě , vždyť na vojně <extra_id_1> tehdy čas tak vzácný .",
+        "targets": "<extra_id_0> měl <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Já jsem <extra_id_0> na kolenou blok , abych <extra_id_1> dopis své budoucí ženě , vždyť na vojně byl tehdy čas tak vzácný .",
+        "targets": "<extra_id_0> měl <extra_id_1> dopsal <extra_id_2>"
+    },
+    {
+        "inputs": "Jednou se moje sestra koupala a já těsně předtím potají <extra_id_0> do sprchového koutu a <extra_id_1> jsem jí .",
+        "targets": "<extra_id_0> vklouznul <extra_id_1> pozoroval <extra_id_2>"
+    },
+    {
+        "inputs": "Jednou se moje sestra <extra_id_0> a já těsně předtím potají vklouznul do sprchového koutu a <extra_id_1> jsem jí .",
+        "targets": "<extra_id_0> koupala <extra_id_1> pozoroval <extra_id_2>"
+    },
+    {
+        "inputs": "Jednou se moje sestra <extra_id_0> a já těsně předtím potají <extra_id_1> do sprchového koutu a pozoroval jsem jí .",
+        "targets": "<extra_id_0> koupala <extra_id_1> vklouznul <extra_id_2>"
+    },
+    {
+        "inputs": "První střelu <extra_id_0> vykopnout nohou , druhou <extra_id_1> .",
+        "targets": "<extra_id_0> stačil <extra_id_1> chytil <extra_id_2>"
+    },
+    {
+        "inputs": "Když se počasí <extra_id_0> , <extra_id_1> jsme až do Holandska .",
+        "targets": "<extra_id_0> umoudřilo <extra_id_1> pokračovali <extra_id_2>"
+    },
+    {
+        "inputs": "Snažila se ho otočit , aby <extra_id_0> druhou ručičku a <extra_id_1> se až po té černé kávě .",
+        "targets": "<extra_id_0> viděla <extra_id_1> povedlo <extra_id_2>"
+    },
+    {
+        "inputs": "Do volební kampaně ODS v Karlových Varech <extra_id_0> jako tým , takže svoji kandidaturu jsem tak i <extra_id_1> .",
+        "targets": "<extra_id_0> vstupovala <extra_id_1> vnímala <extra_id_2>"
+    },
+    {
+        "inputs": "Jeden z lovců ji <extra_id_0> a <extra_id_1> tupým koncem zbraně .",
+        "targets": "<extra_id_0> okřikl <extra_id_1> zamával <extra_id_2>"
+    },
+    {
+        "inputs": "A tykali jsme si Ivane , když jsi <extra_id_0> v redakci , <extra_id_1> jsme si , tak toho nech .",
+        "targets": "<extra_id_0> byl <extra_id_1> tykali <extra_id_2>"
+    },
+    {
+        "inputs": "A <extra_id_0> jsme si Ivane , když jsi byl v redakci , <extra_id_1> jsme si , tak toho nech .",
+        "targets": "<extra_id_0> tykali <extra_id_1> tykali <extra_id_2>"
+    },
+    {
+        "inputs": "A <extra_id_0> jsme si Ivane , když jsi <extra_id_1> v redakci , tykali jsme si , tak toho nech .",
+        "targets": "<extra_id_0> tykali <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Lidé , kteří <extra_id_0> z Kaddáfího komplexu , si ale <extra_id_1> i další cenné trofeje .",
+        "targets": "<extra_id_0> proudili <extra_id_1> odnášeli <extra_id_2>"
+    },
+    {
+        "inputs": "Eindhoven <extra_id_0> opustit v roce 2001 , když se hráči otevřeně <extra_id_1> jeho tvrdým metodám .",
+        "targets": "<extra_id_0> musel <extra_id_1> vzepřeli <extra_id_2>"
+    },
+    {
+        "inputs": "Takže na poslední chvíli se služby <extra_id_0> hlavně ti , kteří <extra_id_1> v kabinách první - Lemfeld s Čejpou .",
+        "targets": "<extra_id_0> chopili <extra_id_1> byli <extra_id_2>"
+    },
+    {
+        "inputs": "Kdyby se faraonovi něco přihodilo , <extra_id_0> by kněží převzít vládu do té doby , než by <extra_id_1> zvolen nový faraon .",
+        "targets": "<extra_id_0> museli <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Kdyby se faraonovi něco <extra_id_0> , museli by kněží převzít vládu do té doby , než by <extra_id_1> zvolen nový faraon .",
+        "targets": "<extra_id_0> přihodilo <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Kdyby se faraonovi něco <extra_id_0> , <extra_id_1> by kněží převzít vládu do té doby , než by byl zvolen nový faraon .",
+        "targets": "<extra_id_0> přihodilo <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "Pláže prakticky <extra_id_0> a cesta <extra_id_1> trnitá a svízelná .",
+        "targets": "<extra_id_0> zmizely <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Tedy dva modroocí partneři by <extra_id_0> mít modrooké děti , a že jakákoliv jiná kombinace by <extra_id_1> dát barvu hnědou .",
+        "targets": "<extra_id_0> měli <extra_id_1> měla <extra_id_2>"
+    },
+    {
+        "inputs": "Jelikož jsem <extra_id_0> zvýšenou hladinu cukru , paní doktorka mi <extra_id_1> diabetickou dietu .",
+        "targets": "<extra_id_0> měla <extra_id_1> předepsala <extra_id_2>"
+    },
+    {
+        "inputs": "Určitě tady všichni nešťastnému dědulovi drželi palce , ale to <extra_id_0> asi všechno , co pro něho <extra_id_1> udělat .",
+        "targets": "<extra_id_0> bylo <extra_id_1> mohli <extra_id_2>"
+    },
+    {
+        "inputs": "Určitě tady všichni nešťastnému dědulovi <extra_id_0> palce , ale to bylo asi všechno , co pro něho <extra_id_1> udělat .",
+        "targets": "<extra_id_0> drželi <extra_id_1> mohli <extra_id_2>"
+    },
+    {
+        "inputs": "Určitě tady všichni nešťastnému dědulovi <extra_id_0> palce , ale to <extra_id_1> asi všechno , co pro něho mohli udělat .",
+        "targets": "<extra_id_0> drželi <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Zvuk výstřelu <extra_id_0> plechové stěny komínu a saze <extra_id_1> .",
+        "targets": "<extra_id_0> rozkmital <extra_id_1> opadaly <extra_id_2>"
+    },
+    {
+        "inputs": "Sledoval , jak se v posteli <extra_id_0> do klubíčka a <extra_id_1> se netřást .",
+        "targets": "<extra_id_0> stulila <extra_id_1> pokusila <extra_id_2>"
+    },
+    {
+        "inputs": "Dobrý den , <extra_id_0> bych vypovědět sml . o dílo , která <extra_id_1> uzavřena mezi stranami na dobu neurčitou .",
+        "targets": "<extra_id_0> chtěla <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Krow 12 . prosince 2007 0 9 : 0 5 Díky za to , že jsi de facto <extra_id_0> to co jsem už <extra_id_1> .",
+        "targets": "<extra_id_0> shrnul <extra_id_1> napsal <extra_id_2>"
+    },
+    {
+        "inputs": "Dvůr provozovny <extra_id_0> dvoukřídlou branou a řádně ji <extra_id_1> .",
+        "targets": "<extra_id_0> uzavřel <extra_id_1> uzamkl <extra_id_2>"
+    },
+    {
+        "inputs": "Ale po chvilce pozorování jsem si <extra_id_0> , že se nesmím nechat zahanbit a tak jsem se <extra_id_1> vlnit také .",
+        "targets": "<extra_id_0> uvědomil <extra_id_1> začal <extra_id_2>"
+    },
+    {
+        "inputs": "Drtivá většina problémů už tady <extra_id_0> řešena a většina z nich <extra_id_1> vyřešena .",
+        "targets": "<extra_id_0> byla <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Tahle otázka by <extra_id_0> velice spekulativní , kdo by <extra_id_1> lépe .",
+        "targets": "<extra_id_0> byla <extra_id_1> obstál <extra_id_2>"
+    },
+    {
+        "inputs": "Po válce v roce 1945 se <extra_id_0> do Československa jako civil a <extra_id_1> na prezidenta Beneše žalobu .",
+        "targets": "<extra_id_0> vrátil <extra_id_1> podal <extra_id_2>"
+    },
+    {
+        "inputs": "Severus na něj <extra_id_0> , jako by se Harry právě <extra_id_1> na jeden z Nevillových omylů .",
+        "targets": "<extra_id_0> zíral <extra_id_1> změnil <extra_id_2>"
+    },
+    {
+        "inputs": "To by přece <extra_id_0> šílené , kdybyste to <extra_id_1> !",
+        "targets": "<extra_id_0> bylo <extra_id_1> odvysílali <extra_id_2>"
+    },
+    {
+        "inputs": "Celé si to vlastně vždycky <extra_id_0> jako na plátně biografu , zatímco divák <extra_id_1> v pohodlném křesle .",
+        "targets": "<extra_id_0> představoval <extra_id_1> seděl <extra_id_2>"
+    },
+    {
+        "inputs": "A taky bych řek že to MAtěj nemyslel tak jak to <extra_id_0> nebo tak jak to <extra_id_1> .",
+        "targets": "<extra_id_0> napsal <extra_id_1> vyznělo <extra_id_2>"
+    },
+    {
+        "inputs": "Dlouho prý nepotkávali žádné podobné kmeny a tak si <extra_id_0> myslet , že se konečně <extra_id_1> dál .",
+        "targets": "<extra_id_0> začali <extra_id_1> dostali <extra_id_2>"
+    },
+    {
+        "inputs": "Bezradně jsem <extra_id_0> hlavou , po tvářích mi <extra_id_1> slzy bezmoci .",
+        "targets": "<extra_id_0> vrtěla <extra_id_1> stékaly <extra_id_2>"
+    },
+    {
+        "inputs": "Neznámý se otočil , <extra_id_0> Randoma a i s Klenotem se <extra_id_1> na útěk ke knihovně .",
+        "targets": "<extra_id_0> odstrčil <extra_id_1> dal <extra_id_2>"
+    },
+    {
+        "inputs": "Neznámý se <extra_id_0> , odstrčil Randoma a i s Klenotem se <extra_id_1> na útěk ke knihovně .",
+        "targets": "<extra_id_0> otočil <extra_id_1> dal <extra_id_2>"
+    },
+    {
+        "inputs": "Neznámý se <extra_id_0> , <extra_id_1> Randoma a i s Klenotem se dal na útěk ke knihovně .",
+        "targets": "<extra_id_0> otočil <extra_id_1> odstrčil <extra_id_2>"
+    },
+    {
+        "inputs": "Několik týdnů po smrti otce nám Angkar <extra_id_0> jíst rýži , protože <extra_id_1> doba sklizně .",
+        "targets": "<extra_id_0> dovolila <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Pro Brusel by <extra_id_0> nepříznivé , kdyby politický obraz Ukrajiny <extra_id_1> jednotvárný .",
+        "targets": "<extra_id_0> bylo <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Na všech hráčích <extra_id_0> patrné obrovské zklamání , bod <extra_id_1> opravdu blízko .",
+        "targets": "<extra_id_0> bylo <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Jak tu <extra_id_0> , <extra_id_1> mi docela normální .",
+        "targets": "<extra_id_0> seděl <extra_id_1> připadal <extra_id_2>"
+    },
+    {
+        "inputs": "Starostlivá matka <extra_id_0> své dítě betonovými skružemi o hmotnosti Jupitera , čímž mu <extra_id_1> život .",
+        "targets": "<extra_id_0> obkládala <extra_id_1> prodloužila <extra_id_2>"
+    },
+    {
+        "inputs": "Pokud bychom teplotu <extra_id_0> , cukroví by <extra_id_1> měkké a lepivé .",
+        "targets": "<extra_id_0> zvýšili <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Prášek <extra_id_0> a knězi <extra_id_1> umožněno prchnout .",
+        "targets": "<extra_id_0> zapůsobil <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Na běhu <extra_id_0> roli favorita a zaslouženě <extra_id_1> Přemek Švarc ( 1 .",
+        "targets": "<extra_id_0> potvrdil <extra_id_1> zvítězil <extra_id_2>"
+    },
+    {
+        "inputs": "Lamborghini vůz <extra_id_0> na autosalonu v Ženevě , ale po vlažném přijetí veřejností jej na čas <extra_id_1> k ledu .",
+        "targets": "<extra_id_0> vystavil <extra_id_1> poslal <extra_id_2>"
+    },
+    {
+        "inputs": "Vale ty časy <extra_id_0> celkem konstantně , takže by se <extra_id_1> i zlepšit .",
+        "targets": "<extra_id_0> zajížděl <extra_id_1> mohl <extra_id_2>"
+    },
+    {
+        "inputs": "Domácí divák mlátil na plexisklo a něco <extra_id_0> , <extra_id_1> to určitě hodně vyhecované .",
+        "targets": "<extra_id_0> pořvával <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Domácí divák <extra_id_0> na plexisklo a něco pořvával , <extra_id_1> to určitě hodně vyhecované .",
+        "targets": "<extra_id_0> mlátil <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Domácí divák <extra_id_0> na plexisklo a něco <extra_id_1> , bylo to určitě hodně vyhecované .",
+        "targets": "<extra_id_0> mlátil <extra_id_1> pořvával <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsme začali s analýzou , <extra_id_0> nás neznámá loď a <extra_id_1> náš raketoplán .",
+        "targets": "<extra_id_0> zaměřila <extra_id_1> napadla <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsme <extra_id_0> s analýzou , zaměřila nás neznámá loď a <extra_id_1> náš raketoplán .",
+        "targets": "<extra_id_0> začali <extra_id_1> napadla <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsme <extra_id_0> s analýzou , <extra_id_1> nás neznámá loď a napadla náš raketoplán .",
+        "targets": "<extra_id_0> začali <extra_id_1> zaměřila <extra_id_2>"
+    },
+    {
+        "inputs": "Kdyby <extra_id_0> válka , jsem přesvědčen , že by <extra_id_1> vyrobit zbraň z trubek od topení .",
+        "targets": "<extra_id_0> byla <extra_id_1> dokázali <extra_id_2>"
+    },
+    {
+        "inputs": "Na mne hleděla vztekle a <extra_id_0> po mně a <extra_id_1> se jí mne poškrábat .",
+        "targets": "<extra_id_0> sekala <extra_id_1> podařilo <extra_id_2>"
+    },
+    {
+        "inputs": "Na mne <extra_id_0> vztekle a sekala po mně a <extra_id_1> se jí mne poškrábat .",
+        "targets": "<extra_id_0> hleděla <extra_id_1> podařilo <extra_id_2>"
+    },
+    {
+        "inputs": "Na mne <extra_id_0> vztekle a <extra_id_1> po mně a podařilo se jí mne poškrábat .",
+        "targets": "<extra_id_0> hleděla <extra_id_1> sekala <extra_id_2>"
+    },
+    {
+        "inputs": "Pořáedně jsme to tam vše <extra_id_0> , panička mi <extra_id_1> dobroty a kšíry , které mi moc sluší .",
+        "targets": "<extra_id_0> prohlídli <extra_id_1> koupila <extra_id_2>"
+    },
+    {
+        "inputs": "Já jsem si <extra_id_0> práci , která mě baví a nevím , co bych <extra_id_1> doma .",
+        "targets": "<extra_id_0> vybrala <extra_id_1> dělala <extra_id_2>"
+    },
+    {
+        "inputs": "Co se týká samiček .. oni <extra_id_0> když <extra_id_1> z čeho v době kdy já nic neměl .",
+        "targets": "<extra_id_0> vybírali <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "A <extra_id_0> jsem těch pět hodin volna večer , co mi do rána <extra_id_1> , jako nemluvně !",
+        "targets": "<extra_id_0> spala <extra_id_1> zbyly <extra_id_2>"
+    },
+    {
+        "inputs": "Bývalý disident <extra_id_0> , že ho hodně <extra_id_1> , že Maďarsko nepřijalo zákon dřív .",
+        "targets": "<extra_id_0> dodal <extra_id_1> naštvalo <extra_id_2>"
+    },
+    {
+        "inputs": "Lady Gudrun <extra_id_0> patrné zklidnění svého manžela a <extra_id_1> mu pohár vína .",
+        "targets": "<extra_id_0> využila <extra_id_1> podala <extra_id_2>"
+    },
+    {
+        "inputs": "Kdyby to tak <extra_id_0> u všech lidí , <extra_id_1> by krásně na světě .",
+        "targets": "<extra_id_0> bylo <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Čirou náhodou právě ve chvíli , kdy se <extra_id_0> volání SOS , <extra_id_1> na můstku Marla McGiversová .",
+        "targets": "<extra_id_0> ozvalo <extra_id_1> sloužila <extra_id_2>"
+    },
+    {
+        "inputs": "Jako volební kampaň by tak <extra_id_0> sloužit už samotná práce , kterou jsem pro kraj <extra_id_1> .",
+        "targets": "<extra_id_0> mohla <extra_id_1> odvedl <extra_id_2>"
+    },
+    {
+        "inputs": "Svým způsobem jsem za to <extra_id_0> ráda , ale jednou mou částí mi <extra_id_1> líto , že tím mu má tajemství budou utajena .",
+        "targets": "<extra_id_0> byla <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Římané se poté <extra_id_0> opět proti nim a <extra_id_1> je ustoupit až k Akregantu .",
+        "targets": "<extra_id_0> vydali <extra_id_1> donutili <extra_id_2>"
+    },
+    {
+        "inputs": "Celý zápas <extra_id_0> tedy velké drama , kterému většinu času <extra_id_1> brněnští .",
+        "targets": "<extra_id_0> byl <extra_id_1> dominovali <extra_id_2>"
+    },
+    {
+        "inputs": "Všechna nervozita ze mě <extra_id_0> a na tváři se mi <extra_id_1> obrovský úsměv .",
+        "targets": "<extra_id_0> spadla <extra_id_1> roztáhl <extra_id_2>"
+    },
+    {
+        "inputs": "Hosté <extra_id_0> rychlým přechodem do útoku a za první půli si <extra_id_1> tři výborné příležitosti .",
+        "targets": "<extra_id_0> hrozili <extra_id_1> vypracovali <extra_id_2>"
+    },
+    {
+        "inputs": "Pokud by si ale člověk <extra_id_0> , že Praha taky jako vír odsává schopné policisty ze sousedství , pak by se <extra_id_1> .",
+        "targets": "<extra_id_0> myslel <extra_id_1> mýlil <extra_id_2>"
+    },
+    {
+        "inputs": "Další formací <extra_id_0> Ten-Wheel Drive , kteří si později <extra_id_1> název na Spiders and Cowboys .",
+        "targets": "<extra_id_0> byli <extra_id_1> změnili <extra_id_2>"
+    },
+    {
+        "inputs": "Po náročném a dlouhodobém léčení <extra_id_0> svá vystoupení omezit a jeho návrat na pódia se <extra_id_1> zázraku .",
+        "targets": "<extra_id_0> musel <extra_id_1> rovnal <extra_id_2>"
+    },
+    {
+        "inputs": "Po třiceti minutách jsme se autem <extra_id_0> do fitka a 60 min <extra_id_1> .",
+        "targets": "<extra_id_0> přemístily <extra_id_1> cvičily <extra_id_2>"
+    },
+    {
+        "inputs": "Dnes jsme <extra_id_0> soupeře z dolní poloviny tabulky a <extra_id_1> znát , kde jsme my a kde soupeř .",
+        "targets": "<extra_id_0> přivítali <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Zatím z lehké diskuze v kruzích modelářských <extra_id_0> , že by se <extra_id_1> odstín RAL 3003 .",
+        "targets": "<extra_id_0> vyplynulo <extra_id_1> hodil <extra_id_2>"
+    },
+    {
+        "inputs": "Navíc bychom tím <extra_id_0> zavedené blbosti ve trojbloku a místo čpč by <extra_id_1> pčp .",
+        "targets": "<extra_id_0> dostáli <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Mé myšlenky se <extra_id_0> plánem na útěk do pokoje – <extra_id_1> jsem , že si toho nikdo nevšimne .",
+        "targets": "<extra_id_0> zaobíraly <extra_id_1> doufala <extra_id_2>"
+    },
+    {
+        "inputs": "Tato příručka navazuje na zprávu / RA / , která <extra_id_0> terminologii a <extra_id_1> postup analýzy CPQRA .",
+        "targets": "<extra_id_0> zavedla <extra_id_1> popsala <extra_id_2>"
+    },
+    {
+        "inputs": "Dvoujspřeží koní se splašilo a <extra_id_0> kočího a <extra_id_1> podél silnice .",
+        "targets": "<extra_id_0> vyklopilo <extra_id_1> letěli <extra_id_2>"
+    },
+    {
+        "inputs": "Dvoujspřeží koní se <extra_id_0> a vyklopilo kočího a <extra_id_1> podél silnice .",
+        "targets": "<extra_id_0> splašilo <extra_id_1> letěli <extra_id_2>"
+    },
+    {
+        "inputs": "Dvoujspřeží koní se <extra_id_0> a <extra_id_1> kočího a letěli podél silnice .",
+        "targets": "<extra_id_0> splašilo <extra_id_1> vyklopilo <extra_id_2>"
+    },
+    {
+        "inputs": "Obležení <extra_id_0> 13 let , až nakonec město <extra_id_1> dobyto .",
+        "targets": "<extra_id_0> trvalo <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Hasiči <extra_id_0> místo a událost <extra_id_1> Českému telekomu .",
+        "targets": "<extra_id_0> zajistili <extra_id_1> oznámili <extra_id_2>"
+    },
+    {
+        "inputs": "Zbraně <extra_id_0> a <extra_id_1> nepříjemně kovový zvuk .",
+        "targets": "<extra_id_0> zarachotily <extra_id_1> vydaly <extra_id_2>"
+    },
+    {
+        "inputs": "Poznámka : Poté , co jsem ho <extra_id_0> , <extra_id_1> jednoduchý název Krtek .",
+        "targets": "<extra_id_0> upekla <extra_id_1> dostal <extra_id_2>"
+    },
+    {
+        "inputs": "První nekrálovští majitelé <extra_id_0> Imrich a Štefan Zápoľští , kteří hrad <extra_id_1> za zásluhy v roce 1464 .",
+        "targets": "<extra_id_0> byli <extra_id_1> dostali <extra_id_2>"
+    },
+    {
+        "inputs": "To <extra_id_0> úleva , přece jen to <extra_id_1> být povinné body .",
+        "targets": "<extra_id_0> byla <extra_id_1> měly <extra_id_2>"
+    },
+    {
+        "inputs": "V utkání <extra_id_0> aktivnějším a důraznějším týmem , který se častěji <extra_id_1> i do gólových šancí .",
+        "targets": "<extra_id_0> byly <extra_id_1> dostával <extra_id_2>"
+    },
+    {
+        "inputs": "Před půlnocí jsme <extra_id_0> teplé kabáty a <extra_id_1> na náměstí přivítat rok 2009 .",
+        "targets": "<extra_id_0> oblékli <extra_id_1> spěchali <extra_id_2>"
+    },
+    {
+        "inputs": "Martin Jalůvka toužebně <extra_id_0> přísun hořčíku do svalů a chvílemi to <extra_id_1> na skreč .",
+        "targets": "<extra_id_0> očekával <extra_id_1> vypadalo <extra_id_2>"
+    },
+    {
+        "inputs": "Kanu ho kličkou <extra_id_0> a ve vápně se mu <extra_id_1> volní spoluhráči .",
+        "targets": "<extra_id_0> překonal <extra_id_1> nabízeli <extra_id_2>"
+    },
+    {
+        "inputs": "Volba <extra_id_0> jasná , bez váhání jsme <extra_id_1> po žebřících vzhůru .",
+        "targets": "<extra_id_0> byla <extra_id_1> vyrazili <extra_id_2>"
+    },
+    {
+        "inputs": "Kontraband <extra_id_0> na Šumavu odpoledne , <extra_id_1> krátká porada a poté nervózní čekání na tmu .",
+        "targets": "<extra_id_0> dorazil <extra_id_1> následovala <extra_id_2>"
+    },
+    {
+        "inputs": "Tento překop <extra_id_0> vyražen až do ložiska a po zdolání silného přítoku vod <extra_id_1> postupováno v ložisku .",
+        "targets": "<extra_id_0> byl <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Vláda tehdy <extra_id_0> k okamžité evakuaci , která <extra_id_1> od května do srpna .",
+        "targets": "<extra_id_0> přikročila <extra_id_1> probíhala <extra_id_2>"
+    },
+    {
+        "inputs": "Dobrý den paní doktorko , ráda bych <extra_id_0> , kolik mléka za den by <extra_id_1> můj syn vypít ?",
+        "targets": "<extra_id_0> věděla <extra_id_1> měl <extra_id_2>"
+    },
+    {
+        "inputs": "Vzal jsem jí do náruče a <extra_id_0> do své pracovny , kde jsem si vše <extra_id_1> na porod .",
+        "targets": "<extra_id_0> vyběhl <extra_id_1> připravil <extra_id_2>"
+    },
+    {
+        "inputs": "Tak třeba mě <extra_id_0> , že paní doktorka <extra_id_1> zhubnutí klidně 6 kg za 14 dní .",
+        "targets": "<extra_id_0> udivilo <extra_id_1> uváděla <extra_id_2>"
+    },
+    {
+        "inputs": "Sotva <extra_id_0> do země poslední uhlíky , <extra_id_1> už hobiti na nohou .",
+        "targets": "<extra_id_0> zadupal <extra_id_1> stáli <extra_id_2>"
+    },
+    {
+        "inputs": "Všechny děti již <extra_id_0> první semestr a <extra_id_1> si desetidenní prázdniny na začátku října .",
+        "targets": "<extra_id_0> ukončily <extra_id_1> užily <extra_id_2>"
+    },
+    {
+        "inputs": "Gustav Aulehla <extra_id_0> a s tím se <extra_id_1> i jeho fotografie .",
+        "targets": "<extra_id_0> dozrál <extra_id_1> změnily <extra_id_2>"
+    },
+    {
+        "inputs": "Docela nás to <extra_id_0> , protože jsme <extra_id_1> napřed s tím , že nadělovat budou deváťáci jako dřív .",
+        "targets": "<extra_id_0> mrzelo <extra_id_1> počítali <extra_id_2>"
+    },
+    {
+        "inputs": "Bytosti z Digae <extra_id_0> Giweruzanům účast a ochotně jim <extra_id_1> pomoc .",
+        "targets": "<extra_id_0> vyjádřily <extra_id_1> nabízely <extra_id_2>"
+    },
+    {
+        "inputs": "Pak Matěj <extra_id_0> ránu pod břevno a <extra_id_1> jsme .",
+        "targets": "<extra_id_0> vyslal <extra_id_1> vedli <extra_id_2>"
+    },
+    {
+        "inputs": "V obchodě mě <extra_id_0> svou velikostí , <extra_id_1> jsem totiž , že za oněch krásných 99 Kč to bude nějaký prcek .",
+        "targets": "<extra_id_0> překvapil <extra_id_1> myslel <extra_id_2>"
+    },
+    {
+        "inputs": "Cestu zpět do Vrbna jsme <extra_id_0> přes Drakov , kde jsme nakonec na tábořišti i <extra_id_1> .",
+        "targets": "<extra_id_0> zvolili <extra_id_1> přespali <extra_id_2>"
+    },
+    {
+        "inputs": "Kluci jako jedni z mála <extra_id_0> vyrovnané nástřiky a časem 26,41 <extra_id_1> sedmé místo .",
+        "targets": "<extra_id_0> předvedli <extra_id_1> obsadili <extra_id_2>"
+    },
+    {
+        "inputs": "Za kasama se utvořila zácpa , jenže my se <extra_id_0> kasou procpat , jinak abychom se hlady <extra_id_1> .",
+        "targets": "<extra_id_0> museli <extra_id_1> překotili <extra_id_2>"
+    },
+    {
+        "inputs": "Za kasama se <extra_id_0> zácpa , jenže my se museli kasou procpat , jinak abychom se hlady <extra_id_1> .",
+        "targets": "<extra_id_0> utvořila <extra_id_1> překotili <extra_id_2>"
+    },
+    {
+        "inputs": "Za kasama se <extra_id_0> zácpa , jenže my se <extra_id_1> kasou procpat , jinak abychom se hlady překotili .",
+        "targets": "<extra_id_0> utvořila <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "První revolver <extra_id_0> v deseti a první bambitku <extra_id_1> ve dvanácti .",
+        "targets": "<extra_id_0> získal <extra_id_1> vyrobil <extra_id_2>"
+    },
+    {
+        "inputs": "To je to adekvátní bydlení , co ti Pepa <extra_id_0> za dům , kde jste všichni společně <extra_id_1> ?",
+        "targets": "<extra_id_0> slíbil <extra_id_1> bydleli <extra_id_2>"
+    },
+    {
+        "inputs": "Rada pronájem <extra_id_0> s podmínkami a <extra_id_1> uzavření nájemní smlouvy po projednání s právníkem .",
+        "targets": "<extra_id_0> odsouhlasila <extra_id_1> doporučila <extra_id_2>"
+    },
+    {
+        "inputs": "Ostatní nahoře jen překvapeně <extra_id_0> oblak prachu , který se náhle <extra_id_1> místo něj .",
+        "targets": "<extra_id_0> sledovali <extra_id_1> objevil <extra_id_2>"
+    },
+    {
+        "inputs": "A Generální rada BWA spolehlivě <extra_id_0> , že CBF <extra_id_1> daná kriteria umožňující členství v BWA .",
+        "targets": "<extra_id_0> rozeznala <extra_id_1> splnilo <extra_id_2>"
+    },
+    {
+        "inputs": "Colin taky boural a hodně ale než <extra_id_0> auto tak smin třeba třikrát <extra_id_1> .",
+        "targets": "<extra_id_0> zničil <extra_id_1> vyhrál <extra_id_2>"
+    },
+    {
+        "inputs": "Colin taky <extra_id_0> a hodně ale než zničil auto tak smin třeba třikrát <extra_id_1> .",
+        "targets": "<extra_id_0> boural <extra_id_1> vyhrál <extra_id_2>"
+    },
+    {
+        "inputs": "Colin taky <extra_id_0> a hodně ale než <extra_id_1> auto tak smin třeba třikrát vyhrál .",
+        "targets": "<extra_id_0> boural <extra_id_1> zničil <extra_id_2>"
+    },
+    {
+        "inputs": "Moje panička měla na oplátku moji maminku a musím říct , že to <extra_id_0> těžší , protože <extra_id_1> .",
+        "targets": "<extra_id_0> měla <extra_id_1> tahala <extra_id_2>"
+    },
+    {
+        "inputs": "Moje panička <extra_id_0> na oplátku moji maminku a musím říct , že to měla těžší , protože <extra_id_1> .",
+        "targets": "<extra_id_0> měla <extra_id_1> tahala <extra_id_2>"
+    },
+    {
+        "inputs": "Moje panička <extra_id_0> na oplátku moji maminku a musím říct , že to <extra_id_1> těžší , protože tahala .",
+        "targets": "<extra_id_0> měla <extra_id_1> měla <extra_id_2>"
+    },
+    {
+        "inputs": "V tom jsme <extra_id_0> trhnutí a hned <extra_id_1> několik dalších trhnutí .",
+        "targets": "<extra_id_0> ucítili <extra_id_1> následovalo <extra_id_2>"
+    },
+    {
+        "inputs": "OTÁZKA : Ve zprávách <extra_id_0> uvedno , že Anička o sobě <extra_id_1> v mužském rodě .",
+        "targets": "<extra_id_0> bylo <extra_id_1> mluvila <extra_id_2>"
+    },
+    {
+        "inputs": "Oba <extra_id_0> a od toho se <extra_id_1> životní lapálie .",
+        "targets": "<extra_id_0> pili <extra_id_1> odvíjely <extra_id_2>"
+    },
+    {
+        "inputs": "Teprve v 16 . století se <extra_id_0> chemické prostředky , které na slunci vlasy výrazně <extra_id_1> .",
+        "targets": "<extra_id_0> objevily <extra_id_1> zesvětlily <extra_id_2>"
+    },
+    {
+        "inputs": "Maturitní zkoušku <extra_id_0> 19 studentů , z nichž tři <extra_id_1> přijati ke studiu na vysoké škole .",
+        "targets": "<extra_id_0> vykonalo <extra_id_1> byli <extra_id_2>"
+    },
+    {
+        "inputs": "K radosti mu nakonec <extra_id_0> málo , protože míč <extra_id_1> libereckou tyč .",
+        "targets": "<extra_id_0> chybělo <extra_id_1> orazítkoval <extra_id_2>"
+    },
+    {
+        "inputs": "Za druhé , ti lidé si to <extra_id_0> rozmyslet dřív , než <extra_id_1> platit nájem ve Vsetíně .",
+        "targets": "<extra_id_0> měli <extra_id_1> přestali <extra_id_2>"
+    },
+    {
+        "inputs": "Schellenberg vstal , když jeho nadřízený <extra_id_0> mluvit , a nervózně si <extra_id_1> rty .",
+        "targets": "<extra_id_0> začal <extra_id_1> olízl <extra_id_2>"
+    },
+    {
+        "inputs": "Schellenberg <extra_id_0> , když jeho nadřízený začal mluvit , a nervózně si <extra_id_1> rty .",
+        "targets": "<extra_id_0> vstal <extra_id_1> olízl <extra_id_2>"
+    },
+    {
+        "inputs": "Schellenberg <extra_id_0> , když jeho nadřízený <extra_id_1> mluvit , a nervózně si olízl rty .",
+        "targets": "<extra_id_0> vstal <extra_id_1> začal <extra_id_2>"
+    },
+    {
+        "inputs": "Uprostřed se vytvořil široký koridor pro houkající a když <extra_id_0> , auta se zase plynule <extra_id_1> .",
+        "targets": "<extra_id_0> projeli <extra_id_1> rozjela <extra_id_2>"
+    },
+    {
+        "inputs": "Uprostřed se <extra_id_0> široký koridor pro houkající a když projeli , auta se zase plynule <extra_id_1> .",
+        "targets": "<extra_id_0> vytvořil <extra_id_1> rozjela <extra_id_2>"
+    },
+    {
+        "inputs": "Uprostřed se <extra_id_0> široký koridor pro houkající a když <extra_id_1> , auta se zase plynule rozjela .",
+        "targets": "<extra_id_0> vytvořil <extra_id_1> projeli <extra_id_2>"
+    },
+    {
+        "inputs": "Dále kdy se <extra_id_0> do země , kdy <extra_id_1> procleno a kdy vzato do zdejší evidence .",
+        "targets": "<extra_id_0> dostalo <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Na závěr <extra_id_0> pořadatelky výsledky kvízu , úspěšné – ale i méně úspěšné – odpovědi <extra_id_1> .",
+        "targets": "<extra_id_0> vyhodnotily <extra_id_1> odměnily <extra_id_2>"
+    },
+    {
+        "inputs": "Nakládal jsem všechny věci zpátky do auta a když jsem <extra_id_0> trička na mříž , něco mne <extra_id_1> do prstu .",
+        "targets": "<extra_id_0> věšel <extra_id_1> kouslo <extra_id_2>"
+    },
+    {
+        "inputs": "Snad se tam <extra_id_0> Kopffüsslerové a <extra_id_1> na sebe jejich pozornost .",
+        "targets": "<extra_id_0> objevili <extra_id_1> přilákali <extra_id_2>"
+    },
+    {
+        "inputs": "Jedinou jeho šancí <extra_id_0> penalta , kterou jim <extra_id_1> fatální chybou brankář Beňa .",
+        "targets": "<extra_id_0> byla <extra_id_1> nabídl <extra_id_2>"
+    },
+    {
+        "inputs": "Potopeného štíra si <extra_id_0> na svoji loď a sám se <extra_id_1> o celou operaci záchrany štíra .",
+        "targets": "<extra_id_0> přivázal <extra_id_1> postaral <extra_id_2>"
+    },
+    {
+        "inputs": "Žel je to pravda pravdoucí – sám jsem to osobně viděl , <extra_id_0> , <extra_id_1> .",
+        "targets": "<extra_id_0> slyšel <extra_id_1> zažil <extra_id_2>"
+    },
+    {
+        "inputs": "Žel je to pravda pravdoucí – sám jsem to osobně <extra_id_0> , slyšel , <extra_id_1> .",
+        "targets": "<extra_id_0> viděl <extra_id_1> zažil <extra_id_2>"
+    },
+    {
+        "inputs": "Žel je to pravda pravdoucí – sám jsem to osobně <extra_id_0> , <extra_id_1> , zažil .",
+        "targets": "<extra_id_0> viděl <extra_id_1> slyšel <extra_id_2>"
+    },
+    {
+        "inputs": "V každém případě , N 900 <extra_id_0> vyvinuta proto , aby <extra_id_1> používána na platformě Maemo .",
+        "targets": "<extra_id_0> byla <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Ve vynucených přídavcích <extra_id_0> i Kanagom , který jsem naživo <extra_id_1> naposledy někdy v roce 1988 .",
+        "targets": "<extra_id_0> zazněl <extra_id_1> slyšel <extra_id_2>"
+    },
+    {
+        "inputs": "Vyslanci z Bratislavy <extra_id_0> proto velmi ostře a v časové tísni <extra_id_1> manipulace .",
+        "targets": "<extra_id_0> reagovali <extra_id_1> použili <extra_id_2>"
+    },
+    {
+        "inputs": "Nebylo zvykem , aby si <extra_id_0> po světě a <extra_id_1> něčí zadky , jako je to dneska normálka .",
+        "targets": "<extra_id_0> lítaly <extra_id_1> nakopávaly <extra_id_2>"
+    },
+    {
+        "inputs": "V těch letech prý <extra_id_0> velmi oblíbená , ale až v 90 . letech 20 . století <extra_id_1> opravdový boom .",
+        "targets": "<extra_id_0> byla <extra_id_1> zaznamenala <extra_id_2>"
+    },
+    {
+        "inputs": "Mnohé se totiž <extra_id_0> a <extra_id_1> možnost vzniku požáru .",
+        "targets": "<extra_id_0> přehřívaly <extra_id_1> hrozila <extra_id_2>"
+    },
+    {
+        "inputs": "Teradim <extra_id_0> na stromě u brány a <extra_id_1> se na oblohu .",
+        "targets": "<extra_id_0> seděl <extra_id_1> díval <extra_id_2>"
+    },
+    {
+        "inputs": "Neustále ho <extra_id_0> z vymezeného území a <extra_id_1> zpředu , aby nemohl přebrat přihrávku .",
+        "targets": "<extra_id_0> vystrkoval <extra_id_1> bránil <extra_id_2>"
+    },
+    {
+        "inputs": "Buď jsme měli lepší herní projev , tzv . jsme soupeře <extra_id_0> , nebo jsme soupeře <extra_id_1> kondičně .",
+        "targets": "<extra_id_0> přehráli <extra_id_1> zdolali <extra_id_2>"
+    },
+    {
+        "inputs": "Buď jsme <extra_id_0> lepší herní projev , tzv . jsme soupeře přehráli , nebo jsme soupeře <extra_id_1> kondičně .",
+        "targets": "<extra_id_0> měli <extra_id_1> zdolali <extra_id_2>"
+    },
+    {
+        "inputs": "Buď jsme <extra_id_0> lepší herní projev , tzv . jsme soupeře <extra_id_1> , nebo jsme soupeře zdolali kondičně .",
+        "targets": "<extra_id_0> měli <extra_id_1> přehráli <extra_id_2>"
+    },
+    {
+        "inputs": "I on <extra_id_0> tu změnu a <extra_id_1> své přírazy stupňovat .",
+        "targets": "<extra_id_0> zaznamenal <extra_id_1> začal <extra_id_2>"
+    },
+    {
+        "inputs": "Hned v 6 . minutě se do šance málem <extra_id_0> po Vidličkově centru Hašek , k míči mu ale <extra_id_1> krok .",
+        "targets": "<extra_id_0> dostal <extra_id_1> chyběl <extra_id_2>"
+    },
+    {
+        "inputs": "Upřel na ni tázavý pohled , ale ona mu jen <extra_id_0> , aby se <extra_id_1> .",
+        "targets": "<extra_id_0> pokynula <extra_id_1> posadil <extra_id_2>"
+    },
+    {
+        "inputs": "Ovšem <extra_id_0> jsme na ni kolem 3 hodiny , mrtví hlady ( <extra_id_1> jsme před tím navštívit rodiče a švagrovou ) .",
+        "targets": "<extra_id_0> dorazili <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "On strašně rád <extra_id_0> a <extra_id_1> se vždycky nějak váhu ošidit .",
+        "targets": "<extra_id_0> jedl <extra_id_1> snažil <extra_id_2>"
+    },
+    {
+        "inputs": "Letohrad <extra_id_0> dnes k poražení , ale to by někteří naši hráči <extra_id_1> chtít .",
+        "targets": "<extra_id_0> byl <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "Vydala jsem neurčitý zvuk , který se <extra_id_0> pokládat za ano i za ne , podle toho , co <extra_id_1> tazatel slyšet .",
+        "targets": "<extra_id_0> dal <extra_id_1> chtěl <extra_id_2>"
+    },
+    {
+        "inputs": "U obou se mi <extra_id_0> , že při prvním startu nebyly vidět a <extra_id_1> nutné ještě jednou počítač vypnout a zapnout .",
+        "targets": "<extra_id_0> stalo <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Na stránkách jsme <extra_id_0> důraz na přehlednost , aby prohlížení stránek <extra_id_1> co nejpohldnější .",
+        "targets": "<extra_id_0> kladli <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Zároveň bych i Vás <extra_id_0> požádat , abyste se <extra_id_1> i Vy .",
+        "targets": "<extra_id_0> chtěl <extra_id_1> zapojili <extra_id_2>"
+    },
+    {
+        "inputs": "Do teď sem mu <extra_id_0> jen čaj .. na prdíky mu <extra_id_1> .",
+        "targets": "<extra_id_0> dávala <extra_id_1> pomáhal <extra_id_2>"
+    },
+    {
+        "inputs": "Domácí brankář Šafránek <extra_id_0> více práce než v první části a několikrát <extra_id_1> svou chybu při první brance .",
+        "targets": "<extra_id_0> měl <extra_id_1> nahradil <extra_id_2>"
+    },
+    {
+        "inputs": "Závěr nahrávání <extra_id_0> velmi hekticky , a tak jsme se všichni <extra_id_1> , až si budeme užívat živé hraní .",
+        "targets": "<extra_id_0> probíhal <extra_id_1> těšili <extra_id_2>"
+    },
+    {
+        "inputs": "Těžko říci , které prastaré zvyky <extra_id_0> oni od nás , a u kterých se tak <extra_id_1> naopak .",
+        "targets": "<extra_id_0> převzali <extra_id_1> stalo <extra_id_2>"
+    },
+    {
+        "inputs": "Opatrně , abych se v tom bahně moc neušpinila , jsem <extra_id_0> na místo , kde jsem nedávno <extra_id_1> velkou myšici .",
+        "targets": "<extra_id_0> zamířila <extra_id_1> ulovila <extra_id_2>"
+    },
+    {
+        "inputs": "Domů jsem dorazil kolem osmé , šíleně se <extra_id_0> a <extra_id_1> .",
+        "targets": "<extra_id_0> přežral <extra_id_1> vytuhnul <extra_id_2>"
+    },
+    {
+        "inputs": "Domů jsem <extra_id_0> kolem osmé , šíleně se přežral a <extra_id_1> .",
+        "targets": "<extra_id_0> dorazil <extra_id_1> vytuhnul <extra_id_2>"
+    },
+    {
+        "inputs": "Domů jsem <extra_id_0> kolem osmé , šíleně se <extra_id_1> a vytuhnul .",
+        "targets": "<extra_id_0> dorazil <extra_id_1> přežral <extra_id_2>"
+    },
+    {
+        "inputs": "Sport potřebuje zůstat zdravý a dnes jste <extra_id_0> jak <extra_id_1> všichni šťastní .",
+        "targets": "<extra_id_0> viděli <extra_id_1> byli <extra_id_2>"
+    },
+    {
+        "inputs": "V pátek 19 . srpna ráno <extra_id_0> muži zákona do Holovous , kde <extra_id_1> krádež štěpkovače .",
+        "targets": "<extra_id_0> vyjeli <extra_id_1> vyšetřovali <extra_id_2>"
+    },
+    {
+        "inputs": "A možná i proto mě velice <extra_id_0> a <extra_id_1> jsem nadšen z kapely Bora .",
+        "targets": "<extra_id_0> překvapila <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Ve třetím kole <extra_id_0> na celkově třetí Třešňákovou s Pilátovou a <extra_id_1> jim 0 : 2 ( - 18 , - 8 ) .",
+        "targets": "<extra_id_0> narazily <extra_id_1> podlehly <extra_id_2>"
+    },
+    {
+        "inputs": "Konvoj vozidel s humanitární pomocí <extra_id_0> po silnici , která <extra_id_1> v délce 3 km pod vodou .",
+        "targets": "<extra_id_0> jel <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "ICOK , který <extra_id_0> nově , <extra_id_1> pro ně neutrální .",
+        "targets": "<extra_id_0> vznikl <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Crytek za to <extra_id_0> spoustu kritiky a <extra_id_1> se , že se poučí .",
+        "targets": "<extra_id_0> schytal <extra_id_1> rozhodl <extra_id_2>"
+    },
+    {
+        "inputs": "Já to zažila u pesana , který <extra_id_0> starý a <extra_id_1> jasný , že to přijde a neustála jsem to .",
+        "targets": "<extra_id_0> byl <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Já to <extra_id_0> u pesana , který byl starý a <extra_id_1> jasný , že to přijde a neustála jsem to .",
+        "targets": "<extra_id_0> zažila <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Já to <extra_id_0> u pesana , který <extra_id_1> starý a bylo jasný , že to přijde a neustála jsem to .",
+        "targets": "<extra_id_0> zažila <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Jako že kdyby v šatníku mého partnera <extra_id_0> tepláky , <extra_id_1> bych si taky spoustu tepláků ?",
+        "targets": "<extra_id_0> převládaly <extra_id_1> nakoupila <extra_id_2>"
+    },
+    {
+        "inputs": "O rok později jsem <extra_id_0> úchvatnou sérii kdy z 10 odehraných turnajů jsem <extra_id_1> 9 x na FO 6 x na bedně a 2 x první .",
+        "targets": "<extra_id_0> měl <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Tu , jako by dno <extra_id_0> a z jeho pukliny <extra_id_1> vystupovat plošina .",
+        "targets": "<extra_id_0> puklo <extra_id_1> začala <extra_id_2>"
+    },
+    {
+        "inputs": "Markus píše : Jenom mě štvou Ebon , Jerson a Vlasák , kteří podle <extra_id_0> , zatímco jsme <extra_id_1> .",
+        "targets": "<extra_id_0> odjeli <extra_id_1> spali <extra_id_2>"
+    },
+    {
+        "inputs": "Jak <extra_id_0> , tak jsem mu ho <extra_id_1> a po probuzení nedala .",
+        "targets": "<extra_id_0> usnul <extra_id_1> sebrala <extra_id_2>"
+    },
+    {
+        "inputs": "Všechny učitelky v minulém školním roce <extra_id_0> předepsané učivo a <extra_id_1> stanovené plány .",
+        "targets": "<extra_id_0> probraly <extra_id_1> splnily <extra_id_2>"
+    },
+    {
+        "inputs": "Hned první ročník <extra_id_0> , že jsme se asi <extra_id_1> dobře .",
+        "targets": "<extra_id_0> ukázal <extra_id_1> trefili <extra_id_2>"
+    },
+    {
+        "inputs": "Na rozdíl od předešlých verzích <extra_id_0> tato loutka lépe skovaná a <extra_id_1> dokonce pohyblivé klouby .",
+        "targets": "<extra_id_0> byla <extra_id_1> měla <extra_id_2>"
+    },
+    {
+        "inputs": "Jestli jsem si <extra_id_0> , že jsem připravený na to , co uvidím , <extra_id_1> jsem se snad na čtyřicet způsobů .",
+        "targets": "<extra_id_0> myslel <extra_id_1> pletl <extra_id_2>"
+    },
+    {
+        "inputs": "Zvláštním druhem consolamenta <extra_id_0> to , které se <extra_id_1> umírajícím .",
+        "targets": "<extra_id_0> bylo <extra_id_1> udílelo <extra_id_2>"
+    },
+    {
+        "inputs": "Bavorák <extra_id_0> na stejném místě , kde jsem ho <extra_id_1> .",
+        "targets": "<extra_id_0> stál <extra_id_1> nechal <extra_id_2>"
+    },
+    {
+        "inputs": "Kde <extra_id_0> ODS být , kdyby <extra_id_1> to , co o sobě tvrdí v reklamě ?",
+        "targets": "<extra_id_0> mohla <extra_id_1> platilo <extra_id_2>"
+    },
+    {
+        "inputs": "Byl dalším jezdcem , který se <extra_id_0> vypořádat s Rembrandtem , a <extra_id_1> si přitom nohu .",
+        "targets": "<extra_id_0> musel <extra_id_1> zlomil <extra_id_2>"
+    },
+    {
+        "inputs": "Devátá třída <extra_id_0> písničky a proto jsme se <extra_id_1> do tance .",
+        "targets": "<extra_id_0> pouštěla <extra_id_1> dali <extra_id_2>"
+    },
+    {
+        "inputs": "Zážitek z cest nám <extra_id_0> příroda , která se <extra_id_1> v plné kráse .",
+        "targets": "<extra_id_0> umocňovala <extra_id_1> předvedla <extra_id_2>"
+    },
+    {
+        "inputs": "Naopak nejvýraznější pokles <extra_id_0> Belgie , kde se tržby <extra_id_1> o 4,1 procenta .",
+        "targets": "<extra_id_0> zaznamenala <extra_id_1> snížily <extra_id_2>"
+    },
+    {
+        "inputs": "Četné rodiny <extra_id_0> se na útěk , ale <extra_id_1> přece , až bude -li toho potřebí .",
+        "targets": "<extra_id_0> chystaly <extra_id_1> vyčkávaly <extra_id_2>"
+    },
+    {
+        "inputs": "Zatím co jsem <extra_id_0> ve sněhu , můj penis stále <extra_id_1> .",
+        "targets": "<extra_id_0> ležel <extra_id_1> rostl <extra_id_2>"
+    },
+    {
+        "inputs": "Patronem závodu <extra_id_0> jihočeský senátor Pavel Eybert , který <extra_id_1> , že se nejvíce těší na jihočeské posádky .",
+        "targets": "<extra_id_0> byl <extra_id_1> tvrdil <extra_id_2>"
+    },
+    {
+        "inputs": "Ale absolutní šílenost <extra_id_0> auto , kdy z jedné strany na nás <extra_id_1> šálu Gottwaldova a z druhé šálu Pardubic .",
+        "targets": "<extra_id_0> bylo <extra_id_1> ukazovali <extra_id_2>"
+    },
+    {
+        "inputs": "Zákon <extra_id_0> služby , na kterých se klient podílí finančně , od těch , které by <extra_id_1> být automaticky zadarmo .",
+        "targets": "<extra_id_0> oddělil <extra_id_1> měly <extra_id_2>"
+    },
+    {
+        "inputs": "Bergfrit <extra_id_0> od druhého poschodí úplně nově vystavěn ve slohu historismu ; původní věž <extra_id_1> zřejm ě nižší .",
+        "targets": "<extra_id_0> byl <extra_id_1> byla <extra_id_2>"
+    },
+    {
+        "inputs": "Jeho dech <extra_id_0> dokonalou harmonii , která <extra_id_1> všude kolem .",
+        "targets": "<extra_id_0> rušil <extra_id_1> zavládla <extra_id_2>"
+    },
+    {
+        "inputs": "Mnohé závěry , které se v tehdejší době <extra_id_0> spíše hypotetickými , <extra_id_1> osm let ověřovány v praxi .",
+        "targets": "<extra_id_0> jevily <extra_id_1> byly <extra_id_2>"
+    },
+    {
+        "inputs": "Jak už jsem <extra_id_0> , <extra_id_1> se hodně a to především v lese v jedné s kolmých technických pasáží .",
+        "targets": "<extra_id_0> řekl <extra_id_1> padalo <extra_id_2>"
+    },
+    {
+        "inputs": "Nejdříve jsme se <extra_id_0> vyvést maršrutkou co možná nejdál a nejvýš , jak jen to <extra_id_1> možné .",
+        "targets": "<extra_id_0> nechali <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Když jsem se ráno <extra_id_0> , Milan <extra_id_1> pryč .",
+        "targets": "<extra_id_0> vzbudila <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Selena se jeho prostřednictvím spojila s Tomem a <extra_id_0> jen štěstí , že <extra_id_1> na tebe .",
+        "targets": "<extra_id_0> bylo <extra_id_1> narazili <extra_id_2>"
+    },
+    {
+        "inputs": "Selena se jeho prostřednictvím <extra_id_0> s Tomem a bylo jen štěstí , že <extra_id_1> na tebe .",
+        "targets": "<extra_id_0> spojila <extra_id_1> narazili <extra_id_2>"
+    },
+    {
+        "inputs": "Selena se jeho prostřednictvím <extra_id_0> s Tomem a <extra_id_1> jen štěstí , že narazili na tebe .",
+        "targets": "<extra_id_0> spojila <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Avšak abychom <extra_id_0> vynášet kvalifikované soudy , <extra_id_1> bychom o tom vědět více .",
+        "targets": "<extra_id_0> mohli <extra_id_1> museli <extra_id_2>"
+    },
+    {
+        "inputs": "Pod tíhou těchto myšlenek se <extra_id_0> a oba dva se na něj hned <extra_id_1> .",
+        "targets": "<extra_id_0> pousmál <extra_id_1> podívali <extra_id_2>"
+    },
+    {
+        "inputs": "AXP Praha <extra_id_0> rozhodčí řízení a soud poté <extra_id_1> exekuci na majetek Datartu .",
+        "targets": "<extra_id_0> vyhrála <extra_id_1> nařídil <extra_id_2>"
+    },
+    {
+        "inputs": "Polské dziewczyny je na chvíli <extra_id_0> a nám <extra_id_1> jasné , že už oba zamíří k trochu jinému stolu .",
+        "targets": "<extra_id_0> zdržely <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Kurt <extra_id_0> , že první krok je na něm , a jak lépe by <extra_id_1> vyjádřit své pocity než písní .",
+        "targets": "<extra_id_0> věděl <extra_id_1> mohl <extra_id_2>"
+    },
+    {
+        "inputs": "V tom IDC to určitě záměr <extra_id_0> -- vždyť si tam z nás <extra_id_1> legraci !",
+        "targets": "<extra_id_0> byl <extra_id_1> dělali <extra_id_2>"
+    },
+    {
+        "inputs": "Strana <extra_id_0> na změně s agenturou , která jí <extra_id_1> už s několika volebními kampaněmi .",
+        "targets": "<extra_id_0> spolupracovala <extra_id_1> pomáhala <extra_id_2>"
+    },
+    {
+        "inputs": "Kvůli ní jsem <extra_id_0> v tom pitomém Hrabětíně sedačku a <extra_id_1> nás z práce .",
+        "targets": "<extra_id_0> ukradl <extra_id_1> vyhodili <extra_id_2>"
+    },
+    {
+        "inputs": "Fotili jsme je pár měsíců , co jsme se <extra_id_0> a pak , kdy se <extra_id_1> .",
+        "targets": "<extra_id_0> poznali <extra_id_1> dalo <extra_id_2>"
+    },
+    {
+        "inputs": "A tento příklad <extra_id_0> jen jedním z mnoha problémů , které by <extra_id_1> ŘSD řešit .",
+        "targets": "<extra_id_0> byl <extra_id_1> mělo <extra_id_2>"
+    },
+    {
+        "inputs": "Po přestávce <extra_id_0> Herálec lepším týmem a <extra_id_1> se vedení 3 : 1 .",
+        "targets": "<extra_id_0> byl <extra_id_1> ujal <extra_id_2>"
+    },
+    {
+        "inputs": "Když zdrhul podruhé , <extra_id_0> se přenést daleko dřív , takže se <extra_id_1> sám .",
+        "targets": "<extra_id_0> nechal <extra_id_1> vylízal <extra_id_2>"
+    },
+    {
+        "inputs": "Když <extra_id_0> podruhé , nechal se přenést daleko dřív , takže se <extra_id_1> sám .",
+        "targets": "<extra_id_0> zdrhul <extra_id_1> vylízal <extra_id_2>"
+    },
+    {
+        "inputs": "Když <extra_id_0> podruhé , <extra_id_1> se přenést daleko dřív , takže se vylízal sám .",
+        "targets": "<extra_id_0> zdrhul <extra_id_1> nechal <extra_id_2>"
+    },
+    {
+        "inputs": "To dokonce i Verča plakala , protože jí to <extra_id_0> líto , že mu na tu tlapku <extra_id_1> .",
+        "targets": "<extra_id_0> bylo <extra_id_1> šlápla <extra_id_2>"
+    },
+    {
+        "inputs": "To dokonce i Verča <extra_id_0> , protože jí to bylo líto , že mu na tu tlapku <extra_id_1> .",
+        "targets": "<extra_id_0> plakala <extra_id_1> šlápla <extra_id_2>"
+    },
+    {
+        "inputs": "To dokonce i Verča <extra_id_0> , protože jí to <extra_id_1> líto , že mu na tu tlapku šlápla .",
+        "targets": "<extra_id_0> plakala <extra_id_1> bylo <extra_id_2>"
+    },
+    {
+        "inputs": "Že to <extra_id_0> schopní lidé , kteří se <extra_id_1> generály i po roce 1989 .",
+        "targets": "<extra_id_0> byli <extra_id_1> stali <extra_id_2>"
+    },
+    {
+        "inputs": "Myslím , že se to zdařilo a že ta roční námaha , že se tímto koncertem <extra_id_0> a <extra_id_1> .",
+        "targets": "<extra_id_0> završila <extra_id_1> vyplatila <extra_id_2>"
+    },
+    {
+        "inputs": "Myslím , že se to <extra_id_0> a že ta roční námaha , že se tímto koncertem završila a <extra_id_1> .",
+        "targets": "<extra_id_0> zdařilo <extra_id_1> vyplatila <extra_id_2>"
+    },
+    {
+        "inputs": "Myslím , že se to <extra_id_0> a že ta roční námaha , že se tímto koncertem <extra_id_1> a vyplatila .",
+        "targets": "<extra_id_0> zdařilo <extra_id_1> završila <extra_id_2>"
+    },
+    {
+        "inputs": "Nějaký starý pán si <extra_id_0> cestu a <extra_id_1> přes koleje .",
+        "targets": "<extra_id_0> zkrátil <extra_id_1> přecházel <extra_id_2>"
+    },
+    {
+        "inputs": "I běloch se přizpůsobil jejich zvykům , a když zase <extra_id_0> ručnici , <extra_id_1> i on tichý a zdrženlivý .",
+        "targets": "<extra_id_0> odložil <extra_id_1> zůstal <extra_id_2>"
+    },
+    {
+        "inputs": "I běloch se <extra_id_0> jejich zvykům , a když zase odložil ručnici , <extra_id_1> i on tichý a zdrženlivý .",
+        "targets": "<extra_id_0> přizpůsobil <extra_id_1> zůstal <extra_id_2>"
+    },
+    {
+        "inputs": "I běloch se <extra_id_0> jejich zvykům , a když zase <extra_id_1> ručnici , zůstal i on tichý a zdrženlivý .",
+        "targets": "<extra_id_0> přizpůsobil <extra_id_1> odložil <extra_id_2>"
+    },
+    {
+        "inputs": "V soboty sázel brambory a prý k němu <extra_id_0> 2 čápi , kteří ho celou dobu <extra_id_1> .",
+        "targets": "<extra_id_0> přiletěly <extra_id_1> pronásledovali <extra_id_2>"
+    },
+    {
+        "inputs": "V soboty <extra_id_0> brambory a prý k němu přiletěly 2 čápi , kteří ho celou dobu <extra_id_1> .",
+        "targets": "<extra_id_0> sázel <extra_id_1> pronásledovali <extra_id_2>"
+    },
+    {
+        "inputs": "V soboty <extra_id_0> brambory a prý k němu <extra_id_1> 2 čápi , kteří ho celou dobu pronásledovali .",
+        "targets": "<extra_id_0> sázel <extra_id_1> přiletěly <extra_id_2>"
+    },
+    {
+        "inputs": "Pozvání jsme nakonec <extra_id_0> , Roland jenom telefonicky <extra_id_1> manželku .",
+        "targets": "<extra_id_0> přijali <extra_id_1> informoval <extra_id_2>"
+    },
+    {
+        "inputs": "Ve dvanácté minutě se hosté dokonce <extra_id_0> vedení po střele za modrou čárou <extra_id_1> Bíbu na švestkách Bušek .",
+        "targets": "<extra_id_0> ujali <extra_id_1> nachytal <extra_id_2>"
+    },
+    {
+        "inputs": "Na místě jí <extra_id_0> zadržen řidičský průkaz , který <extra_id_1> zaslán na úřad k dalšímu opatření .",
+        "targets": "<extra_id_0> byl <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Poté jsme <extra_id_0> po větru a v pohodě <extra_id_1> .",
+        "targets": "<extra_id_0> hráli <extra_id_1> vyhráli <extra_id_2>"
+    },
+    {
+        "inputs": "Najednou se za ním <extra_id_0> Jaden a <extra_id_1> mu ruku za krk .",
+        "targets": "<extra_id_0> objevil <extra_id_1> vrazil <extra_id_2>"
+    },
+    {
+        "inputs": "Toto vyplácení se <extra_id_0> přesně dvě stě let , dokud se v Granadě <extra_id_1> nedo  statek zlata .",
+        "targets": "<extra_id_0> trvalo <extra_id_1> projevil <extra_id_2>"
+    },
+    {
+        "inputs": "Jeho gravitací přitahovaná kila <extra_id_0> své a <extra_id_1> ho do slušného spídu .",
+        "targets": "<extra_id_0> udělala <extra_id_1> rozjela <extra_id_2>"
+    },
+    {
+        "inputs": "Vaniak se vytáhl – míč <extra_id_0> , ale obránci nepokryli Rajtorala , který <extra_id_1> odražený míč do sítě 24 .",
+        "targets": "<extra_id_0> vyrazil <extra_id_1> dorazil <extra_id_2>"
+    },
+    {
+        "inputs": "Vaniak se <extra_id_0> – míč vyrazil , ale obránci nepokryli Rajtorala , který <extra_id_1> odražený míč do sítě 24 .",
+        "targets": "<extra_id_0> vytáhl <extra_id_1> dorazil <extra_id_2>"
+    },
+    {
+        "inputs": "Vaniak se <extra_id_0> – míč <extra_id_1> , ale obránci nepokryli Rajtorala , který dorazil odražený míč do sítě 24 .",
+        "targets": "<extra_id_0> vytáhl <extra_id_1> vyrazil <extra_id_2>"
+    },
+    {
+        "inputs": "Kluk <extra_id_0> oči a <extra_id_1> se na ni .",
+        "targets": "<extra_id_0> otevřel <extra_id_1> podíval <extra_id_2>"
+    },
+    {
+        "inputs": "On <extra_id_0> vždycky ten , který <extra_id_1> na všechno moc hr .",
+        "targets": "<extra_id_0> byl <extra_id_1> byl <extra_id_2>"
+    },
+    {
+        "inputs": "Moje ruka <extra_id_0> proti autorádiu jako blesk a hned ho <extra_id_1> .",
+        "targets": "<extra_id_0> vyletěla <extra_id_1> vypla <extra_id_2>"
+    },
+    {
+        "inputs": "Rakouskou žádost o zatčení <extra_id_0> s poukazem , aby si ho <extra_id_1> Rakušané sami .",
+        "targets": "<extra_id_0> odmítli <extra_id_1> zatkli <extra_id_2>"
+    },
+    {
+        "inputs": "Baránek má 4 a hodně tak <extra_id_0> optimismus těch , kteří ho <extra_id_1> , takže tady už body nikdo nezíská .",
+        "targets": "<extra_id_0> překonal <extra_id_1> uvedli <extra_id_2>"
+    },
+    {
+        "inputs": "Když <extra_id_0> pár týdnů , <extra_id_1> se Mirka na rozvod .",
+        "targets": "<extra_id_0> uběhlo <extra_id_1> zeptala <extra_id_2>"
+    },
+    {
+        "inputs": "Jakmile se ocitla sama , <extra_id_0> na dokument třímající v ruce a dobrá nálada ji v mžiku <extra_id_1> .",
+        "targets": "<extra_id_0> pohlédla <extra_id_1> opustila <extra_id_2>"
+    },
+    {
+        "inputs": "Jakmile se <extra_id_0> sama , pohlédla na dokument třímající v ruce a dobrá nálada ji v mžiku <extra_id_1> .",
+        "targets": "<extra_id_0> ocitla <extra_id_1> opustila <extra_id_2>"
+    },
+    {
+        "inputs": "Jakmile se <extra_id_0> sama , <extra_id_1> na dokument třímající v ruce a dobrá nálada ji v mžiku opustila .",
+        "targets": "<extra_id_0> ocitla <extra_id_1> pohlédla <extra_id_2>"
+    },
+    {
+        "inputs": "Svojí slečnu si vybrat <extra_id_0> ( nebo si ona <extra_id_1> jeho ?",
+        "targets": "<extra_id_0> uměl <extra_id_1> vybrala <extra_id_2>"
+    },
+    {
+        "inputs": "Ale Hermida <extra_id_0> perfektně a já neměl moc dobrý konec , ten moment bych možná <extra_id_1> krizí .",
+        "targets": "<extra_id_0> jel <extra_id_1> nazval <extra_id_2>"
+    }
+]

@@ -1,0 +1,24 @@
+task: aver_agree_single
+generation_kwargs:
+  until:
+    - "<extra_id_1>"
+  do_sample: false
+  temperature: 0.0
+doc_to_text: "Věta: {{inputs}}\nTvoje odpověď: "
+doc_to_target: targets
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files:
+    validation: aver_agree_single.json
+validation_split: validation
+
+metric_list:
+  - metric: ter
+    higher_is_better: false
+  - metric: chrf
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: false
