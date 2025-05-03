@@ -1,0 +1,5602 @@
+[
+    {
+        "question": "Hmyzem a drobnými bezobratlými živočichy se živí:",
+        "answers": [
+            "pstruh obecný",
+            "sumec velký"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Které onemocnění postihuje hlavně játra?",
+        "answers": [
+            "salmonelóza",
+            "hepatitida (infekční žloutenka)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nervová tkáň:",
+        "answers": [
+            "tvoří mozek a nervy",
+            "vystýlá močový měchýř"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "cévní klubíčko",
+        "answers": [
+            "glomerulum",
+            "ureter"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Stonožkovci mají za normálních okolností <extra_id_0> počet končetin.",
+        "answers": [
+            "sudý",
+            "lichý"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Svalová vlákna v příčně pruhované svalovině vznikají:",
+        "answers": [
+            "splynutím buněk",
+            "z mezibuněčné hmoty"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Modré pole na křídle má:",
+        "answers": [
+            "sojka obecná",
+            "strakapoud velký"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zlomeniny obvykle <extra_id_0> bolestivé.",
+        "answers": [
+            "nebývají",
+            "bývají"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "červené krevní barvivo v červených krvinkách",
+        "answers": [
+            "fibrin",
+            "hemoglobin"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Světlo dopadající na Zemi pochází hlavně:",
+        "answers": [
+            "z Měsíce",
+            "ze Slunce"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Svaly se mohou stahovat.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která možnost obsahuje názvy mechů?",
+        "answers": [
+            "ploník, bělomech",
+            "řasokoule zelená, šroubatka"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Mezi neživé podmínky života náleží:",
+        "answers": [
+            "společenstva živočichů",
+            "vzduch"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Do skupiny <i>Viridiplantae</i> patří:",
+        "answers": [
+            "zelené řasy",
+            "ruduchy, glaukofyty"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Játra se nacházejí:",
+        "answers": [
+            "v dutině hrudní",
+            "pod bránicí"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Rozměry 2,5 cm × 5 m bude mít spíše:",
+        "answers": [
+            "náplast s polštářkem",
+            "hladká náplast v cívce"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "K vnitřnímu krvácení pravděpodobně dochází, když je postižený:",
+        "answers": [
+            "bledý, má rychlý tep a dýchání",
+            "oteklý, přehřátý"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V lese <extra_id_0> vhodné nahlas pouštět hudbu z reproduktorů.",
+        "answers": [
+            "není",
+            "je"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Součástí DNA je zejména:",
+        "answers": [
+            "uracil",
+            "thymin"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolik pánví je v těle člověka?",
+        "answers": [
+            "dvě",
+            "jedna"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Erikovi rodiče se často chlubí, že má samé jedničky. Proč se Erik zlobí?",
+        "answers": [
+            "Protože rodiče jsou mu lhostejní.",
+            "Protože rodiče se zajímají víc o jeho výsledky než o to, jak se má."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "tekutý tuk",
+        "answers": [
+            "parafín",
+            "olej"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Brněnský masiv sestává zejména <extra_id_0> hornin.",
+        "answers": [
+            "z vyvřelých",
+            "z usazených"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Očkování u člověka zajišťuje <extra_id_0> imunitu.",
+        "answers": [
+            "vrozenou",
+            "získanou"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Skokan hnědý má oproti ropuše obecné <extra_id_0> nohy.",
+        "answers": [
+            "delší",
+            "kratší"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Antropogenní skleníkový efekt <extra_id_0> způsoben člověkem.",
+        "answers": [
+            "je",
+            "není"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zdrojem energie pro svaly jsou zejména:",
+        "answers": [
+            "sacharidy",
+            "proteiny"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Výrazně zploštělé bývá tělo:",
+        "answers": [
+            "rejnoků",
+            "žraloků"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Drobný plž cestuje na větší vzdálenost v ptačím peří. Jak by se dal označit tento vztah?",
+        "answers": [
+            "mutualizmus",
+            "komenzálizmus"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Cílem resuscitace je:",
+        "answers": [
+            "zajistit náhradní oběh okysličené krve",
+            "utlumit alergickou reakci"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Chromozomy jsou v rámci spermie umístěny:",
+        "answers": [
+            "v hlavičce",
+            "v krčku"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Krev rozvádí po těle:",
+        "answers": [
+            "vodu",
+            "žluč"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Alpinské a himalájské vrásnění probíhaly:",
+        "answers": [
+            "na stejném místě",
+            "ve zcela odlišných částech světa"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ve stáří <extra_id_0> svalová hmota.",
+        "answers": [
+            "ubývá",
+            "přibývá"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ryby mají tělo obvykle pokryté:",
+        "answers": [
+            "šupinami",
+            "srstí"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "slizniční záhyb (řasa) nacházející se ve vchodu do pochvy, panenská blána",
+        "answers": [
+            "klitoris",
+            "hymen"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Orgánové soustavy se někdy označují jako:",
+        "answers": [
+            "ústrojí",
+            "ústroje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Předchůdci anatomicky moderního člověka se poprvé objevili:",
+        "answers": [
+            "v Americe",
+            "v Africe"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Obraz v reálných barvách může poskytnout <extra_id_0> mikroskop.",
+        "answers": [
+            "optický",
+            "elektronový"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V ledvinách dochází ke vzniku moči díky <extra_id_0> krve.",
+        "answers": [
+            "destilaci",
+            "ultrafiltraci"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Tkáň je:",
+        "answers": [
+            "součást buňky",
+            "soubor buněk s určitou funkcí"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Vyberte možnost obsahující součásti těla, které se aspoň částečně nacházejí v šourku.",
+        "answers": [
+            "nadvarle, chámovod",
+            "varle, prostata"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Samice tura, která ještě neměla tele, se nazývá:",
+        "answers": [
+            "jalovice",
+            "dojnice"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Axony míšních neuronů mohou být dlouhé až:",
+        "answers": [
+            "10 cm",
+            "1 m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Hormony se po těle přenášejí zejména:",
+        "answers": [
+            "lymfou",
+            "krví"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Polovina jedné čelisti dospělého člověka obsahuje 2:",
+        "answers": [
+            "třenové zuby",
+            "špičáky"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kovy jsou tažné. To znamená, že je <extra_id_0> natahovat.",
+        "answers": [
+            "nelze",
+            "lze"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak dochází k zástavě krvácení?",
+        "answers": [
+            "vlákna aktinu a myozinu se posouvají mezi sebe",
+            "v ráně se bílkovina fibrinogen mění na síťovitý polymer fibrin"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Podchlazeného člověka:",
+        "answers": [
+            "poléváme vroucí vodou",
+            "přemístíme do teplého prostředí"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Člověk náleží mezi lemurovité primáty.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V současnosti panuje na Zemi doba:",
+        "answers": [
+            "ledová",
+            "meziledová"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V rámci mitózy k dělení buňky dochází:",
+        "answers": [
+            "dvakrát",
+            "jednou"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Podnebí <extra_id_0> ovlivněno množstvím dopadajícího slunečního záření.",
+        "answers": [
+            "je",
+            "není"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co platí o žilách?",
+        "answers": [
+            "krev se v nich zbavuje kyslíku",
+            "vedou většinou odkysličenou krev"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Gonozomálně recesivní onemocnění vázané na chromozom X se častěji projevují:",
+        "answers": [
+            "u mužů",
+            "u žen"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "květní vzorec jazykovitého květu hvězdnicovitých",
+        "answers": [
+            "♀ ↓ K0 C(3) A0 G(<span style='text-decoration: overline'>2</span>)",
+            "☿ ∗ K0 C(5) G(<span style='text-decoration: overline'>2</span>)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "okostice",
+        "answers": [
+            "periost",
+            "osteon"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pro ošetření silně krvácející řezné rány je důležitější:",
+        "answers": [
+            "obvaz",
+            "dezinfekce"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Chrání prezervativ před pohlavně přenosnými chorobami?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pohlavní buňka (vajíčko, nebo spermie) má oproti tělní buňce člověka:",
+        "answers": [
+            "polovinu genetické informace",
+            "dvojnásobek genetické informace"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Každý gen v genotypu člověka má vždy právě dvě alely.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Více vytrvalé jsou a zvěř uštvávají <extra_id_0> šelmy.",
+        "answers": [
+            "kočkovité",
+            "psovité"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Trojklaný nerv (n. trigeminus) zajišťuje:",
+        "answers": [
+            "hybnost i citlivost obličeje",
+            "pouze citlivost obličeje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který ekosystém je spíše přírodní?",
+        "answers": [
+            "rumiště",
+            "les bez zásahu člověka"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "reakce organizmu na podnět",
+        "answers": [
+            "receptor",
+            "reflex"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Flexory a extenzory v určité části těla působí antagonisticky.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Do evakuačního zavazadla patří…",
+        "answers": [
+            "oblečení",
+            "mixér"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co bychom měli dělat, pokud emoce překážejí našemu každodennímu fungování?",
+        "answers": [
+            "Vyhledat podporu pro lepší zvládání emocí.",
+            "Nechat je bez povšimnutí."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zavíječ paprikový žije zejména:",
+        "answers": [
+            "v domácnostech",
+            "v blízkosti vodních toků"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Některé druhy pavouků pečují o mláďata.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Množství vody odevzdané transpirací minimalizují zejména rostliny využívající:",
+        "answers": [
+            "CAM fotosyntézu",
+            "C3 fotosyntézu"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Galenit má tvrdost 2–2,75. Je tedy <extra_id_0> než fluorit.",
+        "answers": [
+            "měkčí",
+            "tvrdší"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V Česku se ročně objeví více případů:",
+        "answers": [
+            "napadení tasemnicí",
+            "rakoviny tlustého střeva a konečníku"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V rámci meiózy jako první probíhá homeotypické (ekvační) dělení. Je to pravda?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Placenta se u placentálů nachází:",
+        "answers": [
+            "v zárodku/plodu",
+            "mimo zárodek/plod"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Tekutina zvlhčující pochvu při sexuálním vzrušení vzniká:",
+        "answers": [
+            "činností kostní dřeně",
+            "filtrací krve"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který typ chlupů slouží zejména jako tepelná izolace?",
+        "answers": [
+            "podsada",
+            "pesíky"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Pro vlnu se chová tur domácí.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Někteří savci mají tělo pokryté šupinami.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : V cytoplazmatické membráně bývají zabudované proteiny.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Proč je užitečné mluvit o svých pocitech?",
+        "answers": [
+            "Abychom si vybrali, co cítit.",
+            "Abychom je lépe zvládali."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Chrání hormonální antikoncepce před pohlavně přenosnými chorobami?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Mlži dokáží světločivnými orgány vnímat světlo a tmu.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Masožravost se v rámci skupiny rostlin vyvinula:",
+        "answers": [
+            "víckrát nezávisle na sobě",
+            "pouze jednou"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Celosvětově se za rok vyhodí asi třetina vyprodukovaných potravin.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V živých organizmech funguje vztah:",
+        "answers": [
+            "DNA → protein → znak",
+            "DNA → znak → protein"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Chováním živočichů se zabývá především:",
+        "answers": [
+            "etologie",
+            "etymologie"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "K trávení plžů přispívá:",
+        "answers": [
+            "slinivkojaterní žláza",
+            "metanefridie"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Prvohory jsou období před <extra_id_0> miliony let.",
+        "answers": [
+            "252–65",
+            "541–252"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Která možnost obsahuje součásti těla vyskytující se jen u muže?",
+        "answers": [
+            "varle, nadvarle, močová trubice",
+            "chámovod, prostata, penis"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kvalitativní znaky se <extra_id_0> vyjádřit číslem.",
+        "answers": [
+            "nedají",
+            "dají"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Stonožkovci mívají tykadla.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Houbovitá tkáň se nachází <extra_id_0> kostí.",
+        "answers": [
+            "na povrchu",
+            "uvnitř"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Někdo se na mě divně podíval, takže se mi všichni smějí za zády.",
+        "answers": [
+            "filtrování",
+            "přehnané zobecnění"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kastrace spočívá v odstranění <extra_id_0> samce.",
+        "answers": [
+            "varlat",
+            "dělohy"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Živiny se do svalů dostávají hlavně:",
+        "answers": [
+            "krví",
+            "lymfou"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Etologie se zabývá <extra_id_0> živočichů.",
+        "answers": [
+            "vnitřní stavbou těla",
+            "chováním"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Člověk může žít i s jednou zdravou plící.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Emise skleníkových plynů vznikají při <extra_id_0> solárních panelů.",
+        "answers": [
+            "provozu",
+            "výrobě"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "bílkovinný obal kolem nukleové kyseliny viru",
+        "answers": [
+            "kapsida",
+            "kapsela"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Redukce v organické chemii obvykle souvisí s přidáním:",
+        "answers": [
+            "vodíku",
+            "kyslíku"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Oxid hlinitý tvoří minerál korund. Ten je <extra_id_0> než běžné sklo.",
+        "answers": [
+            "měkčí",
+            "tvrdší"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Napětí v galvanických článcích vzniká díky přesunu <extra_id_0> mezi různými látkami.",
+        "answers": [
+            "elektrolyzérů",
+            "elektronů"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolem jádra atomu se nachází <extra_id_0> obal.",
+        "answers": [
+            "elektronový",
+            "protonový"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Maltosa může vznikat enzymatickou hydrolýzou škrobu.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Destilovaná voda má pH:",
+        "answers": [
+            "7",
+            "14"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Nejvyšší hustotu ze všech kovů má:",
+        "answers": [
+            "platina (Pt)",
+            "osmium (Os)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Arsen prospívá lidskému zdraví.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Dle principu <extra_id_0> formulovaného W. Heisenbergem současně nelze určit hybnost a polohu elektronu.",
+        "answers": [
+            "neurčitosti",
+            "stacionarity"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Alkoholové kvašení se obvykle zastaví při zhruba 12% obsahu alkoholu ve směsi. Jak se vyrábějí koncentrovanější alkoholické nápoje?",
+        "answers": [
+            "destilací",
+            "filtrací"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Při adici atomů/skupin na dvojnou vazbu se z ní stane vazba:",
+        "answers": [
+            "trojná",
+            "jednoduchá"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nižší karboxylové kyseliny zpravidla <extra_id_0> rozpustné ve vodě.",
+        "answers": [
+            "nejsou",
+            "jsou"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jako bílý pigment se používá:",
+        "answers": [
+            "oxid dusičitý",
+            "oxid titaničitý"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "záporně nabitý iont",
+        "answers": [
+            "anion",
+            "kation"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Větší tendenci usazovat se na stěnách cév má:",
+        "answers": [
+            "LDL (low density lipoprotein)",
+            "HDL (high density lipoprotein)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Enzymy se vyskytují <extra_id_0> živých organizmů.",
+        "answers": [
+            "u všech",
+            "u některých"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "teplota tání wolframu",
+        "answers": [
+            "3 387 °C",
+            "489 °C"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Ketony mají karbonylovou skupinu na konci uhlíkového řetězce.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Hořící hořčík vytváří intenzivní <extra_id_0> světlo s výraznou ultrafialovou složkou.",
+        "answers": [
+            "žluté",
+            "bílé"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Estery karboxylových kyselin vznikají reakcí:",
+        "answers": [
+            "s alkylhalogenidem",
+            "s alkoholem"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Kyslík v oxidech má oxidační číslo −II.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Sodík má ve valenční vrstvě:",
+        "answers": [
+            "3 elektrony",
+            "1 elektron"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V roztoku o celkové hmotnosti 150 g bylo 20 g rozpuštěné látky. Hmotnostní zlomek rozpuštěné látky je:",
+        "answers": [
+            "0,13",
+            "0,25"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Mezi nekovy patří:",
+        "answers": [
+            "mangan (Mn)",
+            "uhlík (C)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Zásaditější je roztok s pH:",
+        "answers": [
+            "9",
+            "8"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jádro atomu obsahuje 13 protonů. Atom je elektricky neutrální. Ve svém obalu bude obsahovat:",
+        "answers": [
+            "13 elektronů",
+            "26 elektronů"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Čisticí prostředky (např. prostředek na mytí nádobí) se označují jako:",
+        "answers": [
+            "detergenty",
+            "emulgátory"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Při buněčném dýchání vzniká kyslík.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Methanol má <extra_id_0> teplotu varu než ethanol.",
+        "answers": [
+            "nižší",
+            "vyšší"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ethanol se v těle metabolizuje <extra_id_0> na ethanal a kyselinu octovou.",
+        "answers": [
+            "oxidací",
+            "redukcí"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Součástí RNA je:",
+        "answers": [
+            "D-galaktosa",
+            "D-ribosa"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Oxid uhličitý vzniká při metabolizmu živin v těle člověka.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Aminokyseliny, které tělo člověka dokáže vyrobit z jiných látek, se označují jako neesenciální.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "pufr",
+        "answers": [
+            "indikátor",
+            "tlumivý roztok"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který prvek má vyšší elektronegativitu?",
+        "answers": [
+            "kyslík (O)",
+            "uhlík (C)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Antipyretika slouží ke <extra_id_0> tělesné teploty.",
+        "answers": [
+            "snížení",
+            "zvýšení"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "aminokyseliny, které si lidské tělo dokáže vytvořit z jiných látek",
+        "answers": [
+            "esenciální",
+            "neesenciální"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Polokovy jsou (podobně jako nekovy):",
+        "answers": [
+            "za standardních podmínek plyny",
+            "křehké"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Hodnota pH je závislá na teplotě.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Značka prvku Na se čte jako:",
+        "answers": [
+            "[en-á]",
+            "[na]"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který prvek patří do 6. skupiny a 4. periody?",
+        "answers": [
+            "molybden (Mo)",
+            "chrom (Cr)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Rozpouštíme sůl ve vodě, ta se kompletně rozpustí. Vznikne <extra_id_0> směs.",
+        "answers": [
+            "heterogenní",
+            "homogenní"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Částice nejdále od sebe mají <extra_id_0> látky.",
+        "answers": [
+            "kapalné",
+            "plynné"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Hliník je nejrozšířenější prvek na Zemi.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Propan-1,2,3-triol se také označuje jako:",
+        "answers": [
+            "glukóza",
+            "glycerol"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Hmotnostní zlomek cukru v marmeládě byl 0,6. Kolik cukru obsahovalo 10 g marmelády?",
+        "answers": [
+            "6 g",
+            "0,6 g"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Záporně nabitý iont se označuje jako anion.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Při pH větším než 7 jsou roztoky:",
+        "answers": [
+            "kyselé",
+            "zásadité"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ke vnášení zbytků karboxylových kyselin do organických sloučenin se využívají zejména <extra_id_0> karboxylových kyselin.",
+        "answers": [
+            "estery",
+            "halogenidy"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kovy značek Cu, Au a Ag jsou:",
+        "answers": [
+            "ušlechtilé",
+            "neušlechtilé"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Sádrovec je:",
+        "answers": [
+            "dihydrát síranu vápenatého",
+            "hemihydrát síranu vápenatého"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Valenční elektrony prvků 2. skupiny jsou v porovnání s prvky 1. skupiny vázány:",
+        "answers": [
+            "pevněji",
+            "méně pevně"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Do žlutých kontejnerů na tříděný odpad <extra_id_0> kelímek od jogurtu.",
+        "answers": [
+            "patří",
+            "nepatří"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Nižší protonové číslo má:",
+        "answers": [
+            "Al",
+            "B"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "U organických sloučenin se mnohdy projevuje různé uspořádaní atomů u látek, které mají stejný sumární vzorec. To se označuje jako:",
+        "answers": [
+            "izomerie",
+            "hybridizace"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Některé aminokyseliny obsahují atomy síry.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Mezi kovy alkalických zemin patří:",
+        "answers": [
+            "baryum",
+            "francium"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Běžné kvasinky provádějí kvašení asi do <extra_id_0> obsahu ethanolu ve směsi.",
+        "answers": [
+            "40%",
+            "12%"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "bazický",
+        "answers": [
+            "kyselý",
+            "zásaditý"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co vznikne reakcí ethanolu a sodíku?",
+        "answers": [
+            "ethen",
+            "ethoxid sodný"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pokud jsou atomy uhlíku uspořádány v kruhu, označuje se uhlíkový řetězec jako:",
+        "answers": [
+            "lineární",
+            "cyklický"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "reakce s halogenem",
+        "answers": [
+            "hydratace",
+            "halogenace"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "K výrobě stentů (ty zajišťují např. roztažení cévy ve zdravotnictví) se používají sloučeniny:",
+        "answers": [
+            "platiny (Pt) a osmia (Os)",
+            "niklu (Ni) a titanu (Ti)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Oxidace a redukce vždy probíhají společně.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Proteiny jsou:",
+        "answers": [
+            "monomery",
+            "makromolekuly"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Fotosyntéza je typická pro <extra_id_0> organizmy.",
+        "answers": [
+            "heterotrofní",
+            "autotrofní"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Kladně nabitý iont se označuje jako anion.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Dojde-li k porušení ochranného hlenu na stěnách žaludku, naleptání stěn <extra_id_0> může vést ke vzniku žaludečních vředů.",
+        "answers": [
+            "kyselinou sírovou",
+            "kyselinou chlorovodíkovou"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Mezi polokovy patří:",
+        "answers": [
+            "tellur (Te)",
+            "zinek (Zn)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Mezi polokovy patří:",
+        "answers": [
+            "beryllium (Be)",
+            "bor (B)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jako jedlá soda se označuje:",
+        "answers": [
+            "uhličitan sodný",
+            "hydrogenuhličitan sodný"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Záření γ:",
+        "answers": [
+            "sestává z jader helia",
+            "je elektromagnetické záření"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Analýza DNA může sloužit ke zkoumání vztahů mezi živými organizmy.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Konzumace tuků obsahujících transmastné kyseliny vede k chorobám:",
+        "answers": [
+            "oběhové soustavy",
+            "kostry"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V rámci primární fáze fotosyntézy přímo vzniká:",
+        "answers": [
+            "glukosa",
+            "ATP"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Antibiotika jsou obvykle dostupná:",
+        "answers": [
+            "volně",
+            "na předpis"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Přechodnou tvrdost vody <extra_id_0> odstranit varem.",
+        "answers": [
+            "lze",
+            "nelze"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Příkladem látky nebezpečné pro zdraví je:",
+        "answers": [
+            "helium",
+            "kadmium"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Hořlavost patří mezi fyzikální vlastnosti látek.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Elektrony ve vnější vrstvě obalu se označují jako:",
+        "answers": [
+            "validní",
+            "valenční"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Naftalen je za standardních podmínek:",
+        "answers": [
+            "pevná látka",
+            "kapalina"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Většina hmotnosti atomu je soustředěna:",
+        "answers": [
+            "v elektronovém obalu",
+            "v jádře"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,75 g zubního amalgámu obsahovalo 55 % stříbra. Jaká byla hmotnost tohoto prvku ve slitině?",
+        "answers": [
+            "41,25 g",
+            "0,41 g"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Aktivátory snižují aktivitu enzymů.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Lepek a laktóza:",
+        "answers": [
+            "jsou rozdílné látky",
+            "je jedna a ta samá látka"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Částice mohou být stabilnější, pokud se sloučí s jinými částicemi.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Škrob se za přítomnosti roztoku jodu barví:",
+        "answers": [
+            "oranžově",
+            "modrofialově"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nukleofil je typicky <extra_id_0> nabitá částice.",
+        "answers": [
+            "kladně",
+            "záporně"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Atomy uhlíku jsou obvykle pětivazné.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Mezi kovy alkalických zemin patří:",
+        "answers": [
+            "vápník (Ca)",
+            "draslík (K)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který prvek patří do 3. skupiny a 6. periody?",
+        "answers": [
+            "aktinium (Ac)",
+            "lanthan (La)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Kyslíkaté kyseliny vždy obsahují atomy O.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Chlor se v těle přirozeně vyskytuje ve formě chloridových:",
+        "answers": [
+            "kationtů",
+            "aniontů"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Sloupce periodické tabulky prvků se označují jako periody.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Elektrolýza se běžně používá k výrobě:",
+        "answers": [
+            "čistého kyslíku",
+            "železa"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "monosacharidy s 5členným cyklem",
+        "answers": [
+            "pyranosy",
+            "furanosy"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Protony a neutrony se souhrnně označují jako:",
+        "answers": [
+            "elektrony",
+            "nukleony"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Některé vitaminy jsou součástí:",
+        "answers": [
+            "enzymů",
+            "hormonů"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Plasty jsou <extra_id_0> látky.",
+        "answers": [
+            "anorganické",
+            "organické"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Kyselina 2-hydroxypropanová (mléčná) vzniká i v lidském těle.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jmenuji se Lucie.<br>Ahoj, _.",
+        "answers": [
+            "Lucio",
+            "Lucie"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "sch_ma",
+        "answers": [
+            "e",
+            "é"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Měla pleť heb_í než samet.",
+        "answers": [
+            "š",
+            "č"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "l_šejník",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "ní_ká zídka",
+        "answers": [
+            "z",
+            "zs"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "atrakt_vní",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nová erupce sopky v Indonésii ROZPRAŠUJE popel na míle daleko.",
+        "answers": [
+            "rozptyluje",
+            "zahrabává"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "New York _ity",
+        "answers": [
+            "C",
+            "c"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "M_ nedohoníš.",
+        "answers": [
+            "ně",
+            "ě"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Charles Baudelaire",
+        "answers": [
+            "moderna",
+            "romantismus"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Vym_til stromy před domem.",
+        "answers": [
+            "í",
+            "ý"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Za_pěla.",
+        "answers": [
+            "ů",
+            "ú"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "kniha o českých poto_",
+        "answers": [
+            "kách",
+            "cích"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "ne_aromatičtější olej",
+        "answers": [
+            "jj",
+            "j"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "jesky_í lidé",
+        "answers": [
+            "nn",
+            "n"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "krokodýlí slzy",
+        "answers": [
+            "úmrtí v rodině",
+            "předstíraný pláč"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Odmalička věděla, že ji nevychovávají biologičtí rodiče, ale _.",
+        "answers": [
+            "adaptivní",
+            "adoptivní"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "známý _ínský vědec",
+        "answers": [
+            "Č",
+            "č"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "p_líř",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jakým způsobem přispíval Jaroslav Vrchlický k pozvednutí české literatury na evropskou úroveň?",
+        "answers": [
+            "zakládáním knihoven",
+            "překladatelskou činností"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "anal_tické myšlení",
+        "answers": [
+            "i",
+            "y"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Hlídání celého vozu, jízda mimo navigaci, ale třeba i výměna prasklé gumy budou nejspíš ještě dlouho zastávány člověkem.",
+        "answers": [
+            "podmět několikanásobný",
+            "podmět holý"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jezdím na brusl_.",
+        "answers": [
+            "ách",
+            "ích"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Táta obědv_.",
+        "answers": [
+            "áme",
+            "á"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Filip si našel v _, jak se vyrábí z ropy benzín.",
+        "answers": [
+            "encyklopedii",
+            "apologii"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "hondura_tí umělci",
+        "answers": [
+            "š",
+            "sš"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "_eský tým",
+        "answers": [
+            "Č",
+            "č"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Osoba, která je <extra_id_0> má sklony k vyhýbání se společenským situacím a je uzavřená.",
+        "answers": [
+            "extrovertní",
+            "introvertní"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Odešel k Davidov_.",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Bílkoviny, tuky i sacharidy jsou součástí našeho jídelníčku.",
+        "answers": [
+            "podmět několikanásobný",
+            "podmět rozvitý"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak nazýváme spisovatele opovrhující morálkou, kteří psali o (v té době) šokujících věcech?",
+        "answers": [
+            "konvenční moralisté",
+            "anarchističtí buřiči"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Spojené státy _merické",
+        "answers": [
+            "A",
+            "a"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "pod bradl_",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Na lůžkách leží všichni _azaři.",
+        "answers": [
+            "L",
+            "l"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V jaké divadelní hře zazněla poprvé česká hymna?",
+        "answers": [
+            "Libuše",
+            "Fidlovačka"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Volné šaty stáhla opaskem s ozdobnou _.",
+        "answers": [
+            "skobou",
+            "přezkou"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Já to _pravím.",
+        "answers": [
+            "z",
+            "s"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Představím ti mou tet_.",
+        "answers": [
+            "e",
+            "u"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jmenuji se Václav.<br>Ahoj, _.",
+        "answers": [
+            "Václavu",
+            "Václave"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které slovo je souřadné se slovy NARCIS, RŮŽE, SEDMIKRÁSKA?",
+        "answers": [
+            "KVĚTINA",
+            "TULIPÁN"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "po_šit",
+        "answers": [
+            "tě",
+            "te"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "su_tilní",
+        "answers": [
+            "p",
+            "b"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "_trýc",
+        "answers": [
+            "s",
+            "S"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Lidová kult_ra je často opomíjena.",
+        "answers": [
+            "u",
+            "ů"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "úči_ější metoda",
+        "answers": [
+            "n",
+            "nn"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Správně PŘEDPOKLÁDAL, že vlak bude mít zpoždění.",
+        "answers": [
+            "určil",
+            "tušil"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "pracovník",
+        "answers": [
+            "prac",
+            "rac"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaké zaměstnání vykonával Charles Bukowski předtím, než se stal spisovatelem?",
+        "answers": [
+            "pošťák",
+            "učitel"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Skvrny od krve jdou špatně _.",
+        "answers": [
+            "vybrat",
+            "vyprat"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "_apež",
+        "answers": [
+            "p",
+            "P"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "h_bridní",
+        "answers": [
+            "i",
+            "y"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Psích sportů ale existuje mnohem víc.",
+        "answers": [
+            "věta jednoduchá",
+            "souvětí"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "J. _. Krchovský",
+        "answers": [
+            "H",
+            "h"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jdu na výlet s kamarádk_.",
+        "answers": [
+            "ou",
+            "u"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Dnešní Sluneční soustava je sice už mnohem klidnější, než bývala během svých mladých let, i tak ale není úplně bez rizika srážek mezi vesmírnými objekty.",
+        "answers": [
+            "2",
+            "3"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Koupím dvě másl_.",
+        "answers": [
+            "a",
+            "y"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "samo_řejmě",
+        "answers": [
+            "z",
+            "sd"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "dát si chleba s hum_",
+        "answers": [
+            "usem",
+            "em"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "s_slit",
+        "answers": [
+            "i",
+            "y"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "obranyschopnost organism_",
+        "answers": [
+            "u",
+            "usu"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Povídáme si o mém oblíbeném film_.",
+        "answers": [
+            "e",
+            "u"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ty si vážně myslíš, že se ti tímhle způsobem <extra_id_0> někoho přelstít?",
+        "answers": [
+            "podaří",
+            "povaří"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Aby dosáhl svého, kul pikle, jednal nečestně a lstivě –⁠ byl to pěkný _.",
+        "answers": [
+            "intrikán",
+            "pedant"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co je to v_m?",
+        "answers": [
+            "ě",
+            "je"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "topol os_ka",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "per_ekvovat",
+        "answers": [
+            "z",
+            "s"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "b_střina",
+        "answers": [
+            "i",
+            "y"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "ang_na",
+        "answers": [
+            "i",
+            "í"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "_onzova kytara",
+        "answers": [
+            "h",
+            "H"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo chce meditovat a protáhnout si tělo, _.",
+        "answers": [
+            "cvičí jógu",
+            "dělá box"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "obrázky _tažené z internetu",
+        "answers": [
+            "s",
+            "z"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Tato sukně má <extra_id_0> velikost: oblékne ji každý.",
+        "answers": [
+            "univerzitní",
+            "univerzální"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kob_lisy",
+        "answers": [
+            "y",
+            "i"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "rod _absburků",
+        "answers": [
+            "H",
+            "h"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "hospoda Na _ůžku",
+        "answers": [
+            "r",
+            "R"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "_atínek",
+        "answers": [
+            "T",
+            "t"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "není dnešního dat_",
+        "answers": [
+            "a",
+            "umu"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "německo-české porozum_ní",
+        "answers": [
+            "ně",
+            "ě"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "do pátk_",
+        "answers": [
+            "u",
+            "a"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V šedi normalizace muselo být čtení o mimořádné české lékařce, která v Bagdádu založila československou nemocnici, vzrušujícím zážitkem.",
+        "answers": [
+            "2",
+            "3"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Potřeboval jsi pomoct?",
+        "answers": [
+            "podmět vyjádřený",
+            "podmět nevyjádřený"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Získat kluka snů je občas pořádný oříšek. Díky následujícím tipům dostaň srdce svého _!",
+        "answers": [
+            "konkurenta",
+            "idola"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Měl jsem _, že jsi jít nechtěl.",
+        "answers": [
+            "za to",
+            "zato"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Klíčové je nalézt nějaký řetězec symbolů.",
+        "answers": [
+            "podmět vyjádřený",
+            "podmět nevyjádřený"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "ve střetu s král_",
+        "answers": [
+            "i",
+            "mi"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "chorva_ké hotely",
+        "answers": [
+            "ts",
+            "c"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "př_běh",
+        "answers": [
+            "í",
+            "ý"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Oni s námi _.",
+        "answers": [
+            "nejedou",
+            "nejedete"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "_držet se hlasování",
+        "answers": [
+            "z",
+            "s"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Slovo SAVEC je <extra_id_0> slovu ZVÍŘE.",
+        "answers": [
+            "podřazené",
+            "souřadné"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "p_knik",
+        "answers": [
+            "i",
+            "y"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Fronta v supermarketu se nezmenšovala.",
+        "answers": [
+            "podmět několikanásobný",
+            "podmět rozvitý"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "v <extra_id_0> roce",
+        "answers": [
+            "přestupním",
+            "přestupném"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "_eská televize",
+        "answers": [
+            "Č",
+            "č"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pan učitel v_ hodně informací.",
+        "answers": [
+            "í",
+            "íte"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "_olicie ČR",
+        "answers": [
+            "P",
+            "p"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Máš _lad?",
+        "answers": [
+            "H",
+            "h"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "ře_ký ústav",
+        "answers": [
+            "s",
+            "žs"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "navštívit <extra_id_0> pohádkové jeskyně",
+        "answers": [
+            "t. zv.",
+            "tzv."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "nebezpečný sjez_",
+        "answers": [
+            "t",
+            "d"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je pravda, že třicetiletá válka začala v českém království?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo to byl šógun?",
+        "answers": [
+            "obchodník",
+            "představitel vojenské šlechty"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které období považujeme za počátek národního obrození?",
+        "answers": [
+            "konec 18. století",
+            "konec 17. století"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která armáda osvobodila Osvětim?",
+        "answers": [
+            "rudá",
+            "spojenecká"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Které americké město hrálo roli ve vzniku Československa?",
+        "answers": [
+            "New Jersey",
+            "Pittsburgh"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Získalo Japonsko v 19. století Tchaj-wan?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která válka probíhala ve světě během anglické revoluce?",
+        "answers": [
+            "třicetiletá",
+            "sedmiletá"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kde se zformovala rota Nazdar?",
+        "answers": [
+            "Rusko",
+            "Francie"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Členem které církve byl Jan Amos Komenský?",
+        "answers": [
+            "Jednoty bratrské",
+            "husitské"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Podle koho získali Rurikovci své jméno?",
+        "answers": [
+            "podle přízviska knížete Olega",
+            "podle knížete Rurika"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak se říká odstraňování pařezů?",
+        "answers": [
+            "klučení",
+            "mýcení"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Komu se svatý Václav zavázal, že bude platit tribut pacis?",
+        "answers": [
+            "Otovi IV.",
+            "Jindřichu I. Ptáčníkovi"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Používaly se v průběhu války tanky?",
+        "answers": [
+            "ano ",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Čím byl v roce 1789 ve Francii zrušen feudální režim?",
+        "answers": [
+            "srpnovými dekrety",
+            "Ústavodárným dekretem"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdy vyhlásila nezávislost Ukrajina?",
+        "answers": [
+            "srpen 1991",
+            "březen 1990"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo stál v čele Francie v době diktatury, která byla jednou z fází Velké francouzské revoluce?",
+        "answers": [
+            "labouristé",
+            "jakobíni"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Omezovalo Obnovené zřízení zemské moc panovníka?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdy v Rusku proběhl bolševický převrat?",
+        "answers": [
+            "říjen 1917",
+            "říjen 1817"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaký je jiný výraz pro husitství?",
+        "answers": [
+            "presbyteriánství",
+            "utrakvismus"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdy byla osvobozena Praha?",
+        "answers": [
+            "9. května",
+            "9. června"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "K jakým událostem se váže pojem „pád železné opony“?",
+        "answers": [
+            "kolaps komunistických režimů v Evropě",
+            "zrušení bariéry mezi USA a Mexikem"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaké bylo státní zřízení USA?",
+        "answers": [
+            "republika",
+            "diktatura"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo měl na starost těžbu nerostů v Latinské Americe?",
+        "answers": [
+            "USA",
+            "domovský stát"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co to byla zelená linie?",
+        "answers": [
+            "vyjednaná hranice Izraele od roku 1949 do roku 1967",
+            "aktuální hranice Izraele"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Důsledkem světové války byl vznik mnoha států. Který z následujících států k nim patří?",
+        "answers": [
+            "Československo",
+            "Švédsko"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kolikátá manželka byla Blanka z Valois?",
+        "answers": [
+            "1",
+            "4"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaká rasa byla podle nacistů nadřazená?",
+        "answers": [
+            "árijská",
+            "židovská"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se jmenovala organizace, jejímž účelem bylo na konci války zajišťovat především materiální a potravinovou pomoc státům zasaženým válečnými událostmi?",
+        "answers": [
+            "Varšavská smlouva",
+            "UNRRA"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak se jmenovala dohoda, která schvalovala spojení Čechů a Slováků ve společném státě?",
+        "answers": [
+            "Washingtonská dohoda",
+            "Pittsburská dohoda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ve které spolkové zemi byl podepsán mír ukončující třicetiletou válku?",
+        "answers": [
+            "Sársko",
+            "Vestfálsko"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je pravda, že první mobilní telefon byl vyroben již před rokem 1990?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde sídlil japonský císař na začátku 19. století?",
+        "answers": [
+            "Soul",
+            "Kjóto"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Která námořní bitva byla tou největší během první světové války?",
+        "answers": [
+            "u Calais",
+            "u Jutska"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde bylo v českých zemích založeno druhé biskupství?",
+        "answers": [
+            "Olomouc",
+            "Zlín"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Byly vzducholodě použity Němci k útoku na Londýn?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo byl českým králem po bitvě na Bílé hoře?",
+        "answers": [
+            "Ferdinand II. Habsburský",
+            "František Josef I."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se jmenuje autor hudební skladby, která se později stala českou státní hymnou?",
+        "answers": [
+            "František Škroup",
+            "Antonín Dvořák"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Které město v Německu významně zvelebil?",
+        "answers": [
+            "Norimberk",
+            "Berlín"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se nazývá proces, při kterém byla drobným živnostníkům a rolníkům odebrána půda/majetky?",
+        "answers": [
+            "socializace",
+            "znárodňování"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který mír je také součástí třicetileté války?",
+        "answers": [
+            "jankovský",
+            "pražský"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Byli mezi defenestrovanými i šlechtici?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který z následujích států stál na konci první světové války na vítězné straně?",
+        "answers": [
+            "Velká Británie",
+            "Rakousko-Uhersko"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo to byli konšelé?",
+        "answers": [
+            "královi sloužící",
+            "radní ve městech"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co označuje pojem „Luftwaffe“?",
+        "answers": [
+            "typ německého tanku",
+            "německé letectvo"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak se říká renesanci, která vznikala v období vlády Karla Velikého?",
+        "answers": [
+            "karolinská",
+            "první"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Stála katolická církev na straně krále?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ve kterém roce nastal krach na newyorské burze?",
+        "answers": [
+            "1815",
+            "1929"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Datum 8. května 1945 značí:",
+        "answers": [
+            "konec války v Evropě",
+            "konec války celosvětově"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Vyhrálo hnutí Solidarita volby v Polsku v roce 1989?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který nástupnický systém byl dříve?",
+        "answers": [
+            "seniorát",
+            "primogenitura"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jakým způsobem se Evropané zapojovali do bojů v japonské občanské válce v 19. století?",
+        "answers": [
+            "letecky",
+            "válečným loďstvem"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak pojmenoval císař Meidži v druhé polovině 19. století japonské hlavní město?",
+        "answers": [
+            "Tokio",
+            "Hanoj"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kolikátá manželka byla Anna Svídnická?",
+        "answers": [
+            "1",
+            "3"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které odvětví se po textilnictví zakládáním manufaktur rozvíjelo nejvíce?",
+        "answers": [
+            "mýdlárenské",
+            "sklářství"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které evropské státy ovlivňovaly politickou situaci v Číně?",
+        "answers": [
+            "Německo, VB, Rusko",
+            "Nizozemsko, Irsko, Norsko"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Na kterém náměstí proběhla poprava 27 českých pánů?",
+        "answers": [
+            "Václavském",
+            "Staroměstském"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo byla sestra Václava III.?",
+        "answers": [
+            "Eliška Přemyslovna",
+            "Judita"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kde byl poprvé použit pojem konečné řešení židovské otázky?",
+        "answers": [
+            "konference v Norimberku",
+            "konference ve Wansee"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo byl druhým prezidentem Československa?",
+        "answers": [
+            "Klement Gottwald",
+            "Edvard Beneš"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co se skrývá pod pojmem Kominterna?",
+        "answers": [
+            "Komunistická internacionála",
+            "Komunistická interpretace"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Bylo Jordánsko první arabskou zemí, která uznala Izrael?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ve které části Čech se nachází Chodsko?",
+        "answers": [
+            "západní",
+            "východní"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V jakém století byla ve starověkých Athénách nastolena demokracie?",
+        "answers": [
+            "6. století př. n. l.",
+            "13. století př. n. l."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kolikátá republika vzniká ve Francii na konci 19. století?",
+        "answers": [
+            "osmá",
+            "třetí"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Po které válce byly úžiny Bospor a Dardanely prohlášeny nezávislým územím?",
+        "answers": [
+            "prusko-rakouská válka",
+            "Krymská válka"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak se nazývali římští občané, kteří nebyli považováni za plnoprávné?",
+        "answers": [
+            "plebejové",
+            "patricijové"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který český kníže nechal založit pražské biskupství?",
+        "answers": [
+            "Boleslav I.",
+            "Václav IV."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je pravda, že se Finsko přidalo během druhé světové války na stranu Německa?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo byl zavražděn 15. března 44 př. n. l.?",
+        "answers": [
+            "Julius Caesar",
+            "Theodosius"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo se postavil proti Karlovi I.?",
+        "answers": [
+            "Oliver Cromwell",
+            "Thomas Naseby"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jakého vyznání byl Bohuslav Balbín?",
+        "answers": [
+            "jezuita",
+            "kalvinista"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Které dvě vesnice byly vypáleny po atentátu na Heydricha?",
+        "answers": [
+            "Lidice a Ležáky",
+            "Lidice a Lety"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ve kterých dvou městech se začalo jednat o míru na konci třicetileté války?",
+        "answers": [
+            "Münster a Osnabrück",
+            "Mnichov a Norimberk"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo v Rusku vyhrál v roce 1922 občanskou válku?",
+        "answers": [
+            "podporovatelé cara",
+            "bolševici"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Která další říše existovala vedle Západořímské říše v Evropě?",
+        "answers": [
+            "Východořímská",
+            "Severořímská"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která dvě města mezi sebou vedla válku?",
+        "answers": [
+            "Sparta a Athény",
+            "Trója a Řím"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Přežili místodržící pád z okna během defenestrace?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolik kolejí měla Karlova univerzita při svém založení?",
+        "answers": [
+            "2",
+            "4"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V jaké zemi proběhla průmyslová revoluce až ve 20. století?",
+        "answers": [
+            "v Rusku",
+            "ve Francii"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo stavěl chrám sv. Víta na Pražském hradě?",
+        "answers": [
+            "Ignác Dientzenhofer",
+            "Petr Parléř"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které státy podepsaly Bruselský pakt?",
+        "answers": [
+            "státy Beneluxu, Španělsko a Švédsko",
+            "VB, Francie a státy Beneluxu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Která bájná kněžna předpověděla stavbu Prahy?",
+        "answers": [
+            "Libuše",
+            "Teta"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co je to konfiskace?",
+        "answers": [
+            "povýšení do šlechtického stavu",
+            "zabavení majetku"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ve kterém městě proběhl pivní puč?",
+        "answers": [
+            "Mnichov",
+            "Berlín"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Na kterém kontinentě také probíhaly boje během první světové války?",
+        "answers": [
+            "Antarktida",
+            "Afrika"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Byl v roce 1811 přijat Všeobecný občanský zákoník?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co byla nejvyspělejší britská západoafrická kolonie?",
+        "answers": [
+            "Ghana",
+            "Libye"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se jmenovala česká vlastenecká spisovatelka, která psala o českém lidu?",
+        "answers": [
+            "Jane Austenová",
+            "Božena Němcová"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kterého vyznání byl Fridrich Falcký?",
+        "answers": [
+            "protestant",
+            "katolík"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který kmen kromě Etrusků obýval Řím?",
+        "answers": [
+            "Latinové",
+            "Hunové"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se jmenoval přísný rakouský kancléř, kterého lidé neměli rádi?",
+        "answers": [
+            "Metternich",
+            "Kolovrat"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jakou funkci zastával Reinhard Heydrich v protektorátu?",
+        "answers": [
+            "prezident",
+            "zastupující říšský protektor"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo byl v čele Haagské koalice?",
+        "answers": [
+            "dánský král",
+            "anglický král"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která církev měla v novověké Anglii převahu?",
+        "answers": [
+            "katolická",
+            "anglikánská"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Proč Jindřich VIII. založil novou církev?",
+        "answers": [
+            "papež mu nedovolil se rozvést",
+            "vytvořit vlastní církev chtěl odjakživa"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který titul chtěl získat Přemysl Otakar II.?",
+        "answers": [
+            "anglický císař",
+            "římsko-německý král"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jak se jmenoval slavný ruský vojevůdce v napoleonských válkách?",
+        "answers": [
+            "Kutuzov",
+            "Hannibal"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se říká události, při které byly vymláceny výlohy obchodů?",
+        "answers": [
+            "noc světel",
+            "křišťálová noc"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kdo přeložil Bibli do němčiny?",
+        "answers": [
+            "Luther",
+            "Hus"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kde byla nejpočetnější demonstrace během sametové revoluce?",
+        "answers": [
+            "Letná",
+            "Albertov"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "U věty končící zkratkou (například „atd.“) se na konci:",
+        "answers": [
+            "píše jedna tečka",
+            "píší dvě tečky"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pokud použijeme v počítači sestupné řazení na slova (textové řetězce), seřadí se:",
+        "answers": [
+            "od A do Z",
+            "od Z do A"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Která čísla dává <code>range(3, 10, 2)</code>?",
+        "answers": [
+            "3, 5, 7, 9",
+            "3, 5, 7, 9, 11"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "40 000 kB",
+        "answers": [
+            "40 MB",
+            "40 TB"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Opakovaně provádět stejný pohyb dokáží lépe:",
+        "answers": [
+            "lidé",
+            "roboti"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pro práci s nejistotou využívá umělá inteligence:",
+        "answers": [
+            "logiku a geometrii",
+            "pravděpodobnost a statistiku"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Počítače ve 40. a 50. letech 20. stol. byly obvykle přístupné běžným lidem k užívání.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "K tomu, aby si člověk uvědomil, že by se měl hýbat, nutně <extra_id_0> nositelné zařízení.",
+        "answers": [
+            "nepotřebuje",
+            "potřebuje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Antivirové programy jsou vždy dostupné zdarma.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "GNU GPL",
+        "answers": [
+            "closed source licence",
+            "open source licence"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "MS-DOS je:",
+        "answers": [
+            "typ monitoru",
+            "operační systém"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Monitor se k počítači připojuje přes:",
+        "answers": [
+            "síťovou kartu",
+            "grafickou kartu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nositelné zařízení odhalí spíše:",
+        "answers": [
+            "nízkou fyzickou aktivitu",
+            "nádor tlustého střeva"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Některé editory zdrojového kódu umožňují spolupráci více lidí v reálném čase.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "teoretický model počítače",
+        "answers": [
+            "Turingův stroj",
+            "schéma lorda Byrona"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Textový procesor mnohdy v rámci kontroly pravopisu za chybu považuje:",
+        "answers": [
+            "cizí slova",
+            "běžné předložky"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Příklad počítačového vidění:",
+        "answers": [
+            "korektura textu",
+            "vyhledávání obrázku podle textu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Spam většinou obsahuje odkazy na <extra_id_0> či pochybné stránky.",
+        "answers": [
+            "nebezpečné",
+            "užitečné"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Může se mezi různými zařízeními lišit kvalita reprodukce zvuku?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Informace o počtu hospitalizovaných pacientů na jednotlivých odděleních bude obsahovat informační systém:",
+        "answers": [
+            "v nemocnici",
+            "ve škole"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "pravděpodobnostní model zachycující vztahy mezi událostmi",
+        "answers": [
+            "genetický algoritmus",
+            "Bayesovská síť"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "rozdělení textu na základní jednotky",
+        "answers": [
+            "tokenizace",
+            "digitalizace"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který typ souboru umožňuje uložit i údaje o formátování textu?",
+        "answers": [
+            "TXT",
+            "DOCX"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Vhodně zvolený předmět <extra_id_0> zpětné vyhledání e-mailu.",
+        "answers": [
+            "neusnadňuje",
+            "usnadňuje"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "malý přenosný počítač s dotykovou obrazovkou",
+        "answers": [
+            "server",
+            "smartphone"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Podle Moorova zákona se výkon integrovaných obvodů s časem exponenciálně zvyšuje.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "6,3 kbit/s",
+        "answers": [
+            "6 300 bit/s",
+            "0,63 bit/s"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdy začala být umělá inteligence schopná spolehlivě pojmenovat objekty na fotografii?",
+        "answers": [
+            "před 10 lety",
+            "před 30 lety"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Malware se do počítače může dostat společně s nelegálním softwarem.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Digitální identita občana může zajišťovat přístup ke službám státu.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaká je běžná klávesová zkratka pro zavináč (@) v českém rozložení klávesnice?",
+        "answers": [
+            "Ctrl + V",
+            "AltGr + V"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "token",
+        "answers": [
+            "metoda strojového učení",
+            "základní jednotka při práci s textem"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Může funkce obsahovat <code>return</code> i <code>print</code>?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Vyvíjený lék měl mnoho vedlejších účinků. Výzkumníci se studii na toto téma rozhodli nezveřejňovat.",
+        "answers": [
+            "výběrové zkreslení",
+            "publikační zkreslení"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je-li zpráva cenzurovaná, obvykle obsahuje:",
+        "answers": [
+            "protinázor k prezentovanému názoru",
+            "nekompletní pohled, který byl někým upraven"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaká je hodnota výrazu <code>(5 > 10) == false</code> ?",
+        "answers": [
+            "vždy <code>True</code>",
+            "záleží na hodnotě proměnné <code>false</code>"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "jeden kompletní vstup pro model (řádek datasetu)",
+        "answers": [
+            "metrika",
+            "příklad"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Dezinformační servery jsou mnohdy financované konkrétním státem, jehož názory jsou prosazovány.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "nevyžádaná pošta",
+        "answers": [
+            "spam",
+            "subject"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Každý kandidátní klíč je i primární.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Přeučení modelu je:",
+        "answers": [
+            "žádoucí",
+            "nežádoucí"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Data získaná z elektronického dotazníku mohou být spojena s identitou konkrétního člověka zpravidla:",
+        "answers": [
+            "podle písma respondenta",
+            "tak, že respondent zadá své identifikační údaje (např. e-mail)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "NoSQL databáze na rozdíl od relačních <extra_id_0> ukládat nestrukturovaná data.",
+        "answers": [
+            "neumožňují",
+            "umožňují"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Pro oddělení promluv dvou lidí mluvících přes sebe na jedné zvukové nahrávce lze využít učení bez učitele.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pro výběr modelu ve strojovém učení platí princip zvaný Occamova břitva, který říká, že existuje-li více různých vysvětlení, je lépe upřednostňovat to <extra_id_0> z nich.",
+        "answers": [
+            "nejsložitější",
+            "nejjednodušší"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Absolutní hodnota čísla se zjistí pomocí funkce:",
+        "answers": [
+            "ABS",
+            "SIGN"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "velikost displeje",
+        "answers": [
+            "0″",
+            "0 km/h"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Atributy, které nejsou pro klasifikace podstatné, by měly mít napříč kategoriemi <extra_id_0> rozdělení hodnot.",
+        "answers": [
+            "stejné",
+            "odlišné"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "příklad běžně využívané chybové funkce",
+        "answers": [
+            "ReLU",
+            "kvadratická chyba"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co je to clipping?",
+        "answers": [
+            "namixování stereo stop do jedné stopy",
+            "oříznutí vrcholů (peaků) signálu, přebuzení"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Databáze používané v praxi mají obvykle spíše <extra_id_0> řádků.",
+        "answers": [
+            "jednotky",
+            "tisíce"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "textový procesor",
+        "answers": [
+            "LibreOffice Writer",
+            "Microsoft Excel"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Model pro rozpoznávání mrkve měl při trénování úspěšnost 99 %, ale při testování pouze 55 %.",
+        "answers": [
+            "podučení",
+            "přeučení"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Desktopové aplikace jsou určené hlavně pro:",
+        "answers": [
+            "smartphony, tablety",
+            "stolní počítače, notebooky"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "program, který zvládne napsat slohovou práci",
+        "answers": [
+            "realita",
+            "fikce"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Během 20. století došlo dvakrát k tzv. „zimě umělé inteligence“ spojené s <extra_id_0>  zájmu, výzkumu a investic do umělé inteligence.",
+        "answers": [
+            "útlumem",
+            "zvýšením"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Program, který by se snažil být nerozpoznatelný od člověka, <extra_id_0> předstírat prodlevy při psaní a počítání, i když by uměl odpověď poskytnout okamžitě.",
+        "answers": [
+            "bude",
+            "nebude"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaká je nejnižší možná hodnota <code>abs(x)</code> ?",
+        "answers": [
+            "není zespoda ohraničená",
+            "0"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : O určité skutečnosti je možné sebrat „všechna“ data a tak se zcela vyhnout zkreslení.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co bude pravděpodobně uloženo v informačním systému automobilky?",
+        "answers": [
+            "barva očí zaměstnanců",
+            "dostupnost dílů"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "browser",
+        "answers": [
+            "editor prezentací",
+            "internetový prohlížeč"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Město, které aktivně podporuje sport, dotazníkem zjistilo, že žactvo základní školy sportuje velmi nerado. Výsledky se rozhodlo nezveřejnit.",
+        "answers": [
+            "publikační zkreslení",
+            "potvrzující zkreslení"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Sociální síť nabízí uživateli reklamy na základě toho, o čem si v chatu píše s jinými lidmi. Takový chat pravděpodobně <extra_id_0> koncové šifrování.",
+        "answers": [
+            "nepoužívá",
+            "používá"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Na vlastní webovou stránku můžeme dát pouze obrázky, které jsou naším vlastním dílem.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "model, který se učí hrát dámu tak, že hraje sám proti sobě",
+        "answers": [
+            "posilované učení",
+            "učení bez učitele"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zásadní účel citace je, aby:",
+        "answers": [
+            "jasně identifikovala zdroj",
+            "dodržela normu"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Software byl chybně naprogramován a proto způsobil škodu. Takový software se <extra_id_0> za malware.",
+        "answers": [
+            "nepovažuje",
+            "považuje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Pokud chceme zjistit, jaká teplota vzduchu je zrovna v určitém městě, musíme toto město osobně navštívit.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "real",
+        "answers": [
+            "datový typ",
+            "datový člen"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Z hlediska ergonomie je obvykle vhodnější používat:",
+        "answers": [
+            "stolní počítač",
+            "notebook"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Pokud použijeme v počítači sestupné řazení na slova (textové řetězce), seřadí se od Z do A.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Používá robotický vysavač techniky umělé inteligence?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Vyhledávače mnohdy umějí vyhledávat obrázky jen s určitou licencí (např. Creative Commons).",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Internet má jednoho správce, který odpovídá za jeho fungování.",
+        "answers": [
+            "pravda",
+            "nepravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "K vyjádření rozsahu se používá:",
+        "answers": [
+            "pomlčka",
+            "spojovník"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Při odhadování nejpravděpodobnějšího textu odpovídajícího záznamu řeči pomocí skrytých Markovových modelů budou skrytým stavem:",
+        "answers": [
+            "písmena (text)",
+            "zvuky (řeč)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Vyberte značku pro zobrazení počítačového kódu (typicky zobrazený neproporcionálním písmem).",
+        "answers": [
+            "&lt code&gt ",
+            "&lt pc&gt"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Prořezávání rozhodovacích stromů snižuje riziko:",
+        "answers": [
+            "podučení",
+            "přeučení"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "d. m. Y",
+        "answers": [
+            "datum narození",
+            "rodné číslo"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "programy, které se chovají racionálně",
+        "answers": [
+            "umělá inteligence",
+            "strojové učení"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Polovodičová paměť je příklad integrovaného obvodu.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co se obvykle používá k výzkumu veřejného mínění?",
+        "answers": [
+            "pozorování",
+            "dotazníky"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Které programovací jazyky se využívaly k programování umělé inteligence dříve (60.–80. léta)?",
+        "answers": [
+            "Lisp, Prolog",
+            "R, Python"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Generování odkazů v textu i příslušných bibliografických citací umožňují citační:",
+        "answers": [
+            "trenažéry",
+            "manažery"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "příklad přirozeného jazyka",
+        "answers": [
+            "dánština",
+            "Python"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "zoom",
+        "answers": [
+            "přiblížení obrazu",
+            "formát souboru s fotkou"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "AI se snaží <extra_id_0>  pravděpodobnost dosažení definovaných cílů.",
+        "answers": [
+            "maximalizovat",
+            "minimalizovat"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Čím delší exponent, tím <extra_id_0> číslo můžeme zapsat.",
+        "answers": [
+            "přesnější",
+            "větší"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ke kterému způsobu získávání dat se zpravidla využívají přístroje?",
+        "answers": [
+            "pozorování",
+            "měření"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pravděpodobnost, že má pacient virovou nákazu je 5 %. Jaká je pravděpodobnost, že pacient nemá virovou nákazu?",
+        "answers": [
+            "95 %",
+            "5 %"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Následující výrok je <extra_id_0> : Součástí multimediálního souboru mohou být i titulky.",
+        "answers": [
+            "nepravda",
+            "pravda"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pro lokalizaci robota použijeme spíše:",
+        "answers": [
+            "skryté Markovovy modely",
+            "Naivní Bayesův klasifikátor"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Chybu ve výpočtu udělá spíše program, který se snaží chovat:",
+        "answers": [
+            "racionálně",
+            "jako člověk"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "X and Y",
+        "answers": [
+            "platí X i Y současně",
+            "platí alespoň jeden z X a Y"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Prostředí pro úlohu hraní piškvorek je:",
+        "answers": [
+            "spojité",
+            "diskrétní"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Současné operační systémy obvykle <extra_id_0> základní ovladače periferií (např. klávesnice, myši, tiskárny).",
+        "answers": [
+            "neobsahují",
+            "obsahují"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "operace, při které posouváme malý filtr přes celý obrázek (nebo jiná prostorová data)",
+        "answers": [
+            "konvoluce",
+            "gradientní sestup"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "oprávnění k nakládání s autorským dílem",
+        "answers": [
+            "citace",
+            "licence"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde spíše narazíme na použití umělé inteligence?",
+        "answers": [
+            "zpracování přirozeného jazyka",
+            "teorie formálních jazyků"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která z možností je vhodnější jméno proměnné pro počet hráčů?",
+        "answers": [
+            "p",
+            "n_players"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "RPSN",
+        "answers": [
+            "roční procentní sazba nákladů",
+            "roční průměrná splátka nedoplatků"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Číslo 3 je:",
+        "answers": [
+            "sudé",
+            "liché"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolik os má elipsa?",
+        "answers": [
+            "1",
+            "2"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,2 t",
+        "answers": [
+            "20 kg",
+            "200 kg"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pro výpočet obsahu rovnoběžníku potřebujeme znát délku strany a dále:",
+        "answers": [
+            "délku další strany",
+            "délku výšky k ní příslušné"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Směrový a normálový vektor přímky",
+        "answers": [
+            "jsou kolmé",
+            "mají stejnou velikost"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "délka hada",
+        "answers": [
+            "metry",
+            "minuty"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "5 kg",
+        "answers": [
+            "5000 g",
+            "5000 mg"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Válec a hranol se stejným objemem a stejným obsahem podstavy <extra_id_0> stejnou výšku.",
+        "answers": [
+            "nemusí mít",
+            "musí mít"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "souhlasné úhly mají",
+        "answers": [
+            "stejnou velikost",
+            "součet 180°"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "10 t",
+        "answers": [
+            "10000 kg",
+            "10000 g"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je exponenciální funkce lichá?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jehlan a kužel se stejným povrchem musí mít i stejný obsah podstavy.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Číslo 45 je:",
+        "answers": [
+            "liché",
+            "sudé"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "40 dag",
+        "answers": [
+            "4 g",
+            "400 g"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Zvětšíme-li poloměr koule o polovinu, její povrch se zvětší také o polovinu.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "finanční prostředky ve formě mincí nebo bankovek",
+        "answers": [
+            "hotovost",
+            "splátka"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je číslo 40 dělitelné číslem 10?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je číslo 10 dělitelné číslem 10?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Půjčím si od banky peníze na nové rogalo:",
+        "answers": [
+            "neúčelový spotřebitelský úvěr",
+            "účelový spotřebitelský úvěr"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "billboard",
+        "answers": [
+            "1,2 m²",
+            "12 m²"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Není pravda, že mám kolo nebo koloběžku.",
+        "answers": [
+            "Nemám kolo ani koloběžku.",
+            "Mám jen kolo."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pro výpočet obsahu lichoběžníku stačí znát délku základny a dále:",
+        "answers": [
+            "délku druhé základny a výšku",
+            "výšku"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je logaritmická funkce lichá?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "pytel jablek",
+        "answers": [
+            "2 kg",
+            "0,2 kg"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pokud je 1 EUR = 25 CZK, kolik je 400 korun ?",
+        "answers": [
+            "40 euro",
+            "16 euro"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Zaokrouhlete 1865 na desítky.",
+        "answers": [
+            "1860",
+            "1870"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,1 cm",
+        "answers": [
+            "1 mm",
+            "1 m"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Na základě znalosti objemu koule <extra_id_0> určit její poloměr.",
+        "answers": [
+            "nemůžeme",
+            "můžeme"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jakou délku může mít třetí strana trojúhelníku s délkami stran 12 cm a 5 cm, aby šel sestrojit?",
+        "answers": [
+            "2 dm",
+            "10 cm"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "150 g",
+        "answers": [
+            "0,15 kg",
+            "0,015 kg"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "1600 m²",
+        "answers": [
+            "hokejové hřiště",
+            "golfové hřiště"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Číslo 15 je:",
+        "answers": [
+            "sudé",
+            "liché"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Dvě čísla jsou v poměru 7 : 5. Jejich rozdíl je 2. Jaká jsou to čísla?",
+        "answers": [
+            "5 a 3",
+            "7 a 5"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Medián <extra_id_0> vždy jednoznačně určen.",
+        "answers": [
+            "nemusí být",
+            "je"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Pokud se vklady úročí dvakrát ročně, znamená to, že úrokovací období je _.",
+        "answers": [
+            "rok",
+            "půl roku"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,83 km",
+        "answers": [
+            "830 m",
+            "83 m"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "nosnost mostu",
+        "answers": [
+            "tuna",
+            "hektar"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je trojúhelník se stranami 1, 5, 7 pravoúhlý?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "45 % z 900",
+        "answers": [
+            "přibližně 400",
+            "přibližně 240"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je logaritmická funkce prostá?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Václavské náměstí",
+        "answers": [
+            "40 ha",
+            "4 ha"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolik asi stojí jeden časopis?",
+        "answers": [
+            "40 Kč",
+            "4 000 Kč"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Dvě čísla jsou v poměru 3 : 4. Jejich součin je 48. Jaké je větší z těchto dvou čísel?",
+        "answers": [
+            "8",
+            "12"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Rozhodněte, zda platí:  Hloubka jezera je přímo úměrná jeho rozloze.",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "hodina a čtvrt",
+        "answers": [
+            "125 minut",
+            "75 minut"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Musím zaplatit <extra_id_0> za parkování v centru města.",
+        "answers": [
+            "půjčku",
+            "poplatek"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je exponenciální funkce periodická?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kterou charakteristiku můžeme určit pro znak „pásek v karate“?",
+        "answers": [
+            "medián",
+            "aritmetický průměr"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Které číslo obsahuje víc různých číslic?",
+        "answers": [
+            "11230",
+            "98997"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Číslo 781 je:",
+        "answers": [
+            "sudé",
+            "liché"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je pravda, že na základě znalosti délek dvou stran můžeme určit povrch kvádru?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "5 dm",
+        "answers": [
+            "50 cm",
+            "500 cm"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kdo může určit (odhlasovat) výši zisku akciové společnosti za dané období?",
+        "answers": [
+            "valná hromada akcionářů",
+            "parlament"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "40 g",
+        "answers": [
+            "rohlík",
+            "varná konvice"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zaokrouhlete 6126 na stovky.",
+        "answers": [
+            "6200",
+            "6100"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je pravda, že dva kužely se stejným povrchem musí mít stejný poloměr podstavy?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "20 % z 47589",
+        "answers": [
+            "přibližně 9 500",
+            "přibližně 10 000"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Zaokrouhlete 49112 na statisíce.",
+        "answers": [
+            "0",
+            "100000"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "trest za porušení pravidel",
+        "answers": [
+            "sankce",
+            "akcie"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Může mít třetí strana trojúhelníku s délkami stran 12 cm a 10 cm délku 6 cm?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "3 g",
+        "answers": [
+            "tužka",
+            "tiskárna"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "5 km²",
+        "answers": [
+            "celé Brno",
+            "Královo pole (městká část)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Může mít třetí strana trojúhelníku s délkami stran 3,5 cm a 7 cm délku 12 cm?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kolik asi stojí jedna láhev minerálky?",
+        "answers": [
+            "3 Kč",
+            "15 Kč"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "90 cm",
+        "answers": [
+            "9 m",
+            "0,9 m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "šířka dveří",
+        "answers": [
+            "80 mm",
+            "80 cm"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "250 ha",
+        "answers": [
+            "Středozemní moře",
+            "Brněnská přehrada"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Půjčil jsem si od Toma peníze, mám teď u něj _.",
+        "answers": [
+            "dar",
+            "dluh"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "1000 m",
+        "answers": [
+            "1 km",
+            "1 dm"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "úsečka spojující střed strany a protilehlý vrchol",
+        "answers": [
+            "osa strany",
+            "těžnice"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Každý měsíc mám vysoké <extra_id_0> za nájem a energie.",
+        "answers": [
+            "úroky",
+            "výdaje"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "10 % z 299",
+        "answers": [
+            "přibližně 21",
+            "přibližně 30"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "1929 je _.",
+        "answers": [
+            "číslo",
+            "číslice"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je číslo 15 dělitelné číslem 2?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je číslo 25 dělitelné číslem 10?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "list papíru A4",
+        "answers": [
+            "60 cm²",
+            "600 cm²"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "670 g",
+        "answers": [
+            "0,067 kg",
+            "0,67 kg"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "45 mm",
+        "answers": [
+            "4,5 cm",
+            "0,45 m"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Vrcholová tečna paraboly je",
+        "answers": [
+            "kolmá k ose paraboly.",
+            "rovnoběžná s osou paraboly."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kde se obchoduje s akciemi?",
+        "answers": [
+            "na burze",
+            "ve směnárně"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Je 50 prvočíslo?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "délka běžeckého oválu",
+        "answers": [
+            "4000 cm",
+            "400 m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "25 m",
+        "answers": [
+            "2500 cm",
+            "25000 cm"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "kilo-",
+        "answers": [
+            "tisícinásobek",
+            "tisícina"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Číslo 51 je:",
+        "answers": [
+            "liché",
+            "sudé"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která charakteristika (pokud se dá spočítat) je vždy jednoznačně určena?",
+        "answers": [
+            "aritmetický průměr",
+            "modus"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "tupý úhel patří mezi konkávní úhly",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ve výpočtu konečné hodnoty vkladu po pěti úrokovacích obdobích použijeme v případě složených úroků _.",
+        "answers": [
+            "pátou mocninu",
+            "násobení pěti"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "ostrý úhel patří mezi konvexní úhly",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "vystudovaný obor",
+        "answers": [
+            "ordinální data",
+            "nominální data"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Je číslo 19 dělitelné číslem 5?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "90 cm",
+        "answers": [
+            "délka světelného meče",
+            "délka vesmírné lodi Millennium Falcon"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Příklad burzy v ČR:",
+        "answers": [
+            "Česká pošta",
+            "R-M systém"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Přímka, která neprotíná elipsu, se nazývá vnější přímka.",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "95 % z 867",
+        "answers": [
+            "přibližně 200",
+            "přibližně 820"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Na základě znalosti povrchu jehlanu <extra_id_0> určit jeho výšku.",
+        "answers": [
+            "můžeme",
+            "nemůžeme"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Má pro poměrová data smysl říct, že jeden prvek je dvakrát větší než druhý?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "40 cm",
+        "answers": [
+            "4 m",
+            "0,4 m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "2 a čtvrt hodiny",
+        "answers": [
+            "135 minut",
+            "165 minut"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Sinus úhlu lomu vyšel 0,8. Dojde k totálnímu odrazu?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,15 mm",
+        "answers": [
+            "0,15 ⋅ 10³ m",
+            "1,5 ⋅ 10⁻⁴ m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "V jakém skupenství je za pokojové teploty a tlaku zlato?",
+        "answers": [
+            "plynné",
+            "pevné"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pro měření tlaku se používají i jiné jednotky než Pascaly. Například _.",
+        "answers": [
+            "atmosféry",
+            "stratosféry"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Přenos tepla mezi elektrickou plotýnkou a hrncem probíhá _.",
+        "answers": [
+            "zářením",
+            "vedením"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde se setkáme s důsledky Bernoulliho rovnice?",
+        "answers": [
+            "u stromu ohýbaného větrem",
+            "u přivřených dveří v průvanu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaký rozměr (v zákl. jednotkách SI) má <b>zrychlení</b>?",
+        "answers": [
+            "m/s",
+            "m/s²"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Piráti našli zlatý poklad. Jak zjistí, že to jsou mince z ryzího zlata?",
+        "answers": [
+            "kousnutím do mince",
+            "určí hustotu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Při chlazení se vnitřní energie _.",
+        "answers": [
+            "snižuje",
+            "zvyšuje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Který druh energie je složkou vnitřní energie pevného tělesa?",
+        "answers": [
+            "gravitační potenciální energie",
+            "potenciální energie vzájemného působení částic"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Výslednice sil působících na těleso obíhající stálou rychlostí kolem země je nulová.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se zkráceně zapíše kilopascal?",
+        "answers": [
+            "kpa",
+            "kPa"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "3 ⋅ 10⁵ km/s",
+        "answers": [
+            "1,08 ⋅ 10⁹ m/s",
+            "3 ⋅ 10⁸ m/s"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaké látkové množství soli (NaCl) dostaneme sloučením 1 molu atomů sodíku (Na) a 1 molu atomů chloru (Cl)?",
+        "answers": [
+            "2 moly",
+            "1 mol"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "40 μm",
+        "answers": [
+            "4 ⋅ 10⁻⁶ m",
+            "4 ⋅ 10⁻⁵ m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Od oběžné dráhy Neptunu dále se nachází:",
+        "answers": [
+            "Kuiperův pás",
+            "fotosféra"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak se běžně ovlivňuje vodivost (a elektrický odpor) polovodiče?",
+        "answers": [
+            "snížením tlaku",
+            "pomocí příměsí (dopantu)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Proč polystyrenová krabička vytažená z lednice není studená?",
+        "answers": [
+            "polystyren není možné ochladit",
+            "polystyren není dobrý tepelný vodič"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Pro měření atmosférického tlaku se používají i jiné jednotky. Například _.",
+        "answers": [
+            "bary a milibary",
+            "bary a minibary"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "5 kJ",
+        "answers": [
+            "5000 J",
+            "5000000 J"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co to kladka v podstatě je?",
+        "answers": [
+            "kolečko, přes které jde provaz",
+            "uzel na dvou provazech"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Nejběžnějším typem hvězdy v Galaxii je:",
+        "answers": [
+            "červený trpaslík",
+            "hyperobr"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jak může být vyjádřena hustota?",
+        "answers": [
+            "cm/g³",
+            "g/cm³"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co funguje na základě přeměny dodávané energie na světlo (světelný výkon)?",
+        "answers": [
+            "LED dioda",
+            "tiskárna"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Určete správnou jednotku teploty.",
+        "answers": [
+            "C",
+            "°C"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Co je existující předpona pro násobky a díly jednotek?",
+        "answers": [
+            "makro-",
+            "mikro-"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Sinus úhlu lomu vyšel 1,1. Dojde k totálnímu odrazu?",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Který výrok je správný?",
+        "answers": [
+            "v centrálním poli směřuje gravitace opačným směrem než v homogenním poli",
+            "v centrálním poli směřuje gravitace do jednoho bodu v prostoru (zdroj gravitace)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Převeďte na <b>základní</b> jednotku v exponenciálním tvaru: <b>2 tuny</b>",
+        "answers": [
+            "2 ⋅ 10³ kg",
+            "2 ⋅ 10⁶ g"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "1,602 ⋅ 10⁻¹⁹ C",
+        "answers": [
+            "1,602 ⋅ 10⁰ nC",
+            "1,602 ⋅ 10⁻¹⁰ nC"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaký je vztah předpon kilo- a mili-?",
+        "answers": [
+            "mili- je miliontina kilo-",
+            "mili- je tisícina kilo-"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Výslednice sil působících na těleso pohybující se rovnoměrně a přímočaře je nulová.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Hustota vzduchu na Mont Blancu je stejná, nebo menší než hustota vzduchu v Brně?",
+        "answers": [
+            "menší",
+            "stejná"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Z polovodičů jsou vyrobeny např.:",
+        "answers": [
+            "tužkové baterie",
+            "tranzistory"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Topné těleso o výkonu 1000 W ohřívá kapalinu 100 sekund. Kapalina se ohřeje o 50 °C. Jakou má tepelnou kapacitu?",
+        "answers": [
+            "2000 J/K",
+            "600 J/K"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ohmův zákon můžeme použít <extra_id_0> .",
+        "answers": [
+            "pouze pro jednotlivé prvky",
+            "pro celý obvod i pro jeho jednotlivé prvky"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "4 mm/s",
+        "answers": [
+            "14,4 m/h",
+            "14,4 km/h"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Na čem závisí odpor vodiče?",
+        "answers": [
+            "na materiálu",
+            "na okolním elektrickém poli"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaký rozměr (v zákl. jednotkách SI) má <b>maximální teplota</b> tělesa?",
+        "answers": [
+            "K",
+            "kg·m·s⁻²"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Co je to výkon (v kontextu spotřebičů)?",
+        "answers": [
+            "využitá část příkonu dodaného spotřebiči",
+            "množství energie dodané spotřebiči za jednotku času"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Mars se otočí okolo své rotační osy za:",
+        "answers": [
+            "9 hodin a 56 minut",
+            "24 hodin a 37 minut"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "1 m³",
+        "answers": [
+            "0,001 l",
+            "1000 l"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaký je celkový náboj všech volných elektronů a všech děr (v klasickém nenabitém polovodiči)?",
+        "answers": [
+            "0 Coulombů",
+            "1 Coulomb"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Energie může být uvolněna pomocí chemických reakcí.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "5 kg",
+        "answers": [
+            "5000 g",
+            "0,005 g"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Hydrostatický tlak <extra_id_0> .",
+        "answers": [
+            "se mění s hloubkou",
+            "je stejný v celém objemu kapaliny"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaký rozměr (v zákl. jednotkách SI) má <b>objem</b>?",
+        "answers": [
+            "m³",
+            "kg/m³"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Převeďte na <b>základní</b> jednotku v exponenciálním tvaru: <b>8 GHz</b>",
+        "answers": [
+            "8 ⋅ 10⁹ Hz",
+            "8 ⋅ 10⁶ Hz"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Měrná tepelná kapacita určuje, kolik tepla je třeba k ohřátí jednoho kilogramu látky o jeden stupeň Celsia.",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaký rozměr (v zákl. jednotkách SI) má <b>síla</b>?",
+        "answers": [
+            "kg⋅m⋅s⁻²",
+            "kg⋅m⁻²"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "subhvězdné objekty, v nichž probíhá pouze syntéza helia z deuteria",
+        "answers": [
+            "obři",
+            "hnědí trpaslíci"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jaký rozměr (v základních jednotkách SI) má <b>perioda</b> pohybu po kružnici?",
+        "answers": [
+            "s",
+            "N"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "0,2 molu",
+        "answers": [
+            "asi 0,2 ⋅ 10²³ částic",
+            "asi 1,204 ⋅ 10²³ částic"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Během kruhového děje je konečný stav soustavy totožný s počátečním stavem soustavy.",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "500 kcal",
+        "answers": [
+            "500 kalorií",
+            "500 kilokalorií"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nerovnoměrný pohyb probíhá:",
+        "answers": [
+            "s měnící se (okamžitou) rychlostí",
+            "na nerovných površích"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "6000000000 molekul",
+        "answers": [
+            "asi 0,1 molu",
+            "asi 0,00000000000001 molu"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde se magnety využívají?",
+        "answers": [
+            "ve dřezu",
+            "na stěně ledničky"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jakou jednotku má moment síly?",
+        "answers": [
+            "newtonmetr",
+            "newtonhodina"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která předpona označuje miliontinu jednotky?",
+        "answers": [
+            "mili-",
+            "mikro-"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "5 ⋅ 10⁰ m",
+        "answers": [
+            "5 ⋅ 10² cm",
+            "5 ⋅ 10² mm"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V nádobě je voda a olej. Vrstva oleje leží na vrstvě vody. Větší hustotu má:",
+        "answers": [
+            "voda",
+            "olej"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "150 m/s",
+        "answers": [
+            "1,5 ⋅ 10⁻⁰ km/s",
+            "1,5 ⋅ 10⁻¹ km/s"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "2,5 g/cm³",
+        "answers": [
+            "2500 kg/m³",
+            "2005 kg/m³"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "V soustavě spojené s držadlem větrníku koná větrník:",
+        "answers": [
+            "otáčivý pohyb",
+            "posuvný pohyb"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaký rozměr (v zákl. jednotkách SI) má <b>energie</b>?",
+        "answers": [
+            "kg⋅m²/s²",
+            "m²/s²"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Elektrický odpor polovodiče se zahřátím _.",
+        "answers": [
+            "snižuje",
+            "zvyšuje"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "3 gigawatty",
+        "answers": [
+            "3000000 kilowattů",
+            "3000000000 kilowattů"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Planety obíhají Slunce:",
+        "answers": [
+            "přibližně v jedné rovině",
+            "v rovinách s velmi odlišným sklonem"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "50 mol",
+        "answers": [
+            "5000000 mmol",
+            "50000 mmol"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Měrnou tepelnou kapacitu značíme _.",
+        "answers": [
+            "c",
+            "k"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Gravitační zrychlení má _.",
+        "answers": [
+            "směr a velikost",
+            "jen velikost"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Když snížíme tlak pod úroveň okolního atmosférického tlaku, říká se tomu _.",
+        "answers": [
+            "přetlak",
+            "podtlak"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Za jako dlouho ujede formule 100 m, když jede rychlostí 360 km/h?",
+        "answers": [
+            "asi 0,14 s",
+            "1 s"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "300000 Hz",
+        "answers": [
+            "3 ⋅ 10⁻¹ MHz",
+            "3 ⋅ 10⁻¹ GHz"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Tepelný stroj odebírá teplo z _.",
+        "answers": [
+            "chladiče",
+            "ohřívače"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Kde se magnety využívají?",
+        "answers": [
+            "u nožiček židlí",
+            "drží dvířka skříněk"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "36 km/h",
+        "answers": [
+            "0,36 m/s",
+            "10 m/s"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Prvky které části periodické tabulky tvoří nejčastěji polovodiče?",
+        "answers": [
+            "polokovy",
+            "nekovy"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Konvektivní proudění může probíhat v _.",
+        "answers": [
+            "pevných látkách",
+            "kapalinách"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jupiter a Saturn lze označit za:",
+        "answers": [
+            "terestrické planety",
+            "plynné obry"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Cestováním mimo Zemi se zabývá obor zvaný:",
+        "answers": [
+            "planetárium",
+            "kosmonautika"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "0,4",
+        "answers": [
+            "2/5",
+            "4/5"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Kde můžeme obvykle najít kladky?",
+        "answers": [
+            "topinkovač",
+            "jeřáby"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Můžeme popisovat jeden pohyb z pohledu mnoha vztažných soustav?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Která předpona odpovídá písmenu před jednotkou: <b>kg</b>",
+        "answers": [
+            "kilo-",
+            "mega-"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "15 km",
+        "answers": [
+            "150000 mm",
+            "15000000 mm"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Oblast kolem hvězdy, v níž by se mohl vyskytovat život, se označuje jako <extra_id_0> zóna.",
+        "answers": [
+            "kolonizovatelná",
+            "obyvatelná"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Vztažnou soustavu tvoří:",
+        "answers": [
+            "souřadnice a podřadnice",
+            "počáteční bod a souřadnicové osy"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Jakou jednotku má vlnovou délka?",
+        "answers": [
+            "žádnou",
+            "m"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Těleso změní svoji vnitřní energii jen v důsledku konání práce třecích sil.",
+        "answers": [
+            "ne",
+            "ano"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaká písmena (před zkratkou vlastní jednotky) označují předponu deka- ?",
+        "answers": [
+            "da",
+            "d"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "900 mJ",
+        "answers": [
+            "0,9 J",
+            "0,1 J"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "40 km/h",
+        "answers": [
+            "asi 11 m/s",
+            "asi 8 m/s"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "0,6 g/cm³",
+        "answers": [
+            "600 kg/m³",
+            "60 kg/m³"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Ve fyzice říkáme že těleso <i>plove</i>, když v kapalině stoupá vzhůru k hladině nebo je na hladině a setrvává tam. Je to pravda?",
+        "answers": [
+            "ano",
+            "ne"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Topné těleso o výkonu 500 W ohřívá kapalinu 100 sekund. Kapalina se ohřeje o 100 °C. Jakou má tepelnou kapacitu?",
+        "answers": [
+            "750 J/K",
+            "500 J/K"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Nejnižší definovaná teplota je absolutní nula. Jak se tato teplota vyjádří v Kelvinově stupnici?",
+        "answers": [
+            "0 K",
+            "-273,15 K"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "4,185 J",
+        "answers": [
+            "1 cal",
+            "0,01 cal"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Jaká je výslednice sil, pokud na těleso nepůsobí žádná síla?",
+        "answers": [
+            "nenulová",
+            "nulová"
+        ],
+        "correct_answer": 1
+    }
+]

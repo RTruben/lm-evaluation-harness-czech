@@ -1,0 +1,17 @@
+task: aver_umime_to
+output_type: multiple_choice
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files:
+    validation: /Users/richardtruben/College/bc_thesis/lm-evaluation-harness-czech/lm_eval/tasks/aver/aver_umime_to.json
+validation_split: validation
+
+doc_to_text: question
+doc_to_choice: answers
+doc_to_target: correct_answer
+
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
