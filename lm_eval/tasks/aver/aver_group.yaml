@@ -1,0 +1,9 @@
+group: aver_complete
+task:
+  - aver_agree_single_var
+  - aver_agree_double_var
+  - aver_belebele
+  - aver_csgec
+  - aver_hellaswag
+  - aver_sqad
+  - aver_umime_to
