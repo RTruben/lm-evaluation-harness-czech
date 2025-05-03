@@ -1,0 +1,17 @@
+task: aver_csgec
+output_type: multiple_choice
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files:
+    validation: aver_cs_gec.json
+validation_split: validation
+
+doc_to_text: "Následující věta je gramaticky <extra_id_0>: {{sentence}}"
+doc_to_choice: choices
+doc_to_target: answer
+
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
