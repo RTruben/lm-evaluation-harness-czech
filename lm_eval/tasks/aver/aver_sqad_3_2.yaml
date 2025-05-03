@@ -1,6 +1,4 @@
 task: aver_sqad
-group:
-  - aver
 generation_kwargs:
   until:
     - "<extra_id_1>"
