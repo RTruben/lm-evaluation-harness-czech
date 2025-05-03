@@ -1,0 +1,34 @@
+group: aver_belebele
+task:
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-0
+    doc_to_text: "Věta: {{inputs}}\nTvoje odpověď: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-1
+    doc_to_text: "Vstup: {{inputs}}\nVýstup: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-2
+    doc_to_text: "{{inputs}}"
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-3
+    doc_to_text: "Maska: {{inputs}}\nCíl: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-4
+    doc_to_text: "Text kde chybí slovo: {{inputs}}\nSlovo: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-5
+    doc_to_text: "Nekompletní věta: {{inputs}}\nDoplňený slovo: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-6
+    doc_to_text: "{{inputs}}\nDoplňeno: "
+    doc_to_target: targets
+  - task: aver_belebele_mask
+    task_alias: belebele_prompt-7
+    doc_to_text: "Věta bez slova: {{inputs}}\nSlovo: "
+    doc_to_target: targets
