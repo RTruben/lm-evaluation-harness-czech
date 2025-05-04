@@ -4,7 +4,7 @@ dataset_path: json
 dataset_name: null
 dataset_kwargs:
   data_files:
-    validation: /Users/richardtruben/College/bc_thesis/lm-evaluation-harness-czech/lm_eval/tasks/aver/aver_umime_to.json
+    validation: aver_umime_to.json
 validation_split: validation
 
 doc_to_text: question
