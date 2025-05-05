@@ -442,7 +442,6 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
             f"batch_size: {args.batch_size}{f' ({batch_sizes})' if batch_sizes else ''}"
         )
         print(make_table(results))
-        # print(results)
         if "groups" in results:
             print(make_table(results, "groups"))
         if "aver_complete" in results.get("results"):
