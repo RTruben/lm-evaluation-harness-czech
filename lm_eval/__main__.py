@@ -445,7 +445,7 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
         # print(results)
         if "groups" in results:
             print(make_table(results, "groups"))
-        if "aver_complete" in results:
+        if "aver_complete" in results.get("results"):
             print_single_metric(results.get("results"))
         if args.wandb_args:
             # Tear down wandb run once all the logging is done.
