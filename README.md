@@ -1,4 +1,15 @@
-To setup this project please follow these steps:
+To setup the project please follow these steps:
+<h2>
+Requirements:
+</h2>
+
+<b>Python</b> (3.10 used during development)
+
+pip package installer for python (24.0 used during development outside of venv)
+
+<h2>
+Setup and evaluation
+</h2>
 
 1. run the setup script: `source setup_aver.sh` (source is important to keep venv active outside of the process)
 2. when you are ready, run the evaluation: `./run_eval.sh [-m <model>] [-o <output>] [-d <device>] [-b <batch_size>]`
