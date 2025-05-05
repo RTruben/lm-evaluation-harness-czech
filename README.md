@@ -11,7 +11,7 @@ pip package installer for python (24.0 used during development outside of venv)
 Setup and evaluation
 </h2>
 
-1. run the setup script: `source setup_aver.sh` (source is important to keep venv active outside of the process)
+1. run the setup script: `source setup_aver.sh` (source is important to keep venv active outside of the process) IMPORTANT: in case you are working on a machine that requires everyone to use a venv by default, such as apollo.fi.muni.cz, comment out the 5th and 7th lines in this script
 2. when you are ready, run the evaluation: `./run_eval.sh [-m <model>] [-o <output>] [-d <device>] [-b <batch_size>]`
 
 `<model>` is the huggingface path of the model you wish to evaluate eg. `google/mt5-base`
