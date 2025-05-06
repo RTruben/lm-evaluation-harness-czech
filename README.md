@@ -21,3 +21,5 @@ Setup and evaluation
 `<device>` denotes the device which will be used for evaluation `[cuda,cpu,mps]`. Anything other than `cuda` is not recommended for full aver evaluation due to very long evaluation
 
 `<batch_size>` determines batch_size used when evaluating (we used `batch_size=16` on the `NVIDIA A40` GPU on the `apollo` server, running locally we used `batch_size=2`), this greatly influences the evaluating speed
+
+Please feel free to modify the evaluation script if your model requires different parameters.
