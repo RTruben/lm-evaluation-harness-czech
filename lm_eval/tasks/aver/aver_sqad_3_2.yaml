@@ -4,7 +4,7 @@ generation_kwargs:
     - "<extra_id_1>"
   do_sample: false
   temperature: 0.0
-doc_to_text: "Kontext: {{context}}\n <extra_id_0> je odpověď na otázku: {{question}}\n"
+doc_to_text: "Kontext:\n{{context}}\n\n<extra_id_0>\n\nOtázka:\n{{question}}"
 doc_to_target: answer
 dataset_path: json
 dataset_name: null
