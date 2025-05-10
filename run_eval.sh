@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd lm_eval && cd tasks && cd aver
+cd lm_eval/tasks/aver
 
 DEVICE="cuda"
 MODEL="google/mt5-base"

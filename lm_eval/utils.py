@@ -370,9 +370,9 @@ def print_single_metric(results):
     aver_hellaswag = results.get("aver_hellaswag", None)
     aver_sqad = results.get("aver_sqad", None)
     aver_umimeto = results.get("aver_umime_to", None)
-    # number in tuple denotes amount of samples per task
+    # second value in tuple denotes amount of samples per task
     mask_tasks = [(agree_single, 713), (agree_double, 329), (belebele_mask, 750), (aver_sqad, 500)]
-    # last two numbers denote baseline and best scores
+    # last two values in tuple denote baseline and best scores
     acc_tasks = [(aver_csgec, 1000, 0.556, 1.0), (aver_hellaswag, 1000, 0.263, 1.0), (aver_umimeto, 700, 0.5, 1.0)]
     chrf_performance = round(get_chrf(mask_tasks), 2)
     ter_performance = round(get_ter(mask_tasks), 2)
