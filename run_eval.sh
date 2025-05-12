@@ -38,7 +38,7 @@ python3 -m accelerate.commands.launch \
   --dynamo_backend=inductor \
   -m lm_eval \
   --model hf \
-  --model_args pretrained="$MODEL",max_length=2048,truncation=True,normalize_log_probs=True,trust_remote_code=True,truncate_strategy=leave_description \
+  --model_args pretrained="$MODEL",max_length=2048,truncation=True,trust_remote_code=True \
   --tasks aver_complete \
   --batch_size "$BATCH_SIZE" \
   --output_path "$OUTPUT_PATH" \
