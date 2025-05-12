@@ -95,7 +95,7 @@ def chrf(items):
 
     Higher is better  # TODO I think
     """
-    my_items = chrf_ter_util(items)
+    my_items = chrf_util(items)
     print(my_items)
     refs = list(zip(*my_items))[0]
     preds = list(zip(*my_items))[1]
@@ -103,7 +103,7 @@ def chrf(items):
     return sacrebleu.corpus_chrf(preds, refs).score
 
 
-def chrf_ter_util(items):
+def chrf_util(items):
     my_items = []
     for double in items:
         ref = re.sub(r"<extra_id_\d+>", "", double[0]).strip().replace("  ",",")
@@ -113,6 +113,15 @@ def chrf_ter_util(items):
         if len(ref_list) > 1 and len(pred_list) == len(ref_list):
             for index, value in enumerate(ref_list):
                 my_items.append([value, pred_list[index]])
+        my_items.append([ref, pred])
+    return my_items
+
+
+def ter_util(items):
+    my_items = []
+    for double in items:
+        ref = re.sub(r"<extra_id_\d+>", "", double[0]).strip().replace("  "," ")
+        pred = re.sub(r"<extra_id_\d+>", "", double[1]).strip().replace("  "," ")
         my_items.append([ref, pred])
     return my_items
 
@@ -127,7 +136,7 @@ def ter(items):
 
     Lower is better
     """
-    my_items = chrf_ter_util(items)
+    my_items = ter_util(items)
     refs = list(zip(*my_items))[0]
     preds = list(zip(*my_items))[1]
     refs, preds = _sacreformat(refs, preds)
@@ -211,7 +220,6 @@ def exact_match_hf_evaluate(
     ignore_numbers=False,
 ):
     predictions, references = em_util(predictions, references)
-    print(f'Preds: {predictions} | Refs: {references}')
     if regexes_to_ignore is not None:
         for s in regexes_to_ignore:
             predictions = np.array([re.sub(s, "", x) for x in predictions])
@@ -254,6 +262,7 @@ def em_util(predictions, references):
             my_references.append(value)
             my_predictions.append(pred_list[index])
     return my_predictions, my_references    
+
 
 @register_metric(
     metric="exact_match",
