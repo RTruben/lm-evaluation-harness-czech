@@ -1,0 +1,18 @@
+group: aver_sqad_var
+task:
+  - task: aver_sqad
+    task_alias: sqad_prompt-0
+    doc_to_text: "Kontext:\n{{context}}\n\nOtázka:\n{{question}}\n\nOdpověď:\n<extra_id_0>\n"
+    doc_to_target: targets
+  - task: aver_sqad
+    task_alias: sqad_prompt-1
+    doc_to_text: "Zadání:\n{{context}}\n\nDotaz:\n{{question}}\n\nVaše odpověď:\n<extra_id_0>\n"
+    doc_to_target: targets
+  - task: aver_sqad
+    task_alias: sqad_prompt-2
+    doc_to_text: "{{context}}\n\n{{question}}\n\n<extra_id_0>\n"
+    doc_to_target: targets
+  - task: aver_sqad
+    task_alias: sqad_prompt-3
+    doc_to_text: "Kontext:\n{{context}}\n\nOdpověď:\n<extra_id_0>\n\nOtázka:\n{{question}}\n"
+    doc_to_target: targets
