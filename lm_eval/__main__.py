@@ -10,7 +10,7 @@ from lm_eval import evaluator, utils
 from lm_eval.evaluator import request_caching_arg_to_dict
 from lm_eval.loggers import EvaluationTracker, WandbLogger
 from lm_eval.tasks import TaskManager
-from lm_eval.utils import handle_non_serializable, make_table, simple_parse_args_string, print_single_metric
+from lm_eval.utils import handle_non_serializable, make_table, simple_parse_args_string, print_single_metric, calculate_single_metric
 
 
 def _int_or_none_list_arg_type(
@@ -420,7 +420,9 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
                     wandb_logger.log_eval_samples(samples)
             except Exception as e:
                 eval_logger.info(f"Logging to Weights and Biases failed due to {e}")
-
+        if "aver_complete" in results.get("results"):
+            aver_results = calculate_single_metric()
+            results["combined_metric"] = results.get("results")
         evaluation_tracker.save_results_aggregated(
             results=results, samples=samples if args.log_samples else None
         )
@@ -445,7 +447,7 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
         if "groups" in results:
             print(make_table(results, "groups"))
         if "aver_complete" in results.get("results"):
-            print_single_metric(results.get("results"))
+            print_single_metric(aver_results)
         if args.wandb_args:
             # Tear down wandb run once all the logging is done.
             wandb_logger.run.finish()

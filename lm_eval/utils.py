@@ -361,7 +361,7 @@ def get_acc(acc_tasks):
         samples_agg += sample_count
     return (result_agg / samples_agg)
     
-def print_single_metric(results):
+def calculate_single_metric(results):
     """Calculate and print single value metric"""
     agree_single = results.get("aver_agree_single_var", None)
     agree_double = results.get("aver_agree_double_var", None)
@@ -379,11 +379,20 @@ def print_single_metric(results):
     exact_match_performance = round(get_exact_match(mask_tasks), 2)
     acc_performance = round(get_acc(acc_tasks), 2)
     combined = (chrf_performance + ter_performance + exact_match_performance + acc_performance) / 4
-    print(f"Normalized CHRF performance across all tasks is: {chrf_performance}")
-    print(f"Normalized TER performance across all tasks is: {ter_performance}")
-    print(f"Normalized EM performance across all tasks is: {exact_match_performance}")
-    print(f"Normalized ACC performance across all tasks is: {acc_performance}")
-    print(f"Combined performance across all metrics of all tasks is: {round(combined, 2)}")
+    return {
+        "combined": round(combined, 2),
+        "chrf": chrf_performance,
+        "ter": ter_performance,
+        "em": exact_match_performance,
+        "acc": acc_performance
+    }
+    
+def print_single_metric(results):
+    print(f"Normalized CHRF performance across all tasks is: {results["chrf"]}")
+    print(f"Normalized TER performance across all tasks is: {results["ter"]}")
+    print(f"Normalized EM performance across all tasks is: {results["em"]}")
+    print(f"Normalized ACC performance across all tasks is: {results["acc"]}")
+    print(f"Combined performance across all metrics of all tasks is: {results["combined"]}")
 
 def make_table(result_dict, column: str = "results", sort_results: bool = True):
     """Generate table of results."""
