@@ -360,6 +360,17 @@ def get_acc(acc_tasks):
         result_agg += (sample_count * normalized)
         samples_agg += sample_count
     return (result_agg / samples_agg)
+
+def get_fim_metric(tasks, key, baseline, best):
+    result_agg = 0
+    samples_agg = 0
+    for task, sample_count in tasks:
+        result = task.get(key, 0)
+        normalized = 100 * ((baseline - result) / (baseline - best)) \
+            if key == "ter,none" else 100 * ((result - baseline) / (best - baseline))
+        result_agg += (sample_count * normalized)
+        samples_agg += sample_count
+    return (result_agg / samples_agg)
     
 def calculate_single_metric(results):
     """Calculate and print single value metric"""
@@ -374,9 +385,9 @@ def calculate_single_metric(results):
     mask_tasks = [(agree_single, 713), (agree_double, 329), (belebele_mask, 750), (aver_sqad, 500)]
     # last two values in tuple denote baseline and best scores
     acc_tasks = [(aver_csgec, 1000, 0.556, 1.0), (aver_hellaswag, 1000, 0.263, 1.0), (aver_umimeto, 700, 0.5, 1.0)]
-    chrf_performance = round(get_chrf(mask_tasks), 2)
-    ter_performance = round(get_ter(mask_tasks), 2)
-    exact_match_performance = round(get_exact_match(mask_tasks), 2)
+    chrf_performance = round(get_fim_metric(mask_tasks, "chrf,none", 0, 100), 2)
+    ter_performance = round(get_fim_metric(mask_tasks, "ter,none", 150, 0), 2)
+    exact_match_performance = round(get_fim_metric(mask_tasks, "exact_match,none", 0, 1), 2)
     acc_performance = round(get_acc(acc_tasks), 2)
     combined = (chrf_performance + ter_performance + exact_match_performance + acc_performance) / 4
     return {
