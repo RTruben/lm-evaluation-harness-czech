@@ -422,7 +422,7 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
                 eval_logger.info(f"Logging to Weights and Biases failed due to {e}")
         if "aver_complete" in results.get("results"):
             aver_results = calculate_single_metric(results.get("results"))
-            results["combined_metric"] = results.get("results")
+            results["combined_metric"] = aver_results
         evaluation_tracker.save_results_aggregated(
             results=results, samples=samples if args.log_samples else None
         )
