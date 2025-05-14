@@ -388,11 +388,17 @@ def calculate_single_metric(results):
     }
     
 def print_single_metric(results):
-    print(f"Normalized CHRF performance across all tasks is: {results['chrf']}")
-    print(f"Normalized TER performance across all tasks is: {results['ter']}")
-    print(f"Normalized EM performance across all tasks is: {results['em']}")
-    print(f"Normalized ACC performance across all tasks is: {results['acc']}")
-    print(f"Combined performance across all metrics of all tasks is: {results['combined']}")
+    metric_names = {
+        'chrf': 'Normalized CHRF',
+        'ter': 'Normalized TER',
+        'em': 'Normalized EM',
+        'acc': 'Normalized ACC',
+        'combined': 'Combined performance across all metrics'
+    }
+
+    for key, description in metric_names.items():
+        if key in results:
+            print(f"{description} across all tasks is: {results[key]}")
 
 def make_table(result_dict, column: str = "results", sort_results: bool = True):
     """Generate table of results."""
