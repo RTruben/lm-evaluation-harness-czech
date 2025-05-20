@@ -314,42 +314,7 @@ class Reorderer:
         assert all(cov)
 
         return res
-    
-def get_chrf(tasks):
-    baseline = 0
-    best = 100
-    result_agg = 0
-    samples_agg = 0
-    for task, sample_count in tasks:
-        result_chrf = task.get("chrf,none", 0)
-        normalized = 100 * ((result_chrf - baseline) / (best - baseline))
-        result_agg += (sample_count * normalized)
-        samples_agg += sample_count
-    return (result_agg / samples_agg)
 
-def get_ter(tasks):
-    baseline = 150
-    best = 0
-    result_agg = 0
-    samples_agg = 0
-    for task, sample_count in tasks:
-        result_ter = task.get("ter,none", 0)
-        normalized = 100 * ((baseline - result_ter) / (baseline - best))
-        result_agg += (sample_count * normalized)
-        samples_agg += sample_count
-    return (result_agg / samples_agg)
-
-def get_exact_match(tasks):
-    baseline = 0
-    best = 1
-    result_agg = 0
-    samples_agg = 0
-    for task, sample_count in tasks:
-        result_em = task.get("exact_match,none", 0)
-        normalized = 100 * ((result_em - baseline) / (best - baseline))
-        result_agg += (sample_count * normalized)
-        samples_agg += sample_count
-    return (result_agg / samples_agg)
 
 def get_acc(acc_tasks):
     result_agg = 0
@@ -373,7 +338,7 @@ def get_fim_metric(tasks, key, baseline, best):
     return (result_agg / samples_agg)
     
 def calculate_single_metric(results):
-    """Calculate and print single value metric"""
+    """Calculate single value metric"""
     agree_single = results.get("aver_agree_single_var", None)
     agree_double = results.get("aver_agree_double_var", None)
     belebele_mask = results.get("aver_belebele", None)
